@@ -1,6 +1,6 @@
 ---
 title: Provisioning
-weight: 3
+weight: 5
 ---
 
 {{% notice tip %}}

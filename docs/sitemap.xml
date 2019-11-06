@@ -3,11 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/terraform-workshop/requirements/</loc>
+    <loc>/terraform-workshop/basics/</loc>
   </url>
   
   <url>
-    <loc>/terraform-workshop/basics/</loc>
+    <loc>/terraform-workshop/requirements/</loc>
   </url>
   
   <url>
