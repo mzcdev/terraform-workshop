@@ -1,6 +1,6 @@
 ---
 title: Backend
-weight: 31
+weight: 32
 ---
 
 > Terraform state 정보를 저장할 S3 Bucket 를 생성 합니다.

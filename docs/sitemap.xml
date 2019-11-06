@@ -83,7 +83,7 @@
   </url>
   
   <url>
-    <loc>/terraform-workshop/provisioning/backend/</loc>
+    <loc>/terraform-workshop/provisioning/clone/</loc>
   </url>
   
   <url>
@@ -91,7 +91,7 @@
   </url>
   
   <url>
-    <loc>/terraform-workshop/provisioning/clone/</loc>
+    <loc>/terraform-workshop/provisioning/backend/</loc>
   </url>
   
   <url>
