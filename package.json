@@ -1,0 +1,24 @@
+{
+  "name": "workshop",
+  "version": "1.0.0",
+  "homepage": "https://github.com/nalbam/workshop",
+  "bugs": {
+    "url": "https://github.com/nalbam/workshop/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nalbam/workshop.git"
+  },
+  "scripts": {
+    "theme": "git submodule init && git submodule update",
+    "build": "hugo -v",
+    "start": "hugo server -w -v --enableGitInfo --bind=0.0.0.0 --port 8080 --navigateToChanged",
+    "deploy": "aws s3 sync public/ s3://ws.cui.sh/ --delete --acl public-read"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.9.0",
+    "hugo-cli": "^0.11.0",
+    "hugo-lunr": "0.0.4",
+    "mermaid": "^8.0.0"
+  }
+}

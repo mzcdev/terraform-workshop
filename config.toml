@@ -1,0 +1,39 @@
+title = "Workshop"
+theme = "learn"
+
+baseURL = "/"
+
+languageCode = "ko-KR"
+defaultContentLanguage = "ko"
+
+metaDataFormat = "yaml"
+defaultContentLanguageInSubdir= false
+
+[params]
+  editURL = "https://github.com/nalbam/workshop/edit/master/content/"
+  description = "Workshop"
+  author = "Jungyoul Yu"
+  showVisitedLinks = false
+  disableBreadcrumb = false
+  disableNextPrev = false
+  themeVariant = "blue"
+
+[outputs]
+home = [ "HTML" ]
+
+[Languages]
+[Languages.ko]
+title = "Workshop"
+weight = 2
+languageName = "Korean"
+
+[[Languages.ko.menu.shortcuts]]
+name = "<i class='fab fa-fw fa-github'></i> GitHub"
+identifier = "ds"
+url = "https://github.com/nalbam/workshop"
+weight = 20
+
+[[Languages.ko.menu.shortcuts]]
+name = "<i class='fas fa-fw fa-bullhorn'></i> Credits"
+url = "/credits"
+weight = 30
