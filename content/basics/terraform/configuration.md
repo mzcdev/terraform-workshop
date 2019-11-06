@@ -8,3 +8,5 @@ weight: 31
 * 0.12 기준
 
 ![Configuration Language](../../terraform/images/configuration.png)
+
+* https://www.terraform.io/docs/configuration/index.html

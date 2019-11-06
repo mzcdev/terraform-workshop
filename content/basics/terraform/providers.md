@@ -13,3 +13,7 @@ weight: 34
 
 * SaaS
   * Terraform Cloud, GitHub...
+
+![Providers](../../terraform/images/providers.png)
+
+* https://www.terraform.io/docs/providers/index.html

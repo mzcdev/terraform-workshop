@@ -12,3 +12,7 @@ weight: 33
   * local
 
   * remote: 팀 협업에 적당
+
+![State](../../terraform/images/state.png)
+
+* https://www.terraform.io/docs/state/index.html

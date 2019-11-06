@@ -9,3 +9,7 @@ weight: 35
   * file
   * local-exec
   * remote-exec
+
+![Provisioners](../../terraform/images/provisioners.png)
+
+* https://www.terraform.io/docs/provisioners/index.html
