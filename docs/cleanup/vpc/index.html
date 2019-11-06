@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/terraform-workshop/images/favicon-60.png" type="image/x-icon" />
 <link rel="icon" href="/terraform-workshop/images/favicon-60.png" type="image/x-icon" />
 
-    <title>Terraform :: Terraform Workshop</title>
+    <title>VPC :: Terraform Workshop</title>
 
     
     <link href="/terraform-workshop/css/nucleus.css?1573027125" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/terraform-workshop/basics/terraform/">
+  <body class="" data-url="/terraform-workshop/cleanup/vpc/">
     <nav id="sidebar" class="">
 
 
@@ -430,7 +430,7 @@
   
     
     <li data-nav-id="/terraform-workshop/basics/" title="Basics" class="dd-item 
-        parent
+        
         
         
         ">
@@ -457,8 +457,8 @@
   
     
     <li data-nav-id="/terraform-workshop/basics/terraform/" title="Terraform" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/terraform-workshop/basics/terraform/">
@@ -758,7 +758,7 @@
   
     
     <li data-nav-id="/terraform-workshop/cleanup/" title="CleanUp" class="dd-item 
-        
+        parent
         
         
         ">
@@ -820,7 +820,7 @@
  
   
     
-      <li data-nav-id="/terraform-workshop/cleanup/vpc/" title="VPC" class="dd-item ">
+      <li data-nav-id="/terraform-workshop/cleanup/vpc/" title="VPC" class="dd-item active">
         <a href="/terraform-workshop/cleanup/vpc/">
         VPC
         
@@ -883,7 +883,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='' href="https://github.com/mzcdev/terraform-workshop/edit/master/content/basics/terraform/_index.md" target="blank">
+                    <a class="github-link" title='' href="https://github.com/mzcdev/terraform-workshop/edit/master/content/cleanup/vpc.md" target="blank">
                       <i class="fas fa-code-branch"></i>
                       <span id="top-github-link-text"></span>
                     </a>
@@ -914,7 +914,7 @@
             
           
           
-            <a href='/terraform-workshop/'>Home</a> > <a href='/terraform-workshop/basics/'>Basics</a> > Terraform
+            <a href='/terraform-workshop/'>Home</a> > <a href='/terraform-workshop/cleanup/'>CleanUp</a> > VPC
           
          
           
@@ -943,7 +943,7 @@
           
             <h1>
               
-              Terraform
+              VPC
             </h1>
           
 
@@ -951,24 +951,18 @@
 
 
 
+<blockquote>
+<p>Terraform 명령으로 삭제 합니다.</p>
+</blockquote>
 
-	<ul>
-<li><p>Infrstructure as Code</p></li>
-
-<li><p>Hashicorp 에서 오픈소스로 개발중인 인프라스트럭처 관리 도구</p></li>
-
-<li><p>앤서블(Ansible) 과 더불어 프로비저닝 도구로 분류</p></li>
-
-<li><p>필요한 리소스를 <strong>선언적</strong>인 <strong>코드</strong>로 관리</p></li>
-</ul>
-
-
-
+<pre><code>terraform destroy
+</code></pre>
 
 
 <footer class=" footline" >
 	
 </footer>
+
 
         
         </div> 
@@ -1262,7 +1256,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -1278,7 +1271,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -1291,9 +1283,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1509,6 +1498,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1521,6 +1511,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1553,6 +1546,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -1577,10 +1571,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/terraform-workshop/basics/" title="Basics"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/terraform-workshop/cleanup/eks/" title="EKS"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/terraform-workshop/basics/terraform/configuration/" title="Configuration Language" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/terraform-workshop/cleanup/lambda/" title="Lambda API" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1609,3 +1603,4 @@
     
   </body>
 </html>
+

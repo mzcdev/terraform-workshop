@@ -15,6 +15,10 @@
   </url>
   
   <url>
+    <loc>/terraform-workshop/cleanup/</loc>
+  </url>
+  
+  <url>
     <loc>/terraform-workshop/requirements/account/</loc>
   </url>
   
@@ -124,6 +128,18 @@
   
   <url>
     <loc>/terraform-workshop/basics/terraform/backends/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/cleanup/lambda/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/cleanup/eks/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/cleanup/vpc/</loc>
   </url>
   
   <url>
