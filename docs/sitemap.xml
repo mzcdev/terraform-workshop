@@ -83,11 +83,39 @@
   </url>
   
   <url>
+    <loc>/terraform-workshop/basics/terraform/configuration/</loc>
+  </url>
+  
+  <url>
     <loc>/terraform-workshop/terraform/clone/</loc>
   </url>
   
   <url>
+    <loc>/terraform-workshop/basics/terraform/commands/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/basics/terraform/state/</loc>
+  </url>
+  
+  <url>
     <loc>/terraform-workshop/terraform/vpc/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/basics/terraform/providers/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/basics/terraform/provisioners/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/basics/terraform/modules/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/basics/terraform/backends/</loc>
   </url>
   
   <url>

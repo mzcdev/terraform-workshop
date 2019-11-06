@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/terraform-workshop/images/favicon-60.png" type="image/x-icon" />
 <link rel="icon" href="/terraform-workshop/images/favicon-60.png" type="image/x-icon" />
 
-    <title>VPC :: Terraform Workshop</title>
+    <title>Provisioners :: Terraform Workshop</title>
 
     
     <link href="/terraform-workshop/css/nucleus.css?1573018220" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/terraform-workshop/terraform/vpc/">
+  <body class="" data-url="/terraform-workshop/basics/terraform/provisioners/">
     <nav id="sidebar" class="">
 
 
@@ -430,7 +430,7 @@
   
     
     <li data-nav-id="/terraform-workshop/basics/" title="Basics" class="dd-item 
-        
+        parent
         
         
         ">
@@ -457,7 +457,7 @@
   
     
     <li data-nav-id="/terraform-workshop/basics/terraform/" title="Terraform" class="dd-item 
-        
+        parent
         
         
         ">
@@ -557,7 +557,7 @@
  
   
     
-      <li data-nav-id="/terraform-workshop/basics/terraform/provisioners/" title="Provisioners" class="dd-item ">
+      <li data-nav-id="/terraform-workshop/basics/terraform/provisioners/" title="Provisioners" class="dd-item active">
         <a href="/terraform-workshop/basics/terraform/provisioners/">
         Provisioners
         
@@ -631,7 +631,7 @@
   
     
     <li data-nav-id="/terraform-workshop/terraform/" title="Terraform" class="dd-item 
-        parent
+        
         
         
         ">
@@ -693,7 +693,7 @@
  
   
     
-      <li data-nav-id="/terraform-workshop/terraform/vpc/" title="VPC" class="dd-item active">
+      <li data-nav-id="/terraform-workshop/terraform/vpc/" title="VPC" class="dd-item ">
         <a href="/terraform-workshop/terraform/vpc/">
         VPC
         
@@ -756,7 +756,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='' href="https://github.com/mzcdev/terraform-workshop/edit/master/content/terraform/vpc.md" target="blank">
+                    <a class="github-link" title='' href="https://github.com/mzcdev/terraform-workshop/edit/master/content/basics/terraform/provisioners.md" target="blank">
                       <i class="fas fa-code-branch"></i>
                       <span id="top-github-link-text"></span>
                     </a>
@@ -787,7 +787,13 @@
             
           
           
-            <a href='/terraform-workshop/'>Home</a> > <a href='/terraform-workshop/terraform/'>Terraform</a> > VPC
+            
+            
+          
+          
+            <a href='/terraform-workshop/'>Home</a> > <a href='/terraform-workshop/basics/'>Basics</a> > <a href='/terraform-workshop/basics/terraform/'>Terraform</a> > Provisioners
+          
+         
           
          
           
@@ -816,7 +822,7 @@
           
             <h1>
               
-              VPC
+              Provisioners
             </h1>
           
 
@@ -824,56 +830,17 @@
 
 
 
-<blockquote>
-<p>Public subnet 과 Private subnet 을 포함한 VPC 를 생성 합니다.</p>
-</blockquote>
+<ul>
+<li><p>인프라 객체를 local 또는 remote 에서 특정 작업을 수행</p></li>
 
-<p><img src="../../terraform/images/terraform_vpc_ach.png" alt="Success" /></p>
+<li><p>주요 프로비저너</p>
 
-<blockquote>
-<p>Terraform 명령으로 생성 합니다.</p>
-</blockquote>
-
-<pre><code>cd terraform-env-workshop/vpc
-
-terraform init
-terraform plan
-terraform apply
-</code></pre>
-
-<blockquote>
-<p>다음과 같은 메세지가 출력 되면 성공 입니다.</p>
-</blockquote>
-
-<pre><code>Apply complete! Resources: 0 added, 0 changed, 0 destroyed.
-
-Outputs:
-
-nat_ip = [
-  &quot;52.78.13.15&quot;,
-]
-private_subnet_cidr = [
-  &quot;10.15.4.0/24&quot;,
-  &quot;10.15.5.0/24&quot;,
-  &quot;10.15.6.0/24&quot;,
-]
-private_subnet_ids = [
-  &quot;subnet-034abbc6xc10634ad&quot;,
-  &quot;subnet-0944x61ec8c2f8f93&quot;,
-  &quot;subnet-06b7d51d44537x626&quot;,
-]
-public_subnet_cidr = [
-  &quot;10.15.1.0/24&quot;,
-  &quot;10.15.2.0/24&quot;,
-  &quot;10.15.3.0/24&quot;,
-]
-public_subnet_ids = [
-  &quot;subnet-092938d936610xbfe&quot;,
-  &quot;subnet-026b23axc4b257e42&quot;,
-  &quot;subnet-0xfe713b44d028898&quot;,
-]
-vpc_id = vpc-0fxb2037axdc5b059
-</code></pre>
+<ul>
+<li>file</li>
+<li>local-exec</li>
+<li>remote-exec</li>
+</ul></li>
+</ul>
 
 
 <footer class=" footline" >
@@ -1173,6 +1140,7 @@ vpc_id = vpc-0fxb2037axdc5b059
             
                 
                     
+                    
                 
                 
 
@@ -1188,6 +1156,7 @@ vpc_id = vpc-0fxb2037axdc5b059
             
                 
                     
+                    
                 
                 
 
@@ -1201,37 +1170,8 @@ vpc_id = vpc-0fxb2037axdc5b059
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
-            
-            
-                
                     
                 
                 
@@ -1297,6 +1237,7 @@ vpc_id = vpc-0fxb2037axdc5b059
             
                 
                     
+                    
                 
                 
 
@@ -1307,26 +1248,6 @@ vpc_id = vpc-0fxb2037axdc5b059
                     
             
         
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
                     
                         
             
@@ -1363,11 +1284,61 @@ vpc_id = vpc-0fxb2037axdc5b059
             
         
                     
+            
+        
+                    
+            
+        
+                    
                         
             
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -1392,10 +1363,10 @@ vpc_id = vpc-0fxb2037axdc5b059
 	 
 	 
 		
-			<a class="nav nav-prev" href="/terraform-workshop/terraform/clone/" title="Clone"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/terraform-workshop/basics/terraform/providers/" title="Providers"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/terraform-workshop/terraform/backend/" title="Backend" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/terraform-workshop/basics/terraform/modules/" title="Modules" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
