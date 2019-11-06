@@ -17,7 +17,7 @@
       
       <guid>/terraform-workshop/cleanup/lambda/</guid>
       <description> Terraform 명령으로 삭제 합니다.
- terraform destroy  </description>
+ cd terraform-env-workshop/lambda terraform destroy  </description>
     </item>
     
     <item>
@@ -27,7 +27,7 @@
       
       <guid>/terraform-workshop/cleanup/eks/</guid>
       <description> Terraform 명령으로 삭제 합니다.
- terraform destroy  </description>
+ cd terraform-env-workshop/eks terraform destroy  </description>
     </item>
     
     <item>
@@ -37,7 +37,7 @@
       
       <guid>/terraform-workshop/cleanup/vpc/</guid>
       <description> Terraform 명령으로 삭제 합니다.
- terraform destroy  </description>
+ cd terraform-env-workshop/vpc terraform destroy  </description>
     </item>
     
   </channel>
