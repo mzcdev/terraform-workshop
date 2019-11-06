@@ -10,5 +10,87 @@
 	<atom:link href="/terraform-workshop/basics/terraform/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>Configuration Language</title>
+      <link>/terraform-workshop/basics/terraform/configuration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/terraform-workshop/basics/terraform/configuration/</guid>
+      <description> HCL (Hashicorp Configuration Language)
+ 0.12 기준
+  </description>
+    </item>
+    
+    <item>
+      <title>Commands (CLI)</title>
+      <link>/terraform-workshop/basics/terraform/commands/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/terraform-workshop/basics/terraform/commands/</guid>
+      <description> 간결한 command-line interface
+ init, plan, apply, destroy
+  </description>
+    </item>
+    
+    <item>
+      <title>State</title>
+      <link>/terraform-workshop/basics/terraform/state/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/terraform-workshop/basics/terraform/state/</guid>
+      <description> 인프라 구성 및 상태를 저장
+ 실제 리소스를 매핑
+ terraform.tfstate 파일에 저장
+ local
+ remote: 팀 협업에 적당
+   </description>
+    </item>
+    
+    <item>
+      <title>Providers</title>
+      <link>/terraform-workshop/basics/terraform/providers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/terraform-workshop/basics/terraform/providers/</guid>
+      <description> 자원 제공자
+ IssS
+ AWS, GCP, Azure, Alibaba, OpenStack…  PaaS
+ Heroku…  SaaS
+ Terraform Cloud, GitHub&amp;hellip;   </description>
+    </item>
+    
+    <item>
+      <title>Provisioners</title>
+      <link>/terraform-workshop/basics/terraform/provisioners/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/terraform-workshop/basics/terraform/provisioners/</guid>
+      <description> 인프라 객체를 local 또는 remote 에서 특정 작업을 수행
+ 주요 프로비저너
+ file local-exec remote-exec   </description>
+    </item>
+    
+    <item>
+      <title>Modules</title>
+      <link>/terraform-workshop/basics/terraform/modules/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/terraform-workshop/basics/terraform/modules/</guid>
+      <description> 여러 리소스의 컨테이너
+ 객체를 추상화
+  </description>
+    </item>
+    
+    <item>
+      <title>Backends</title>
+      <link>/terraform-workshop/basics/terraform/backends/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/terraform-workshop/basics/terraform/backends/</guid>
+      <description> State 가 로드되는 방식을 결정
+ 백엔드의 이점
+ 팀 협업 중요한 정보 유지 원격 운영   </description>
+    </item>
+    
   </channel>
 </rss>
