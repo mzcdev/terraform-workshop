@@ -1,6 +1,6 @@
 ---
 title: VPC
-weight: 33
+weight: 35
 ---
 
 > Public subnet 과 Private subnet 을 포함한 VPC 를 생성 합니다.
