@@ -10,7 +10,7 @@ weight: 33
 > Terraform 명령으로 생성 합니다.
 
 ```
-cd terraform-env-workshop/vpc
+cd terraform-env/vpc
 
 terraform init
 terraform plan
