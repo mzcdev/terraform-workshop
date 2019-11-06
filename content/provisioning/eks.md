@@ -1,6 +1,6 @@
 ---
 title: EKS
-weight: 34
+weight: 36
 ---
 
 > EKS cluster 를 생성하고, on-demand 와 spot instance 로 구성된 Worker node 를 생성 합니다.
