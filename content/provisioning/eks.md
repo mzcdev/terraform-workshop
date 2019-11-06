@@ -14,8 +14,7 @@ weight: 36
 
 cd terraform-env-workshop/eks
 
-sed -i "s/terraform-workshop-seoul/${BUCKET}/g" ./main.tf
-sed -i "s/terraform-workshop-seoul/${BUCKET}/g" ./variable.tf
+sed -i "s/terraform-workshop-seoul/${BUCKET}/g" *.tf
 ```
 
 > Terraform 명령으로 생성 합니다.

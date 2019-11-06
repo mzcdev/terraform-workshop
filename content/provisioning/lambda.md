@@ -10,8 +10,7 @@ weight: 33
 
 cd terraform-env-workshop/lambda
 
-sed -i "s/terraform-workshop-seoul/${BUCKET}/g" ./main.tf
-sed -i "s/terraform-workshop-seoul/${BUCKET}/g" ./variable.tf
+sed -i "s/terraform-workshop-seoul/${BUCKET}/g" *.tf
 ```
 
 > Terraform 명령으로 생성 합니다.
