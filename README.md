@@ -16,7 +16,7 @@ git submodule init ; git submodule update
 npm install
 
 rm -rf public && hugo -v
-rm -rf docs && hugo -v -b /workshop/ -d docs
+rm -rf docs && hugo -v -b /terraform-workshop/ -d docs
 ```
 
 ## localhost

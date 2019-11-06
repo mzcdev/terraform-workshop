@@ -1,4 +1,4 @@
-title = "Workshop"
+title = "Terraform Workshop"
 theme = "learn"
 
 baseURL = "/"
@@ -10,8 +10,8 @@ metaDataFormat = "yaml"
 defaultContentLanguageInSubdir= false
 
 [params]
-  editURL = "https://github.com/nalbam/workshop/edit/master/content/"
-  description = "Workshop"
+  editURL = "https://github.com/mzcdev/terraform-workshop/edit/master/content/"
+  description = "Terraform Workshop"
   author = "Jungyoul Yu"
   showVisitedLinks = false
   disableBreadcrumb = false
@@ -23,14 +23,14 @@ home = [ "HTML" ]
 
 [Languages]
 [Languages.ko]
-title = "Workshop"
+title = "Terraform Workshop"
 weight = 2
 languageName = "Korean"
 
 [[Languages.ko.menu.shortcuts]]
 name = "<i class='fab fa-fw fa-github'></i> GitHub"
 identifier = "ds"
-url = "https://github.com/nalbam/workshop"
+url = "https://github.com/mzcdev/terraform-workshop"
 weight = 20
 
 [[Languages.ko.menu.shortcuts]]

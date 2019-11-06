@@ -3,107 +3,107 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/workshop/requirements/</loc>
+    <loc>/terraform-workshop/requirements/</loc>
   </url>
   
   <url>
-    <loc>/workshop/basics/</loc>
+    <loc>/terraform-workshop/basics/</loc>
   </url>
   
   <url>
-    <loc>/workshop/terraform/</loc>
+    <loc>/terraform-workshop/terraform/</loc>
   </url>
   
   <url>
-    <loc>/workshop/requirements/account/</loc>
+    <loc>/terraform-workshop/requirements/account/</loc>
   </url>
   
   <url>
-    <loc>/workshop/requirements/account/add_user_01/</loc>
+    <loc>/terraform-workshop/requirements/account/add_user_01/</loc>
   </url>
   
   <url>
-    <loc>/workshop/requirements/account/add_user_02/</loc>
+    <loc>/terraform-workshop/requirements/account/add_user_02/</loc>
   </url>
   
   <url>
-    <loc>/workshop/requirements/account/add_user_03/</loc>
+    <loc>/terraform-workshop/requirements/account/add_user_03/</loc>
   </url>
   
   <url>
-    <loc>/workshop/requirements/account/add_user_04/</loc>
+    <loc>/terraform-workshop/requirements/account/add_user_04/</loc>
   </url>
   
   <url>
-    <loc>/workshop/requirements/account/add_user_05/</loc>
+    <loc>/terraform-workshop/requirements/account/add_user_05/</loc>
   </url>
   
   <url>
-    <loc>/workshop/requirements/lightsail/</loc>
+    <loc>/terraform-workshop/requirements/lightsail/</loc>
   </url>
   
   <url>
-    <loc>/workshop/requirements/lightsail/add_lightsail_01/</loc>
+    <loc>/terraform-workshop/requirements/lightsail/add_lightsail_01/</loc>
   </url>
   
   <url>
-    <loc>/workshop/requirements/lightsail/add_lightsail_02/</loc>
+    <loc>/terraform-workshop/requirements/lightsail/add_lightsail_02/</loc>
   </url>
   
   <url>
-    <loc>/workshop/requirements/lightsail/add_lightsail_03/</loc>
+    <loc>/terraform-workshop/requirements/lightsail/add_lightsail_03/</loc>
   </url>
   
   <url>
-    <loc>/workshop/requirements/lightsail/add_lightsail_04/</loc>
+    <loc>/terraform-workshop/requirements/lightsail/add_lightsail_04/</loc>
   </url>
   
   <url>
-    <loc>/workshop/requirements/lightsail/console/</loc>
+    <loc>/terraform-workshop/requirements/lightsail/console/</loc>
   </url>
   
   <url>
-    <loc>/workshop/requirements/lightsail/tools/</loc>
+    <loc>/terraform-workshop/requirements/lightsail/tools/</loc>
   </url>
   
   <url>
-    <loc>/workshop/requirements/lightsail/aws_configure/</loc>
+    <loc>/terraform-workshop/requirements/lightsail/aws_configure/</loc>
   </url>
   
   <url>
-    <loc>/workshop/requirements/lightsail/ssh_keygen/</loc>
+    <loc>/terraform-workshop/requirements/lightsail/ssh_keygen/</loc>
   </url>
   
   <url>
-    <loc>/workshop/basics/terraform/</loc>
+    <loc>/terraform-workshop/basics/terraform/</loc>
   </url>
   
   <url>
-    <loc>/workshop/terraform/backend/</loc>
+    <loc>/terraform-workshop/terraform/backend/</loc>
   </url>
   
   <url>
-    <loc>/workshop/terraform/clone/</loc>
+    <loc>/terraform-workshop/terraform/clone/</loc>
   </url>
   
   <url>
-    <loc>/workshop/terraform/vpc/</loc>
+    <loc>/terraform-workshop/terraform/vpc/</loc>
   </url>
   
   <url>
-    <loc>/workshop/categories/</loc>
+    <loc>/terraform-workshop/categories/</loc>
   </url>
   
   <url>
-    <loc>/workshop/credits/</loc>
+    <loc>/terraform-workshop/credits/</loc>
   </url>
   
   <url>
-    <loc>/workshop/</loc>
+    <loc>/terraform-workshop/</loc>
   </url>
   
   <url>
-    <loc>/workshop/tags/</loc>
+    <loc>/terraform-workshop/tags/</loc>
   </url>
   
 </urlset>
