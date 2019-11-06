@@ -9,3 +9,7 @@ weight: 37
   * 팀 협업
   * 중요한 정보 유지
   * 원격 운영
+
+![Backends](../../terraform/images/backends.png)
+
+* https://www.terraform.io/docs/backends/index.html
