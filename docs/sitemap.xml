@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>/workshop/requirements/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/basics/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/terraform/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/requirements/account/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/requirements/account/add_user_01/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/requirements/account/add_user_02/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/requirements/account/add_user_03/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/requirements/account/add_user_04/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/requirements/account/add_user_05/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/requirements/lightsail/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/requirements/lightsail/add_lightsail_01/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/requirements/lightsail/add_lightsail_02/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/requirements/lightsail/add_lightsail_03/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/requirements/lightsail/add_lightsail_04/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/requirements/lightsail/console/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/requirements/lightsail/tools/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/requirements/lightsail/aws_configure/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/requirements/lightsail/ssh_keygen/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/basics/terraform/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/terraform/backend/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/terraform/clone/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/terraform/vpc/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/credits/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/tags/</loc>
+  </url>
+  
+</urlset>

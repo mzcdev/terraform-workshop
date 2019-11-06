@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AWS Lightsail on Workshop</title>
+    <link>/workshop/requirements/lightsail/</link>
+    <description>Recent content in AWS Lightsail on Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    
+	<atom:link href="/workshop/requirements/lightsail/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Set lishtsail details</title>
+      <link>/workshop/requirements/lightsail/add_lightsail_01/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/workshop/requirements/lightsail/add_lightsail_01/</guid>
+      <description> Instance location 은 Seoul 을 확인 합니다.
+Platform 은 Linux 를 선택 합니다.
+Blueprint 는 OS Only 를 선택 합니다.,
+ </description>
+    </item>
+    
+    <item>
+      <title>Instance plan</title>
+      <link>/workshop/requirements/lightsail/add_lightsail_02/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/workshop/requirements/lightsail/add_lightsail_02/</guid>
+      <description> Instance plan 은 기본값을 사용 합니다.
+ </description>
+    </item>
+    
+    <item>
+      <title>Create instance</title>
+      <link>/workshop/requirements/lightsail/add_lightsail_03/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/workshop/requirements/lightsail/add_lightsail_03/</guid>
+      <description> 인스턴스를 생성 합니다.
+ </description>
+    </item>
+    
+    <item>
+      <title>Success</title>
+      <link>/workshop/requirements/lightsail/add_lightsail_04/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/workshop/requirements/lightsail/add_lightsail_04/</guid>
+      <description> 잠시 기다리면 인스턴스가 생성되고, SSH 로 접근 할수 있습니다.
+ </description>
+    </item>
+    
+    <item>
+      <title>Console</title>
+      <link>/workshop/requirements/lightsail/console/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/workshop/requirements/lightsail/console/</guid>
+      <description> 새창이 열리고 SSH 로 접속 했습니다.
+ </description>
+    </item>
+    
+    <item>
+      <title>Install tools</title>
+      <link>/workshop/requirements/lightsail/tools/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/workshop/requirements/lightsail/tools/</guid>
+      <description> 워크샵에 필요한 툴을 설치 합니다.
+ curl -sL toast.sh/tools | bash   다음의 툴이 설치 됩니다.
+  git, jq, pip, telnet awscli terraform kubectl helm nodejs aws-iam-authenticator  </description>
+    </item>
+    
+    <item>
+      <title>AWS configure</title>
+      <link>/workshop/requirements/lightsail/aws_configure/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/workshop/requirements/lightsail/aws_configure/</guid>
+      <description> AWS Account 를 생성하고 저장한 Access key ID 와 Secret access key 를 입력합니다.
+ aws configure  AWS Access Key ID [None]: AXXXXXXXXXXXXXXXXXXX AWS Secret Access Key [None]: AXXXXXXXXXXXXXXXXXXXAXXXXXXXXXXXXXXXXXXX Default region name [ap-northeast-2]: ap-northeast-2 Default output format [None]: json  </description>
+    </item>
+    
+    <item>
+      <title>SSH keygen</title>
+      <link>/workshop/requirements/lightsail/ssh_keygen/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/workshop/requirements/lightsail/ssh_keygen/</guid>
+      <description> SSH 키를 생성합니다.
+ ssh-keygen -q -f ~/.ssh/id_rsa -N &amp;quot;&amp;quot; -C &amp;quot;workshop&amp;quot;   만든 퍼블릭 키를 EC2 리전에 업로드 합니다.
+ aws ec2 import-key-pair --key-name &amp;quot;workshop&amp;quot; --public-key-material file://~/.ssh/id_rsa.pub  </description>
+    </item>
+    
+  </channel>
+</rss>
