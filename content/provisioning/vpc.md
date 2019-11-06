@@ -5,7 +5,7 @@ weight: 33
 
 > Public subnet 과 Private subnet 을 포함한 VPC 를 생성 합니다.
 
-![VPC](../../terraform/images/terraform_vpc_ach.png)
+![VPC](../../provisioning/images/terraform_vpc_ach.png)
 
 > 다음 파일에서 **terraform-workshop-seoul** 을 생성한 버켓명으로 변경해줍니다.
 
