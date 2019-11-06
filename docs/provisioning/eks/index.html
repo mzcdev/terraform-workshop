@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/terraform-workshop/images/favicon-60.png" type="image/x-icon" />
 <link rel="icon" href="/terraform-workshop/images/favicon-60.png" type="image/x-icon" />
 
-    <title>Create instance :: Terraform Workshop</title>
+    <title>EKS :: Terraform Workshop</title>
 
     
     <link href="/terraform-workshop/css/nucleus.css?1573026392" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/terraform-workshop/requirements/lightsail/add_lightsail_03/">
+  <body class="" data-url="/terraform-workshop/provisioning/eks/">
     <nav id="sidebar" class="">
 
 
@@ -81,7 +81,7 @@
   
     
     <li data-nav-id="/terraform-workshop/requirements/" title="Requirements" class="dd-item 
-        parent
+        
         
         
         ">
@@ -237,7 +237,7 @@
   
     
     <li data-nav-id="/terraform-workshop/requirements/lightsail/" title="AWS Lightsail" class="dd-item 
-        parent
+        
         
         
         ">
@@ -299,7 +299,7 @@
  
   
     
-      <li data-nav-id="/terraform-workshop/requirements/lightsail/add_lightsail_03/" title="Create instance" class="dd-item active">
+      <li data-nav-id="/terraform-workshop/requirements/lightsail/add_lightsail_03/" title="Create instance" class="dd-item ">
         <a href="/terraform-workshop/requirements/lightsail/add_lightsail_03/">
         Create instance
         
@@ -631,7 +631,7 @@
   
     
     <li data-nav-id="/terraform-workshop/provisioning/" title="Provisioning" class="dd-item 
-        
+        parent
         
         
         ">
@@ -712,7 +712,7 @@
  
   
     
-      <li data-nav-id="/terraform-workshop/provisioning/eks/" title="EKS" class="dd-item ">
+      <li data-nav-id="/terraform-workshop/provisioning/eks/" title="EKS" class="dd-item active">
         <a href="/terraform-workshop/provisioning/eks/">
         EKS
         
@@ -794,7 +794,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='' href="https://github.com/mzcdev/terraform-workshop/edit/master/content/requirements/lightsail/add_lightsail_03.md" target="blank">
+                    <a class="github-link" title='' href="https://github.com/mzcdev/terraform-workshop/edit/master/content/provisioning/eks.md" target="blank">
                       <i class="fas fa-code-branch"></i>
                       <span id="top-github-link-text"></span>
                     </a>
@@ -825,13 +825,7 @@
             
           
           
-            
-            
-          
-          
-            <a href='/terraform-workshop/'>Home</a> > <a href='/terraform-workshop/requirements/'>Requirements</a> > <a href='/terraform-workshop/requirements/lightsail/'>AWS Lightsail</a> > Create instance
-          
-         
+            <a href='/terraform-workshop/'>Home</a> > <a href='/terraform-workshop/provisioning/'>Provisioning</a> > EKS
           
          
           
@@ -860,7 +854,7 @@
           
             <h1>
               
-              Create instance
+              EKS
             </h1>
           
 
@@ -869,10 +863,76 @@
 
 
 <blockquote>
-<p>인스턴스를 생성 합니다.</p>
+<p>EKS cluster 를 생성하고, on-demand 와 spot instance 로 구성된 Worker node 를 생성 합니다.</p>
 </blockquote>
 
-<p><img src="../../lightsail/images/add_lightsail_03.png" alt="Create instance" /></p>
+<p><img src="../../terraform/images/terraform_eks_ach.png" alt="EKS" /></p>
+
+<blockquote>
+<p>다음 파일에서 <strong>terraform-workshop-seoul</strong> 을 생성한 버켓명으로 변경해줍니다.</p>
+</blockquote>
+
+<pre><code># export BUCKET=&quot;terraform-nalbam-seoul&quot;
+
+cd terraform-env-workshop/eks
+
+sed -i &quot;s/terraform-workshop-seoul/${BUCKET}/g&quot; ./main.tf
+sed -i &quot;s/terraform-workshop-seoul/${BUCKET}/g&quot; ./variable.tf
+</code></pre>
+
+<blockquote>
+<p>Terraform 명령으로 생성 합니다.</p>
+</blockquote>
+
+<pre><code>terraform init
+terraform plan
+terraform apply
+</code></pre>
+
+<blockquote>
+<p>다음과 같은 메세지가 출력 되면 성공 입니다.</p>
+</blockquote>
+
+<pre><code>Apply complete! Resources: x added, 0 changed, 0 destroyed.
+
+Outputs:
+
+config = #
+
+# kube config
+aws eks update-kubeconfig --name workshop-eks --alias workshop-eks
+
+# or
+mkdir -p ~/.kube &amp;&amp; cp .output/kube_config.yaml ~/.kube/config
+
+# files
+cat .output/aws_auth.yaml
+cat .output/kube_config.yaml
+
+# get
+kubectl get node -o wide
+kubectl get all --all-namespaces
+
+#
+
+endpoint = https://F4CB6XXXXXXXXX53EXXXXXXXXXX5BA2.sk1.ap-northeast-2.eks.amazonaws.com
+name = workshop-eks
+</code></pre>
+
+<blockquote>
+<p>kubectl 실행을 위한 권한을 획득합니다.</p>
+</blockquote>
+
+<pre><code>aws eks update-kubeconfig --name workshop-eks --alias workshop-eks
+</code></pre>
+
+<blockquote>
+<p>간단한 kubectl 명령으로 조회를 해봅니다.</p>
+</blockquote>
+
+<pre><code>kubectl get node -o wide
+kubectl get all --all-namespaces
+</code></pre>
 
 
 <footer class=" footline" >
@@ -911,6 +971,8 @@
             
                 
                     
+                        
+                        
                     
                 
                 
@@ -927,9 +989,6 @@
             
                 
                     
-                        
-                        
-                    
                 
                 
 
@@ -937,22 +996,6 @@
                     
                     
 
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
                         
             
@@ -1018,38 +1061,21 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
             
         
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
                     
             
         
@@ -1067,14 +1093,10 @@
                     
 
                     
-            
-        
-                    
                         
             
             
                 
-                    
                     
                 
                 
@@ -1092,8 +1114,37 @@
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
+            
+            
+                
                     
                 
                 
@@ -1327,6 +1378,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1339,6 +1391,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1388,6 +1443,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1403,6 +1459,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1427,10 +1486,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/terraform-workshop/requirements/lightsail/add_lightsail_02/" title="Instance plan"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/terraform-workshop/provisioning/vpc/" title="VPC"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/terraform-workshop/requirements/lightsail/add_lightsail_04/" title="Success" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/terraform-workshop/provisioning/lambda/" title="Lambda API" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
