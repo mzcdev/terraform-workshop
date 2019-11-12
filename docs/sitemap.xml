@@ -143,6 +143,34 @@
   </url>
   
   <url>
+    <loc>/terraform-workshop/basics/terraform/configuration/providers/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/basics/terraform/configuration/resources/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/basics/terraform/configuration/input_variables/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/basics/terraform/configuration/output_values/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/basics/terraform/configuration/local_values/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/basics/terraform/configuration/modules/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/basics/terraform/configuration/data_sources/</loc>
+  </url>
+  
+  <url>
     <loc>/terraform-workshop/categories/</loc>
   </url>
   
