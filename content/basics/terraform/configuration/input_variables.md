@@ -12,7 +12,7 @@ Input Variable은 Terraform 모듈의 매개 변수 역할을하며 모듈 자�
 ```
 variable "ami_id" {
   description = "The id of the machine image (AMI) to use for the server."
-  type = string
+  type        = string
 }
 
 variable "availability_zone_names" {
