@@ -11,18 +11,6 @@
     
     
     <item>
-      <title>Configuration Language</title>
-      <link>/terraform-workshop/basics/terraform/configuration/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/terraform-workshop/basics/terraform/configuration/</guid>
-      <description>Terraform은 HCL(Hashicorp Configuration Language) 이라는 인프라에 대한 간결한 설명이 가능하도록 설계된 자체 구성 언어를 사용합니다.
-Resources and Modules Terraform 언어의 주요 목적은 Resource를 선언하는 것입니다. 단일 인프라 개체를 설명 합니다.
-자원 그룹을 Module이라는 더 큰 구성 단위를 만들수 있습니다.
-Arguments, Blocks, and Expressions  블록은 다른 내용의 컨테이너이며 일반적으로 리소스와 같은 일종의 개체 구성을 나타냅니다. 블록은 블록 유형을 가지며 0 개 이상의 레이블을 가질 수 있으며 여러 개의 인수와 중첩 된 블록을 포함하는 본문을 갖습니다.</description>
-    </item>
-    
-    <item>
       <title>Commands (CLI)</title>
       <link>/terraform-workshop/basics/terraform/commands/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -40,8 +28,9 @@ $ terraform Usage: terraform [-version] [-help] &amp;lt;command&amp;gt; [args] T
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/terraform-workshop/basics/terraform/state/</guid>
-      <description>Terraform은 관리 형 인프라 및 구성에 대한 상태를 저장해야합니다. 이 상태는 Terraform에서 실제 리소스를 구성에 매핑하고 메타 데이터를 추적하며 대규모 인프라의 성능을 향상시키는 데 사용됩니다.
-이 상태는 기본적으로 &amp;ldquo;terraform.tfstate&amp;rdquo;라는 로컬 파일에 저장되지만 원격으로 저장할 수 있습니다.
+      <description>Terraform은 인프라 및 구성에 대한 상태를 저장해야합니다. 이 상태는 Terraform에서 실제 리소스를 구성에 매핑하고 메타 데이터를 추적하며 대규모 인프라의 성능을 향상시키는 데 사용됩니다.
+이 상태는 기본적으로 terraform.tfstate라는 로컬 파일에 json 형식으로 저장 되지만 원격으로 저장할 수 있습니다.
+아래 그림은 tfstate 예시 입니다.
  https://www.terraform.io/docs/state/index.html  </description>
     </item>
     
