@@ -13,20 +13,20 @@
     <title>Modules :: Terraform Workshop</title>
 
     
-    <link href="/terraform-workshop/css/nucleus.css?1573548547" rel="stylesheet">
-    <link href="/terraform-workshop/css/fontawesome-all.min.css?1573548547" rel="stylesheet">
-    <link href="/terraform-workshop/css/hybrid.css?1573548547" rel="stylesheet">
-    <link href="/terraform-workshop/css/featherlight.min.css?1573548547" rel="stylesheet">
-    <link href="/terraform-workshop/css/perfect-scrollbar.min.css?1573548547" rel="stylesheet">
-    <link href="/terraform-workshop/css/auto-complete.css?1573548547" rel="stylesheet">
-    <link href="/terraform-workshop/css/atom-one-dark-reasonable.css?1573548547" rel="stylesheet">
-    <link href="/terraform-workshop/css/theme.css?1573548547" rel="stylesheet">
-    <link href="/terraform-workshop/css/hugo-theme.css?1573548547" rel="stylesheet">
+    <link href="/terraform-workshop/css/nucleus.css?1573549090" rel="stylesheet">
+    <link href="/terraform-workshop/css/fontawesome-all.min.css?1573549090" rel="stylesheet">
+    <link href="/terraform-workshop/css/hybrid.css?1573549090" rel="stylesheet">
+    <link href="/terraform-workshop/css/featherlight.min.css?1573549090" rel="stylesheet">
+    <link href="/terraform-workshop/css/perfect-scrollbar.min.css?1573549090" rel="stylesheet">
+    <link href="/terraform-workshop/css/auto-complete.css?1573549090" rel="stylesheet">
+    <link href="/terraform-workshop/css/atom-one-dark-reasonable.css?1573549090" rel="stylesheet">
+    <link href="/terraform-workshop/css/theme.css?1573549090" rel="stylesheet">
+    <link href="/terraform-workshop/css/hugo-theme.css?1573549090" rel="stylesheet">
     
-      <link href="/terraform-workshop/css/theme-blue.css?1573548547" rel="stylesheet">
+      <link href="/terraform-workshop/css/theme-blue.css?1573549090" rel="stylesheet">
     
 
-    <script src="/terraform-workshop/js/jquery-3.3.1.min.js?1573548547"></script>
+    <script src="/terraform-workshop/js/jquery-3.3.1.min.js?1573549090"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/terraform-workshop/js/lunr.min.js?1573548547"></script>
-<script type="text/javascript" src="/terraform-workshop/js/auto-complete.js?1573548547"></script>
+<script type="text/javascript" src="/terraform-workshop/js/lunr.min.js?1573549090"></script>
+<script type="text/javascript" src="/terraform-workshop/js/auto-complete.js?1573549090"></script>
 <script type="text/javascript">
     
         var baseurl = "\/terraform-workshop\/";
     
 </script>
-<script type="text/javascript" src="/terraform-workshop/js/search.js?1573548547"></script>
+<script type="text/javascript" src="/terraform-workshop/js/search.js?1573549090"></script>
 
     
   </div>
@@ -1142,9 +1142,17 @@
 
 <p>terraform plan 또는 terraform apply 시 작업 디렉토리의 .tf 파일은 루트 모듈에서 함께 적용됩니다. 해당 모듈은 다른 모듈을 호출하고 하나의 출력 값을 다른 모듈의 입력 값으로 전달하여 서로 연결할 수 있습니다.</p>
 
-<p>아래 그림은 AWS 상에서 VPC, EKS, ASG 모듈 관계 예시 입니다.</p>
-
-<p><img src="../../terraform/images/modules.png" alt="Modules" /></p>
+<pre><code>$ tree sample-module/
+.
+├── README.md
+├── main.tf
+├── variables.tf
+├── outputs.tf
+├── ...
+├── examples/
+│   ├── main.tf
+│   ├── .../
+</code></pre>
 
 <p>더 많은 정보를 확인 하시려면 아래 링크를 참고 하세요.</p>
 
@@ -1895,19 +1903,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/terraform-workshop/js/clipboard.min.js?1573548547"></script>
-    <script src="/terraform-workshop/js/perfect-scrollbar.min.js?1573548547"></script>
-    <script src="/terraform-workshop/js/perfect-scrollbar.jquery.min.js?1573548547"></script>
-    <script src="/terraform-workshop/js/jquery.sticky.js?1573548547"></script>
-    <script src="/terraform-workshop/js/featherlight.min.js?1573548547"></script>
-    <script src="/terraform-workshop/js/highlight.pack.js?1573548547"></script>
+    <script src="/terraform-workshop/js/clipboard.min.js?1573549090"></script>
+    <script src="/terraform-workshop/js/perfect-scrollbar.min.js?1573549090"></script>
+    <script src="/terraform-workshop/js/perfect-scrollbar.jquery.min.js?1573549090"></script>
+    <script src="/terraform-workshop/js/jquery.sticky.js?1573549090"></script>
+    <script src="/terraform-workshop/js/featherlight.min.js?1573549090"></script>
+    <script src="/terraform-workshop/js/highlight.pack.js?1573549090"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/terraform-workshop/js/modernizr.custom-3.6.0.js?1573548547"></script>
-    <script src="/terraform-workshop/js/learn.js?1573548547"></script>
-    <script src="/terraform-workshop/js/hugo-learn.js?1573548547"></script>
+    <script src="/terraform-workshop/js/modernizr.custom-3.6.0.js?1573549090"></script>
+    <script src="/terraform-workshop/js/learn.js?1573549090"></script>
+    <script src="/terraform-workshop/js/hugo-learn.js?1573549090"></script>
 
-    <link href="/terraform-workshop/mermaid/mermaid.css?1573548547" rel="stylesheet" />
-    <script src="/terraform-workshop/mermaid/mermaid.js?1573548547"></script>
+    <link href="/terraform-workshop/mermaid/mermaid.css?1573549090" rel="stylesheet" />
+    <script src="/terraform-workshop/mermaid/mermaid.js?1573549090"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
