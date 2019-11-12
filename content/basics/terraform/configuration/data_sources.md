@@ -1,6 +1,6 @@
 ---
 title: Data Sources
-weight: 317
+weight: 316
 ---
 
 Data Source를 통해 Terraform 구성의 다른 곳에서 사용하기 위해 데이터를 가져 오거나 계산할 수 있습니다. 데이터 소스를 사용하면 Terraform 구성이 Terraform 외부에서 정의되거나 다른 별도의 Terraform 구성으로 정의 된 정보를 사용할 수 있습니다.

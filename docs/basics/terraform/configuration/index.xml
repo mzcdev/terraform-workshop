@@ -11,6 +11,17 @@
     
     
     <item>
+      <title>Input Variables</title>
+      <link>/terraform-workshop/basics/terraform/configuration/input_variables/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/terraform-workshop/basics/terraform/configuration/input_variables/</guid>
+      <description>Input Variable은 Terraform 모듈의 매개 변수 역할을하며 모듈 자체 소스 코드를 변경하지 않고 모듈의 측면을 사용자 정의 할 수 있고 다른 구성간에 모듈을 공유 할 수 있습니다.
+Declaring an Input Variable variable 블록을 사용 하여 설정 합니다.
+variable &amp;quot;ami_id&amp;quot; { description = &amp;quot;The id of the machine image (AMI) to use for the server.&amp;quot; type = string } variable &amp;quot;availability_zone_names&amp;quot; { type = list(string) default = [&amp;quot;us-west-1a&amp;quot;] } variable &amp;quot;docker_ports&amp;quot; { type = list(object({ internal = number external = number protocol = string })) default = [ { internal = 8300 external = 8300 protocol = &amp;quot;tcp&amp;quot; } ] }  type 인수를 사용하면 변수 값으로 허용되는 값 유형을 제한 할 수 있습니다.</description>
+    </item>
+    
+    <item>
       <title>Providers</title>
       <link>/terraform-workshop/basics/terraform/configuration/providers/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -30,19 +41,8 @@
       <guid>/terraform-workshop/basics/terraform/configuration/resources/</guid>
       <description>Terraform 언어에서 리소스는 가장 중요한 요소입니다. 각 리소스 블록은 가상 네트워크, 컴퓨팅 인스턴스 또는 DNS 레코드와 같은 상위 구성 요소와 같은 하나 이상의 인프라 개체를 설명합니다.
 Resource Syntax 아래는 aws ec2 instance 를 생성하는 가장 심플한 코드 입니다.
-resource &amp;quot;aws_instance&amp;quot; &amp;quot;sample&amp;quot; { ami = &amp;quot;ami-a1b2c3d4&amp;quot; instance_type = &amp;quot;t2.micro&amp;quot; }  resource 블록을 사용 하여 설정 합니다. aws_instance의 자원을 생성하며, sample의 이름을 가집니다.
+resource &amp;quot;aws_instance&amp;quot; &amp;quot;sample&amp;quot; { ami = var.ami_id instance_type = var.instance_type }  resource 블록을 사용 하여 설정 합니다. aws_instance의 자원을 생성하며, sample의 이름을 가집니다.
 블록 내의 ami instance_type은 aws_instance 자원 유형의 인수 입니다.</description>
-    </item>
-    
-    <item>
-      <title>Input Variables</title>
-      <link>/terraform-workshop/basics/terraform/configuration/input_variables/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/terraform-workshop/basics/terraform/configuration/input_variables/</guid>
-      <description>Input Variable은 Terraform 모듈의 매개 변수 역할을하며 모듈 자체 소스 코드를 변경하지 않고 모듈의 측면을 사용자 정의 할 수 있고 다른 구성간에 모듈을 공유 할 수 있습니다.
-Declaring an Input Variable variable 블록을 사용 하여 설정 합니다.
-variable &amp;quot;ami_id&amp;quot; { description = &amp;quot;The id of the machine image (AMI) to use for the server.&amp;quot; type = string } variable &amp;quot;availability_zone_names&amp;quot; { type = list(string) default = [&amp;quot;us-west-1a&amp;quot;] } variable &amp;quot;docker_ports&amp;quot; { type = list(object({ internal = number external = number protocol = string })) default = [ { internal = 8300 external = 8300 protocol = &amp;quot;tcp&amp;quot; } ] }  변수 블록의 type 인수를 사용하면 변수 값으로 허용되는 값 유형을 제한 할 수 있습니다.</description>
     </item>
     
     <item>
@@ -53,8 +53,7 @@ variable &amp;quot;ami_id&amp;quot; { description = &amp;quot;The id of the mach
       <guid>/terraform-workshop/basics/terraform/configuration/output_values/</guid>
       <description>Output Value는 Terraform 모듈의 반환 값과 유사하며 여러 용도로 사용됩니다.
 Declaring an Output Value output 블록을 사용 하여 설정 합니다.
-output &amp;quot;private_ip&amp;quot; { value = aws_instance.server.private_ip }  value 인수는 결과가 사용자에게 리턴되는 표현식을 사용합니다.
-Accessing Child Module Outputs 상위 모듈에서 하위 모듈의 출력은 module.&amp;lt;MODULE NAME&amp;gt;.&amp;lt;OUTPUT NAME&amp;gt;로 표현할 수 있습니다. 예를 들어, server라는 하위 모듈이 private_ip라는 출력을 선언 한 경우 해당 값에 module.server.private_ip로 액세스 할 수 있습니다.</description>
+output &amp;quot;private_ip&amp;quot; { value = aws_instance.server.private_ip description = &amp;quot;The private IP address of the main server instance.&amp;quot; depends_on = [ aws_security_group_rule.local_access, ] } output &amp;quot;db_password&amp;quot; { value = aws_db_instance.db.password description = &amp;quot;The password for logging in to the database.&amp;quot; sensitive = true }  value 인수는 결과가 사용자에게 리턴되는 표현식을 사용합니다.</description>
     </item>
     
     <item>
@@ -70,6 +69,17 @@ locals { # 두개의 인스턴스의 ID List를 반환 합니다. instance_ids =
     </item>
     
     <item>
+      <title>Data Sources</title>
+      <link>/terraform-workshop/basics/terraform/configuration/data_sources/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/terraform-workshop/basics/terraform/configuration/data_sources/</guid>
+      <description>Data Source를 통해 Terraform 구성의 다른 곳에서 사용하기 위해 데이터를 가져 오거나 계산할 수 있습니다. 데이터 소스를 사용하면 Terraform 구성이 Terraform 외부에서 정의되거나 다른 별도의 Terraform 구성으로 정의 된 정보를 사용할 수 있습니다.
+Using Data Sources data 블록을 사용 하여 설정 합니다. Terraform이 지정된 데이터 소스 aws_ami에서 읽고 해당 로컬 이름 example으로 결과를 내보내도록 요청합니다.
+블록 본문 내에 ({와} 사이) 데이터 소스에 의해 정의 된 쿼리 제한 조건이 있습니다. 이 섹션의 대부분의 인수는 데이터 소스에 따라 다르며 실제로이 예에서 most_recent, owners 및 tags는 모두 aws_ami 데이터 소스에 대해 특별히 정의 된 인수입니다.</description>
+    </item>
+    
+    <item>
       <title>Modules</title>
       <link>/terraform-workshop/basics/terraform/configuration/modules/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -79,17 +89,6 @@ locals { # 두개의 인스턴스의 ID List를 반환 합니다. instance_ids =
 모든 Terraform 구성에는 기본 작업 디렉토리의 .tf 파일에 정의 된 리소스로 구성된 루트 모듈이라고하는 하나 이상의 모듈이 있습니다.
 모듈은 다른 모듈을 호출 할 수 있으며, 이를 통해 하위 모듈의 리소스를 간결하게 구성에 포함시킬 수 있습니다. 동일한 구성 내에서 또는 별도의 구성으로 모듈을 여러 번 호출하여 리소스 구성을 패키지화하고 재사용 할 수 있습니다.
 Calling a Child Module module &amp;quot;servers&amp;quot; { source = &amp;quot;./app-cluster&amp;quot; servers = 5 }  module 키워드 바로 뒤에있는 레이블은 로컬 이름이며 호출 모듈은이 모듈 인스턴스를 참조하는 데 사용할 수 있습니다.</description>
-    </item>
-    
-    <item>
-      <title>Data Sources</title>
-      <link>/terraform-workshop/basics/terraform/configuration/data_sources/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/terraform-workshop/basics/terraform/configuration/data_sources/</guid>
-      <description>Data Source를 통해 Terraform 구성의 다른 곳에서 사용하기 위해 데이터를 가져 오거나 계산할 수 있습니다. 데이터 소스를 사용하면 Terraform 구성이 Terraform 외부에서 정의되거나 다른 별도의 Terraform 구성으로 정의 된 정보를 사용할 수 있습니다.
-Using Data Sources data 블록을 사용 하여 설정 합니다. Terraform이 지정된 데이터 소스 aws_ami에서 읽고 해당 로컬 이름 example으로 결과를 내보내도록 요청합니다.
-블록 본문 내에 ({와} 사이) 데이터 소스에 의해 정의 된 쿼리 제한 조건이 있습니다. 이 섹션의 대부분의 인수는 데이터 소스에 따라 다르며 실제로이 예에서 most_recent, owners 및 tags는 모두 aws_ami 데이터 소스에 대해 특별히 정의 된 인수입니다.</description>
     </item>
     
   </channel>

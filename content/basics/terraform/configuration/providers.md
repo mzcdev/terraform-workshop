@@ -1,6 +1,6 @@
 ---
 title: Providers
-weight: 311
+weight: 312
 ---
 
 자원은 Terraform 언어의 기본 구성이지만 자원의 동작은 연관된 자원 유형에 의존하며 이러한 유형은 제공자에 의해 정의됩니다.
@@ -17,7 +17,7 @@ weight: 311
 
 ```
 provider "aws" {
-  region     = "ap-northeast-2"
+  region     = var.region
   access_key = "<ACCESS_KEY_HERE>"
   secret_key = "<SECRET_KEY_HERE>"
 }
@@ -25,8 +25,8 @@ provider "aws" {
 
 ```
 provider "google" {
-  project = "acme-app"
-  region  = "us-central1"
+  project = var.project
+  region  = var.region
 }
 ```
 

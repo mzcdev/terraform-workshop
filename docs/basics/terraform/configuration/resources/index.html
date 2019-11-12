@@ -13,20 +13,20 @@
     <title>Resources :: Terraform Workshop</title>
 
     
-    <link href="/terraform-workshop/css/nucleus.css?1573546344" rel="stylesheet">
-    <link href="/terraform-workshop/css/fontawesome-all.min.css?1573546344" rel="stylesheet">
-    <link href="/terraform-workshop/css/hybrid.css?1573546344" rel="stylesheet">
-    <link href="/terraform-workshop/css/featherlight.min.css?1573546344" rel="stylesheet">
-    <link href="/terraform-workshop/css/perfect-scrollbar.min.css?1573546344" rel="stylesheet">
-    <link href="/terraform-workshop/css/auto-complete.css?1573546344" rel="stylesheet">
-    <link href="/terraform-workshop/css/atom-one-dark-reasonable.css?1573546344" rel="stylesheet">
-    <link href="/terraform-workshop/css/theme.css?1573546344" rel="stylesheet">
-    <link href="/terraform-workshop/css/hugo-theme.css?1573546344" rel="stylesheet">
+    <link href="/terraform-workshop/css/nucleus.css?1573548122" rel="stylesheet">
+    <link href="/terraform-workshop/css/fontawesome-all.min.css?1573548122" rel="stylesheet">
+    <link href="/terraform-workshop/css/hybrid.css?1573548122" rel="stylesheet">
+    <link href="/terraform-workshop/css/featherlight.min.css?1573548122" rel="stylesheet">
+    <link href="/terraform-workshop/css/perfect-scrollbar.min.css?1573548122" rel="stylesheet">
+    <link href="/terraform-workshop/css/auto-complete.css?1573548122" rel="stylesheet">
+    <link href="/terraform-workshop/css/atom-one-dark-reasonable.css?1573548122" rel="stylesheet">
+    <link href="/terraform-workshop/css/theme.css?1573548122" rel="stylesheet">
+    <link href="/terraform-workshop/css/hugo-theme.css?1573548122" rel="stylesheet">
     
-      <link href="/terraform-workshop/css/theme-blue.css?1573546344" rel="stylesheet">
+      <link href="/terraform-workshop/css/theme-blue.css?1573548122" rel="stylesheet">
     
 
-    <script src="/terraform-workshop/js/jquery-3.3.1.min.js?1573546344"></script>
+    <script src="/terraform-workshop/js/jquery-3.3.1.min.js?1573548122"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/terraform-workshop/js/lunr.min.js?1573546344"></script>
-<script type="text/javascript" src="/terraform-workshop/js/auto-complete.js?1573546344"></script>
+<script type="text/javascript" src="/terraform-workshop/js/lunr.min.js?1573548122"></script>
+<script type="text/javascript" src="/terraform-workshop/js/auto-complete.js?1573548122"></script>
 <script type="text/javascript">
     
         var baseurl = "\/terraform-workshop\/";
     
 </script>
-<script type="text/javascript" src="/terraform-workshop/js/search.js?1573546344"></script>
+<script type="text/javascript" src="/terraform-workshop/js/search.js?1573548122"></script>
 
     
   </div>
@@ -159,6 +159,25 @@
  
   
     
+      <li data-nav-id="/terraform-workshop/basics/terraform/configuration/input_variables/" title="Input Variables" class="dd-item ">
+        <a href="/terraform-workshop/basics/terraform/configuration/input_variables/">
+        Input Variables
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/terraform-workshop/basics/terraform/configuration/providers/" title="Providers" class="dd-item ">
         <a href="/terraform-workshop/basics/terraform/configuration/providers/">
         Providers
@@ -181,25 +200,6 @@
       <li data-nav-id="/terraform-workshop/basics/terraform/configuration/resources/" title="Resources" class="dd-item active">
         <a href="/terraform-workshop/basics/terraform/configuration/resources/">
         Resources
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/terraform-workshop/basics/terraform/configuration/input_variables/" title="Input Variables" class="dd-item ">
-        <a href="/terraform-workshop/basics/terraform/configuration/input_variables/">
-        Input Variables
         
         </a>
     </li>
@@ -254,9 +254,9 @@
  
   
     
-      <li data-nav-id="/terraform-workshop/basics/terraform/configuration/modules/" title="Modules" class="dd-item ">
-        <a href="/terraform-workshop/basics/terraform/configuration/modules/">
-        Modules
+      <li data-nav-id="/terraform-workshop/basics/terraform/configuration/data_sources/" title="Data Sources" class="dd-item ">
+        <a href="/terraform-workshop/basics/terraform/configuration/data_sources/">
+        Data Sources
         
         </a>
     </li>
@@ -273,9 +273,9 @@
  
   
     
-      <li data-nav-id="/terraform-workshop/basics/terraform/configuration/data_sources/" title="Data Sources" class="dd-item ">
-        <a href="/terraform-workshop/basics/terraform/configuration/data_sources/">
-        Data Sources
+      <li data-nav-id="/terraform-workshop/basics/terraform/configuration/modules/" title="Modules" class="dd-item ">
+        <a href="/terraform-workshop/basics/terraform/configuration/modules/">
+        Modules
         
         </a>
     </li>
@@ -1096,7 +1096,16 @@
 <li>
 <ul>
 <li><a href="#resource-syntax">Resource Syntax</a></li>
-<li><a href="#resource-behavior">Resource Behavior</a></li>
+<li><a href="#resource-behavior">Resource Behavior</a>
+<ul>
+<li><a href="#resource-dependencies">Resource Dependencies</a></li>
+</ul></li>
+<li><a href="#meta-arguments">Meta-Arguments</a>
+<ul>
+<li><a href="#count">count</a></li>
+<li><a href="#for-each">for_each</a></li>
+<li><a href="#lifecycle">lifecycle</a></li>
+</ul></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -1133,8 +1142,8 @@
 <p>아래는 aws ec2 instance 를 생성하는 가장 심플한 코드 입니다.</p>
 
 <pre><code>resource &quot;aws_instance&quot; &quot;sample&quot; {
-  ami           = &quot;ami-a1b2c3d4&quot;
-  instance_type = &quot;t2.micro&quot;
+  ami           = var.ami_id
+  instance_type = var.instance_type
 }
 </code></pre>
 
@@ -1149,6 +1158,87 @@
 <p><code>terraform apply</code> 를 통하여 설정과 구성이 일치 하도록 실제 인프라 개체를 생성, 업데이트 및 파기를 수행 합니다.</p>
 
 <p>새 인프라 개체를 생성하면 <code>State</code> 에 저장되어 관리 됩니다.</p>
+
+<h4 id="resource-dependencies">Resource Dependencies</h4>
+
+<p>구성의 대부분의 리소스는 특별한 관계가 없으며 Terraform은 관련이없는 여러 리소스를 동시에 변경할 수 있습니다.</p>
+
+<p>그러나 일부 자원은 다른 특정 자원 이후에 처리해야합니다. 때로는 리소스 작동 방식 때문일 수도 있고 리소스 구성에 다른 리소스에서 생성 된 정보 만 필요하기도합니다.</p>
+
+<p>대부분의 리소스 종속성은 자동으로 처리됩니다. Terraform은 리소스 블록 내의 표현식을 분석하여 다른 객체에 대한 참조를 찾은 다음 해당 참조를 리소스를 생성, 업데이트 또는 파괴 할 때 암시 적 순서 요구 사항으로 취급합니다. 다른 자원에 대한 행동 종속성이있는 대부분의 자원도 해당 자원의 데이터를 참조하므로 일반적으로 자원 간 종속성을 수동으로 지정할 필요는 없습니다.</p>
+
+<p>그러나 일부 종속성은 구성에서 암시 적으로 인식 될 수 없습니다. 예를 들어 Terraform이 액세스 제어 정책을 관리하고 해당 정책이 있어야하는 조치를 취해야하는 경우 액세스 정책과 해당 정책이 종속 된 리소스간에 숨겨진 종속성이 있습니다. 이러한 드문 경우에 <code>depend_on</code> 메타 인수는 명시 적으로 종속성을 지정할 수 있습니다.</p>
+
+<h3 id="meta-arguments">Meta-Arguments</h3>
+
+<p>Terraform CLI는 다음과 같은 메타 인수를 정의합니다.이 인수는 모든 자원 유형과 함께 사용하여 자원의 동작을 변경할 수 있습니다.</p>
+
+<ul>
+<li><code>count</code>: 개수에 따라 여러 자원 인스턴스를 작성</li>
+<li><code>depend_on</code>: 숨겨진 종속성을 지정</li>
+<li><code>for_each</code>: 맵 또는 문자열 세트에 따라 여러 인스턴스를 작성</li>
+<li><code>provider</code>: 기본이 아닌 공급자 구성을 선택</li>
+<li><code>lifecycle</code>: 라이프 사이클 사용자 정의</li>
+<li><code>provisioner</code> and <code>connection</code>: 리소스 생성 후 추가 작업을 수행</li>
+</ul>
+
+<h4 id="count">count</h4>
+
+<pre><code>resource &quot;aws_instance&quot; &quot;server&quot; {
+  count = 4  # 4개의 EC2 instance 를 생성 합니다.
+
+  ami           = var.ami_id
+  instance_type = var.instance_type
+
+  tags = {
+    Name = &quot;Server ${count.index}&quot;
+  }
+}
+</code></pre>
+
+<h4 id="for-each">for_each</h4>
+
+<pre><code>resource &quot;aws_autoscaling_group&quot; &quot;worker&quot; {
+  name = var.name
+
+  min_size = var.min
+  max_size = var.max
+
+  vpc_zone_identifier = var.subnet_ids
+
+  mixed_instances_policy {
+    launch_template {
+      launch_template_specification {
+        launch_template_id = aws_launch_template.worker.id
+        version            = &quot;$Latest&quot;
+      }
+
+      override {
+        instance_type = var.instance_type
+      }
+
+      dynamic &quot;override&quot; {
+        for_each = var.mixed_instances
+        content {
+          instance_type = override.value
+        }
+      }
+    }
+  }
+}
+</code></pre>
+
+<h4 id="lifecycle">lifecycle</h4>
+
+<pre><code>
+resource &quot;aws_launch_configuration&quot; &quot;worker&quot; {
+  # ...
+
+  lifecycle {
+    create_before_destroy = true
+  }
+}
+</code></pre>
 
 
 <footer class=" footline" >
@@ -1252,141 +1342,6 @@
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
                 
                 
 
@@ -1482,25 +1437,6 @@
             
         
                     
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
             
         
                     
@@ -1557,6 +1493,22 @@
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                     
                 
                 
@@ -1576,22 +1528,6 @@
                     
                         
                         
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -1711,144 +1647,6 @@
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
                 
                 
 
@@ -1884,22 +1682,6 @@
                     
                         
                         
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -2019,6 +1801,176 @@
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                     
                 
                 
@@ -2098,6 +2050,144 @@
             
         
                     
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
             
             
@@ -2173,6 +2263,22 @@
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                     
                 
                 
@@ -2192,22 +2298,6 @@
                     
                         
                         
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -2710,7 +2800,7 @@
 			<a class="nav nav-prev" href="/terraform-workshop/basics/terraform/configuration/providers/" title="Providers"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/terraform-workshop/basics/terraform/configuration/input_variables/" title="Input Variables" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/terraform-workshop/basics/terraform/configuration/output_values/" title="Output Values" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -2720,19 +2810,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/terraform-workshop/js/clipboard.min.js?1573546344"></script>
-    <script src="/terraform-workshop/js/perfect-scrollbar.min.js?1573546344"></script>
-    <script src="/terraform-workshop/js/perfect-scrollbar.jquery.min.js?1573546344"></script>
-    <script src="/terraform-workshop/js/jquery.sticky.js?1573546344"></script>
-    <script src="/terraform-workshop/js/featherlight.min.js?1573546344"></script>
-    <script src="/terraform-workshop/js/highlight.pack.js?1573546344"></script>
+    <script src="/terraform-workshop/js/clipboard.min.js?1573548122"></script>
+    <script src="/terraform-workshop/js/perfect-scrollbar.min.js?1573548122"></script>
+    <script src="/terraform-workshop/js/perfect-scrollbar.jquery.min.js?1573548122"></script>
+    <script src="/terraform-workshop/js/jquery.sticky.js?1573548122"></script>
+    <script src="/terraform-workshop/js/featherlight.min.js?1573548122"></script>
+    <script src="/terraform-workshop/js/highlight.pack.js?1573548122"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/terraform-workshop/js/modernizr.custom-3.6.0.js?1573546344"></script>
-    <script src="/terraform-workshop/js/learn.js?1573546344"></script>
-    <script src="/terraform-workshop/js/hugo-learn.js?1573546344"></script>
+    <script src="/terraform-workshop/js/modernizr.custom-3.6.0.js?1573548122"></script>
+    <script src="/terraform-workshop/js/learn.js?1573548122"></script>
+    <script src="/terraform-workshop/js/hugo-learn.js?1573548122"></script>
 
-    <link href="/terraform-workshop/mermaid/mermaid.css?1573546344" rel="stylesheet" />
-    <script src="/terraform-workshop/mermaid/mermaid.js?1573546344"></script>
+    <link href="/terraform-workshop/mermaid/mermaid.css?1573548122" rel="stylesheet" />
+    <script src="/terraform-workshop/mermaid/mermaid.js?1573548122"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

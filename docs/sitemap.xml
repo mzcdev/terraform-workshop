@@ -143,15 +143,15 @@
   </url>
   
   <url>
+    <loc>/terraform-workshop/basics/terraform/configuration/input_variables/</loc>
+  </url>
+  
+  <url>
     <loc>/terraform-workshop/basics/terraform/configuration/providers/</loc>
   </url>
   
   <url>
     <loc>/terraform-workshop/basics/terraform/configuration/resources/</loc>
-  </url>
-  
-  <url>
-    <loc>/terraform-workshop/basics/terraform/configuration/input_variables/</loc>
   </url>
   
   <url>
@@ -163,11 +163,11 @@
   </url>
   
   <url>
-    <loc>/terraform-workshop/basics/terraform/configuration/modules/</loc>
+    <loc>/terraform-workshop/basics/terraform/configuration/data_sources/</loc>
   </url>
   
   <url>
-    <loc>/terraform-workshop/basics/terraform/configuration/data_sources/</loc>
+    <loc>/terraform-workshop/basics/terraform/configuration/modules/</loc>
   </url>
   
   <url>

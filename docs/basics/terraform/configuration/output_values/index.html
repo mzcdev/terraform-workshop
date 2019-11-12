@@ -13,20 +13,20 @@
     <title>Output Values :: Terraform Workshop</title>
 
     
-    <link href="/terraform-workshop/css/nucleus.css?1573546344" rel="stylesheet">
-    <link href="/terraform-workshop/css/fontawesome-all.min.css?1573546344" rel="stylesheet">
-    <link href="/terraform-workshop/css/hybrid.css?1573546344" rel="stylesheet">
-    <link href="/terraform-workshop/css/featherlight.min.css?1573546344" rel="stylesheet">
-    <link href="/terraform-workshop/css/perfect-scrollbar.min.css?1573546344" rel="stylesheet">
-    <link href="/terraform-workshop/css/auto-complete.css?1573546344" rel="stylesheet">
-    <link href="/terraform-workshop/css/atom-one-dark-reasonable.css?1573546344" rel="stylesheet">
-    <link href="/terraform-workshop/css/theme.css?1573546344" rel="stylesheet">
-    <link href="/terraform-workshop/css/hugo-theme.css?1573546344" rel="stylesheet">
+    <link href="/terraform-workshop/css/nucleus.css?1573548122" rel="stylesheet">
+    <link href="/terraform-workshop/css/fontawesome-all.min.css?1573548122" rel="stylesheet">
+    <link href="/terraform-workshop/css/hybrid.css?1573548122" rel="stylesheet">
+    <link href="/terraform-workshop/css/featherlight.min.css?1573548122" rel="stylesheet">
+    <link href="/terraform-workshop/css/perfect-scrollbar.min.css?1573548122" rel="stylesheet">
+    <link href="/terraform-workshop/css/auto-complete.css?1573548122" rel="stylesheet">
+    <link href="/terraform-workshop/css/atom-one-dark-reasonable.css?1573548122" rel="stylesheet">
+    <link href="/terraform-workshop/css/theme.css?1573548122" rel="stylesheet">
+    <link href="/terraform-workshop/css/hugo-theme.css?1573548122" rel="stylesheet">
     
-      <link href="/terraform-workshop/css/theme-blue.css?1573546344" rel="stylesheet">
+      <link href="/terraform-workshop/css/theme-blue.css?1573548122" rel="stylesheet">
     
 
-    <script src="/terraform-workshop/js/jquery-3.3.1.min.js?1573546344"></script>
+    <script src="/terraform-workshop/js/jquery-3.3.1.min.js?1573548122"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/terraform-workshop/js/lunr.min.js?1573546344"></script>
-<script type="text/javascript" src="/terraform-workshop/js/auto-complete.js?1573546344"></script>
+<script type="text/javascript" src="/terraform-workshop/js/lunr.min.js?1573548122"></script>
+<script type="text/javascript" src="/terraform-workshop/js/auto-complete.js?1573548122"></script>
 <script type="text/javascript">
     
         var baseurl = "\/terraform-workshop\/";
     
 </script>
-<script type="text/javascript" src="/terraform-workshop/js/search.js?1573546344"></script>
+<script type="text/javascript" src="/terraform-workshop/js/search.js?1573548122"></script>
 
     
   </div>
@@ -159,6 +159,25 @@
  
   
     
+      <li data-nav-id="/terraform-workshop/basics/terraform/configuration/input_variables/" title="Input Variables" class="dd-item ">
+        <a href="/terraform-workshop/basics/terraform/configuration/input_variables/">
+        Input Variables
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/terraform-workshop/basics/terraform/configuration/providers/" title="Providers" class="dd-item ">
         <a href="/terraform-workshop/basics/terraform/configuration/providers/">
         Providers
@@ -181,25 +200,6 @@
       <li data-nav-id="/terraform-workshop/basics/terraform/configuration/resources/" title="Resources" class="dd-item ">
         <a href="/terraform-workshop/basics/terraform/configuration/resources/">
         Resources
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/terraform-workshop/basics/terraform/configuration/input_variables/" title="Input Variables" class="dd-item ">
-        <a href="/terraform-workshop/basics/terraform/configuration/input_variables/">
-        Input Variables
         
         </a>
     </li>
@@ -254,9 +254,9 @@
  
   
     
-      <li data-nav-id="/terraform-workshop/basics/terraform/configuration/modules/" title="Modules" class="dd-item ">
-        <a href="/terraform-workshop/basics/terraform/configuration/modules/">
-        Modules
+      <li data-nav-id="/terraform-workshop/basics/terraform/configuration/data_sources/" title="Data Sources" class="dd-item ">
+        <a href="/terraform-workshop/basics/terraform/configuration/data_sources/">
+        Data Sources
         
         </a>
     </li>
@@ -273,9 +273,9 @@
  
   
     
-      <li data-nav-id="/terraform-workshop/basics/terraform/configuration/data_sources/" title="Data Sources" class="dd-item ">
-        <a href="/terraform-workshop/basics/terraform/configuration/data_sources/">
-        Data Sources
+      <li data-nav-id="/terraform-workshop/basics/terraform/configuration/modules/" title="Modules" class="dd-item ">
+        <a href="/terraform-workshop/basics/terraform/configuration/modules/">
+        Modules
         
         </a>
     </li>
@@ -1133,11 +1133,28 @@
 <p><code>output</code> 블록을 사용 하여 설정 합니다.</p>
 
 <pre><code>output &quot;private_ip&quot; {
-  value = aws_instance.server.private_ip
+  value       = aws_instance.server.private_ip
+  description = &quot;The private IP address of the main server instance.&quot;
+
+  depends_on = [
+    aws_security_group_rule.local_access,
+  ]
+}
+
+output &quot;db_password&quot; {
+  value       = aws_db_instance.db.password
+  description = &quot;The password for logging in to the database.&quot;
+  sensitive   = true
 }
 </code></pre>
 
 <p><code>value</code> 인수는 결과가 사용자에게 리턴되는 표현식을 사용합니다.</p>
+
+<p><code>description</code> 인수를 사용하여 각 값의 목적을 간단히 설명 할 수 있습니다.</p>
+
+<p><code>sensitive</code> 출럭값을 마스킹 할 수 있습니다.</p>
+
+<p><code>depends_on</code> 출력 값은 모듈에서 데이터를 전달하는 수단 일 뿐이므로 일반적으로 종속성 그래프에서 다른 노드와의 관계에 대해 걱정할 필요가 없습니다. 그러나 상위 모듈이 하위 모듈 중 하나에서 내 보낸 출력 값에 액세스 할 때 해당 출력 값의 종속성을 통해 Terraform은 다른 모듈에 정의 된 리소스 간의 종속성을 올바르게 결정할 수 있습니다.</p>
 
 <h3 id="accessing-child-module-outputs">Accessing Child Module Outputs</h3>
 
@@ -2700,7 +2717,7 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/terraform-workshop/basics/terraform/configuration/input_variables/" title="Input Variables"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/terraform-workshop/basics/terraform/configuration/resources/" title="Resources"> <i class="fa fa-chevron-left"></i></a>
 		
 		
 			<a class="nav nav-next" href="/terraform-workshop/basics/terraform/configuration/local_values/" title="Local Values" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
@@ -2713,19 +2730,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/terraform-workshop/js/clipboard.min.js?1573546344"></script>
-    <script src="/terraform-workshop/js/perfect-scrollbar.min.js?1573546344"></script>
-    <script src="/terraform-workshop/js/perfect-scrollbar.jquery.min.js?1573546344"></script>
-    <script src="/terraform-workshop/js/jquery.sticky.js?1573546344"></script>
-    <script src="/terraform-workshop/js/featherlight.min.js?1573546344"></script>
-    <script src="/terraform-workshop/js/highlight.pack.js?1573546344"></script>
+    <script src="/terraform-workshop/js/clipboard.min.js?1573548122"></script>
+    <script src="/terraform-workshop/js/perfect-scrollbar.min.js?1573548122"></script>
+    <script src="/terraform-workshop/js/perfect-scrollbar.jquery.min.js?1573548122"></script>
+    <script src="/terraform-workshop/js/jquery.sticky.js?1573548122"></script>
+    <script src="/terraform-workshop/js/featherlight.min.js?1573548122"></script>
+    <script src="/terraform-workshop/js/highlight.pack.js?1573548122"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/terraform-workshop/js/modernizr.custom-3.6.0.js?1573546344"></script>
-    <script src="/terraform-workshop/js/learn.js?1573546344"></script>
-    <script src="/terraform-workshop/js/hugo-learn.js?1573546344"></script>
+    <script src="/terraform-workshop/js/modernizr.custom-3.6.0.js?1573548122"></script>
+    <script src="/terraform-workshop/js/learn.js?1573548122"></script>
+    <script src="/terraform-workshop/js/hugo-learn.js?1573548122"></script>
 
-    <link href="/terraform-workshop/mermaid/mermaid.css?1573546344" rel="stylesheet" />
-    <script src="/terraform-workshop/mermaid/mermaid.js?1573546344"></script>
+    <link href="/terraform-workshop/mermaid/mermaid.css?1573548122" rel="stylesheet" />
+    <script src="/terraform-workshop/mermaid/mermaid.js?1573548122"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
