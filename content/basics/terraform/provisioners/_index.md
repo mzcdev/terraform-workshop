@@ -1,6 +1,6 @@
 ---
 title: Provisioners
-weight: 35
+weight: 350
 ---
 
 Provisioner를 사용하면 서버 또는 기타 인프라 개체를 서비스 할 수 있도록 로컬 컴퓨터 또는 원격 컴퓨터에서 특정 작업을 모델링 할 수 있습니다.

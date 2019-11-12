@@ -1,6 +1,6 @@
 ---
 title: Configuration Language
-weight: 31
+weight: 310
 ---
 
 Terraform은 HCL(Hashicorp Configuration Language) 이라는 인프라에 대한 간결한 설명이 가능하도록 설계된 자체 구성 언어를 사용합니다.
