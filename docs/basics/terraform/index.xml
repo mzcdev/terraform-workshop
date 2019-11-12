@@ -16,9 +16,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/terraform-workshop/basics/terraform/configuration/</guid>
-      <description> HCL (Hashicorp Configuration Language)
- 0.12 기준
-   https://www.terraform.io/docs/configuration/index.html  </description>
+      <description>Terraform은 HCL(Hashicorp Configuration Language) 이라는 인프라에 대한 간결한 설명이 가능하도록 설계된 자체 구성 언어를 사용합니다.
+Resources and Modules Terraform 언어의 주요 목적은 Resource를 선언하는 것입니다. 단일 인프라 개체를 설명 합니다.
+자원 그룹을 Module이라는 더 큰 구성 단위를 만들수 있습니다.
+Arguments, Blocks, and Expressions  블록은 다른 내용의 컨테이너이며 일반적으로 리소스와 같은 일종의 개체 구성을 나타냅니다. 블록은 블록 유형을 가지며 0 개 이상의 레이블을 가질 수 있으며 여러 개의 인수와 중첩 된 블록을 포함하는 본문을 갖습니다.</description>
     </item>
     
     <item>
@@ -27,9 +28,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/terraform-workshop/basics/terraform/commands/</guid>
-      <description> 간결한 command-line interface
- init, plan, apply, destroy
-   https://www.terraform.io/docs/commands/index.html  </description>
+      <description>Terraform은 명령 줄 인터페이스 (CLI)를 통해 제어됩니다.
+Terraform은 단일 명령 행 애플리케이션 인 terraform입니다. 그리고 apply또는 plan과 같은 하위 명령을 사용합니다.
+terraform 명령을 실행하면 다음과 같은 설명이 출력 됩니다.
+$ terraform Usage: terraform [-version] [-help] &amp;lt;command&amp;gt; [args] The available commands for execution are listed below. The most common, useful commands are shown first, followed by less common or more advanced commands. If you&#39;re just getting started with Terraform, stick with the common commands.</description>
     </item>
     
     <item>
@@ -38,12 +40,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/terraform-workshop/basics/terraform/state/</guid>
-      <description> 인프라 구성 및 상태를 저장
- 실제 리소스를 매핑
- terraform.tfstate 파일에 저장
- local
- remote: 팀 협업에 적당
-    https://www.terraform.io/docs/state/index.html  </description>
+      <description>Terraform은 관리 형 인프라 및 구성에 대한 상태를 저장해야합니다. 이 상태는 Terraform에서 실제 리소스를 구성에 매핑하고 메타 데이터를 추적하며 대규모 인프라의 성능을 향상시키는 데 사용됩니다.
+이 상태는 기본적으로 &amp;ldquo;terraform.tfstate&amp;rdquo;라는 로컬 파일에 저장되지만 원격으로 저장할 수 있습니다.
+ https://www.terraform.io/docs/state/index.html  </description>
     </item>
     
     <item>
@@ -52,11 +51,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/terraform-workshop/basics/terraform/providers/</guid>
-      <description> 자원 제공자
- IssS
- AWS, GCP, Azure, Alibaba, OpenStack…  PaaS
- Heroku…  SaaS
- Terraform Cloud, GitHub&amp;hellip;    https://www.terraform.io/docs/providers/index.html  </description>
+      <description>Terraform은 물리적 시스템, VM, 네트워크 스위치, 컨테이너 등과 같은 인프라 리소스를 생성, 관리 및 업데이트하는 데 사용됩니다. 거의 모든 인프라 유형이 Terraform의 리소스로 표현 될 수 있습니다.
+아래 그림은 AWS Provider를 선언한 예시 코드입니다.
+더 많은 정보를 확인 하시려면 아래 링크를 참고 하세요.
+ https://www.terraform.io/docs/providers/index.html  </description>
     </item>
     
     <item>
@@ -65,9 +63,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/terraform-workshop/basics/terraform/provisioners/</guid>
-      <description> 인프라 객체를 local 또는 remote 에서 특정 작업을 수행
- 주요 프로비저너
- file local-exec remote-exec    https://www.terraform.io/docs/provisioners/index.html  </description>
+      <description>Provisioner를 사용하면 서버 또는 기타 인프라 개체를 서비스 할 수 있도록 로컬 컴퓨터 또는 원격 컴퓨터에서 특정 작업을 모델링 할 수 있습니다.
+Provisioners are a Last Resort Terraform에는 Terraform의 선언적 모델에서 직접 표현할 수없는 특정 행동이 항상있을 것임을 알고 프로비저닝의 개념을 실용주의의 척도로 포함합니다.
+하지만 이것은 Terraform 사용에 상당한 복잡성과 불확실성을 추가합니다. 최대한 Terraform에서 제공되는 기본 기능으로 시도하고, 다른 옵션이 없을 경우에만 Provisioner를 사용하는 것이 좋습니다.
+아래 그림은 로칼 컴퓨터에서 특정 명령을 실행 하는 예시 코드입니다.</description>
     </item>
     
     <item>
@@ -76,9 +75,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/terraform-workshop/basics/terraform/modules/</guid>
-      <description> 여러 리소스의 컨테이너
- 객체를 추상화
-   https://www.terraform.io/docs/modules/index.html  </description>
+      <description>모듈은 함께 사용되는 여러 리소스의 컨테이너입니다. 모듈을 사용하여 간단한 추상화를 생성 할 수 있으므로 물리적 객체의 관점이 아닌 아키텍처의 관점에서 인프라를 설명 할 수 있습니다.
+terraform plan 또는 terraform apply 시 작업 디렉토리의 .tf 파일은 루트 모듈에서 함께 적용됩니다. 해당 모듈은 다른 모듈을 호출하고 하나의 출력 값을 다른 모듈의 입력 값으로 전달하여 서로 연결할 수 있습니다.
+아래 그림은 AWS 상에서 VPC, EKS, ASG 모듈 관계 예시 입니다.
+더 많은 정보를 확인 하시려면 아래 링크를 참고 하세요.</description>
     </item>
     
     <item>
@@ -87,9 +87,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/terraform-workshop/basics/terraform/backends/</guid>
-      <description> State 가 로드되는 방식을 결정
- 백엔드의 이점
- 팀 협업 중요한 정보 유지 원격 운영    https://www.terraform.io/docs/backends/index.html  </description>
+      <description>Terraform의 Backend는 State가 로드되는 방식과 apply와 같은 작업이 실행되는 방식을 결정합니다.
+Benefits of backends  팀 협업: 상태를 원격 저장하고, 실행중 일때 상태를 잠금으로 보호하여 손상을 방지 할수 있습니다.
+ 중요한 정보 유지: 정의 하지 않을 경우 메모리에만 저장됩니다. Amazon S3와 같이 원격지에 저장 할수 있습니다.
+ 원격 운영: 대규모의 인프라의 생성 또는 변경은 작업 시간이 오래 걸릴 수 있습니다. 일부 백엔드는 원격작업을 지원하여 작업을 원격에서 유지 할수 있습니다. 원격 상태 저장소와 잠금 기능을 같이 사용 하면 팀 협업에 도움이 됩니다.</description>
     </item>
     
   </channel>
