@@ -13,7 +13,16 @@ Terraform 언어의 주요 목적은 `Resource`를 선언하는 것입니다. �
 
 ### Arguments, Blocks, and Expressions
 
-![Configuration Language](../../terraform/images/configuration.png)
+```
+resource "aws_vpc" "main" {
+  cidr_block = var.base_cidr_block
+}
+
+<BLOCK TYPE> "<BLOCK LABEL>" "<BLOCK LABEL>" {
+  # Block body
+  <IDENTIFIER> = <EXPRESSION> # Argument
+}
+```
 
 * 블록은 다른 내용의 컨테이너이며 일반적으로 리소스와 같은 일종의 개체 구성을 나타냅니다. 블록은 블록 유형을 가지며 0 개 이상의 레이블을 가질 수 있으며 여러 개의 인수와 중첩 된 블록을 포함하는 본문을 갖습니다.
 

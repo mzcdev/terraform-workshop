@@ -7,8 +7,4 @@ Terraform은 인프라 및 구성에 대한 상태를 저장해야합니다. 이
 
 이 상태는 기본적으로 `terraform.tfstate`라는 로컬 파일에 json 형식으로 저장 되지만 원격으로 저장할 수 있습니다.
 
-아래 그림은 tfstate 예시 입니다.
-
-![State](../../terraform/images/state.png)
-
 * https://www.terraform.io/docs/state/index.html

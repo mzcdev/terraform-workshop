@@ -7,7 +7,13 @@ Terraform은 물리적 시스템, VM, 네트워크 스위치, 컨테이너 등�
 
 아래 그림은 AWS Provider를 선언한 예시 코드입니다.
 
-![Providers](../../terraform/images/providers.png)
+```
+provider "aws" {
+  region     = var.region
+  access_key = "<ACCESS_KEY_HERE>"
+  secret_key = "<SECRET_KEY_HERE>"
+}
+```
 
 더 많은 정보를 확인 하시려면 아래 링크를 참고 하세요.
 

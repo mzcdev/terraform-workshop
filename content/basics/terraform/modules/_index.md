@@ -7,9 +7,18 @@ weight: 360
 
 terraform plan 또는 terraform apply 시 작업 디렉토리의 .tf 파일은 루트 모듈에서 함께 적용됩니다. 해당 모듈은 다른 모듈을 호출하고 하나의 출력 값을 다른 모듈의 입력 값으로 전달하여 서로 연결할 수 있습니다.
 
-아래 그림은 AWS 상에서 VPC, EKS, ASG 모듈 관계 예시 입니다.
-
-![Modules](../../terraform/images/modules.png)
+```
+$ tree sample-module/
+.
+├── README.md
+├── main.tf
+├── variables.tf
+├── outputs.tf
+├── ...
+├── examples/
+│   ├── main.tf
+│   ├── .../
+```
 
 더 많은 정보를 확인 하시려면 아래 링크를 참고 하세요.
 

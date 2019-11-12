@@ -11,9 +11,26 @@ Terraform에는 Terraform의 선언적 모델에서 직접 표현할 수없는 �
 
 하지만 이것은 Terraform 사용에 상당한 복잡성과 불확실성을 추가합니다. 최대한 Terraform에서 제공되는 기본 기능으로 시도하고, 다른 옵션이 없을 경우에만 Provisioner를 사용하는 것이 좋습니다.
 
-아래 그림은 로칼 컴퓨터에서 특정 명령을 실행 하는 예시 코드입니다.
+```
+resource "null_resource" "executor" {
+  depends_on = [aws_eks_cluster.cluster]
 
-![Provisioners](../../terraform/images/provisioners.png)
+  provisioner "local-exec" {
+    working_dir = path.module
+
+    command = <<EOS
+echo "local ecec" & \
+ls -al
+EOS
+
+    interpreter = var.local_exec_interpreter
+  }
+
+  triggers = {
+    endpoint = aws_eks_cluster.cluster.endpoint
+  }
+}
+```
 
 더 많은 정보를 확인 하시려면 아래 링크를 참고 하세요.
 
