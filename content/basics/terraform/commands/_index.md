@@ -1,6 +1,6 @@
 ---
 title: Commands (CLI)
-weight: 32
+weight: 320
 ---
 
 Terraform은 명령 줄 인터페이스 (CLI)를 통해 제어됩니다.
