@@ -3,10 +3,8 @@ title: Terraform
 weight: 30
 ---
 
-* Infrstructure as Code
+Terraform은 Resource를 `선언적`인 `코드`로 생성/관리 할 수 있도록 도와주는 도구 입니다. 이를 IaC(Infrstructure as Code) 라고 부릅니다.
 
-* Hashicorp 에서 오픈소스로 개발중인 인프라스트럭처 관리 도구
+여기에서는 Terraform의 기본적인 개념들을 소개하고, AWS(Amazon Web Serivce) 에서 간단한 리소스를 생성해 보는 실습 하도록 하겠습니다.
 
-* 앤서블(Ansible) 과 더불어 프로비저닝 도구로 분류
-
-* 필요한 리소스를 **선언적**인 **코드**로 관리
+{{% children %}}

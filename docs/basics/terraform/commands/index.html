@@ -13,20 +13,20 @@
     <title>Commands (CLI) :: Terraform Workshop</title>
 
     
-    <link href="/terraform-workshop/css/nucleus.css?1573037537" rel="stylesheet">
-    <link href="/terraform-workshop/css/fontawesome-all.min.css?1573037537" rel="stylesheet">
-    <link href="/terraform-workshop/css/hybrid.css?1573037537" rel="stylesheet">
-    <link href="/terraform-workshop/css/featherlight.min.css?1573037537" rel="stylesheet">
-    <link href="/terraform-workshop/css/perfect-scrollbar.min.css?1573037537" rel="stylesheet">
-    <link href="/terraform-workshop/css/auto-complete.css?1573037537" rel="stylesheet">
-    <link href="/terraform-workshop/css/atom-one-dark-reasonable.css?1573037537" rel="stylesheet">
-    <link href="/terraform-workshop/css/theme.css?1573037537" rel="stylesheet">
-    <link href="/terraform-workshop/css/hugo-theme.css?1573037537" rel="stylesheet">
+    <link href="/terraform-workshop/css/nucleus.css?1573525726" rel="stylesheet">
+    <link href="/terraform-workshop/css/fontawesome-all.min.css?1573525726" rel="stylesheet">
+    <link href="/terraform-workshop/css/hybrid.css?1573525726" rel="stylesheet">
+    <link href="/terraform-workshop/css/featherlight.min.css?1573525726" rel="stylesheet">
+    <link href="/terraform-workshop/css/perfect-scrollbar.min.css?1573525726" rel="stylesheet">
+    <link href="/terraform-workshop/css/auto-complete.css?1573525726" rel="stylesheet">
+    <link href="/terraform-workshop/css/atom-one-dark-reasonable.css?1573525726" rel="stylesheet">
+    <link href="/terraform-workshop/css/theme.css?1573525726" rel="stylesheet">
+    <link href="/terraform-workshop/css/hugo-theme.css?1573525726" rel="stylesheet">
     
-      <link href="/terraform-workshop/css/theme-blue.css?1573037537" rel="stylesheet">
+      <link href="/terraform-workshop/css/theme-blue.css?1573525726" rel="stylesheet">
     
 
-    <script src="/terraform-workshop/js/jquery-3.3.1.min.js?1573037537"></script>
+    <script src="/terraform-workshop/js/jquery-3.3.1.min.js?1573525726"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/terraform-workshop/js/lunr.min.js?1573037537"></script>
-<script type="text/javascript" src="/terraform-workshop/js/auto-complete.js?1573037537"></script>
+<script type="text/javascript" src="/terraform-workshop/js/lunr.min.js?1573525726"></script>
+<script type="text/javascript" src="/terraform-workshop/js/auto-complete.js?1573525726"></script>
 <script type="text/javascript">
     
         var baseurl = "\/terraform-workshop\/";
     
 </script>
-<script type="text/javascript" src="/terraform-workshop/js/search.js?1573037537"></script>
+<script type="text/javascript" src="/terraform-workshop/js/search.js?1573525726"></script>
 
     
   </div>
@@ -957,13 +957,51 @@
 
 
 
-<ul>
-<li><p>간결한 command-line interface</p></li>
+<p>Terraform은 명령 줄 인터페이스 (CLI)를 통해 제어됩니다.</p>
 
-<li><p>init, plan, apply, destroy</p></li>
-</ul>
+<p>Terraform은 단일 명령 행 애플리케이션 인 <code>terraform</code>입니다. 그리고 <code>apply</code>또는 <code>plan</code>과 같은 하위 명령을 사용합니다.</p>
 
-<p><img src="../../terraform/images/commands.png" alt="Commands" /></p>
+<p>terraform 명령을 실행하면 다음과 같은 설명이 출력 됩니다.</p>
+
+<pre><code class="language-text">$ terraform
+Usage: terraform [-version] [-help] &lt;command&gt; [args]
+
+The available commands for execution are listed below.
+The most common, useful commands are shown first, followed by
+less common or more advanced commands. If you're just getting
+started with Terraform, stick with the common commands. For the
+other commands, please read the help and docs before usage.
+
+Common commands:
+    apply              Builds or changes infrastructure
+    console            Interactive console for Terraform interpolations
+    destroy            Destroy Terraform-managed infrastructure
+    env                Workspace management
+    fmt                Rewrites config files to canonical format
+    get                Download and install modules for the configuration
+    graph              Create a visual graph of Terraform resources
+    import             Import existing infrastructure into Terraform
+    init               Initialize a Terraform working directory
+    output             Read an output from a state file
+    plan               Generate and show an execution plan
+    providers          Prints a tree of the providers used in the configuration
+    refresh            Update local state file against real resources
+    show               Inspect Terraform state or plan
+    taint              Manually mark a resource for recreation
+    untaint            Manually unmark a resource as tainted
+    validate           Validates the Terraform files
+    version            Prints the Terraform version
+    workspace          Workspace management
+
+All other commands:
+    0.12upgrade        Rewrites pre-0.12 module source code for v0.12
+    debug              Debug output management (experimental)
+    force-unlock       Manually unlock the terraform state
+    push               Obsolete command for Terraform Enterprise legacy (v1)
+    state              Advanced state management
+</code></pre>
+
+<p>더 많은 정보를 확인 하시려면 아래 링크를 참고 하세요.</p>
 
 <ul>
 <li><a href="https://www.terraform.io/docs/commands/index.html">https://www.terraform.io/docs/commands/index.html</a></li>
@@ -1596,19 +1634,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/terraform-workshop/js/clipboard.min.js?1573037537"></script>
-    <script src="/terraform-workshop/js/perfect-scrollbar.min.js?1573037537"></script>
-    <script src="/terraform-workshop/js/perfect-scrollbar.jquery.min.js?1573037537"></script>
-    <script src="/terraform-workshop/js/jquery.sticky.js?1573037537"></script>
-    <script src="/terraform-workshop/js/featherlight.min.js?1573037537"></script>
-    <script src="/terraform-workshop/js/highlight.pack.js?1573037537"></script>
+    <script src="/terraform-workshop/js/clipboard.min.js?1573525726"></script>
+    <script src="/terraform-workshop/js/perfect-scrollbar.min.js?1573525726"></script>
+    <script src="/terraform-workshop/js/perfect-scrollbar.jquery.min.js?1573525726"></script>
+    <script src="/terraform-workshop/js/jquery.sticky.js?1573525726"></script>
+    <script src="/terraform-workshop/js/featherlight.min.js?1573525726"></script>
+    <script src="/terraform-workshop/js/highlight.pack.js?1573525726"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/terraform-workshop/js/modernizr.custom-3.6.0.js?1573037537"></script>
-    <script src="/terraform-workshop/js/learn.js?1573037537"></script>
-    <script src="/terraform-workshop/js/hugo-learn.js?1573037537"></script>
+    <script src="/terraform-workshop/js/modernizr.custom-3.6.0.js?1573525726"></script>
+    <script src="/terraform-workshop/js/learn.js?1573525726"></script>
+    <script src="/terraform-workshop/js/hugo-learn.js?1573525726"></script>
 
-    <link href="/terraform-workshop/mermaid/mermaid.css?1573037537" rel="stylesheet" />
-    <script src="/terraform-workshop/mermaid/mermaid.js?1573037537"></script>
+    <link href="/terraform-workshop/mermaid/mermaid.css?1573525726" rel="stylesheet" />
+    <script src="/terraform-workshop/mermaid/mermaid.js?1573525726"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
