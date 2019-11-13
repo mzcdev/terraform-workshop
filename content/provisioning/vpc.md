@@ -3,13 +3,13 @@ title: VPC
 weight: 35
 ---
 
-> Public subnet 과 Private subnet 을 포함한 VPC 를 생성 합니다.
+Public subnet 과 Private subnet 을 포함한 VPC 를 생성 합니다.
 
 ![VPC](../../provisioning/images/terraform_vpc_ach.png)
 
-> 다음 파일에서 **terraform-workshop-seoul** 을 생성한 버켓명으로 변경해줍니다.
+다음 파일에서 **terraform-workshop-seoul** 을 생성한 버켓명으로 변경해줍니다.
 
-```
+```bash
 # export BUCKET="terraform-nalbam-seoul"
 
 cd terraform-env-workshop/vpc
@@ -17,17 +17,17 @@ cd terraform-env-workshop/vpc
 sed -i "s/terraform-workshop-seoul/${BUCKET}/g" *.tf
 ```
 
-> Terraform 명령으로 생성 합니다.
+Terraform 명령으로 생성 합니다.
 
-```
+```bash
 terraform init
 terraform plan
 terraform apply
 ```
 
-> 다음과 같은 메세지가 출력 되면 성공 입니다.
+다음과 같은 메세지가 출력 되면 성공 입니다.
 
-```
+```bash
 Apply complete! Resources: x added, 0 changed, 0 destroyed.
 
 Outputs:

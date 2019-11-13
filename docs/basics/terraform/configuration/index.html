@@ -13,20 +13,20 @@
     <title>Configuration Language :: Terraform Workshop</title>
 
     
-    <link href="/terraform-workshop/css/nucleus.css?1573550949" rel="stylesheet">
-    <link href="/terraform-workshop/css/fontawesome-all.min.css?1573550949" rel="stylesheet">
-    <link href="/terraform-workshop/css/hybrid.css?1573550949" rel="stylesheet">
-    <link href="/terraform-workshop/css/featherlight.min.css?1573550949" rel="stylesheet">
-    <link href="/terraform-workshop/css/perfect-scrollbar.min.css?1573550949" rel="stylesheet">
-    <link href="/terraform-workshop/css/auto-complete.css?1573550949" rel="stylesheet">
-    <link href="/terraform-workshop/css/atom-one-dark-reasonable.css?1573550949" rel="stylesheet">
-    <link href="/terraform-workshop/css/theme.css?1573550949" rel="stylesheet">
-    <link href="/terraform-workshop/css/hugo-theme.css?1573550949" rel="stylesheet">
+    <link href="/terraform-workshop/css/nucleus.css?1573626561" rel="stylesheet">
+    <link href="/terraform-workshop/css/fontawesome-all.min.css?1573626561" rel="stylesheet">
+    <link href="/terraform-workshop/css/hybrid.css?1573626561" rel="stylesheet">
+    <link href="/terraform-workshop/css/featherlight.min.css?1573626561" rel="stylesheet">
+    <link href="/terraform-workshop/css/perfect-scrollbar.min.css?1573626561" rel="stylesheet">
+    <link href="/terraform-workshop/css/auto-complete.css?1573626561" rel="stylesheet">
+    <link href="/terraform-workshop/css/atom-one-dark-reasonable.css?1573626561" rel="stylesheet">
+    <link href="/terraform-workshop/css/theme.css?1573626561" rel="stylesheet">
+    <link href="/terraform-workshop/css/hugo-theme.css?1573626561" rel="stylesheet">
     
-      <link href="/terraform-workshop/css/theme-blue.css?1573550949" rel="stylesheet">
+      <link href="/terraform-workshop/css/theme-blue.css?1573626561" rel="stylesheet">
     
 
-    <script src="/terraform-workshop/js/jquery-3.3.1.min.js?1573550949"></script>
+    <script src="/terraform-workshop/js/jquery-3.3.1.min.js?1573626561"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/terraform-workshop/js/lunr.min.js?1573550949"></script>
-<script type="text/javascript" src="/terraform-workshop/js/auto-complete.js?1573550949"></script>
+<script type="text/javascript" src="/terraform-workshop/js/lunr.min.js?1573626561"></script>
+<script type="text/javascript" src="/terraform-workshop/js/auto-complete.js?1573626561"></script>
 <script type="text/javascript">
     
         var baseurl = "\/terraform-workshop\/";
     
 </script>
-<script type="text/javascript" src="/terraform-workshop/js/search.js?1573550949"></script>
+<script type="text/javascript" src="/terraform-workshop/js/search.js?1573626561"></script>
 
     
   </div>
@@ -1154,11 +1154,11 @@
 
 	
 
-<p>Terraform은 HCL(Hashicorp Configuration Language) 이라는 인프라에 대한 간결한 설명이 가능하도록 설계된 자체 구성 언어를 사용합니다.</p>
+<p>Terraform은 <code>HCL</code>(Hashicorp Configuration Language) 이라는 인프라에 대한 간결한 설명이 가능하도록 설계된 자체 구성 언어를 사용합니다.</p>
 
 <h3 id="resources-and-modules">Resources and Modules</h3>
 
-<p>Terraform 언어의 주요 목적은 <code>Resource</code>를 선언하는 것입니다. 단일 인프라 개체를 설명 합니다.</p>
+<p>Terraform 언어의 주요 목적은 <code>Resource</code>를 선언하는 것입니다. 리소스는 단일 인프라 개체를 설명 합니다.</p>
 
 <p>자원 그룹을 <code>Module</code>이라는 더 큰 구성 단위를 만들수 있습니다.</p>
 
@@ -1175,11 +1175,11 @@
 </code></pre>
 
 <ul>
-<li><p>블록은 다른 내용의 컨테이너이며 일반적으로 리소스와 같은 일종의 개체 구성을 나타냅니다. 블록은 블록 유형을 가지며 0 개 이상의 레이블을 가질 수 있으며 여러 개의 인수와 중첩 된 블록을 포함하는 본문을 갖습니다.</p></li>
+<li><p><code>Block</code>은 다른 내용의 컨테이너이며 일반적으로 리소스와 같은 일종의 개체 구성을 나타냅니다. 블록은 블록 유형을 가지며 0 개 이상의 <code>Label</code>을 가질 수 있으며 여러 개의 인수와 중첩 된 블록을 포함하는 본문을 갖습니다.</p></li>
 
-<li><p>인수는 이름에 값을 할당합니다. 그것들은 블록 안에 작성합니다.</p></li>
+<li><p><code>Argument</code>는 이름에 값을 할당합니다. 그것들은 블록 안에 작성합니다.</p></li>
 
-<li><p>표현식은 문자 그대로 또는 다른 값을 참조하고 결합하여 값을 나타냅니다. 인수의 값으로 또는 다른 표현식 내에 나타납니다.</p></li>
+<li><p><code>Expression</code>은 문자 그대로 또는 다른 값을 참조하고 결합하여 값을 나타냅니다. 인수의 값으로 또는 다른 표현식 내에 나타납니다.</p></li>
 </ul>
 
 <h3 id="code-organization">Code Organization</h3>
@@ -1190,13 +1190,13 @@
 
 <h3 id="configuration-ordering">Configuration Ordering</h3>
 
-<p>일반적으로 Terraform의 블록 순선는 중요하지 않습니다. 구성의 정의 관계에 따라 리소스를 자동으로 처리합니다.</p>
+<p>일반적으로 Terraform의 블록 순서는 중요하지 않습니다. 구성의 정의 관계에 따라 리소스를 자동으로 처리합니다.</p>
 
 <h3 id="terraform-cli-vs-providers">Terraform CLI vs. Providers</h3>
 
-<p>Terraform CLI는 Terraform 구성을 평가하고 적용하기위한 엔진입니다. Terraform 언어 구문과 전체 구조를 정의하고 원격 인프라가 주어진 구성과 일치하도록 변경 순서를 조정합니다.</p>
+<p><code>Terraform CLI</code>는 Terraform 구성을 평가하고 적용하기위한 엔진입니다. Terraform 언어 구문과 전체 구조를 정의하고 원격 인프라가 주어진 구성과 일치하도록 변경 순서를 조정합니다.</p>
 
-<p>Terraform은 각각 일련의 리소스 유형을 정의하고 관리하는 Provider라는 플러그인을 사용합니다. 대부분의 Provider는 특정 클라우드 또는 온-프레미스 인프라 서비스와 연결되어 있으므로 Terraform은 해당 서비스 내에서 인프라 개체를 관리 할 수 ​​있습니다.</p>
+<p>Terraform은 각각 일련의 리소스 유형을 정의하고 관리하는 <code>Provider</code>라는 플러그인을 사용합니다. 대부분의 Provider는 특정 클라우드 또는 온-프레미스 인프라 서비스와 연결되어 있으므로 Terraform은 해당 서비스 내에서 인프라 개체를 관리 할 수 ​​있습니다.</p>
 
 <ul>
 <li><a href="https://www.terraform.io/docs/configuration/index.html">https://www.terraform.io/docs/configuration/index.html</a></li>
@@ -1942,19 +1942,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/terraform-workshop/js/clipboard.min.js?1573550949"></script>
-    <script src="/terraform-workshop/js/perfect-scrollbar.min.js?1573550949"></script>
-    <script src="/terraform-workshop/js/perfect-scrollbar.jquery.min.js?1573550949"></script>
-    <script src="/terraform-workshop/js/jquery.sticky.js?1573550949"></script>
-    <script src="/terraform-workshop/js/featherlight.min.js?1573550949"></script>
-    <script src="/terraform-workshop/js/highlight.pack.js?1573550949"></script>
+    <script src="/terraform-workshop/js/clipboard.min.js?1573626561"></script>
+    <script src="/terraform-workshop/js/perfect-scrollbar.min.js?1573626561"></script>
+    <script src="/terraform-workshop/js/perfect-scrollbar.jquery.min.js?1573626561"></script>
+    <script src="/terraform-workshop/js/jquery.sticky.js?1573626561"></script>
+    <script src="/terraform-workshop/js/featherlight.min.js?1573626561"></script>
+    <script src="/terraform-workshop/js/highlight.pack.js?1573626561"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/terraform-workshop/js/modernizr.custom-3.6.0.js?1573550949"></script>
-    <script src="/terraform-workshop/js/learn.js?1573550949"></script>
-    <script src="/terraform-workshop/js/hugo-learn.js?1573550949"></script>
+    <script src="/terraform-workshop/js/modernizr.custom-3.6.0.js?1573626561"></script>
+    <script src="/terraform-workshop/js/learn.js?1573626561"></script>
+    <script src="/terraform-workshop/js/hugo-learn.js?1573626561"></script>
 
-    <link href="/terraform-workshop/mermaid/mermaid.css?1573550949" rel="stylesheet" />
-    <script src="/terraform-workshop/mermaid/mermaid.js?1573550949"></script>
+    <link href="/terraform-workshop/mermaid/mermaid.css?1573626561" rel="stylesheet" />
+    <script src="/terraform-workshop/mermaid/mermaid.js?1573626561"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

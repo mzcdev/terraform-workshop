@@ -10,7 +10,6 @@ Terraform은 단일 명령 행 애플리케이션 인 `terraform`입니다. 그�
 terraform 명령을 실행하면 다음과 같은 설명이 출력 됩니다.
 
 ```text
-$ terraform
 Usage: terraform [-version] [-help] <command> [args]
 
 The available commands for execution are listed below.

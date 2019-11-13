@@ -16,8 +16,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/terraform-workshop/cleanup/lambda/</guid>
-      <description> Terraform 명령으로 삭제 합니다.
- cd terraform-env-workshop/lambda terraform destroy  </description>
+      <description>Terraform 명령으로 삭제 합니다.
+cd terraform-env-workshop/lambda terraform destroy  </description>
     </item>
     
     <item>
@@ -26,8 +26,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/terraform-workshop/cleanup/eks/</guid>
-      <description> Terraform 명령으로 삭제 합니다.
- cd terraform-env-workshop/eks terraform destroy  </description>
+      <description>Terraform 명령으로 삭제 합니다.
+cd terraform-env-workshop/eks terraform destroy  </description>
     </item>
     
     <item>
@@ -36,8 +36,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/terraform-workshop/cleanup/vpc/</guid>
-      <description> Terraform 명령으로 삭제 합니다.
- cd terraform-env-workshop/vpc terraform destroy  </description>
+      <description>Terraform 명령으로 삭제 합니다.
+cd terraform-env-workshop/vpc terraform destroy  </description>
     </item>
     
   </channel>

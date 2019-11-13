@@ -16,8 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/terraform-workshop/requirements/account/add_user_01/</guid>
-      <description> 사용자 이름을 입력 합니다.
- </description>
+      <description>사용자 이름을 입력 합니다.</description>
     </item>
     
     <item>
@@ -26,8 +25,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/terraform-workshop/requirements/account/add_user_02/</guid>
-      <description> AdministratorAccess IAM 정책을 추가합니다.
- </description>
+      <description>AdministratorAccess IAM 정책을 추가합니다.</description>
     </item>
     
     <item>
@@ -36,8 +34,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/terraform-workshop/requirements/account/add_user_03/</guid>
-      <description> Tag 정보는 입력하지 않아도 됩니다.
- </description>
+      <description>Tag 정보는 입력하지 않아도 됩니다.</description>
     </item>
     
     <item>
@@ -46,8 +43,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/terraform-workshop/requirements/account/add_user_04/</guid>
-      <description> 입력한 정보를 다시한번 확인 합니다.
- </description>
+      <description>입력한 정보를 다시한번 확인 합니다.</description>
     </item>
     
     <item>
@@ -56,8 +52,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/terraform-workshop/requirements/account/add_user_05/</guid>
-      <description> 이때 생성된 Access key ID 와 Secret access key 를 잘 보관하여 둡니다.
- </description>
+      <description>이때 생성된 Access key ID 와 Secret access key 를 잘 보관하여 둡니다.</description>
     </item>
     
   </channel>
