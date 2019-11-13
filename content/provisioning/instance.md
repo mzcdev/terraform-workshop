@@ -15,7 +15,7 @@ cd terraform-env-workshop/instance
 terraform init
 ```
 
-```
+```text
 Initializing the backend...
 
 Initializing provider plugins...
@@ -43,7 +43,7 @@ cd terraform-env-workshop/instance
 terraform plan
 ```
 
-```
+```text
 Refreshing Terraform state in-memory prior to plan...
 
 ------------------------------------------------------------------------
@@ -72,7 +72,7 @@ cd terraform-env-workshop/instance
 terraform apply
 ```
 
-```
+```text
 Plan: 1 to add, 0 to change, 0 to destroy.
 
 Do you want to perform these actions?
@@ -84,7 +84,7 @@ Do you want to perform these actions?
 
 plan 을 다시한번 해보고 액션을 수행 할지 물어 봅니다. `yes` 를 입력 하면 리소스 생성을 시작 합니다.
 
-```
+```text
 aws_instance.this: Creating...
 aws_instance.this: Still creating... [10s elapsed]
 aws_instance.this: Still creating... [20s elapsed]

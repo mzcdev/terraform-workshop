@@ -11,7 +11,7 @@ git clone https://github.com/mzcdev/terraform-env-workshop
 
 디렉토리 구조는 다음과 같습니다.
 
-```bash
+```text
 ├── README.md
 ├── eks
 │   ├── main.tf

@@ -23,7 +23,7 @@ terraform apply
 
 다음과 같은 메세지가 출력 되면 성공 입니다.
 
-```bash
+```text
 Apply complete! Resources: x added, 0 changed, 0 destroyed.
 
 Outputs:
@@ -37,4 +37,12 @@ lambda api 가 동작 하는지 테스트 해봅시다.
 invoke_url="https://8zgxxav8oi.execute-api.ap-northeast-2.amazonaws.com/dev"
 
 curl -sL -X POST -d "{\"data\":\"ok\"}" ${invoke_url}/demo | jq .
+```
+
+`ok` 가 출력 되면 성공 입니다.
+
+```json
+{
+  "data": "ok"
+}
 ```
