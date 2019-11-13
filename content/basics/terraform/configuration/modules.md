@@ -11,9 +11,11 @@ Module은 함께 사용되는 여러 리소스의 컨테이너입니다.
 
 ### Calling a Child Module
 
+`module` 블록을 사용 하여 설정 합니다.
+
 ```
 module "servers" {
-  source = "./app-cluster"
+  source = "./sub_module"
 
   servers = 5
 }

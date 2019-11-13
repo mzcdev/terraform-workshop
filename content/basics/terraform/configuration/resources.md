@@ -30,9 +30,9 @@ resource "aws_instance" "sample" {
 
 #### Resource Dependencies
 
-구성의 대부분의 리소스는 특별한 관계가 없으며 Terraform은 관련이없는 여러 리소스를 동시에 변경할 수 있습니다.
+구성의 대부분의 리소스 간에는 특별한 관계가 없으며 Terraform은 관련이 없는 여러 리소스를 동시에 변경할 수 있습니다.
 
-그러나 일부 자원은 다른 특정 자원 이후에 처리해야합니다. 때로는 리소스 작동 방식 때문일 수도 있고 리소스 구성에 다른 리소스에서 생성 된 정보 만 필요하기도합니다.
+그러나 일부 자원은 다른 특정 자원 이후에 처리해야합니다. 때로는 리소스 작동 방식 때문일 수도 있고 리소스 구성에 다른 리소스에서 생성 된 정보 만 필요하기도 합니다.
 
 대부분의 리소스 종속성은 자동으로 처리됩니다. Terraform은 리소스 블록 내의 표현식을 분석하여 다른 객체에 대한 참조를 찾은 다음 해당 참조를 리소스를 생성, 업데이트 또는 파괴 할 때 암시 적 순서 요구 사항으로 취급합니다. 다른 자원에 대한 행동 종속성이있는 대부분의 자원도 해당 자원의 데이터를 참조하므로 일반적으로 자원 간 종속성을 수동으로 지정할 필요는 없습니다.
 
@@ -51,9 +51,11 @@ Terraform CLI는 다음과 같은 메타 인수를 정의합니다.이 인수는
 
 #### count
 
+4개의 EC2 instance 를 생성 합니다.
+
 ```
 resource "aws_instance" "server" {
-  count = 4  # 4개의 EC2 instance 를 생성 합니다.
+  count = 4
 
   ami           = var.ami_id
   instance_type = var.instance_type
@@ -64,7 +66,41 @@ resource "aws_instance" "server" {
 }
 ```
 
+#### depends_on
+
+EC2 instance 를 생성하기 전, instance_profile 를 생성 해야 한다는 것은 aws_instance 안에 정의되어 있으므로 유추가 가능 합니다. 하지만, aws_iam_role_policy 는 Terraform 이 유추해 낼 수 없으므로 선언해 주어야 합니다.
+
+```
+resource "aws_iam_role" "example" {
+  name               = "example"
+  assume_role_policy = "..."
+}
+
+resource "aws_iam_instance_profile" "example" {
+  role = aws_iam_role.example.name
+}
+
+resource "aws_iam_role_policy" "example" {
+  name   = "example"
+  role   = aws_iam_role.example.name
+  policy = "..."
+}
+
+resource "aws_instance" "example" {
+  ami           = "ami-a1b2c3d4"
+  instance_type = "t2.micro"
+
+  iam_instance_profile = aws_iam_instance_profile.example
+
+  depends_on = [
+    aws_iam_role_policy.example,
+  ]
+}
+```
+
 #### for_each
+
+Autoscaling Group 에서 mixed_instances 로 정의 할 수 있는데 var.mixed_instances 배열로 n개의 값을 전달 할 수 있습니다.
 
 ```
 resource "aws_autoscaling_group" "worker" {
@@ -99,8 +135,9 @@ resource "aws_autoscaling_group" "worker" {
 
 #### lifecycle
 
-```
+리소스의 생명주기를 정의 합니다.
 
+```
 resource "aws_launch_configuration" "worker" {
   # ...
 
@@ -109,3 +146,9 @@ resource "aws_launch_configuration" "worker" {
   }
 }
 ```
+
+`aws_launch_configuration` (bool) - 현재 업데이트 할 수없는 리소스 인수를 변경해야하는 경우 Terraform은 기존 객체를 삭제 한 다음 새로 구성된 인수로 새 대체 객체를 만듭니다. .
+
+`prevent_destroy` (bool) - 인수가 구성에 존재하는 한 자원과 관련된 인프라 개체를 파괴하는 계획을 Terraform이 오류와 함께 거부하게합니다.
+
+`ignore_changes` (list of attribute names) - Terraform은 실제 인프라 개체의 현재 설정에서 차이를 감지하고 구성과 일치하도록 원격 개체를 업데이트를 사도합니다. 하지만 외부에서 변경된 리소스를 변경 하고 싶지 않을때 사용 될수 있습니다.
