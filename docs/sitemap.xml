@@ -87,6 +87,10 @@
   </url>
   
   <url>
+    <loc>/terraform-workshop/provisioning/instance/</loc>
+  </url>
+  
+  <url>
     <loc>/terraform-workshop/provisioning/backend/</loc>
   </url>
   
@@ -100,6 +104,10 @@
   
   <url>
     <loc>/terraform-workshop/provisioning/eks/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/cleanup/instance/</loc>
   </url>
   
   <url>
