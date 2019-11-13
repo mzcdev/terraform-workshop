@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/terraform-workshop/images/favicon-60.png" type="image/x-icon" />
 <link rel="icon" href="/terraform-workshop/images/favicon-60.png" type="image/x-icon" />
 
-    <title>Data Sources :: Terraform Workshop</title>
+    <title>Instance :: Terraform Workshop</title>
 
     
     <link href="/terraform-workshop/css/nucleus.css?1573635185" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/terraform-workshop/basics/terraform/configuration/data_sources/">
+  <body class="" data-url="/terraform-workshop/cleanup/instance/">
     <nav id="sidebar" class="">
 
 
@@ -81,7 +81,7 @@
   
     
     <li data-nav-id="/terraform-workshop/basics/" title="Basics" class="dd-item 
-        parent
+        
         
         
         ">
@@ -108,7 +108,7 @@
   
     
     <li data-nav-id="/terraform-workshop/basics/terraform/" title="Terraform" class="dd-item 
-        parent
+        
         
         
         ">
@@ -135,7 +135,7 @@
   
     
     <li data-nav-id="/terraform-workshop/basics/terraform/configuration/" title="Configuration Language" class="dd-item 
-        parent
+        
         
         
         ">
@@ -254,7 +254,7 @@
  
   
     
-      <li data-nav-id="/terraform-workshop/basics/terraform/configuration/data_sources/" title="Data Sources" class="dd-item active">
+      <li data-nav-id="/terraform-workshop/basics/terraform/configuration/data_sources/" title="Data Sources" class="dd-item ">
         <a href="/terraform-workshop/basics/terraform/configuration/data_sources/">
         Data Sources
         
@@ -957,7 +957,7 @@
   
     
     <li data-nav-id="/terraform-workshop/cleanup/" title="CleanUp" class="dd-item 
-        
+        parent
         
         
         ">
@@ -981,7 +981,7 @@
  
   
     
-      <li data-nav-id="/terraform-workshop/cleanup/instance/" title="Instance" class="dd-item ">
+      <li data-nav-id="/terraform-workshop/cleanup/instance/" title="Instance" class="dd-item active">
         <a href="/terraform-workshop/cleanup/instance/">
         Instance
         
@@ -1101,7 +1101,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='' href="https://github.com/mzcdev/terraform-workshop/edit/master/content/basics/terraform/configuration/data_sources.md" target="blank">
+                    <a class="github-link" title='' href="https://github.com/mzcdev/terraform-workshop/edit/master/content/cleanup/instance.md" target="blank">
                       <i class="fas fa-code-branch"></i>
                       <span id="top-github-link-text"></span>
                     </a>
@@ -1132,19 +1132,7 @@
             
           
           
-            
-            
-          
-          
-            
-            
-          
-          
-            <a href='/terraform-workshop/'>Home</a> > <a href='/terraform-workshop/basics/'>Basics</a> > <a href='/terraform-workshop/basics/terraform/'>Terraform</a> > <a href='/terraform-workshop/basics/terraform/configuration/'>Configuration Language</a> > Data Sources
-          
-         
-          
-         
+            <a href='/terraform-workshop/'>Home</a> > <a href='/terraform-workshop/cleanup/'>CleanUp</a> > Instance
           
          
           
@@ -1157,17 +1145,7 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#using-data-sources">Using Data Sources</a></li>
-</ul></li>
-</ul></li>
-</ul>
-</nav>
+
     </div>
 </div>
 
@@ -1183,7 +1161,7 @@
           
             <h1>
               
-              Data Sources
+              Instance
             </h1>
           
 
@@ -1191,29 +1169,47 @@
 
 
 
+<p>Terraform 명령으로 삭제 합니다.</p>
 
+<pre><code class="language-bash">cd terraform-env-workshop/instance
 
-<p>Data Source를 통해 Terraform 구성의 다른 곳에서 사용하기 위해 데이터를 가져 오거나 계산할 수 있습니다. 데이터 소스를 사용하면 Terraform 구성이 Terraform 외부에서 정의되거나 다른 별도의 Terraform 구성으로 정의 된 정보를 사용할 수 있습니다.</p>
-
-<h3 id="using-data-sources">Using Data Sources</h3>
-
-<p><code>data</code> 블록을 사용 하여 설정 합니다.</p>
-
-<pre><code>data &quot;aws_ami&quot; &quot;example&quot; {
-  most_recent = true
-
-  owners = [&quot;self&quot;]
-
-  tags = {
-    Name   = &quot;app-server&quot;
-    Tested = &quot;true&quot;
-  }
-}
+terraform destroy
 </code></pre>
 
-<p>Terraform이 지정된 데이터 소스 <code>aws_ami</code>에서 읽고 해당 로컬 이름 <code>example</code>으로 결과를 내보내도록 요청합니다.</p>
+<pre><code>aws_instance.this: Refreshing state... [id=i-0390f0e077a519e15]
 
-<p>블록 본문 내에 ({와} 사이) 데이터 소스에 의해 정의 된 쿼리 제한 조건이 있습니다. 이 섹션의 대부분의 인수는 데이터 소스에 따라 다르며 실제로이 예에서 <code>most_recent</code>, <code>owners</code> 및 <code>tags</code>는 모두 <code>aws_ami</code> 데이터 소스에 대해 특별히 정의 된 인수입니다.</p>
+An execution plan has been generated and is shown below.
+Resource actions are indicated with the following symbols:
+  - destroy
+
+Terraform will perform the following actions:
+
+  # aws_instance.this will be destroyed
+  - resource &quot;aws_instance&quot; &quot;this&quot; {
+      ....
+    }
+
+Plan: 0 to add, 0 to change, 1 to destroy.
+
+Do you really want to destroy all resources?
+  Terraform will destroy all your managed infrastructure, as shown above.
+  There is no undo. Only 'yes' will be accepted to confirm.
+
+  Enter a value:
+</code></pre>
+
+<p>이번에는 <code>-</code> 와 함께 삭제 예상 plan 을 실행 하고, 리소스를 삭제 할지 물어 봅니다. <code>yes</code> 를 입력 하면 리소스 삭제를 시작 합니다.</p>
+
+<pre><code>aws_instance.this: Destroying... [id=i-0390f0e077a519e15]
+aws_instance.this: Still destroying... [id=i-0390f0e077a519e15, 10s elapsed]
+aws_instance.this: Still destroying... [id=i-0390f0e077a519e15, 20s elapsed]
+aws_instance.this: Still destroying... [id=i-0390f0e077a519e15, 30s elapsed]
+aws_instance.this: Destruction complete after 40s
+
+Destroy complete! Resources: 1 destroyed.
+</code></pre>
+
+<p>리소스를 삭제 했습니다.</p>
 
 
 <footer class=" footline" >
@@ -1252,6 +1248,8 @@
             
                 
                     
+                        
+                        
                     
                 
                 
@@ -1268,7 +1266,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -1284,7 +1281,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -1292,25 +1288,6 @@
                     
                     
 
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
                         
             
@@ -1381,7 +1358,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -1398,8 +1374,21 @@
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
-                        
+            
+            
+                
                     
                 
                 
@@ -1892,6 +1881,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1904,6 +1894,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -1920,6 +1911,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1976,10 +1970,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/terraform-workshop/basics/terraform/configuration/local_values/" title="Local Values"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/terraform-workshop/cleanup/" title="CleanUp"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/terraform-workshop/basics/terraform/configuration/modules/" title="Modules" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/terraform-workshop/cleanup/lambda/" title="Lambda API" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

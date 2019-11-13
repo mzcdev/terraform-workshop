@@ -17,6 +17,10 @@ git clone https://github.com/mzcdev/terraform-env-workshop
 │   ├── main.tf
 │   ├── output.tf
 │   └── variable.tf
+├── instance
+│   ├── main.tf
+│   ├── output.tf
+│   └── variable.tf
 ├── lambda
 │   ├── lambda.zip
 │   ├── main.tf
