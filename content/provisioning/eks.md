@@ -27,7 +27,7 @@ terraform apply
 
 다음과 같은 메세지가 출력 되면 성공 입니다.
 
-```bash
+```text
 Apply complete! Resources: x added, 0 changed, 0 destroyed.
 
 Outputs:
