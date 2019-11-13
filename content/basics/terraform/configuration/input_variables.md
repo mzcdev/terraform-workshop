@@ -3,7 +3,7 @@ title: Input Variables
 weight: 311
 ---
 
-Input Variable은 Terraform 모듈의 매개 변수 역할을하며 모듈 자체 소스 코드를 변경하지 않고 모듈의 측면을 사용자 정의 할 수 있고 다른 구성간에 모듈을 공유 할 수 있습니다.
+Input Variable은 Terraform 모듈의 매개 변수 역할을 하며, 다른 모듈 간에 매개 변수를 공유 할 수 있습니다.
 
 ### Declaring an Input Variable
 
@@ -36,11 +36,11 @@ variable "docker_ports" {
 }
 ```
 
-`type` 인수를 사용하면 변수 값으로 허용되는 값 유형을 제한 할 수 있습니다. 유형 제한 조건이 설정되지 않은 경우 모든 유형의 값이 승인됩니다.
+`type` 인수를 사용하면 변수 값으로 허용되는 타입을 제한 할 수 있습니다. 타입이 설정되지 않은 경우 모든 유형의 값이 허용됩니다.
 
 `description` 인수를 사용하여 각 값의 목적을 간단히 설명 할 수 있습니다.
 
-`default` 인수를 선언하면 해당 인수를 선언 하지 않아도 됩니다. 하지만 선언 하지 않으면 해당 값은 필수가 됩니다.
+`default` 인수를 선언하면 해당 인수를 선언 하지 않았을때 정의된 값을 사용 합니다. 하지만 선언 하지 않으면 해당 값은 필수가 됩니다.
 
 ### Using Input Variable Values
 
