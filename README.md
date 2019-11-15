@@ -2,7 +2,7 @@
 
 * <https://mzcdev.github.io/terraform-workshop/>
 
-## setup
+## prepare
 
 ```bash
 brew install hugo
@@ -11,18 +11,14 @@ brew install hugo
 ## build
 
 ```bash
-git submodule init ; git submodule update
-
-npm install
-
-rm -rf public && hugo -v
-rm -rf docs && hugo -v -b /terraform-workshop/ -d docs
+npm run theme
+npm run build
 ```
 
 ## localhost
 
 ```bash
-hugo server -w -v --enableGitInfo --bind=0.0.0.0 --port 8080 --navigateToChanged
+npm run start
 ```
 
 * <http://localhost:8080/>
