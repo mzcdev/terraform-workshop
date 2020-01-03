@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.59.1" />
+    <meta name="generator" content="Hugo 0.62.1" />
     <meta name="description" content="Terraform Workshop">
 <meta name="author" content="Jungyoul Yu">
 
@@ -13,20 +13,20 @@
     <title>Backend :: Terraform Workshop</title>
 
     
-    <link href="/terraform-workshop/css/nucleus.css?1574401944" rel="stylesheet">
-    <link href="/terraform-workshop/css/fontawesome-all.min.css?1574401944" rel="stylesheet">
-    <link href="/terraform-workshop/css/hybrid.css?1574401944" rel="stylesheet">
-    <link href="/terraform-workshop/css/featherlight.min.css?1574401944" rel="stylesheet">
-    <link href="/terraform-workshop/css/perfect-scrollbar.min.css?1574401944" rel="stylesheet">
-    <link href="/terraform-workshop/css/auto-complete.css?1574401944" rel="stylesheet">
-    <link href="/terraform-workshop/css/atom-one-dark-reasonable.css?1574401944" rel="stylesheet">
-    <link href="/terraform-workshop/css/theme.css?1574401944" rel="stylesheet">
-    <link href="/terraform-workshop/css/hugo-theme.css?1574401944" rel="stylesheet">
+    <link href="/terraform-workshop/css/nucleus.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/fontawesome-all.min.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/hybrid.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/featherlight.min.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/perfect-scrollbar.min.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/auto-complete.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/atom-one-dark-reasonable.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/theme.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/hugo-theme.css?1578013178" rel="stylesheet">
     
-      <link href="/terraform-workshop/css/theme-blue.css?1574401944" rel="stylesheet">
+      <link href="/terraform-workshop/css/theme-blue.css?1578013178" rel="stylesheet">
     
 
-    <script src="/terraform-workshop/js/jquery-3.3.1.min.js?1574401944"></script>
+    <script src="/terraform-workshop/js/jquery-3.3.1.min.js?1578013178"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/terraform-workshop/js/lunr.min.js?1574401944"></script>
-<script type="text/javascript" src="/terraform-workshop/js/auto-complete.js?1574401944"></script>
+<script type="text/javascript" src="/terraform-workshop/js/lunr.min.js?1578013178"></script>
+<script type="text/javascript" src="/terraform-workshop/js/auto-complete.js?1578013178"></script>
 <script type="text/javascript">
     
         var baseurl = "\/terraform-workshop\/";
     
 </script>
-<script type="text/javascript" src="/terraform-workshop/js/search.js?1574401944"></script>
+<script type="text/javascript" src="/terraform-workshop/js/search.js?1578013178"></script>
 
     
   </div>
@@ -1145,7 +1145,7 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents"></nav>
     </div>
 </div>
 
@@ -1170,27 +1170,18 @@
 
 
 <p>이번에는 State 를 S3 bucket 에 저장하고, DynamoDB 로 lock 설정을 해보겠습니다.</p>
-
 <p>먼저 Terraform state 정보를 저장할 S3 Bucket 를 생성 합니다.</p>
-
-<pre><code class="language-bash">export REGION=&quot;ap-northeast-2&quot;
-export BUCKET=&quot;terraform-workshop-seoul&quot;
-</code></pre>
-
-<pre><code class="language-bash">aws s3 mb s3://${BUCKET} --region ${REGION}
-</code></pre>
-
-<p>중복 실행을 막기 위해, DynamoDB Table 을 생성 합니다.</p>
-
-<pre><code class="language-bash">aws dynamodb create-table \
-    --table-name ${BUCKET} \
-    --attribute-definitions AttributeName=LockID,AttributeType=S \
-    --key-schema AttributeName=LockID,KeyType=HASH \
-    --provisioned-throughput ReadCapacityUnits=1,WriteCapacityUnits=1 \
-    --region ${REGION}
-</code></pre>
-
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export REGION<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ap-northeast-2&#34;</span>
+export BUCKET<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;terraform-workshop-seoul&#34;</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">aws s3 mb s3://<span style="color:#e6db74">${</span>BUCKET<span style="color:#e6db74">}</span> --region <span style="color:#e6db74">${</span>REGION<span style="color:#e6db74">}</span>
+</code></pre></div><p>중복 실행을 막기 위해, DynamoDB Table 을 생성 합니다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">aws dynamodb create-table <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --table-name <span style="color:#e6db74">${</span>BUCKET<span style="color:#e6db74">}</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --attribute-definitions AttributeName<span style="color:#f92672">=</span>LockID,AttributeType<span style="color:#f92672">=</span>S <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --key-schema AttributeName<span style="color:#f92672">=</span>LockID,KeyType<span style="color:#f92672">=</span>HASH <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --provisioned-throughput ReadCapacityUnits<span style="color:#f92672">=</span>1,WriteCapacityUnits<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --region <span style="color:#e6db74">${</span>REGION<span style="color:#e6db74">}</span>
+</code></pre></div>
 <div class="notices tip" ><p>S3 Bucket 이름으로 사용되는 <strong>terraform-workshop-seoul</strong> 은 다른 사용자와 중복될수 있습니다.
 본인의 닉네임 등을 사용하여 유니크한 이름을 부여하도록 합니다.</p>
 </div>
@@ -1971,19 +1962,19 @@ export BUCKET=&quot;terraform-workshop-seoul&quot;
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/terraform-workshop/js/clipboard.min.js?1574401945"></script>
-    <script src="/terraform-workshop/js/perfect-scrollbar.min.js?1574401945"></script>
-    <script src="/terraform-workshop/js/perfect-scrollbar.jquery.min.js?1574401945"></script>
-    <script src="/terraform-workshop/js/jquery.sticky.js?1574401945"></script>
-    <script src="/terraform-workshop/js/featherlight.min.js?1574401945"></script>
-    <script src="/terraform-workshop/js/highlight.pack.js?1574401945"></script>
+    <script src="/terraform-workshop/js/clipboard.min.js?1578013178"></script>
+    <script src="/terraform-workshop/js/perfect-scrollbar.min.js?1578013178"></script>
+    <script src="/terraform-workshop/js/perfect-scrollbar.jquery.min.js?1578013178"></script>
+    <script src="/terraform-workshop/js/jquery.sticky.js?1578013178"></script>
+    <script src="/terraform-workshop/js/featherlight.min.js?1578013178"></script>
+    <script src="/terraform-workshop/js/highlight.pack.js?1578013178"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/terraform-workshop/js/modernizr.custom-3.6.0.js?1574401945"></script>
-    <script src="/terraform-workshop/js/learn.js?1574401945"></script>
-    <script src="/terraform-workshop/js/hugo-learn.js?1574401945"></script>
+    <script src="/terraform-workshop/js/modernizr.custom-3.6.0.js?1578013178"></script>
+    <script src="/terraform-workshop/js/learn.js?1578013178"></script>
+    <script src="/terraform-workshop/js/hugo-learn.js?1578013178"></script>
 
-    <link href="/terraform-workshop/mermaid/mermaid.css?1574401945" rel="stylesheet" />
-    <script src="/terraform-workshop/mermaid/mermaid.js?1574401945"></script>
+    <link href="/terraform-workshop/mermaid/mermaid.css?1578013178" rel="stylesheet" />
+    <script src="/terraform-workshop/mermaid/mermaid.js?1578013178"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

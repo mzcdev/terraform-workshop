@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.59.1" />
+    <meta name="generator" content="Hugo 0.62.1" />
     <meta name="description" content="Terraform Workshop">
 <meta name="author" content="Jungyoul Yu">
 
@@ -13,20 +13,20 @@
     <title>Provisioners :: Terraform Workshop</title>
 
     
-    <link href="/terraform-workshop/css/nucleus.css?1574401945" rel="stylesheet">
-    <link href="/terraform-workshop/css/fontawesome-all.min.css?1574401945" rel="stylesheet">
-    <link href="/terraform-workshop/css/hybrid.css?1574401945" rel="stylesheet">
-    <link href="/terraform-workshop/css/featherlight.min.css?1574401945" rel="stylesheet">
-    <link href="/terraform-workshop/css/perfect-scrollbar.min.css?1574401945" rel="stylesheet">
-    <link href="/terraform-workshop/css/auto-complete.css?1574401945" rel="stylesheet">
-    <link href="/terraform-workshop/css/atom-one-dark-reasonable.css?1574401945" rel="stylesheet">
-    <link href="/terraform-workshop/css/theme.css?1574401945" rel="stylesheet">
-    <link href="/terraform-workshop/css/hugo-theme.css?1574401945" rel="stylesheet">
+    <link href="/terraform-workshop/css/nucleus.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/fontawesome-all.min.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/hybrid.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/featherlight.min.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/perfect-scrollbar.min.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/auto-complete.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/atom-one-dark-reasonable.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/theme.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/hugo-theme.css?1578013178" rel="stylesheet">
     
-      <link href="/terraform-workshop/css/theme-blue.css?1574401945" rel="stylesheet">
+      <link href="/terraform-workshop/css/theme-blue.css?1578013178" rel="stylesheet">
     
 
-    <script src="/terraform-workshop/js/jquery-3.3.1.min.js?1574401945"></script>
+    <script src="/terraform-workshop/js/jquery-3.3.1.min.js?1578013178"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/terraform-workshop/js/lunr.min.js?1574401945"></script>
-<script type="text/javascript" src="/terraform-workshop/js/auto-complete.js?1574401945"></script>
+<script type="text/javascript" src="/terraform-workshop/js/lunr.min.js?1578013178"></script>
+<script type="text/javascript" src="/terraform-workshop/js/auto-complete.js?1578013178"></script>
 <script type="text/javascript">
     
         var baseurl = "\/terraform-workshop\/";
     
 </script>
-<script type="text/javascript" src="/terraform-workshop/js/search.js?1574401945"></script>
+<script type="text/javascript" src="/terraform-workshop/js/search.js?1578013178"></script>
 
     
   </div>
@@ -1152,15 +1152,13 @@
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#provisioners-are-a-last-resort">Provisioners are a Last Resort</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#provisioners-are-a-last-resort">Provisioners are a Last Resort</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -1186,38 +1184,28 @@
 
 
 
-	
-
-<p>Provisioner를 사용하면 서버 또는 기타 인프라 개체를 서비스 할 수 있도록 로컬 컴퓨터 또는 원격 컴퓨터에서 특정 작업을 모델링 할 수 있습니다.</p>
-
+	<p>Provisioner를 사용하면 서버 또는 기타 인프라 개체를 서비스 할 수 있도록 로컬 컴퓨터 또는 원격 컴퓨터에서 특정 작업을 모델링 할 수 있습니다.</p>
 <h3 id="provisioners-are-a-last-resort">Provisioners are a Last Resort</h3>
-
 <p>Terraform에는 Terraform의 선언적 모델에서 직접 표현할 수없는 특정 행동이 항상있을 것임을 알고 프로비저닝의 개념을 실용주의의 척도로 포함합니다.</p>
-
 <p>하지만 이것은 Terraform 사용에 상당한 복잡성과 불확실성을 추가합니다. 최대한 Terraform에서 제공되는 기본 기능으로 시도하고, 다른 옵션이 없을 경우에만 Provisioner를 사용하는 것이 좋습니다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-hcl" data-lang="hcl"><span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;null_resource&#34; &#34;executor&#34;</span> {
+  depends_on <span style="color:#f92672">=</span> [<span style="color:#66d9ef">aws_eks_cluster</span>.<span style="color:#66d9ef">cluster</span>]
 
-<pre><code>resource &quot;null_resource&quot; &quot;executor&quot; {
-  depends_on = [aws_eks_cluster.cluster]
+  <span style="color:#66d9ef">provisioner</span> <span style="color:#e6db74">&#34;local-exec&#34;</span> {
+    working_dir <span style="color:#f92672">=</span> <span style="color:#66d9ef">path</span>.<span style="color:#66d9ef">module</span>
 
-  provisioner &quot;local-exec&quot; {
-    working_dir = path.module
+    command <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#66d9ef">EOS</span>
+<span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;local exec&#34;</span>
+<span style="color:#66d9ef">EOS</span>
 
-    command = &lt;&lt;EOS
-echo &quot;local ecec&quot; &amp; \
-ls -al
-EOS
-
-    interpreter = var.local_exec_interpreter
+    interpreter <span style="color:#f92672">=</span> <span style="color:#66d9ef">var</span>.<span style="color:#66d9ef">local_exec_interpreter</span>
   }
 
-  triggers = {
-    endpoint = aws_eks_cluster.cluster.endpoint
+  triggers <span style="color:#f92672">=</span> {
+    endpoint <span style="color:#f92672">=</span> <span style="color:#66d9ef">aws_eks_cluster</span>.<span style="color:#66d9ef">cluster</span>.<span style="color:#66d9ef">endpoint</span>
   }
 }
-</code></pre>
-
-<p>더 많은 정보를 확인 하시려면 아래 링크를 참고 하세요.</p>
-
+</code></pre></div><p>더 많은 정보를 확인 하시려면 아래 링크를 참고 하세요.</p>
 <ul>
 <li><a href="https://www.terraform.io/docs/provisioners/index.html">https://www.terraform.io/docs/provisioners/index.html</a></li>
 </ul>
@@ -1997,19 +1985,19 @@ EOS
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/terraform-workshop/js/clipboard.min.js?1574401945"></script>
-    <script src="/terraform-workshop/js/perfect-scrollbar.min.js?1574401945"></script>
-    <script src="/terraform-workshop/js/perfect-scrollbar.jquery.min.js?1574401945"></script>
-    <script src="/terraform-workshop/js/jquery.sticky.js?1574401945"></script>
-    <script src="/terraform-workshop/js/featherlight.min.js?1574401945"></script>
-    <script src="/terraform-workshop/js/highlight.pack.js?1574401945"></script>
+    <script src="/terraform-workshop/js/clipboard.min.js?1578013178"></script>
+    <script src="/terraform-workshop/js/perfect-scrollbar.min.js?1578013178"></script>
+    <script src="/terraform-workshop/js/perfect-scrollbar.jquery.min.js?1578013178"></script>
+    <script src="/terraform-workshop/js/jquery.sticky.js?1578013178"></script>
+    <script src="/terraform-workshop/js/featherlight.min.js?1578013178"></script>
+    <script src="/terraform-workshop/js/highlight.pack.js?1578013178"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/terraform-workshop/js/modernizr.custom-3.6.0.js?1574401945"></script>
-    <script src="/terraform-workshop/js/learn.js?1574401945"></script>
-    <script src="/terraform-workshop/js/hugo-learn.js?1574401945"></script>
+    <script src="/terraform-workshop/js/modernizr.custom-3.6.0.js?1578013178"></script>
+    <script src="/terraform-workshop/js/learn.js?1578013178"></script>
+    <script src="/terraform-workshop/js/hugo-learn.js?1578013178"></script>
 
-    <link href="/terraform-workshop/mermaid/mermaid.css?1574401945" rel="stylesheet" />
-    <script src="/terraform-workshop/mermaid/mermaid.js?1574401945"></script>
+    <link href="/terraform-workshop/mermaid/mermaid.css?1578013178" rel="stylesheet" />
+    <script src="/terraform-workshop/mermaid/mermaid.js?1578013178"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

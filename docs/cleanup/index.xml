@@ -17,7 +17,7 @@
       
       <guid>/terraform-workshop/cleanup/instance/</guid>
       <description>Terraform 명령으로 삭제 합니다.
-cd terraform-env-workshop/instance terraform destroy  aws_instance.this: Refreshing state... [id=i-0390f0e077a519e15] An execution plan has been generated and is shown below. Resource actions are indicated with the following symbols: - destroy Terraform will perform the following actions: # aws_instance.this will be destroyed - resource &amp;quot;aws_instance&amp;quot; &amp;quot;this&amp;quot; { .... } Plan: 0 to add, 0 to change, 1 to destroy. Do you really want to destroy all resources? Terraform will destroy all your managed infrastructure, as shown above.</description>
+cd terraform-env-workshop/instance terraform destroy aws_instance.this: Refreshing state... [id=i-0390f0e077a519e15] An execution plan has been generated and is shown below. Resource actions are indicated with the following symbols: - destroy Terraform will perform the following actions: # aws_instance.this will be destroyed - resource &amp;#34;aws_instance&amp;#34; &amp;#34;this&amp;#34; { .... } Plan: 0 to add, 0 to change, 1 to destroy. Do you really want to destroy all resources? Terraform will destroy all your managed infrastructure, as shown above.</description>
     </item>
     
     <item>
@@ -27,7 +27,7 @@ cd terraform-env-workshop/instance terraform destroy  aws_instance.this: Refresh
       
       <guid>/terraform-workshop/cleanup/lambda/</guid>
       <description>Terraform 명령으로 삭제 합니다.
-cd terraform-env-workshop/lambda terraform destroy  </description>
+cd terraform-env-workshop/lambda terraform destroy </description>
     </item>
     
     <item>
@@ -37,7 +37,7 @@ cd terraform-env-workshop/lambda terraform destroy  </description>
       
       <guid>/terraform-workshop/cleanup/eks/</guid>
       <description>Terraform 명령으로 삭제 합니다.
-cd terraform-env-workshop/eks terraform destroy  </description>
+cd terraform-env-workshop/eks terraform destroy </description>
     </item>
     
     <item>
@@ -47,7 +47,7 @@ cd terraform-env-workshop/eks terraform destroy  </description>
       
       <guid>/terraform-workshop/cleanup/vpc/</guid>
       <description>Terraform 명령으로 삭제 합니다.
-cd terraform-env-workshop/vpc terraform destroy  </description>
+cd terraform-env-workshop/vpc terraform destroy </description>
     </item>
     
   </channel>

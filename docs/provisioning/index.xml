@@ -17,8 +17,8 @@
       
       <guid>/terraform-workshop/provisioning/clone/</guid>
       <description>환경 구성에 필요한 소스를 복제 합니다.
-git clone https://github.com/mzcdev/terraform-env-workshop  디렉토리 구조는 다음과 같습니다.
-├── README.md ├── eks │ ├── main.tf │ ├── output.tf │ └── variable.tf ├── instance │ ├── main.tf │ ├── output.tf │ └── variable.tf ├── lambda │ ├── lambda.zip │ ├── main.tf │ ├── output.tf │ ├── src │ │ ├── index.js │ │ └── package.json │ └── variable.tf └── vpc ├── main.tf ├── output.tf └── variable.</description>
+git clone https://github.com/mzcdev/terraform-env-workshop 디렉토리 구조는 다음과 같습니다.
+├── README.md ├── eks │ ├── main.tf │ ├── output.tf │ └── variable.tf ├── instance │ ├── main.tf │ ├── output.tf │ └── variable.tf ├── lambda │ ├── lambda.zip │ ├── main.tf │ ├── output.tf │ ├── src │ │ ├── index.js │ │ └── package.json │ └── variable.tf └── vpc ├── main.tf ├── output.tf └── variable.tf </description>
     </item>
     
     <item>
@@ -29,9 +29,9 @@ git clone https://github.com/mzcdev/terraform-env-workshop  디렉토리 구조�
       <guid>/terraform-workshop/provisioning/instance/</guid>
       <description>가장 심플한 코드로 EC2 instance 를 만들어 보겠습니다.
 init Terraform 명령으로 초기화 합니다.
-cd terraform-env-workshop/instance terraform init  Initializing the backend... Initializing provider plugins... - Checking for available provider plugins... - Downloading plugin for provider &amp;quot;aws&amp;quot; (hashicorp/aws) 2.35.0... ... * provider.aws: version = &amp;quot;~&amp;gt; 2.35&amp;quot; Terraform has been successfully initialized! ...  aws provider 를 위한 plugin 을 다운로드 했습니다.
+cd terraform-env-workshop/instance terraform init Initializing the backend... Initializing provider plugins... - Checking for available provider plugins... - Downloading plugin for provider &amp;#34;aws&amp;#34; (hashicorp/aws) 2.35.0... ... * provider.aws: version = &amp;#34;~&amp;gt; 2.35&amp;#34; Terraform has been successfully initialized! ... aws provider 를 위한 plugin 을 다운로드 했습니다.
 plan Terraform 명령으로 실행 계획을 확인 합니다.
-cd terraform-env-workshop/instance terraform plan  Refreshing Terraform state in-memory prior to plan.</description>
+cd terraform-env-workshop/instance terraform plan Refreshing Terraform state in-memory prior to plan.</description>
     </item>
     
     <item>
@@ -42,8 +42,8 @@ cd terraform-env-workshop/instance terraform plan  Refreshing Terraform state in
       <guid>/terraform-workshop/provisioning/backend/</guid>
       <description>이번에는 State 를 S3 bucket 에 저장하고, DynamoDB 로 lock 설정을 해보겠습니다.
 먼저 Terraform state 정보를 저장할 S3 Bucket 를 생성 합니다.
-export REGION=&amp;quot;ap-northeast-2&amp;quot; export BUCKET=&amp;quot;terraform-workshop-seoul&amp;quot;  aws s3 mb s3://${BUCKET} --region ${REGION}  중복 실행을 막기 위해, DynamoDB Table 을 생성 합니다.
-aws dynamodb create-table \ --table-name ${BUCKET} \ --attribute-definitions AttributeName=LockID,AttributeType=S \ --key-schema AttributeName=LockID,KeyType=HASH \ --provisioned-throughput ReadCapacityUnits=1,WriteCapacityUnits=1 \ --region ${REGION}  S3 Bucket 이름으로 사용되는 terraform-workshop-seoul 은 다른 사용자와 중복될수 있습니다.</description>
+export REGION=&amp;#34;ap-northeast-2&amp;#34; export BUCKET=&amp;#34;terraform-workshop-seoul&amp;#34; aws s3 mb s3://${BUCKET} --region ${REGION} 중복 실행을 막기 위해, DynamoDB Table 을 생성 합니다.
+aws dynamodb create-table \  --table-name ${BUCKET} \  --attribute-definitions AttributeName=LockID,AttributeType=S \  --key-schema AttributeName=LockID,KeyType=HASH \  --provisioned-throughput ReadCapacityUnits=1,WriteCapacityUnits=1 \  --region ${REGION}  S3 Bucket 이름으로 사용되는 terraform-workshop-seoul 은 다른 사용자와 중복될수 있습니다.</description>
     </item>
     
     <item>
@@ -53,10 +53,10 @@ aws dynamodb create-table \ --table-name ${BUCKET} \ --attribute-definitions Att
       
       <guid>/terraform-workshop/provisioning/lambda/</guid>
       <description>다음 파일에서 terraform-workshop-seoul 을 생성한 버켓명으로 변경해줍니다.
-# export BUCKET=&amp;quot;terraform-nalbam-seoul&amp;quot; cd terraform-env-workshop/lambda sed -i &amp;quot;s/terraform-workshop-seoul/${BUCKET}/g&amp;quot; *.tf  Terraform 명령으로 생성 합니다.
-terraform init terraform plan terraform apply  다음과 같은 메세지가 출력 되면 성공 입니다.
-Apply complete! Resources: x added, 0 changed, 0 destroyed. Outputs: invoke_url = https://8zgxxav8oi.execute-api.ap-northeast-2.amazonaws.com/dev  lambda api 가 동작 하는지 테스트 해봅시다.
-invoke_url=&amp;quot;https://8zgxxav8oi.execute-api.ap-northeast-2.amazonaws.com/dev&amp;quot; curl -sL -X POST -d &amp;quot;{\&amp;quot;data\&amp;quot;:\&amp;quot;ok\&amp;quot;}&amp;quot; ${invoke_url}/demo | jq .  ok 가 출력 되면 성공 입니다.</description>
+# export BUCKET=&amp;#34;terraform-nalbam-seoul&amp;#34; cd terraform-env-workshop/lambda sed -i &amp;#34;s/terraform-workshop-seoul/${BUCKET}/g&amp;#34; *.tf Terraform 명령으로 생성 합니다.
+terraform init terraform plan terraform apply 다음과 같은 메세지가 출력 되면 성공 입니다.
+Apply complete! Resources: x added, 0 changed, 0 destroyed. Outputs: invoke_url = https://8zgxxav8oi.execute-api.ap-northeast-2.amazonaws.com/dev lambda api 가 동작 하는지 테스트 해봅시다.
+invoke_url=&amp;#34;https://8zgxxav8oi.execute-api.ap-northeast-2.amazonaws.com/dev&amp;#34; curl -sL -X POST -d &amp;#34;{\&amp;#34;data\&amp;#34;:\&amp;#34;ok\&amp;#34;}&amp;#34; ${invoke_url}/demo | jq . ok 가 출력 되면 성공 입니다.</description>
     </item>
     
     <item>
@@ -67,9 +67,9 @@ invoke_url=&amp;quot;https://8zgxxav8oi.execute-api.ap-northeast-2.amazonaws.com
       <guid>/terraform-workshop/provisioning/vpc/</guid>
       <description>Public subnet 과 Private subnet 을 포함한 VPC 를 생성 합니다.
 다음 파일에서 terraform-workshop-seoul 을 생성한 버켓명으로 변경해줍니다.
-# export BUCKET=&amp;quot;terraform-nalbam-seoul&amp;quot; cd terraform-env-workshop/vpc sed -i &amp;quot;s/terraform-workshop-seoul/${BUCKET}/g&amp;quot; *.tf  Terraform 명령으로 생성 합니다.
-terraform init terraform plan terraform apply  다음과 같은 메세지가 출력 되면 성공 입니다.
-Apply complete! Resources: x added, 0 changed, 0 destroyed. Outputs: nat_ip = [ &amp;quot;52.78.13.15&amp;quot;, ] private_subnet_cidr = [ &amp;quot;10.15.4.0/24&amp;quot;, &amp;quot;10.15.5.0/24&amp;quot;, &amp;quot;10.15.6.0/24&amp;quot;, ] private_subnet_ids = [ &amp;quot;subnet-034abbc6xc10634ad&amp;quot;, &amp;quot;subnet-0944x61ec8c2f8f93&amp;quot;, &amp;quot;subnet-06b7d51d44537x626&amp;quot;, ] public_subnet_cidr = [ &amp;quot;10.</description>
+# export BUCKET=&amp;#34;terraform-nalbam-seoul&amp;#34; cd terraform-env-workshop/vpc sed -i &amp;#34;s/terraform-workshop-seoul/${BUCKET}/g&amp;#34; *.tf Terraform 명령으로 생성 합니다.
+terraform init terraform plan terraform apply 다음과 같은 메세지가 출력 되면 성공 입니다.
+Apply complete! Resources: x added, 0 changed, 0 destroyed. Outputs: nat_ip = [ &amp;#34;52.78.13.15&amp;#34;, ] private_subnet_cidr = [ &amp;#34;10.15.4.0/24&amp;#34;, &amp;#34;10.15.5.0/24&amp;#34;, &amp;#34;10.15.6.0/24&amp;#34;, ] private_subnet_ids = [ &amp;#34;subnet-034abbc6xc10634ad&amp;#34;, &amp;#34;subnet-0944x61ec8c2f8f93&amp;#34;, &amp;#34;subnet-06b7d51d44537x626&amp;#34;, ] public_subnet_cidr = [ &amp;#34;10.</description>
     </item>
     
     <item>
@@ -80,8 +80,8 @@ Apply complete! Resources: x added, 0 changed, 0 destroyed. Outputs: nat_ip = [ 
       <guid>/terraform-workshop/provisioning/eks/</guid>
       <description>EKS cluster 를 생성하고, on-demand 와 spot instance 로 구성된 Worker node 를 생성 합니다.
 다음 파일에서 terraform-workshop-seoul 을 생성한 버켓명으로 변경해줍니다.
-# export BUCKET=&amp;quot;terraform-nalbam-seoul&amp;quot; cd terraform-env-workshop/eks sed -i &amp;quot;s/terraform-workshop-seoul/${BUCKET}/g&amp;quot; *.tf  Terraform 명령으로 생성 합니다.
-terraform init terraform plan terraform apply  다음과 같은 메세지가 출력 되면 성공 입니다.
+# export BUCKET=&amp;#34;terraform-nalbam-seoul&amp;#34; cd terraform-env-workshop/eks sed -i &amp;#34;s/terraform-workshop-seoul/${BUCKET}/g&amp;#34; *.tf Terraform 명령으로 생성 합니다.
+terraform init terraform plan terraform apply 다음과 같은 메세지가 출력 되면 성공 입니다.
 Apply complete! Resources: x added, 0 changed, 0 destroyed. Outputs: config = # # kube config aws eks update-kubeconfig --name workshop-eks --alias workshop-eks # or mkdir -p ~/.</description>
     </item>
     

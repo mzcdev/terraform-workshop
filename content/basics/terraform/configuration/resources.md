@@ -9,7 +9,7 @@ Terraform 언어에서 리소스는 가장 중요한 요소입니다. 각 리소
 
 아래는 aws ec2 instance 를 생성하는 가장 심플한 코드 입니다.
 
-```
+```hcl
 resource "aws_instance" "sample" {
   ami           = var.ami_id
   instance_type = var.instance_type
@@ -53,7 +53,7 @@ Terraform CLI는 다음과 같은 메타 인수를 정의합니다.이 인수는
 
 4개의 EC2 instance 를 생성 합니다.
 
-```
+```hcl
 resource "aws_instance" "server" {
   count = 4
 
@@ -70,7 +70,7 @@ resource "aws_instance" "server" {
 
 EC2 instance 를 생성하기 전, instance_profile 를 생성 해야 한다는 것은 aws_instance 안에 정의되어 있으므로 유추가 가능 합니다. 하지만, aws_iam_role_policy 는 Terraform 이 유추해 낼 수 없으므로 선언해 주어야 합니다.
 
-```
+```hcl
 resource "aws_iam_role" "example" {
   name               = var.name
   assume_role_policy = "..."
@@ -102,7 +102,7 @@ resource "aws_instance" "example" {
 
 Autoscaling Group 에서 mixed_instances 로 정의 할 수 있는데 var.mixed_instances 배열로 n개의 값을 전달 할 수 있습니다.
 
-```
+```hcl
 resource "aws_autoscaling_group" "worker" {
   name = var.name
 
@@ -137,7 +137,7 @@ resource "aws_autoscaling_group" "worker" {
 
 리소스의 생명주기를 정의 합니다.
 
-```
+```hcl
 resource "aws_launch_configuration" "worker" {
   # ...
 

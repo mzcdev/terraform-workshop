@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.59.1" />
+    <meta name="generator" content="Hugo 0.62.1" />
     <meta name="description" content="Terraform Workshop">
 <meta name="author" content="Jungyoul Yu">
 
@@ -13,20 +13,20 @@
     <title>Resources :: Terraform Workshop</title>
 
     
-    <link href="/terraform-workshop/css/nucleus.css?1574401945" rel="stylesheet">
-    <link href="/terraform-workshop/css/fontawesome-all.min.css?1574401945" rel="stylesheet">
-    <link href="/terraform-workshop/css/hybrid.css?1574401945" rel="stylesheet">
-    <link href="/terraform-workshop/css/featherlight.min.css?1574401945" rel="stylesheet">
-    <link href="/terraform-workshop/css/perfect-scrollbar.min.css?1574401945" rel="stylesheet">
-    <link href="/terraform-workshop/css/auto-complete.css?1574401945" rel="stylesheet">
-    <link href="/terraform-workshop/css/atom-one-dark-reasonable.css?1574401945" rel="stylesheet">
-    <link href="/terraform-workshop/css/theme.css?1574401945" rel="stylesheet">
-    <link href="/terraform-workshop/css/hugo-theme.css?1574401945" rel="stylesheet">
+    <link href="/terraform-workshop/css/nucleus.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/fontawesome-all.min.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/hybrid.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/featherlight.min.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/perfect-scrollbar.min.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/auto-complete.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/atom-one-dark-reasonable.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/theme.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/hugo-theme.css?1578013178" rel="stylesheet">
     
-      <link href="/terraform-workshop/css/theme-blue.css?1574401945" rel="stylesheet">
+      <link href="/terraform-workshop/css/theme-blue.css?1578013178" rel="stylesheet">
     
 
-    <script src="/terraform-workshop/js/jquery-3.3.1.min.js?1574401945"></script>
+    <script src="/terraform-workshop/js/jquery-3.3.1.min.js?1578013178"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/terraform-workshop/js/lunr.min.js?1574401945"></script>
-<script type="text/javascript" src="/terraform-workshop/js/auto-complete.js?1574401945"></script>
+<script type="text/javascript" src="/terraform-workshop/js/lunr.min.js?1578013178"></script>
+<script type="text/javascript" src="/terraform-workshop/js/auto-complete.js?1578013178"></script>
 <script type="text/javascript">
     
         var baseurl = "\/terraform-workshop\/";
     
 </script>
-<script type="text/javascript" src="/terraform-workshop/js/search.js?1574401945"></script>
+<script type="text/javascript" src="/terraform-workshop/js/search.js?1578013178"></script>
 
     
   </div>
@@ -1158,26 +1158,15 @@
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#resource-syntax">Resource Syntax</a></li>
-<li><a href="#resource-behavior">Resource Behavior</a>
-<ul>
-<li><a href="#resource-dependencies">Resource Dependencies</a></li>
-</ul></li>
-<li><a href="#meta-arguments">Meta-Arguments</a>
-<ul>
-<li><a href="#count">count</a></li>
-<li><a href="#depends-on">depends_on</a></li>
-<li><a href="#for-each">for_each</a></li>
-<li><a href="#lifecycle">lifecycle</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#resource-syntax">Resource Syntax</a></li>
+        <li><a href="#resource-behavior">Resource Behavior</a></li>
+        <li><a href="#meta-arguments">Meta-Arguments</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -1202,46 +1191,26 @@
 
 
 
-
-
 <p>Terraform 언어에서 리소스는 가장 중요한 요소입니다. 각 리소스 블록은 가상 네트워크, 컴퓨팅 인스턴스 또는 DNS 레코드와 같은 상위 구성 요소와 같은 하나 이상의 인프라 개체를 설명합니다.</p>
-
 <h3 id="resource-syntax">Resource Syntax</h3>
-
 <p>아래는 aws ec2 instance 를 생성하는 가장 심플한 코드 입니다.</p>
-
-<pre><code>resource &quot;aws_instance&quot; &quot;sample&quot; {
-  ami           = var.ami_id
-  instance_type = var.instance_type
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-hcl" data-lang="hcl"><span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;aws_instance&#34; &#34;sample&#34;</span> {
+  ami           <span style="color:#f92672">=</span> <span style="color:#66d9ef">var</span>.<span style="color:#66d9ef">ami_id</span>
+  instance_type <span style="color:#f92672">=</span> <span style="color:#66d9ef">var</span>.<span style="color:#66d9ef">instance_type</span>
 }
-</code></pre>
-
-<p><code>resource</code> 블록을 사용 하여 설정 합니다. <code>aws_instance</code>의 자원을 생성하며, <code>sample</code>의 이름을 가집니다.</p>
-
+</code></pre></div><p><code>resource</code> 블록을 사용 하여 설정 합니다. <code>aws_instance</code>의 자원을 생성하며, <code>sample</code>의 이름을 가집니다.</p>
 <p>블록 내의 <code>ami</code> <code>instance_type</code>은 aws_instance 자원 유형의 인수 입니다.</p>
-
 <h3 id="resource-behavior">Resource Behavior</h3>
-
 <p>리소스 블록은 톡정 인프라의 선언적 정의 입니다. 정의한 자원은 실제 인프라 개체를 나타내지는 않습니다.</p>
-
 <p><code>terraform apply</code> 를 통하여 설정과 구성이 일치 하도록 실제 인프라 개체를 생성, 업데이트 및 파기를 수행 합니다.</p>
-
 <p>새 인프라 개체를 생성하면 <code>State</code> 에 저장되어 관리 됩니다.</p>
-
 <h4 id="resource-dependencies">Resource Dependencies</h4>
-
 <p>구성의 대부분의 리소스 간에는 특별한 관계가 없으며 Terraform은 관련이 없는 여러 리소스를 동시에 변경할 수 있습니다.</p>
-
 <p>그러나 일부 자원은 다른 특정 자원 이후에 처리해야합니다. 때로는 리소스 작동 방식 때문일 수도 있고 리소스 구성에 다른 리소스에서 생성 된 정보 만 필요하기도 합니다.</p>
-
 <p>대부분의 리소스 종속성은 자동으로 처리됩니다. Terraform은 리소스 블록 내의 표현식을 분석하여 다른 객체에 대한 참조를 찾은 다음 해당 참조를 리소스를 생성, 업데이트 또는 파괴 할 때 암시 적 순서 요구 사항으로 취급합니다. 다른 자원에 대한 행동 종속성이있는 대부분의 자원도 해당 자원의 데이터를 참조하므로 일반적으로 자원 간 종속성을 수동으로 지정할 필요는 없습니다.</p>
-
 <p>그러나 일부 종속성은 구성에서 암시 적으로 인식 될 수 없습니다. 예를 들어 Terraform이 액세스 제어 정책을 관리하고 해당 정책이 있어야하는 조치를 취해야하는 경우 액세스 정책과 해당 정책이 종속 된 리소스간에 숨겨진 종속성이 있습니다. 이러한 드문 경우에 <code>depend_on</code> 메타 인수는 명시 적으로 종속성을 지정할 수 있습니다.</p>
-
 <h3 id="meta-arguments">Meta-Arguments</h3>
-
 <p>Terraform CLI는 다음과 같은 메타 인수를 정의합니다.이 인수는 모든 자원 유형과 함께 사용하여 자원의 동작을 변경할 수 있습니다.</p>
-
 <ul>
 <li><code>count</code>: 개수에 따라 여러 자원 인스턴스를 작성</li>
 <li><code>depend_on</code>: 숨겨진 종속성을 지정</li>
@@ -1250,105 +1219,86 @@
 <li><code>lifecycle</code>: 라이프 사이클 사용자 정의</li>
 <li><code>provisioner</code> and <code>connection</code>: 리소스 생성 후 추가 작업을 수행</li>
 </ul>
-
 <h4 id="count">count</h4>
-
 <p>4개의 EC2 instance 를 생성 합니다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-hcl" data-lang="hcl"><span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;aws_instance&#34; &#34;server&#34;</span> {
+  count <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>
 
-<pre><code>resource &quot;aws_instance&quot; &quot;server&quot; {
-  count = 4
+  ami           <span style="color:#f92672">=</span> <span style="color:#66d9ef">var</span>.<span style="color:#66d9ef">ami_id</span>
+  instance_type <span style="color:#f92672">=</span> <span style="color:#66d9ef">var</span>.<span style="color:#66d9ef">instance_type</span>
 
-  ami           = var.ami_id
-  instance_type = var.instance_type
-
-  tags = {
-    Name = &quot;Server ${count.index}&quot;
+  tags <span style="color:#f92672">=</span> {
+    Name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Server ${count.index}&#34;</span>
   }
 }
-</code></pre>
-
-<h4 id="depends-on">depends_on</h4>
-
+</code></pre></div><h4 id="depends-on">depends_on</h4>
 <p>EC2 instance 를 생성하기 전, instance_profile 를 생성 해야 한다는 것은 aws_instance 안에 정의되어 있으므로 유추가 가능 합니다. 하지만, aws_iam_role_policy 는 Terraform 이 유추해 낼 수 없으므로 선언해 주어야 합니다.</p>
-
-<pre><code>resource &quot;aws_iam_role&quot; &quot;example&quot; {
-  name               = var.name
-  assume_role_policy = &quot;...&quot;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-hcl" data-lang="hcl"><span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;aws_iam_role&#34; &#34;example&#34;</span> {
+  name               <span style="color:#f92672">=</span> <span style="color:#66d9ef">var</span>.<span style="color:#66d9ef">name</span>
+  assume_role_policy <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;...&#34;</span>
 }
 
-resource &quot;aws_iam_instance_profile&quot; &quot;example&quot; {
-  role = aws_iam_role.example.name
+<span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;aws_iam_instance_profile&#34; &#34;example&#34;</span> {
+  role <span style="color:#f92672">=</span> <span style="color:#66d9ef">aws_iam_role</span>.<span style="color:#66d9ef">example</span>.<span style="color:#66d9ef">name</span>
 }
 
-resource &quot;aws_iam_role_policy&quot; &quot;example&quot; {
-  name   = var.name
-  role   = aws_iam_role.example.name
-  policy = &quot;...&quot;
+<span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;aws_iam_role_policy&#34; &#34;example&#34;</span> {
+  name   <span style="color:#f92672">=</span> <span style="color:#66d9ef">var</span>.<span style="color:#66d9ef">name</span>
+  role   <span style="color:#f92672">=</span> <span style="color:#66d9ef">aws_iam_role</span>.<span style="color:#66d9ef">example</span>.<span style="color:#66d9ef">name</span>
+  policy <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;...&#34;</span>
 }
 
-resource &quot;aws_instance&quot; &quot;example&quot; {
-  ami           = var.ami_id
-  instance_type = var.instance_type
+<span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;aws_instance&#34; &#34;example&#34;</span> {
+  ami           <span style="color:#f92672">=</span> <span style="color:#66d9ef">var</span>.<span style="color:#66d9ef">ami_id</span>
+  instance_type <span style="color:#f92672">=</span> <span style="color:#66d9ef">var</span>.<span style="color:#66d9ef">instance_type</span>
 
-  iam_instance_profile = aws_iam_instance_profile.example
+  iam_instance_profile <span style="color:#f92672">=</span> <span style="color:#66d9ef">aws_iam_instance_profile</span>.<span style="color:#66d9ef">example</span>
 
-  depends_on = [
-    aws_iam_role_policy.example,
+  depends_on <span style="color:#f92672">=</span> [
+    <span style="color:#66d9ef">aws_iam_role_policy</span>.<span style="color:#66d9ef">example</span>,
   ]
 }
-</code></pre>
-
-<h4 id="for-each">for_each</h4>
-
+</code></pre></div><h4 id="for-each">for_each</h4>
 <p>Autoscaling Group 에서 mixed_instances 로 정의 할 수 있는데 var.mixed_instances 배열로 n개의 값을 전달 할 수 있습니다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-hcl" data-lang="hcl"><span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;aws_autoscaling_group&#34; &#34;worker&#34;</span> {
+  name <span style="color:#f92672">=</span> <span style="color:#66d9ef">var</span>.<span style="color:#66d9ef">name</span>
 
-<pre><code>resource &quot;aws_autoscaling_group&quot; &quot;worker&quot; {
-  name = var.name
+  min_size <span style="color:#f92672">=</span> <span style="color:#66d9ef">var</span>.<span style="color:#66d9ef">min</span>
+  max_size <span style="color:#f92672">=</span> <span style="color:#66d9ef">var</span>.<span style="color:#66d9ef">max</span>
 
-  min_size = var.min
-  max_size = var.max
+  vpc_zone_identifier <span style="color:#f92672">=</span> <span style="color:#66d9ef">var</span>.<span style="color:#66d9ef">subnet_ids</span>
 
-  vpc_zone_identifier = var.subnet_ids
-
-  mixed_instances_policy {
-    launch_template {
-      launch_template_specification {
-        launch_template_id = aws_launch_template.worker.id
-        version            = &quot;$Latest&quot;
+  <span style="color:#66d9ef">mixed_instances_policy</span> {
+    <span style="color:#66d9ef">launch_template</span> {
+      <span style="color:#66d9ef">launch_template_specification</span> {
+        launch_template_id <span style="color:#f92672">=</span> <span style="color:#66d9ef">aws_launch_template</span>.<span style="color:#66d9ef">worker</span>.<span style="color:#66d9ef">id</span>
+        version            <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;$Latest&#34;</span>
       }
 
-      override {
-        instance_type = var.instance_type
+      <span style="color:#66d9ef">override</span> {
+        instance_type <span style="color:#f92672">=</span> <span style="color:#66d9ef">var</span>.<span style="color:#66d9ef">instance_type</span>
       }
 
-      dynamic &quot;override&quot; {
-        for_each = var.mixed_instances
-        content {
-          instance_type = override.value
+      <span style="color:#66d9ef">dynamic</span> <span style="color:#e6db74">&#34;override&#34;</span> {
+        for_each <span style="color:#f92672">=</span> <span style="color:#66d9ef">var</span>.<span style="color:#66d9ef">mixed_instances</span>
+        <span style="color:#66d9ef">content</span> {
+          instance_type <span style="color:#f92672">=</span> <span style="color:#66d9ef">override</span>.<span style="color:#66d9ef">value</span>
         }
       }
     }
   }
 }
-</code></pre>
-
-<h4 id="lifecycle">lifecycle</h4>
-
+</code></pre></div><h4 id="lifecycle">lifecycle</h4>
 <p>리소스의 생명주기를 정의 합니다.</p>
-
-<pre><code>resource &quot;aws_launch_configuration&quot; &quot;worker&quot; {
-  # ...
-
-  lifecycle {
-    create_before_destroy = true
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-hcl" data-lang="hcl"><span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;aws_launch_configuration&#34; &#34;worker&#34;</span> {<span style="color:#75715e">
+</span><span style="color:#75715e">  # ...
+</span><span style="color:#75715e"></span>
+  <span style="color:#66d9ef">lifecycle</span> {
+    create_before_destroy <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
   }
 }
-</code></pre>
-
-<p><code>aws_launch_configuration</code> (bool) - 현재 업데이트 할 수없는 리소스 인수를 변경해야하는 경우 Terraform은 기존 객체를 삭제 한 다음 새로 구성된 인수로 새 대체 객체를 만듭니다. .</p>
-
+</code></pre></div><p><code>aws_launch_configuration</code> (bool) - 현재 업데이트 할 수없는 리소스 인수를 변경해야하는 경우 Terraform은 기존 객체를 삭제 한 다음 새로 구성된 인수로 새 대체 객체를 만듭니다. .</p>
 <p><code>prevent_destroy</code> (bool) - 인수가 구성에 존재하는 한 자원과 관련된 인프라 개체를 파괴하는 계획을 Terraform이 오류와 함께 거부하게합니다.</p>
-
 <p><code>ignore_changes</code> (list of attribute names) - Terraform은 실제 인프라 개체의 현재 설정에서 차이를 감지하고 구성과 일치하도록 원격 개체를 업데이트를 사도합니다. 하지만 외부에서 변경된 리소스를 변경 하고 싶지 않을때 사용 될수 있습니다.</p>
 
 
@@ -2125,19 +2075,19 @@ resource &quot;aws_instance&quot; &quot;example&quot; {
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/terraform-workshop/js/clipboard.min.js?1574401945"></script>
-    <script src="/terraform-workshop/js/perfect-scrollbar.min.js?1574401945"></script>
-    <script src="/terraform-workshop/js/perfect-scrollbar.jquery.min.js?1574401945"></script>
-    <script src="/terraform-workshop/js/jquery.sticky.js?1574401945"></script>
-    <script src="/terraform-workshop/js/featherlight.min.js?1574401945"></script>
-    <script src="/terraform-workshop/js/highlight.pack.js?1574401945"></script>
+    <script src="/terraform-workshop/js/clipboard.min.js?1578013178"></script>
+    <script src="/terraform-workshop/js/perfect-scrollbar.min.js?1578013178"></script>
+    <script src="/terraform-workshop/js/perfect-scrollbar.jquery.min.js?1578013178"></script>
+    <script src="/terraform-workshop/js/jquery.sticky.js?1578013178"></script>
+    <script src="/terraform-workshop/js/featherlight.min.js?1578013178"></script>
+    <script src="/terraform-workshop/js/highlight.pack.js?1578013178"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/terraform-workshop/js/modernizr.custom-3.6.0.js?1574401945"></script>
-    <script src="/terraform-workshop/js/learn.js?1574401945"></script>
-    <script src="/terraform-workshop/js/hugo-learn.js?1574401945"></script>
+    <script src="/terraform-workshop/js/modernizr.custom-3.6.0.js?1578013178"></script>
+    <script src="/terraform-workshop/js/learn.js?1578013178"></script>
+    <script src="/terraform-workshop/js/hugo-learn.js?1578013178"></script>
 
-    <link href="/terraform-workshop/mermaid/mermaid.css?1574401945" rel="stylesheet" />
-    <script src="/terraform-workshop/mermaid/mermaid.js?1574401945"></script>
+    <link href="/terraform-workshop/mermaid/mermaid.css?1578013178" rel="stylesheet" />
+    <script src="/terraform-workshop/mermaid/mermaid.js?1578013178"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

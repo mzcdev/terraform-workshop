@@ -11,7 +11,7 @@ Terraform에는 Terraform의 선언적 모델에서 직접 표현할 수없는 �
 
 하지만 이것은 Terraform 사용에 상당한 복잡성과 불확실성을 추가합니다. 최대한 Terraform에서 제공되는 기본 기능으로 시도하고, 다른 옵션이 없을 경우에만 Provisioner를 사용하는 것이 좋습니다.
 
-```
+```hcl
 resource "null_resource" "executor" {
   depends_on = [aws_eks_cluster.cluster]
 
@@ -19,8 +19,7 @@ resource "null_resource" "executor" {
     working_dir = path.module
 
     command = <<EOS
-echo "local ecec" & \
-ls -al
+echo "local exec"
 EOS
 
     interpreter = var.local_exec_interpreter
