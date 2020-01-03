@@ -9,7 +9,7 @@ Data Source를 통해 Terraform 구성의 다른 곳에서 사용하기 위해 �
 
 `data` 블록을 사용 하여 설정 합니다.
 
-```
+```hcl
 data "aws_ami" "example" {
   most_recent = true
 

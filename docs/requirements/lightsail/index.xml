@@ -64,7 +64,7 @@ Blueprint 는 OS Only 를 선택 합니다.,</description>
       
       <guid>/terraform-workshop/requirements/lightsail/tools/</guid>
       <description>워크샵에 필요한 툴을 설치 합니다.
-curl -sL toast.sh/tools | bash  다음의 툴이 설치 됩니다.
+curl -sL toast.sh/tools | bash 다음의 툴이 설치 됩니다.
  git, jq, pip, telnet awscli terraform kubectl helm nodejs aws-iam-authenticator  </description>
     </item>
     
@@ -75,7 +75,7 @@ curl -sL toast.sh/tools | bash  다음의 툴이 설치 됩니다.
       
       <guid>/terraform-workshop/requirements/lightsail/aws_configure/</guid>
       <description>AWS Account 를 생성하고 저장한 Access key ID 와 Secret access key 를 입력합니다.
-aws configure  AWS Access Key ID [None]: AXXXXXXXXXXXXXXXXXXX AWS Secret Access Key [None]: AXXXXXXXXXXXXXXXXXXXAXXXXXXXXXXXXXXXXXXX Default region name [ap-northeast-2]: ap-northeast-2 Default output format [None]: json  </description>
+aws configure AWS Access Key ID [None]: AXXXXXXXXXXXXXXXXXXX AWS Secret Access Key [None]: AXXXXXXXXXXXXXXXXXXXAXXXXXXXXXXXXXXXXXXX Default region name [ap-northeast-2]: ap-northeast-2 Default output format [None]: json </description>
     </item>
     
     <item>
@@ -85,8 +85,8 @@ aws configure  AWS Access Key ID [None]: AXXXXXXXXXXXXXXXXXXX AWS Secret Access 
       
       <guid>/terraform-workshop/requirements/lightsail/ssh_keygen/</guid>
       <description>SSH 키를 생성합니다.
-ssh-keygen -q -f ~/.ssh/id_rsa -N &amp;quot;&amp;quot; -C &amp;quot;workshop&amp;quot;  만든 퍼블릭 키를 EC2 리전에 업로드 합니다.
-aws ec2 import-key-pair --key-name &amp;quot;workshop&amp;quot; --public-key-material file://~/.ssh/id_rsa.pub  </description>
+ssh-keygen -q -f ~/.ssh/id_rsa -N &amp;#34;&amp;#34; -C &amp;#34;workshop&amp;#34; 만든 퍼블릭 키를 EC2 리전에 업로드 합니다.
+aws ec2 import-key-pair --key-name &amp;#34;workshop&amp;#34; --public-key-material file://~/.ssh/id_rsa.pub </description>
     </item>
     
   </channel>

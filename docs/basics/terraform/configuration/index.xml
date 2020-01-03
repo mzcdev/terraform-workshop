@@ -18,7 +18,7 @@
       <guid>/terraform-workshop/basics/terraform/configuration/input_variables/</guid>
       <description>Input Variable은 Terraform 모듈의 매개 변수 역할을 하며, 다른 모듈 간에 매개 변수를 공유 할 수 있습니다.
 Declaring an Input Variable variable 블록을 사용 하여 설정 합니다.
-variable &amp;quot;ami_id&amp;quot; { description = &amp;quot;The id of the machine image (AMI) to use for the server.&amp;quot; type = string } variable &amp;quot;availability_zone_names&amp;quot; { type = list(string) default = [&amp;quot;us-west-1a&amp;quot;] } variable &amp;quot;docker_ports&amp;quot; { type = list(object({ internal = number external = number protocol = string })) default = [ { internal = 8300 external = 8300 protocol = &amp;quot;tcp&amp;quot; } ] }  type 인수를 사용하면 변수 값으로 허용되는 타입을 제한 할 수 있습니다.</description>
+variable &amp;#34;ami_id&amp;#34; { description = &amp;#34;The id of the machine image (AMI) to use for the server.&amp;#34; type = string } variable &amp;#34;availability_zone_names&amp;#34; { type = list(string) default = [&amp;#34;us-west-1a&amp;#34;] } variable &amp;#34;docker_ports&amp;#34; { type = list(object({ internal = number external = number protocol = string })) default = [ { internal = 8300 external = 8300 protocol = &amp;#34;tcp&amp;#34; } ] } type 인수를 사용하면 변수 값으로 허용되는 타입을 제한 할 수 있습니다.</description>
     </item>
     
     <item>
@@ -41,7 +41,7 @@ variable &amp;quot;ami_id&amp;quot; { description = &amp;quot;The id of the mach
       <guid>/terraform-workshop/basics/terraform/configuration/resources/</guid>
       <description>Terraform 언어에서 리소스는 가장 중요한 요소입니다. 각 리소스 블록은 가상 네트워크, 컴퓨팅 인스턴스 또는 DNS 레코드와 같은 상위 구성 요소와 같은 하나 이상의 인프라 개체를 설명합니다.
 Resource Syntax 아래는 aws ec2 instance 를 생성하는 가장 심플한 코드 입니다.
-resource &amp;quot;aws_instance&amp;quot; &amp;quot;sample&amp;quot; { ami = var.ami_id instance_type = var.instance_type }  resource 블록을 사용 하여 설정 합니다. aws_instance의 자원을 생성하며, sample의 이름을 가집니다.
+resource &amp;#34;aws_instance&amp;#34; &amp;#34;sample&amp;#34; { ami = var.ami_id instance_type = var.instance_type } resource 블록을 사용 하여 설정 합니다. aws_instance의 자원을 생성하며, sample의 이름을 가집니다.
 블록 내의 ami instance_type은 aws_instance 자원 유형의 인수 입니다.</description>
     </item>
     
@@ -53,7 +53,7 @@ resource &amp;quot;aws_instance&amp;quot; &amp;quot;sample&amp;quot; { ami = var
       <guid>/terraform-workshop/basics/terraform/configuration/output_values/</guid>
       <description>Output Value는 Terraform 모듈의 반환 값과 유사하며 여러 용도로 사용됩니다.
 Declaring an Output Value output 블록을 사용 하여 설정 합니다.
-output &amp;quot;private_ip&amp;quot; { value = aws_instance.server.private_ip description = &amp;quot;The private IP address of the main server instance.&amp;quot; depends_on = [ aws_security_group_rule.local_access, ] } output &amp;quot;db_password&amp;quot; { value = aws_db_instance.db.password description = &amp;quot;The password for logging in to the database.&amp;quot; sensitive = true }  value 인수는 결과가 사용자에게 리턴되는 표현식을 사용합니다.</description>
+output &amp;#34;private_ip&amp;#34; { value = aws_instance.server.private_ip description = &amp;#34;The private IP address of the main server instance.&amp;#34; depends_on = [ aws_security_group_rule.local_access, ] } output &amp;#34;db_password&amp;#34; { value = aws_db_instance.db.password description = &amp;#34;The password for logging in to the database.&amp;#34; sensitive = true } value 인수는 결과가 사용자에게 리턴되는 표현식을 사용합니다.</description>
     </item>
     
     <item>
@@ -64,8 +64,8 @@ output &amp;quot;private_ip&amp;quot; { value = aws_instance.server.private_ip d
       <guid>/terraform-workshop/basics/terraform/configuration/local_values/</guid>
       <description>Local Value는 이름을 표현식에 지정하여 모듈 내에서 반복하지 않고 여러 번 사용할 수 있습니다.
 Declaring a Local Value locals 블록을 사용 하여 설정 합니다.
-locals { service_name = &amp;quot;forum&amp;quot; owner = &amp;quot;Community Team&amp;quot; }  간단한 상수 이거나, 다른 모듈 또는 다른 리소스 값을 반환하거나, 복잡한 표현식도 가능 합니다.
-locals { # 두개의 인스턴스의 ID List를 반환 합니다. instance_ids = concat(aws_instance.blue.*.id, aws_instance.green.*.id) } locals { # 모든 자원에서 사용할 공통 태그 common_tags = { Service = local.</description>
+locals { service_name = &amp;#34;forum&amp;#34; owner = &amp;#34;Community Team&amp;#34; } 간단한 상수 이거나, 다른 모듈 또는 다른 리소스 값을 반환하거나, 복잡한 표현식도 가능 합니다.
+locals {# 두개의 인스턴스의 ID List를 반환 합니다.  instance_ids = concat(aws_instance.blue.*.id, aws_instance.green.*.id) } locals {# 모든 자원에서 사용할 공통 태그  common_tags = { Service = local.</description>
     </item>
     
     <item>
@@ -76,7 +76,7 @@ locals { # 두개의 인스턴스의 ID List를 반환 합니다. instance_ids =
       <guid>/terraform-workshop/basics/terraform/configuration/data_sources/</guid>
       <description>Data Source를 통해 Terraform 구성의 다른 곳에서 사용하기 위해 데이터를 가져 오거나 계산할 수 있습니다. 데이터 소스를 사용하면 Terraform 구성이 Terraform 외부에서 정의되거나 다른 별도의 Terraform 구성으로 정의 된 정보를 사용할 수 있습니다.
 Using Data Sources data 블록을 사용 하여 설정 합니다.
-data &amp;quot;aws_ami&amp;quot; &amp;quot;example&amp;quot; { most_recent = true owners = [&amp;quot;self&amp;quot;] tags = { Name = &amp;quot;app-server&amp;quot; Tested = &amp;quot;true&amp;quot; } }  Terraform이 지정된 데이터 소스 aws_ami에서 읽고 해당 로컬 이름 example으로 결과를 내보내도록 요청합니다.</description>
+data &amp;#34;aws_ami&amp;#34; &amp;#34;example&amp;#34; { most_recent = true owners = [&amp;#34;self&amp;#34;] tags = { Name = &amp;#34;app-server&amp;#34; Tested = &amp;#34;true&amp;#34; } } Terraform이 지정된 데이터 소스 aws_ami에서 읽고 해당 로컬 이름 example으로 결과를 내보내도록 요청합니다.</description>
     </item>
     
     <item>
@@ -89,7 +89,7 @@ data &amp;quot;aws_ami&amp;quot; &amp;quot;example&amp;quot; { most_recent = tru
 모든 Terraform 구성에는 기본 작업 디렉토리의 .tf 파일에 정의 된 리소스로 구성된 루트 모듈이라고하는 하나 이상의 모듈이 있습니다.
 모듈은 다른 모듈을 호출 할 수 있으며, 이를 통해 하위 모듈의 리소스를 간결하게 구성에 포함시킬 수 있습니다. 동일한 구성 내에서 또는 별도의 구성으로 모듈을 여러 번 호출하여 리소스 구성을 패키지화하고 재사용 할 수 있습니다.
 Calling a Child Module module 블록을 사용 하여 설정 합니다.
-module &amp;quot;servers&amp;quot; { source = &amp;quot;.</description>
+module &amp;#34;servers&amp;#34; { source = &amp;#34;.</description>
     </item>
     
   </channel>

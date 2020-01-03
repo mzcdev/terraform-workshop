@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.59.1" />
+    <meta name="generator" content="Hugo 0.62.1" />
     <meta name="description" content="Terraform Workshop">
 <meta name="author" content="Jungyoul Yu">
 
@@ -13,20 +13,20 @@
     <title>Input Variables :: Terraform Workshop</title>
 
     
-    <link href="/terraform-workshop/css/nucleus.css?1574401945" rel="stylesheet">
-    <link href="/terraform-workshop/css/fontawesome-all.min.css?1574401945" rel="stylesheet">
-    <link href="/terraform-workshop/css/hybrid.css?1574401945" rel="stylesheet">
-    <link href="/terraform-workshop/css/featherlight.min.css?1574401945" rel="stylesheet">
-    <link href="/terraform-workshop/css/perfect-scrollbar.min.css?1574401945" rel="stylesheet">
-    <link href="/terraform-workshop/css/auto-complete.css?1574401945" rel="stylesheet">
-    <link href="/terraform-workshop/css/atom-one-dark-reasonable.css?1574401945" rel="stylesheet">
-    <link href="/terraform-workshop/css/theme.css?1574401945" rel="stylesheet">
-    <link href="/terraform-workshop/css/hugo-theme.css?1574401945" rel="stylesheet">
+    <link href="/terraform-workshop/css/nucleus.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/fontawesome-all.min.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/hybrid.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/featherlight.min.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/perfect-scrollbar.min.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/auto-complete.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/atom-one-dark-reasonable.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/theme.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/hugo-theme.css?1578013178" rel="stylesheet">
     
-      <link href="/terraform-workshop/css/theme-blue.css?1574401945" rel="stylesheet">
+      <link href="/terraform-workshop/css/theme-blue.css?1578013178" rel="stylesheet">
     
 
-    <script src="/terraform-workshop/js/jquery-3.3.1.min.js?1574401945"></script>
+    <script src="/terraform-workshop/js/jquery-3.3.1.min.js?1578013178"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/terraform-workshop/js/lunr.min.js?1574401945"></script>
-<script type="text/javascript" src="/terraform-workshop/js/auto-complete.js?1574401945"></script>
+<script type="text/javascript" src="/terraform-workshop/js/lunr.min.js?1578013178"></script>
+<script type="text/javascript" src="/terraform-workshop/js/auto-complete.js?1578013178"></script>
 <script type="text/javascript">
     
         var baseurl = "\/terraform-workshop\/";
     
 </script>
-<script type="text/javascript" src="/terraform-workshop/js/search.js?1574401945"></script>
+<script type="text/javascript" src="/terraform-workshop/js/search.js?1578013178"></script>
 
     
   </div>
@@ -1158,16 +1158,14 @@
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#declaring-an-input-variable">Declaring an Input Variable</a></li>
-<li><a href="#using-input-variable-values">Using Input Variable Values</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#declaring-an-input-variable">Declaring an Input Variable</a></li>
+        <li><a href="#using-input-variable-values">Using Input Variable Values</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -1192,56 +1190,43 @@
 
 
 
-
-
 <p>Input Variable은 Terraform 모듈의 매개 변수 역할을 하며, 다른 모듈 간에 매개 변수를 공유 할 수 있습니다.</p>
-
 <h3 id="declaring-an-input-variable">Declaring an Input Variable</h3>
-
 <p><code>variable</code> 블록을 사용 하여 설정 합니다.</p>
-
-<pre><code>variable &quot;ami_id&quot; {
-  description = &quot;The id of the machine image (AMI) to use for the server.&quot;
-  type        = string
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-hcl" data-lang="hcl"><span style="color:#66d9ef">variable</span> <span style="color:#e6db74">&#34;ami_id&#34;</span> {
+  description <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;The id of the machine image (AMI) to use for the server.&#34;</span>
+  type        <span style="color:#f92672">=</span> <span style="color:#66d9ef">string</span>
 }
 
-variable &quot;availability_zone_names&quot; {
-  type    = list(string)
-  default = [&quot;us-west-1a&quot;]
+<span style="color:#66d9ef">variable</span> <span style="color:#e6db74">&#34;availability_zone_names&#34;</span> {
+  type    <span style="color:#f92672">=</span> <span style="color:#66d9ef">list</span>(<span style="color:#66d9ef">string</span>)
+  default <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;us-west-1a&#34;</span>]
 }
 
-variable &quot;docker_ports&quot; {
-  type = list(object({
-    internal = number
-    external = number
-    protocol = string
+<span style="color:#66d9ef">variable</span> <span style="color:#e6db74">&#34;docker_ports&#34;</span> {
+  type <span style="color:#f92672">=</span> <span style="color:#66d9ef">list</span>(<span style="color:#66d9ef">object</span>({
+    internal <span style="color:#f92672">=</span> <span style="color:#66d9ef">number</span>
+    external <span style="color:#f92672">=</span> <span style="color:#66d9ef">number</span>
+    protocol <span style="color:#f92672">=</span> <span style="color:#66d9ef">string</span>
   }))
-  default = [
+  default <span style="color:#f92672">=</span> [
     {
-      internal = 8300
-      external = 8300
-      protocol = &quot;tcp&quot;
+      internal <span style="color:#f92672">=</span> <span style="color:#ae81ff">8300</span>
+      external <span style="color:#f92672">=</span> <span style="color:#ae81ff">8300</span>
+      protocol <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;tcp&#34;</span>
     }
   ]
 }
-</code></pre>
-
-<p><code>type</code> 인수를 사용하면 변수 값으로 허용되는 타입을 제한 할 수 있습니다. 타입이 설정되지 않은 경우 모든 유형의 값이 허용됩니다.</p>
-
+</code></pre></div><p><code>type</code> 인수를 사용하면 변수 값으로 허용되는 타입을 제한 할 수 있습니다. 타입이 설정되지 않은 경우 모든 유형의 값이 허용됩니다.</p>
 <p><code>description</code> 인수를 사용하여 각 값의 목적을 간단히 설명 할 수 있습니다.</p>
-
 <p><code>default</code> 인수를 선언하면 해당 인수를 선언 하지 않았을때 정의된 값을 사용 합니다. 하지만 선언 하지 않으면 해당 값은 필수가 됩니다.</p>
-
 <h3 id="using-input-variable-values">Using Input Variable Values</h3>
-
 <p>변수를 선언 한 모듈 내에서 표현식 내에서 <code>var.&lt;NAME&gt;</code>으로 값에 액세스 할 수 있습니다.</p>
-
 <pre><code>resource &quot;aws_instance&quot; &quot;example&quot; {
   instance_type = &quot;t2.micro&quot;
   ami           = var.ami_id
 }
 </code></pre>
-
 
 <footer class=" footline" >
 	
@@ -2013,19 +1998,19 @@ variable &quot;docker_ports&quot; {
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/terraform-workshop/js/clipboard.min.js?1574401945"></script>
-    <script src="/terraform-workshop/js/perfect-scrollbar.min.js?1574401945"></script>
-    <script src="/terraform-workshop/js/perfect-scrollbar.jquery.min.js?1574401945"></script>
-    <script src="/terraform-workshop/js/jquery.sticky.js?1574401945"></script>
-    <script src="/terraform-workshop/js/featherlight.min.js?1574401945"></script>
-    <script src="/terraform-workshop/js/highlight.pack.js?1574401945"></script>
+    <script src="/terraform-workshop/js/clipboard.min.js?1578013178"></script>
+    <script src="/terraform-workshop/js/perfect-scrollbar.min.js?1578013178"></script>
+    <script src="/terraform-workshop/js/perfect-scrollbar.jquery.min.js?1578013178"></script>
+    <script src="/terraform-workshop/js/jquery.sticky.js?1578013178"></script>
+    <script src="/terraform-workshop/js/featherlight.min.js?1578013178"></script>
+    <script src="/terraform-workshop/js/highlight.pack.js?1578013178"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/terraform-workshop/js/modernizr.custom-3.6.0.js?1574401945"></script>
-    <script src="/terraform-workshop/js/learn.js?1574401945"></script>
-    <script src="/terraform-workshop/js/hugo-learn.js?1574401945"></script>
+    <script src="/terraform-workshop/js/modernizr.custom-3.6.0.js?1578013178"></script>
+    <script src="/terraform-workshop/js/learn.js?1578013178"></script>
+    <script src="/terraform-workshop/js/hugo-learn.js?1578013178"></script>
 
-    <link href="/terraform-workshop/mermaid/mermaid.css?1574401945" rel="stylesheet" />
-    <script src="/terraform-workshop/mermaid/mermaid.js?1574401945"></script>
+    <link href="/terraform-workshop/mermaid/mermaid.css?1578013178" rel="stylesheet" />
+    <script src="/terraform-workshop/mermaid/mermaid.js?1578013178"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -9,7 +9,7 @@ Input Variable은 Terraform 모듈의 매개 변수 역할을 하며, 다른 모
 
 `variable` 블록을 사용 하여 설정 합니다.
 
-```
+```hcl
 variable "ami_id" {
   description = "The id of the machine image (AMI) to use for the server."
   type        = string

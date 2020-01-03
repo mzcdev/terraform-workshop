@@ -7,7 +7,7 @@ Terraform은 물리적 시스템, VM, 네트워크 스위치, 컨테이너 등�
 
 아래 그림은 AWS Provider를 선언한 예시 코드입니다.
 
-```
+```hcl
 provider "aws" {
   region     = var.region
   access_key = "<ACCESS_KEY_HERE>"

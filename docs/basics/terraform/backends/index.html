@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.59.1" />
+    <meta name="generator" content="Hugo 0.62.1" />
     <meta name="description" content="Terraform Workshop">
 <meta name="author" content="Jungyoul Yu">
 
@@ -13,20 +13,20 @@
     <title>Backends :: Terraform Workshop</title>
 
     
-    <link href="/terraform-workshop/css/nucleus.css?1574401945" rel="stylesheet">
-    <link href="/terraform-workshop/css/fontawesome-all.min.css?1574401945" rel="stylesheet">
-    <link href="/terraform-workshop/css/hybrid.css?1574401945" rel="stylesheet">
-    <link href="/terraform-workshop/css/featherlight.min.css?1574401945" rel="stylesheet">
-    <link href="/terraform-workshop/css/perfect-scrollbar.min.css?1574401945" rel="stylesheet">
-    <link href="/terraform-workshop/css/auto-complete.css?1574401945" rel="stylesheet">
-    <link href="/terraform-workshop/css/atom-one-dark-reasonable.css?1574401945" rel="stylesheet">
-    <link href="/terraform-workshop/css/theme.css?1574401945" rel="stylesheet">
-    <link href="/terraform-workshop/css/hugo-theme.css?1574401945" rel="stylesheet">
+    <link href="/terraform-workshop/css/nucleus.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/fontawesome-all.min.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/hybrid.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/featherlight.min.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/perfect-scrollbar.min.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/auto-complete.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/atom-one-dark-reasonable.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/theme.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/hugo-theme.css?1578013178" rel="stylesheet">
     
-      <link href="/terraform-workshop/css/theme-blue.css?1574401945" rel="stylesheet">
+      <link href="/terraform-workshop/css/theme-blue.css?1578013178" rel="stylesheet">
     
 
-    <script src="/terraform-workshop/js/jquery-3.3.1.min.js?1574401945"></script>
+    <script src="/terraform-workshop/js/jquery-3.3.1.min.js?1578013178"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/terraform-workshop/js/lunr.min.js?1574401945"></script>
-<script type="text/javascript" src="/terraform-workshop/js/auto-complete.js?1574401945"></script>
+<script type="text/javascript" src="/terraform-workshop/js/lunr.min.js?1578013178"></script>
+<script type="text/javascript" src="/terraform-workshop/js/auto-complete.js?1578013178"></script>
 <script type="text/javascript">
     
         var baseurl = "\/terraform-workshop\/";
     
 </script>
-<script type="text/javascript" src="/terraform-workshop/js/search.js?1574401945"></script>
+<script type="text/javascript" src="/terraform-workshop/js/search.js?1578013178"></script>
 
     
   </div>
@@ -1152,15 +1152,13 @@
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#benefits-of-backends">Benefits of backends</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#benefits-of-backends">Benefits of backends</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -1186,36 +1184,31 @@
 
 
 
-	
-
-<p>Terraform의 <code>Backend</code>는 <code>State</code>가 로드되는 방식과 apply와 같은 작업이 실행되는 방식을 결정합니다.</p>
-
+	<p>Terraform의 <code>Backend</code>는 <code>State</code>가 로드되는 방식과 apply와 같은 작업이 실행되는 방식을 결정합니다.</p>
 <h3 id="benefits-of-backends">Benefits of backends</h3>
-
 <ul>
-<li><p>팀 협업: 상태를 원격 저장하고, 실행중 일때 상태를 잠금으로 보호하여 손상을 방지 할수 있습니다.</p></li>
-
-<li><p>중요한 정보 유지: 정의 하지 않을 경우 메모리에만 저장됩니다. Amazon S3와 같이 원격지에 저장 할수 있습니다.</p></li>
-
-<li><p>원격 운영: 대규모의 인프라의 생성 또는 변경은 작업 시간이 오래 걸릴 수 있습니다. 일부 백엔드는 원격작업을 지원하여 작업을 원격에서 유지 할수 있습니다. 원격 상태 저장소와 잠금 기능을 같이 사용 하면 팀 협업에 도움이 됩니다.</p></li>
+<li>
+<p>팀 협업: 상태를 원격 저장하고, 실행중 일때 상태를 잠금으로 보호하여 손상을 방지 할수 있습니다.</p>
+</li>
+<li>
+<p>중요한 정보 유지: 정의 하지 않을 경우 메모리에만 저장됩니다. Amazon S3와 같이 원격지에 저장 할수 있습니다.</p>
+</li>
+<li>
+<p>원격 운영: 대규모의 인프라의 생성 또는 변경은 작업 시간이 오래 걸릴 수 있습니다. 일부 백엔드는 원격작업을 지원하여 작업을 원격에서 유지 할수 있습니다. 원격 상태 저장소와 잠금 기능을 같이 사용 하면 팀 협업에 도움이 됩니다.</p>
+</li>
 </ul>
-
 <p>아래는 Amazon S3를 원격 상태 저장소로 사용하고, DynamoDB 를 잠금 기능으로 선언한 예시 코드입니다.</p>
-
-<pre><code>terraform {
-  backend &quot;s3&quot; {
-    region         = &quot;ap-northeast-2&quot;
-    bucket         = &quot;terraform-workshop-seoul&quot;
-    key            = &quot;vpc.tfstate&quot;
-    dynamodb_table = &quot;terraform-workshop-seoul&quot;
-    encrypt        = true
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-hcl" data-lang="hcl"><span style="color:#66d9ef">terraform</span> {
+  <span style="color:#66d9ef">backend</span> <span style="color:#e6db74">&#34;s3&#34;</span> {
+    region         <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ap-northeast-2&#34;</span>
+    bucket         <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;terraform-workshop-seoul&#34;</span>
+    key            <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;vpc.tfstate&#34;</span>
+    dynamodb_table <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;terraform-workshop-seoul&#34;</span>
+    encrypt        <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
   }
-  required_version = &quot;&gt;= 0.12&quot;
+  required_version <span style="color:#f92672">=</span> &#34;&gt;<span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>.<span style="color:#ae81ff">12</span><span style="color:#960050;background-color:#1e0010">&#34;</span>
 }
-</code></pre>
-
-<p>더 많은 정보를 확인 하시려면 아래 링크를 참고 하세요.</p>
-
+</code></pre></div><p>더 많은 정보를 확인 하시려면 아래 링크를 참고 하세요.</p>
 <ul>
 <li><a href="https://www.terraform.io/docs/backends/index.html">https://www.terraform.io/docs/backends/index.html</a></li>
 </ul>
@@ -1995,19 +1988,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/terraform-workshop/js/clipboard.min.js?1574401945"></script>
-    <script src="/terraform-workshop/js/perfect-scrollbar.min.js?1574401945"></script>
-    <script src="/terraform-workshop/js/perfect-scrollbar.jquery.min.js?1574401945"></script>
-    <script src="/terraform-workshop/js/jquery.sticky.js?1574401945"></script>
-    <script src="/terraform-workshop/js/featherlight.min.js?1574401945"></script>
-    <script src="/terraform-workshop/js/highlight.pack.js?1574401945"></script>
+    <script src="/terraform-workshop/js/clipboard.min.js?1578013178"></script>
+    <script src="/terraform-workshop/js/perfect-scrollbar.min.js?1578013178"></script>
+    <script src="/terraform-workshop/js/perfect-scrollbar.jquery.min.js?1578013178"></script>
+    <script src="/terraform-workshop/js/jquery.sticky.js?1578013178"></script>
+    <script src="/terraform-workshop/js/featherlight.min.js?1578013178"></script>
+    <script src="/terraform-workshop/js/highlight.pack.js?1578013178"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/terraform-workshop/js/modernizr.custom-3.6.0.js?1574401945"></script>
-    <script src="/terraform-workshop/js/learn.js?1574401945"></script>
-    <script src="/terraform-workshop/js/hugo-learn.js?1574401945"></script>
+    <script src="/terraform-workshop/js/modernizr.custom-3.6.0.js?1578013178"></script>
+    <script src="/terraform-workshop/js/learn.js?1578013178"></script>
+    <script src="/terraform-workshop/js/hugo-learn.js?1578013178"></script>
 
-    <link href="/terraform-workshop/mermaid/mermaid.css?1574401945" rel="stylesheet" />
-    <script src="/terraform-workshop/mermaid/mermaid.js?1574401945"></script>
+    <link href="/terraform-workshop/mermaid/mermaid.css?1578013178" rel="stylesheet" />
+    <script src="/terraform-workshop/mermaid/mermaid.js?1578013178"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

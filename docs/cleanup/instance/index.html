@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.59.1" />
+    <meta name="generator" content="Hugo 0.62.1" />
     <meta name="description" content="Terraform Workshop">
 <meta name="author" content="Jungyoul Yu">
 
@@ -13,20 +13,20 @@
     <title>Instance :: Terraform Workshop</title>
 
     
-    <link href="/terraform-workshop/css/nucleus.css?1574401944" rel="stylesheet">
-    <link href="/terraform-workshop/css/fontawesome-all.min.css?1574401944" rel="stylesheet">
-    <link href="/terraform-workshop/css/hybrid.css?1574401944" rel="stylesheet">
-    <link href="/terraform-workshop/css/featherlight.min.css?1574401944" rel="stylesheet">
-    <link href="/terraform-workshop/css/perfect-scrollbar.min.css?1574401944" rel="stylesheet">
-    <link href="/terraform-workshop/css/auto-complete.css?1574401944" rel="stylesheet">
-    <link href="/terraform-workshop/css/atom-one-dark-reasonable.css?1574401944" rel="stylesheet">
-    <link href="/terraform-workshop/css/theme.css?1574401944" rel="stylesheet">
-    <link href="/terraform-workshop/css/hugo-theme.css?1574401944" rel="stylesheet">
+    <link href="/terraform-workshop/css/nucleus.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/fontawesome-all.min.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/hybrid.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/featherlight.min.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/perfect-scrollbar.min.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/auto-complete.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/atom-one-dark-reasonable.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/theme.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/hugo-theme.css?1578013178" rel="stylesheet">
     
-      <link href="/terraform-workshop/css/theme-blue.css?1574401944" rel="stylesheet">
+      <link href="/terraform-workshop/css/theme-blue.css?1578013178" rel="stylesheet">
     
 
-    <script src="/terraform-workshop/js/jquery-3.3.1.min.js?1574401944"></script>
+    <script src="/terraform-workshop/js/jquery-3.3.1.min.js?1578013178"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/terraform-workshop/js/lunr.min.js?1574401944"></script>
-<script type="text/javascript" src="/terraform-workshop/js/auto-complete.js?1574401944"></script>
+<script type="text/javascript" src="/terraform-workshop/js/lunr.min.js?1578013178"></script>
+<script type="text/javascript" src="/terraform-workshop/js/auto-complete.js?1578013178"></script>
 <script type="text/javascript">
     
         var baseurl = "\/terraform-workshop\/";
     
 </script>
-<script type="text/javascript" src="/terraform-workshop/js/search.js?1574401944"></script>
+<script type="text/javascript" src="/terraform-workshop/js/search.js?1578013178"></script>
 
     
   </div>
@@ -1145,7 +1145,7 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents"></nav>
     </div>
 </div>
 
@@ -1170,13 +1170,10 @@
 
 
 <p>Terraform 명령으로 삭제 합니다.</p>
-
-<pre><code class="language-bash">cd terraform-env-workshop/instance
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd terraform-env-workshop/instance
 
 terraform destroy
-</code></pre>
-
-<pre><code class="language-text">aws_instance.this: Refreshing state... [id=i-0390f0e077a519e15]
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">aws_instance.this: Refreshing state... [id=i-0390f0e077a519e15]
 
 An execution plan has been generated and is shown below.
 Resource actions are indicated with the following symbols:
@@ -1185,7 +1182,7 @@ Resource actions are indicated with the following symbols:
 Terraform will perform the following actions:
 
   # aws_instance.this will be destroyed
-  - resource &quot;aws_instance&quot; &quot;this&quot; {
+  - resource &#34;aws_instance&#34; &#34;this&#34; {
       ....
     }
 
@@ -1193,23 +1190,18 @@ Plan: 0 to add, 0 to change, 1 to destroy.
 
 Do you really want to destroy all resources?
   Terraform will destroy all your managed infrastructure, as shown above.
-  There is no undo. Only 'yes' will be accepted to confirm.
+  There is no undo. Only &#39;yes&#39; will be accepted to confirm.
 
   Enter a value:
-</code></pre>
-
-<p>이번에는 <code>-</code> 와 함께 삭제 예상 plan 을 실행 하고, 리소스를 삭제 할지 물어 봅니다. <code>yes</code> 를 입력 하면 리소스 삭제를 시작 합니다.</p>
-
-<pre><code class="language-text">aws_instance.this: Destroying... [id=i-0390f0e077a519e15]
+</code></pre></div><p>이번에는 <code>-</code> 와 함께 삭제 예상 plan 을 실행 하고, 리소스를 삭제 할지 물어 봅니다. <code>yes</code> 를 입력 하면 리소스 삭제를 시작 합니다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">aws_instance.this: Destroying... [id=i-0390f0e077a519e15]
 aws_instance.this: Still destroying... [id=i-0390f0e077a519e15, 10s elapsed]
 aws_instance.this: Still destroying... [id=i-0390f0e077a519e15, 20s elapsed]
 aws_instance.this: Still destroying... [id=i-0390f0e077a519e15, 30s elapsed]
 aws_instance.this: Destruction complete after 40s
 
 Destroy complete! Resources: 1 destroyed.
-</code></pre>
-
-<p>리소스를 삭제 했습니다.</p>
+</code></pre></div><p>리소스를 삭제 했습니다.</p>
 
 
 <footer class=" footline" >
@@ -1983,19 +1975,19 @@ Destroy complete! Resources: 1 destroyed.
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/terraform-workshop/js/clipboard.min.js?1574401945"></script>
-    <script src="/terraform-workshop/js/perfect-scrollbar.min.js?1574401945"></script>
-    <script src="/terraform-workshop/js/perfect-scrollbar.jquery.min.js?1574401945"></script>
-    <script src="/terraform-workshop/js/jquery.sticky.js?1574401945"></script>
-    <script src="/terraform-workshop/js/featherlight.min.js?1574401945"></script>
-    <script src="/terraform-workshop/js/highlight.pack.js?1574401945"></script>
+    <script src="/terraform-workshop/js/clipboard.min.js?1578013178"></script>
+    <script src="/terraform-workshop/js/perfect-scrollbar.min.js?1578013178"></script>
+    <script src="/terraform-workshop/js/perfect-scrollbar.jquery.min.js?1578013178"></script>
+    <script src="/terraform-workshop/js/jquery.sticky.js?1578013178"></script>
+    <script src="/terraform-workshop/js/featherlight.min.js?1578013178"></script>
+    <script src="/terraform-workshop/js/highlight.pack.js?1578013178"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/terraform-workshop/js/modernizr.custom-3.6.0.js?1574401945"></script>
-    <script src="/terraform-workshop/js/learn.js?1574401945"></script>
-    <script src="/terraform-workshop/js/hugo-learn.js?1574401945"></script>
+    <script src="/terraform-workshop/js/modernizr.custom-3.6.0.js?1578013178"></script>
+    <script src="/terraform-workshop/js/learn.js?1578013178"></script>
+    <script src="/terraform-workshop/js/hugo-learn.js?1578013178"></script>
 
-    <link href="/terraform-workshop/mermaid/mermaid.css?1574401945" rel="stylesheet" />
-    <script src="/terraform-workshop/mermaid/mermaid.js?1574401945"></script>
+    <link href="/terraform-workshop/mermaid/mermaid.css?1578013178" rel="stylesheet" />
+    <script src="/terraform-workshop/mermaid/mermaid.js?1578013178"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

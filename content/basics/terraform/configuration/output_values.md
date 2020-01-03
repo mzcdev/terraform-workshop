@@ -9,7 +9,7 @@ Output Value는 Terraform 모듈의 반환 값과 유사하며 여러 용도로 
 
 `output` 블록을 사용 하여 설정 합니다.
 
-```
+```hcl
 output "private_ip" {
   value       = aws_instance.server.private_ip
   description = "The private IP address of the main server instance."

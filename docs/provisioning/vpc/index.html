@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.59.1" />
+    <meta name="generator" content="Hugo 0.62.1" />
     <meta name="description" content="Terraform Workshop">
 <meta name="author" content="Jungyoul Yu">
 
@@ -13,20 +13,20 @@
     <title>VPC :: Terraform Workshop</title>
 
     
-    <link href="/terraform-workshop/css/nucleus.css?1574401944" rel="stylesheet">
-    <link href="/terraform-workshop/css/fontawesome-all.min.css?1574401944" rel="stylesheet">
-    <link href="/terraform-workshop/css/hybrid.css?1574401944" rel="stylesheet">
-    <link href="/terraform-workshop/css/featherlight.min.css?1574401944" rel="stylesheet">
-    <link href="/terraform-workshop/css/perfect-scrollbar.min.css?1574401944" rel="stylesheet">
-    <link href="/terraform-workshop/css/auto-complete.css?1574401944" rel="stylesheet">
-    <link href="/terraform-workshop/css/atom-one-dark-reasonable.css?1574401944" rel="stylesheet">
-    <link href="/terraform-workshop/css/theme.css?1574401944" rel="stylesheet">
-    <link href="/terraform-workshop/css/hugo-theme.css?1574401944" rel="stylesheet">
+    <link href="/terraform-workshop/css/nucleus.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/fontawesome-all.min.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/hybrid.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/featherlight.min.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/perfect-scrollbar.min.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/auto-complete.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/atom-one-dark-reasonable.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/theme.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/hugo-theme.css?1578013178" rel="stylesheet">
     
-      <link href="/terraform-workshop/css/theme-blue.css?1574401944" rel="stylesheet">
+      <link href="/terraform-workshop/css/theme-blue.css?1578013178" rel="stylesheet">
     
 
-    <script src="/terraform-workshop/js/jquery-3.3.1.min.js?1574401944"></script>
+    <script src="/terraform-workshop/js/jquery-3.3.1.min.js?1578013178"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/terraform-workshop/js/lunr.min.js?1574401944"></script>
-<script type="text/javascript" src="/terraform-workshop/js/auto-complete.js?1574401944"></script>
+<script type="text/javascript" src="/terraform-workshop/js/lunr.min.js?1578013178"></script>
+<script type="text/javascript" src="/terraform-workshop/js/auto-complete.js?1578013178"></script>
 <script type="text/javascript">
     
         var baseurl = "\/terraform-workshop\/";
     
 </script>
-<script type="text/javascript" src="/terraform-workshop/js/search.js?1574401944"></script>
+<script type="text/javascript" src="/terraform-workshop/js/search.js?1578013178"></script>
 
     
   </div>
@@ -1145,7 +1145,7 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents"></nav>
     </div>
 </div>
 
@@ -1170,57 +1170,47 @@
 
 
 <p>Public subnet 과 Private subnet 을 포함한 VPC 를 생성 합니다.</p>
-
-<p><img src="../../provisioning/images/terraform_vpc_ach.png" alt="VPC" /></p>
-
+<p><img src="../../provisioning/images/terraform_vpc_ach.png" alt="VPC"></p>
 <p>다음 파일에서 <strong>terraform-workshop-seoul</strong> 을 생성한 버켓명으로 변경해줍니다.</p>
-
-<pre><code class="language-bash"># export BUCKET=&quot;terraform-nalbam-seoul&quot;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># export BUCKET=&#34;terraform-nalbam-seoul&#34;</span>
 
 cd terraform-env-workshop/vpc
 
-sed -i &quot;s/terraform-workshop-seoul/${BUCKET}/g&quot; *.tf
-</code></pre>
-
-<p>Terraform 명령으로 생성 합니다.</p>
-
-<pre><code class="language-bash">terraform init
+sed -i <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">s/terraform-workshop-seoul/</span><span style="color:#e6db74">${</span>BUCKET<span style="color:#e6db74">}</span><span style="color:#e6db74">/g</span><span style="color:#e6db74">&#34;</span> *.tf
+</code></pre></div><p>Terraform 명령으로 생성 합니다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">terraform init
 terraform plan
 terraform apply
-</code></pre>
-
-<p>다음과 같은 메세지가 출력 되면 성공 입니다.</p>
-
-<pre><code class="language-text">Apply complete! Resources: x added, 0 changed, 0 destroyed.
+</code></pre></div><p>다음과 같은 메세지가 출력 되면 성공 입니다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Apply complete! Resources: x added, 0 changed, 0 destroyed.
 
 Outputs:
 
 nat_ip = [
-  &quot;52.78.13.15&quot;,
+  &#34;52.78.13.15&#34;,
 ]
 private_subnet_cidr = [
-  &quot;10.15.4.0/24&quot;,
-  &quot;10.15.5.0/24&quot;,
-  &quot;10.15.6.0/24&quot;,
+  &#34;10.15.4.0/24&#34;,
+  &#34;10.15.5.0/24&#34;,
+  &#34;10.15.6.0/24&#34;,
 ]
 private_subnet_ids = [
-  &quot;subnet-034abbc6xc10634ad&quot;,
-  &quot;subnet-0944x61ec8c2f8f93&quot;,
-  &quot;subnet-06b7d51d44537x626&quot;,
+  &#34;subnet-034abbc6xc10634ad&#34;,
+  &#34;subnet-0944x61ec8c2f8f93&#34;,
+  &#34;subnet-06b7d51d44537x626&#34;,
 ]
 public_subnet_cidr = [
-  &quot;10.15.1.0/24&quot;,
-  &quot;10.15.2.0/24&quot;,
-  &quot;10.15.3.0/24&quot;,
+  &#34;10.15.1.0/24&#34;,
+  &#34;10.15.2.0/24&#34;,
+  &#34;10.15.3.0/24&#34;,
 ]
 public_subnet_ids = [
-  &quot;subnet-092938d936610xbfe&quot;,
-  &quot;subnet-026b23axc4b257e42&quot;,
-  &quot;subnet-0xfe713b44d028898&quot;,
+  &#34;subnet-092938d936610xbfe&#34;,
+  &#34;subnet-026b23axc4b257e42&#34;,
+  &#34;subnet-0xfe713b44d028898&#34;,
 ]
 vpc_id = vpc-0fxb2037axdc5b059
-</code></pre>
-
+</code></pre></div>
 
 <footer class=" footline" >
 	
@@ -1996,19 +1986,19 @@ vpc_id = vpc-0fxb2037axdc5b059
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/terraform-workshop/js/clipboard.min.js?1574401945"></script>
-    <script src="/terraform-workshop/js/perfect-scrollbar.min.js?1574401945"></script>
-    <script src="/terraform-workshop/js/perfect-scrollbar.jquery.min.js?1574401945"></script>
-    <script src="/terraform-workshop/js/jquery.sticky.js?1574401945"></script>
-    <script src="/terraform-workshop/js/featherlight.min.js?1574401945"></script>
-    <script src="/terraform-workshop/js/highlight.pack.js?1574401945"></script>
+    <script src="/terraform-workshop/js/clipboard.min.js?1578013178"></script>
+    <script src="/terraform-workshop/js/perfect-scrollbar.min.js?1578013178"></script>
+    <script src="/terraform-workshop/js/perfect-scrollbar.jquery.min.js?1578013178"></script>
+    <script src="/terraform-workshop/js/jquery.sticky.js?1578013178"></script>
+    <script src="/terraform-workshop/js/featherlight.min.js?1578013178"></script>
+    <script src="/terraform-workshop/js/highlight.pack.js?1578013178"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/terraform-workshop/js/modernizr.custom-3.6.0.js?1574401945"></script>
-    <script src="/terraform-workshop/js/learn.js?1574401945"></script>
-    <script src="/terraform-workshop/js/hugo-learn.js?1574401945"></script>
+    <script src="/terraform-workshop/js/modernizr.custom-3.6.0.js?1578013178"></script>
+    <script src="/terraform-workshop/js/learn.js?1578013178"></script>
+    <script src="/terraform-workshop/js/hugo-learn.js?1578013178"></script>
 
-    <link href="/terraform-workshop/mermaid/mermaid.css?1574401945" rel="stylesheet" />
-    <script src="/terraform-workshop/mermaid/mermaid.js?1574401945"></script>
+    <link href="/terraform-workshop/mermaid/mermaid.css?1578013178" rel="stylesheet" />
+    <script src="/terraform-workshop/mermaid/mermaid.js?1578013178"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

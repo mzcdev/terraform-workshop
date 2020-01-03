@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.59.1" />
+    <meta name="generator" content="Hugo 0.62.1" />
     <meta name="description" content="Terraform Workshop">
 <meta name="author" content="Jungyoul Yu">
 
@@ -13,20 +13,20 @@
     <title>Output Values :: Terraform Workshop</title>
 
     
-    <link href="/terraform-workshop/css/nucleus.css?1574401945" rel="stylesheet">
-    <link href="/terraform-workshop/css/fontawesome-all.min.css?1574401945" rel="stylesheet">
-    <link href="/terraform-workshop/css/hybrid.css?1574401945" rel="stylesheet">
-    <link href="/terraform-workshop/css/featherlight.min.css?1574401945" rel="stylesheet">
-    <link href="/terraform-workshop/css/perfect-scrollbar.min.css?1574401945" rel="stylesheet">
-    <link href="/terraform-workshop/css/auto-complete.css?1574401945" rel="stylesheet">
-    <link href="/terraform-workshop/css/atom-one-dark-reasonable.css?1574401945" rel="stylesheet">
-    <link href="/terraform-workshop/css/theme.css?1574401945" rel="stylesheet">
-    <link href="/terraform-workshop/css/hugo-theme.css?1574401945" rel="stylesheet">
+    <link href="/terraform-workshop/css/nucleus.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/fontawesome-all.min.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/hybrid.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/featherlight.min.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/perfect-scrollbar.min.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/auto-complete.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/atom-one-dark-reasonable.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/theme.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/hugo-theme.css?1578013178" rel="stylesheet">
     
-      <link href="/terraform-workshop/css/theme-blue.css?1574401945" rel="stylesheet">
+      <link href="/terraform-workshop/css/theme-blue.css?1578013178" rel="stylesheet">
     
 
-    <script src="/terraform-workshop/js/jquery-3.3.1.min.js?1574401945"></script>
+    <script src="/terraform-workshop/js/jquery-3.3.1.min.js?1578013178"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/terraform-workshop/js/lunr.min.js?1574401945"></script>
-<script type="text/javascript" src="/terraform-workshop/js/auto-complete.js?1574401945"></script>
+<script type="text/javascript" src="/terraform-workshop/js/lunr.min.js?1578013178"></script>
+<script type="text/javascript" src="/terraform-workshop/js/auto-complete.js?1578013178"></script>
 <script type="text/javascript">
     
         var baseurl = "\/terraform-workshop\/";
     
 </script>
-<script type="text/javascript" src="/terraform-workshop/js/search.js?1574401945"></script>
+<script type="text/javascript" src="/terraform-workshop/js/search.js?1578013178"></script>
 
     
   </div>
@@ -1158,16 +1158,14 @@
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#declaring-an-output-value">Declaring an Output Value</a></li>
-<li><a href="#accessing-child-module-outputs">Accessing Child Module Outputs</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#declaring-an-output-value">Declaring an Output Value</a></li>
+        <li><a href="#accessing-child-module-outputs">Accessing Child Module Outputs</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -1192,40 +1190,28 @@
 
 
 
-
-
 <p>Output Value는 Terraform 모듈의 반환 값과 유사하며 여러 용도로 사용됩니다.</p>
-
 <h3 id="declaring-an-output-value">Declaring an Output Value</h3>
-
 <p><code>output</code> 블록을 사용 하여 설정 합니다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-hcl" data-lang="hcl"><span style="color:#66d9ef">output</span> <span style="color:#e6db74">&#34;private_ip&#34;</span> {
+  value       <span style="color:#f92672">=</span> <span style="color:#66d9ef">aws_instance</span>.<span style="color:#66d9ef">server</span>.<span style="color:#66d9ef">private_ip</span>
+  description <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;The private IP address of the main server instance.&#34;</span>
 
-<pre><code>output &quot;private_ip&quot; {
-  value       = aws_instance.server.private_ip
-  description = &quot;The private IP address of the main server instance.&quot;
-
-  depends_on = [
-    aws_security_group_rule.local_access,
+  depends_on <span style="color:#f92672">=</span> [
+    <span style="color:#66d9ef">aws_security_group_rule</span>.<span style="color:#66d9ef">local_access</span>,
   ]
 }
 
-output &quot;db_password&quot; {
-  value       = aws_db_instance.db.password
-  description = &quot;The password for logging in to the database.&quot;
-  sensitive   = true
+<span style="color:#66d9ef">output</span> <span style="color:#e6db74">&#34;db_password&#34;</span> {
+  value       <span style="color:#f92672">=</span> <span style="color:#66d9ef">aws_db_instance</span>.<span style="color:#66d9ef">db</span>.<span style="color:#66d9ef">password</span>
+  description <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;The password for logging in to the database.&#34;</span>
+  sensitive   <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
 }
-</code></pre>
-
-<p><code>value</code> 인수는 결과가 사용자에게 리턴되는 표현식을 사용합니다.</p>
-
+</code></pre></div><p><code>value</code> 인수는 결과가 사용자에게 리턴되는 표현식을 사용합니다.</p>
 <p><code>description</code> 인수를 사용하여 각 값의 목적을 간단히 설명 할 수 있습니다.</p>
-
 <p><code>sensitive</code> 출럭값을 마스킹 할 수 있습니다.</p>
-
 <p><code>depends_on</code> 출력 값은 모듈에서 데이터를 전달하는 수단 일 뿐이므로 일반적으로 종속성 그래프에서 다른 노드와의 관계에 대해 걱정할 필요가 없습니다. 그러나 상위 모듈이 하위 모듈 중 하나에서 내 보낸 출력 값에 액세스 할 때 해당 출력 값의 종속성을 통해 Terraform은 다른 모듈에 정의 된 리소스 간의 종속성을 올바르게 결정할 수 있습니다.</p>
-
 <h3 id="accessing-child-module-outputs">Accessing Child Module Outputs</h3>
-
 <p>상위 모듈에서 하위 모듈의 출력은 <code>module.&lt;MODULE NAME&gt;.&lt;OUTPUT NAME&gt;</code>로 표현할 수 있습니다. 예를 들어, server라는 하위 모듈이 private_ip라는 출력을 선언 한 경우 해당 값에 <code>module.server.private_ip</code>로 액세스 할 수 있습니다.</p>
 
 
@@ -2002,19 +1988,19 @@ output &quot;db_password&quot; {
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/terraform-workshop/js/clipboard.min.js?1574401945"></script>
-    <script src="/terraform-workshop/js/perfect-scrollbar.min.js?1574401945"></script>
-    <script src="/terraform-workshop/js/perfect-scrollbar.jquery.min.js?1574401945"></script>
-    <script src="/terraform-workshop/js/jquery.sticky.js?1574401945"></script>
-    <script src="/terraform-workshop/js/featherlight.min.js?1574401945"></script>
-    <script src="/terraform-workshop/js/highlight.pack.js?1574401945"></script>
+    <script src="/terraform-workshop/js/clipboard.min.js?1578013178"></script>
+    <script src="/terraform-workshop/js/perfect-scrollbar.min.js?1578013178"></script>
+    <script src="/terraform-workshop/js/perfect-scrollbar.jquery.min.js?1578013178"></script>
+    <script src="/terraform-workshop/js/jquery.sticky.js?1578013178"></script>
+    <script src="/terraform-workshop/js/featherlight.min.js?1578013178"></script>
+    <script src="/terraform-workshop/js/highlight.pack.js?1578013178"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/terraform-workshop/js/modernizr.custom-3.6.0.js?1574401945"></script>
-    <script src="/terraform-workshop/js/learn.js?1574401945"></script>
-    <script src="/terraform-workshop/js/hugo-learn.js?1574401945"></script>
+    <script src="/terraform-workshop/js/modernizr.custom-3.6.0.js?1578013178"></script>
+    <script src="/terraform-workshop/js/learn.js?1578013178"></script>
+    <script src="/terraform-workshop/js/hugo-learn.js?1578013178"></script>
 
-    <link href="/terraform-workshop/mermaid/mermaid.css?1574401945" rel="stylesheet" />
-    <script src="/terraform-workshop/mermaid/mermaid.js?1574401945"></script>
+    <link href="/terraform-workshop/mermaid/mermaid.css?1578013178" rel="stylesheet" />
+    <script src="/terraform-workshop/mermaid/mermaid.js?1578013178"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

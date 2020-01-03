@@ -13,14 +13,14 @@ Terraform 언어의 주요 목적은 `Resource`를 선언하는 것입니다. �
 
 ### Arguments, Blocks, and Expressions
 
-```
+```hcl
 resource "aws_vpc" "main" {
   cidr_block = var.base_cidr_block
 }
 
-<BLOCK TYPE> "<BLOCK LABEL>" "<BLOCK LABEL>" {
+BLOCK_TYPE "BLOCK_LABEL" "BLOCK_LABEL" {
   # Block body
-  <IDENTIFIER> = <EXPRESSION> # Argument
+  IDENTIFIER = EXPRESSION # Argument
 }
 ```
 

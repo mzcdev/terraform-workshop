@@ -15,7 +15,7 @@ weight: 312
 
 `provider` 블록을 사용 하여 설정 합니다.
 
-```
+```hcl
 provider "aws" {
   region     = var.region
   access_key = "<ACCESS_KEY_HERE>"
@@ -23,7 +23,7 @@ provider "aws" {
 }
 ```
 
-```
+```hcl
 provider "google" {
   project = var.project
   region  = var.region
@@ -34,6 +34,6 @@ provider "google" {
 
 새 제공자가 명시 적으로 제공자 블록을 통해 또는 해당 제공자의 자원을 추가하여 구성에 추가 될 때마다 Terraform은 제공자를 사용하기 전에 제공자를 초기화해야합니다. 초기화는 나중에 실행할 수 있도록 공급자의 플러그인을 다운로드하여 설치합니다.
 
-```
+```bash
 terraform init
 ```

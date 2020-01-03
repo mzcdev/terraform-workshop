@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.59.1" />
+    <meta name="generator" content="Hugo 0.62.1" />
     <meta name="description" content="Terraform Workshop">
 <meta name="author" content="Jungyoul Yu">
 
@@ -13,20 +13,20 @@
     <title>Instance :: Terraform Workshop</title>
 
     
-    <link href="/terraform-workshop/css/nucleus.css?1574401944" rel="stylesheet">
-    <link href="/terraform-workshop/css/fontawesome-all.min.css?1574401944" rel="stylesheet">
-    <link href="/terraform-workshop/css/hybrid.css?1574401944" rel="stylesheet">
-    <link href="/terraform-workshop/css/featherlight.min.css?1574401944" rel="stylesheet">
-    <link href="/terraform-workshop/css/perfect-scrollbar.min.css?1574401944" rel="stylesheet">
-    <link href="/terraform-workshop/css/auto-complete.css?1574401944" rel="stylesheet">
-    <link href="/terraform-workshop/css/atom-one-dark-reasonable.css?1574401944" rel="stylesheet">
-    <link href="/terraform-workshop/css/theme.css?1574401944" rel="stylesheet">
-    <link href="/terraform-workshop/css/hugo-theme.css?1574401944" rel="stylesheet">
+    <link href="/terraform-workshop/css/nucleus.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/fontawesome-all.min.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/hybrid.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/featherlight.min.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/perfect-scrollbar.min.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/auto-complete.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/atom-one-dark-reasonable.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/theme.css?1578013178" rel="stylesheet">
+    <link href="/terraform-workshop/css/hugo-theme.css?1578013178" rel="stylesheet">
     
-      <link href="/terraform-workshop/css/theme-blue.css?1574401944" rel="stylesheet">
+      <link href="/terraform-workshop/css/theme-blue.css?1578013178" rel="stylesheet">
     
 
-    <script src="/terraform-workshop/js/jquery-3.3.1.min.js?1574401944"></script>
+    <script src="/terraform-workshop/js/jquery-3.3.1.min.js?1578013178"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/terraform-workshop/js/lunr.min.js?1574401944"></script>
-<script type="text/javascript" src="/terraform-workshop/js/auto-complete.js?1574401944"></script>
+<script type="text/javascript" src="/terraform-workshop/js/lunr.min.js?1578013178"></script>
+<script type="text/javascript" src="/terraform-workshop/js/auto-complete.js?1578013178"></script>
 <script type="text/javascript">
     
         var baseurl = "\/terraform-workshop\/";
     
 </script>
-<script type="text/javascript" src="/terraform-workshop/js/search.js?1574401944"></script>
+<script type="text/javascript" src="/terraform-workshop/js/search.js?1578013178"></script>
 
     
   </div>
@@ -1146,20 +1146,13 @@
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#init">init</a></li>
-<li><a href="#plan">plan</a></li>
-<li><a href="#apply">apply</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -1184,84 +1177,60 @@
 
 
 
-
-
 <p>가장 심플한 코드로 EC2 instance 를 만들어 보겠습니다.</p>
-
 <h4 id="init">init</h4>
-
 <p>Terraform 명령으로 초기화 합니다.</p>
-
-<pre><code class="language-bash">cd terraform-env-workshop/instance
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd terraform-env-workshop/instance
 
 terraform init
-</code></pre>
-
-<pre><code class="language-text">Initializing the backend...
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Initializing the backend...
 
 Initializing provider plugins...
 - Checking for available provider plugins...
-- Downloading plugin for provider &quot;aws&quot; (hashicorp/aws) 2.35.0...
+- Downloading plugin for provider &#34;aws&#34; (hashicorp/aws) 2.35.0...
 
 ...
 
-* provider.aws: version = &quot;~&gt; 2.35&quot;
+* provider.aws: version = &#34;~&gt; 2.35&#34;
 
 Terraform has been successfully initialized!
 
 ...
-</code></pre>
-
-<p>aws provider 를 위한 plugin 을 다운로드 했습니다.</p>
-
+</code></pre></div><p>aws provider 를 위한 plugin 을 다운로드 했습니다.</p>
 <h4 id="plan">plan</h4>
-
 <p>Terraform 명령으로 실행 계획을 확인 합니다.</p>
-
-<pre><code class="language-bash">cd terraform-env-workshop/instance
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd terraform-env-workshop/instance
 
 terraform plan
-</code></pre>
-
-<pre><code class="language-text">Refreshing Terraform state in-memory prior to plan...
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Refreshing Terraform state in-memory prior to plan...
 
 ------------------------------------------------------------------------
 
 Terraform will perform the following actions:
 
   # aws_instance.this will be created
-  + resource &quot;aws_instance&quot; &quot;this&quot; {
+  + resource &#34;aws_instance&#34; &#34;this&#34; {
       ...
     }
 
 Plan: 1 to add, 0 to change, 0 to destroy.
 
 ...
-</code></pre>
-
-<p><code>+</code> 가 나오며 1개의 리소스를 <code>in-memory</code> 에 만들것 이라는것을 알 수 있습니다.</p>
-
+</code></pre></div><p><code>+</code> 가 나오며 1개의 리소스를 <code>in-memory</code> 에 만들것 이라는것을 알 수 있습니다.</p>
 <h4 id="apply">apply</h4>
-
 <p>Terraform 명령으로 실행 합니다.</p>
-
-<pre><code class="language-bash">cd terraform-env-workshop/instance
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd terraform-env-workshop/instance
 
 terraform apply
-</code></pre>
-
-<pre><code class="language-text">Plan: 1 to add, 0 to change, 0 to destroy.
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Plan: 1 to add, 0 to change, 0 to destroy.
 
 Do you want to perform these actions?
   Terraform will perform the actions described above.
-  Only 'yes' will be accepted to approve.
+  Only &#39;yes&#39; will be accepted to approve.
 
   Enter a value:
-</code></pre>
-
-<p>plan 을 다시한번 해보고 액션을 수행 할지 물어 봅니다. <code>yes</code> 를 입력 하면 리소스 생성을 시작 합니다.</p>
-
-<pre><code class="language-text">aws_instance.this: Creating...
+</code></pre></div><p>plan 을 다시한번 해보고 액션을 수행 할지 물어 봅니다. <code>yes</code> 를 입력 하면 리소스 생성을 시작 합니다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">aws_instance.this: Creating...
 aws_instance.this: Still creating... [10s elapsed]
 aws_instance.this: Still creating... [20s elapsed]
 aws_instance.this: Creation complete after 22s [id=i-0390f0e077a519e15]
@@ -1272,9 +1241,7 @@ Outputs:
 
 id = i-0390f0e077a519e15
 private_ip = 172.31.39.210
-</code></pre>
-
-<p>리소스가 생성 되었습니다.</p>
+</code></pre></div><p>리소스가 생성 되었습니다.</p>
 
 
 <footer class=" footline" >
@@ -2051,19 +2018,19 @@ private_ip = 172.31.39.210
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/terraform-workshop/js/clipboard.min.js?1574401944"></script>
-    <script src="/terraform-workshop/js/perfect-scrollbar.min.js?1574401944"></script>
-    <script src="/terraform-workshop/js/perfect-scrollbar.jquery.min.js?1574401944"></script>
-    <script src="/terraform-workshop/js/jquery.sticky.js?1574401944"></script>
-    <script src="/terraform-workshop/js/featherlight.min.js?1574401944"></script>
-    <script src="/terraform-workshop/js/highlight.pack.js?1574401944"></script>
+    <script src="/terraform-workshop/js/clipboard.min.js?1578013178"></script>
+    <script src="/terraform-workshop/js/perfect-scrollbar.min.js?1578013178"></script>
+    <script src="/terraform-workshop/js/perfect-scrollbar.jquery.min.js?1578013178"></script>
+    <script src="/terraform-workshop/js/jquery.sticky.js?1578013178"></script>
+    <script src="/terraform-workshop/js/featherlight.min.js?1578013178"></script>
+    <script src="/terraform-workshop/js/highlight.pack.js?1578013178"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/terraform-workshop/js/modernizr.custom-3.6.0.js?1574401944"></script>
-    <script src="/terraform-workshop/js/learn.js?1574401944"></script>
-    <script src="/terraform-workshop/js/hugo-learn.js?1574401944"></script>
+    <script src="/terraform-workshop/js/modernizr.custom-3.6.0.js?1578013178"></script>
+    <script src="/terraform-workshop/js/learn.js?1578013178"></script>
+    <script src="/terraform-workshop/js/hugo-learn.js?1578013178"></script>
 
-    <link href="/terraform-workshop/mermaid/mermaid.css?1574401944" rel="stylesheet" />
-    <script src="/terraform-workshop/mermaid/mermaid.js?1574401944"></script>
+    <link href="/terraform-workshop/mermaid/mermaid.css?1578013178" rel="stylesheet" />
+    <script src="/terraform-workshop/mermaid/mermaid.js?1578013178"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

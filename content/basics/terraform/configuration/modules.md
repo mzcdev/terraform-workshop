@@ -13,7 +13,7 @@ Module은 함께 사용되는 여러 리소스의 컨테이너입니다.
 
 `module` 블록을 사용 하여 설정 합니다.
 
-```
+```hcl
 module "servers" {
   source = "./sub_module"
 
@@ -25,7 +25,7 @@ module 키워드 바로 뒤에있는 레이블은 로컬 이름이며 호출 모
 
 모든 모듈에는 Terraform CLI에 의해 정의 된 메타 인수 인 `source` 인수가 필요합니다. 그 값은 모듈 구성 파일의 로컬 디렉토리에 대한 경로이거나 Terraform이 다운로드하여 사용해야하는 원격 모듈 소스입니다.
 
-```
+```hcl
 module "vpc" {
   source = "github.com/nalbam/terraform-aws-vpc?ref=v0.12.8"
 
@@ -40,7 +40,7 @@ module "vpc" {
 
 모듈에 정의 된 리소스는 캡슐화되므로 호출 모듈은 해당 속성에 직접 액세스 할 수 없습니다. 그러나 자식 모듈은 출력 값을 선언하여 호출 모듈이 액세스 할 특정 값을 선택적으로 내보낼 수 있습니다.
 
-```
+```hcl
 resource "aws_elb" "example" {
   # ...
 
