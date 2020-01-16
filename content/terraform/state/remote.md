@@ -27,6 +27,13 @@ terraform {
     key    = "vpc-demo.tfstate"
   }
 }
+
+module "vpc" {
+  source = "github.com/nalbam/terraform-aws-vpc?ref=v0.12.24"
+
+  region = var.region
+  name   = var.name
+}
 ```
 
 ```hcl
