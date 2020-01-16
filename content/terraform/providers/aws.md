@@ -64,14 +64,14 @@ AWS 자격 증명 파일을 사용하여 자격 증명을 지정할 수 있습�
 ```hcl
 provider "aws" {
   region                  = "us-west-2"
-  shared_credentials_file = "/Users/tf_user/.aws/credentials"
+  shared_credentials_file = "/Users/tf_user/.aws/cred-custom"
   profile                 = "custom-profile"
 }
 ```
 
 ### EC2 Role
 
-IAM 역할을 사용하여 IAM 인스턴스 프로파일이있는 EC2 인스턴스에서 Terraform을 실행중인 경우 Terraform은 메타 데이터 API 엔드 포인트에 자격 증명을 요청하기 만 합니다.
+IAM 역할을 사용하여 IAM 인스턴스 프로파일이 있는 EC2 인스턴스에서 Terraform을 실행중인 경우 Terraform은 메타 데이터 API 엔드 포인트에 자격 증명을 요청하여 권한을 획득 할 수 있습니다.
 
 ### Assume role
 

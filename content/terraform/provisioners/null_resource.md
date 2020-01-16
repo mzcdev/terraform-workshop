@@ -35,6 +35,8 @@ resource "null_resource" "cluster" {
 }
 ```
 
+### Example - kubernetes provider 사용 전
+
 ```hcl
 resource "null_resource" "executor" {
   depends_on = [aws_eks_cluster.cluster]
@@ -47,10 +49,28 @@ resource "null_resource" "executor" {
     working_dir = path.module
 
     command = <<EOS
-echo "local exec"
+echo "kubectl apply -f aws-auth.yaml"
 EOS
 
     interpreter = var.local_exec_interpreter
+  }
+}
+```
+
+### Example - kubernetes provider 사용 후
+
+```hcl
+resource "kubernetes_config_map" "aws_auth" {
+  depends_on = [aws_eks_cluster.cluster]
+
+  metadata {
+    name      = "aws-auth"
+    namespace = "kube-system"
+  }
+
+  data = {
+    mapRoles = yamlencode(var.map_roles)
+    mapUsers = yamlencode(var.map_users)
   }
 }
 ```

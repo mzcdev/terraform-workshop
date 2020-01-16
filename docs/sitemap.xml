@@ -103,10 +103,6 @@
   </url>
   
   <url>
-    <loc>/terraform-workshop/terraform/state/</loc>
-  </url>
-  
-  <url>
     <loc>/terraform-workshop/terraform/providers/</loc>
   </url>
   
@@ -124,6 +120,10 @@
   
   <url>
     <loc>/terraform-workshop/terraform/modules/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/terraform/state/</loc>
   </url>
   
   <url>
