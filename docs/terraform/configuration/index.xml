@@ -27,7 +27,7 @@ variable &amp;#34;ami_id&amp;#34; { description = &amp;#34;The id of the machine
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/terraform-workshop/terraform/configuration/providers/</guid>
-      <description>자원은 Terraform 언어의 기본 구성이지만 자원의 동작은 연관된 자원 유형에 의존하며 이러한 유형은 제공자에 의해 정의됩니다.
+      <description>자원(Resource)은 Terraform 언어의 기본 구성이지만 자원의 동작은 연관된 자원 유형에 의존하며 이러한 유형은 제공자(Provider)에 의해 정의됩니다.
 각 제공자는 이름 지정된 자원 유형 세트를 제공하고 각 자원 유형에 대해 허용되는 인수, 내보내는 속성 및 해당 유형의 자원 변경 사항이 실제로 원격 API에 적용되는 방법을 정의합니다.
 사용 가능한 대부분의 공급자는 하나의 클라우드 또는 온-프레미스 인프라 플랫폼에 해당하며 해당 플랫폼의 각 기능에 해당하는 리소스 유형을 제공합니다.
 공급자는 일반적으로 엔드 포인트 URL, 리전, 인증 설정 등을 지정하기 위해 자체 구성이 필요합니다.</description>
@@ -76,7 +76,7 @@ locals {# 두개의 인스턴스의 ID List를 반환 합니다.  instance_ids =
       <guid>/terraform-workshop/terraform/configuration/data_sources/</guid>
       <description>Data Source를 통해 Terraform 구성의 다른 곳에서 사용하기 위해 데이터를 가져 오거나 계산할 수 있습니다. 데이터 소스를 사용하면 Terraform 구성이 Terraform 외부에서 정의되거나 다른 별도의 Terraform 구성으로 정의 된 정보를 사용할 수 있습니다.
 Using Data Sources data 블록을 사용 하여 설정 합니다.
-data &amp;#34;aws_ami&amp;#34; &amp;#34;example&amp;#34; { most_recent = true owners = [&amp;#34;self&amp;#34;] tags = { Name = &amp;#34;app-server&amp;#34; Tested = &amp;#34;true&amp;#34; } } Terraform이 지정된 데이터 소스 aws_ami에서 읽고 해당 로컬 이름 example으로 결과를 내보내도록 요청합니다.</description>
+data &amp;#34;aws_ami&amp;#34; &amp;#34;example&amp;#34; { owners = [&amp;#34;self&amp;#34;] tags = { Name = &amp;#34;app-server&amp;#34; Tested = &amp;#34;true&amp;#34; } most_recent = true } Terraform이 지정된 데이터 소스 aws_ami에서 읽고 해당 로컬 이름 example으로 결과를 내보내도록 요청합니다.</description>
     </item>
     
     <item>

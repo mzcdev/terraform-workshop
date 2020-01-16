@@ -22,9 +22,32 @@ weight: 102
 ```hcl
 terraform {
   backend "s3" {
-    region         = "ap-northeast-2"
-    bucket         = "terraform-mz-seoul"
-    key            = "vpc-demo.tfstate"
+    region = "ap-northeast-2"
+    bucket = "terraform-mz-seoul"
+    key    = "vpc-demo.tfstate"
   }
+}
+```
+
+```hcl
+data "terraform_remote_state" "vpc" {
+  backend = "s3"
+  config = {
+    region = "ap-northeast-2"
+    bucket = "terraform-mz-seoul"
+    key    = "vpc-demo.tfstate"
+  }
+}
+```
+
+```hcl
+module "eks" {
+  source = "github.com/nalbam/terraform-aws-eks?ref=v0.12.32"
+
+  region = var.region
+  name   = var.name
+
+  vpc_id     = data.terraform_remote_state.vpc.outputs.vpc_id
+  subnet_ids = data.terraform_remote_state.vpc.outputs.private_subnet_ids
 }
 ```

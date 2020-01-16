@@ -11,14 +11,14 @@ Data Source를 통해 Terraform 구성의 다른 곳에서 사용하기 위해 �
 
 ```hcl
 data "aws_ami" "example" {
-  most_recent = true
-
   owners = ["self"]
 
   tags = {
     Name   = "app-server"
     Tested = "true"
   }
+
+  most_recent = true
 }
 ```
 
@@ -28,12 +28,12 @@ Terraform이 지정된 데이터 소스 `aws_ami`에서 읽고 해당 로컬 이
 
 ```hcl
 data "aws_ami" "worker" {
+  owners = ["602401143452"] # Amazon Account ID
+
   filter {
     name   = "name"
     values = ["amazon-eks-node-${var.kubernetes_version}-*"]
   }
-
-  owners = ["602401143452"] # Amazon Account ID
 
   most_recent = true
 }

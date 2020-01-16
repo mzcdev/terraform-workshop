@@ -3,7 +3,7 @@ title: Providers
 weight: 312
 ---
 
-자원은 Terraform 언어의 기본 구성이지만 자원의 동작은 연관된 자원 유형에 의존하며 이러한 유형은 제공자에 의해 정의됩니다.
+자원(Resource)은 Terraform 언어의 기본 구성이지만 자원의 동작은 연관된 자원 유형에 의존하며 이러한 유형은 제공자(Provider)에 의해 정의됩니다.
 
 각 제공자는 이름 지정된 자원 유형 세트를 제공하고 각 자원 유형에 대해 허용되는 인수, 내보내는 속성 및 해당 유형의 자원 변경 사항이 실제로 원격 API에 적용되는 방법을 정의합니다.
 
@@ -17,16 +17,14 @@ weight: 312
 
 ```hcl
 provider "aws" {
-  region     = var.region
-  access_key = "<ACCESS_KEY_HERE>"
-  secret_key = "<SECRET_KEY_HERE>"
+  region = var.region
 }
 ```
 
 ```hcl
 provider "google" {
-  project = var.project
   region  = var.region
+  project = var.project
 }
 ```
 

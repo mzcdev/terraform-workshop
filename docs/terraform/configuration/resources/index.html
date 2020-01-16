@@ -13,20 +13,20 @@
     <title>Resources :: Terraform Workshop</title>
 
     
-    <link href="/terraform-workshop/css/nucleus.css?1579167960" rel="stylesheet">
-    <link href="/terraform-workshop/css/fontawesome-all.min.css?1579167960" rel="stylesheet">
-    <link href="/terraform-workshop/css/hybrid.css?1579167960" rel="stylesheet">
-    <link href="/terraform-workshop/css/featherlight.min.css?1579167960" rel="stylesheet">
-    <link href="/terraform-workshop/css/perfect-scrollbar.min.css?1579167960" rel="stylesheet">
-    <link href="/terraform-workshop/css/auto-complete.css?1579167960" rel="stylesheet">
-    <link href="/terraform-workshop/css/atom-one-dark-reasonable.css?1579167960" rel="stylesheet">
-    <link href="/terraform-workshop/css/theme.css?1579167960" rel="stylesheet">
-    <link href="/terraform-workshop/css/hugo-theme.css?1579167960" rel="stylesheet">
+    <link href="/terraform-workshop/css/nucleus.css?1579169880" rel="stylesheet">
+    <link href="/terraform-workshop/css/fontawesome-all.min.css?1579169880" rel="stylesheet">
+    <link href="/terraform-workshop/css/hybrid.css?1579169880" rel="stylesheet">
+    <link href="/terraform-workshop/css/featherlight.min.css?1579169880" rel="stylesheet">
+    <link href="/terraform-workshop/css/perfect-scrollbar.min.css?1579169880" rel="stylesheet">
+    <link href="/terraform-workshop/css/auto-complete.css?1579169880" rel="stylesheet">
+    <link href="/terraform-workshop/css/atom-one-dark-reasonable.css?1579169880" rel="stylesheet">
+    <link href="/terraform-workshop/css/theme.css?1579169880" rel="stylesheet">
+    <link href="/terraform-workshop/css/hugo-theme.css?1579169880" rel="stylesheet">
     
-      <link href="/terraform-workshop/css/theme-blue.css?1579167960" rel="stylesheet">
+      <link href="/terraform-workshop/css/theme-blue.css?1579169880" rel="stylesheet">
     
 
-    <script src="/terraform-workshop/js/jquery-3.3.1.min.js?1579167960"></script>
+    <script src="/terraform-workshop/js/jquery-3.3.1.min.js?1579169880"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/terraform-workshop/js/lunr.min.js?1579167960"></script>
-<script type="text/javascript" src="/terraform-workshop/js/auto-complete.js?1579167960"></script>
+<script type="text/javascript" src="/terraform-workshop/js/lunr.min.js?1579169880"></script>
+<script type="text/javascript" src="/terraform-workshop/js/auto-complete.js?1579169880"></script>
 <script type="text/javascript">
     
         var baseurl = "\/terraform-workshop\/";
     
 </script>
-<script type="text/javascript" src="/terraform-workshop/js/search.js?1579167960"></script>
+<script type="text/javascript" src="/terraform-workshop/js/search.js?1579169880"></script>
 
     
   </div>
@@ -1600,7 +1600,7 @@
 <p>블록 내의 <code>ami</code> <code>instance_type</code>은 aws_instance 자원 유형의 인수 입니다.</p>
 <h3 id="resource-behavior">Resource Behavior</h3>
 <p>리소스 블록은 톡정 인프라의 선언적 정의 입니다. 정의한 자원은 실제 인프라 개체를 나타내지는 않습니다.</p>
-<p><code>terraform apply</code> 를 통하여 설정과 구성이 일치 하도록 실제 인프라 개체를 생성, 업데이트 및 파기를 수행 합니다.</p>
+<p><code>terraform apply</code> 를 통하여 설정과 구성이 일치 하도록 실제 인프라 개체를 생성, 업데이트 및 삭제를 수행 합니다.</p>
 <p>새 인프라 개체를 생성하면 <code>State</code> 에 저장되어 관리 됩니다.</p>
 <h4 id="resource-dependencies">Resource Dependencies</h4>
 <p>구성의 대부분의 리소스 간에는 특별한 관계가 없으며 Terraform은 관련이 없는 여러 리소스를 동시에 변경할 수 있습니다.</p>
@@ -1610,9 +1610,9 @@
 <h3 id="meta-arguments">Meta-Arguments</h3>
 <p>Terraform CLI는 다음과 같은 메타 인수를 정의합니다.이 인수는 모든 자원 유형과 함께 사용하여 자원의 동작을 변경할 수 있습니다.</p>
 <ul>
-<li><code>count</code>: 개수에 따라 여러 자원 인스턴스를 작성</li>
-<li><code>depend_on</code>: 숨겨진 종속성을 지정</li>
-<li><code>for_each</code>: 맵 또는 문자열 세트에 따라 여러 인스턴스를 작성</li>
+<li><code>count</code>: 개수에 따라 여러 자원을 작성</li>
+<li><code>depend_on</code>: 숨겨진 종속성을 명시적으로 지정</li>
+<li><code>for_each</code>: 맵 또는 문자열 세트에 따라 여러 자원을 작성</li>
 <li><code>provider</code>: 기본이 아닌 공급자 구성을 선택</li>
 <li><code>lifecycle</code>: 라이프 사이클 사용자 정의</li>
 <li><code>provisioner</code> and <code>connection</code>: 리소스 생성 후 추가 작업을 수행</li>
@@ -2790,19 +2790,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/terraform-workshop/js/clipboard.min.js?1579167960"></script>
-    <script src="/terraform-workshop/js/perfect-scrollbar.min.js?1579167960"></script>
-    <script src="/terraform-workshop/js/perfect-scrollbar.jquery.min.js?1579167960"></script>
-    <script src="/terraform-workshop/js/jquery.sticky.js?1579167960"></script>
-    <script src="/terraform-workshop/js/featherlight.min.js?1579167960"></script>
-    <script src="/terraform-workshop/js/highlight.pack.js?1579167960"></script>
+    <script src="/terraform-workshop/js/clipboard.min.js?1579169880"></script>
+    <script src="/terraform-workshop/js/perfect-scrollbar.min.js?1579169880"></script>
+    <script src="/terraform-workshop/js/perfect-scrollbar.jquery.min.js?1579169880"></script>
+    <script src="/terraform-workshop/js/jquery.sticky.js?1579169880"></script>
+    <script src="/terraform-workshop/js/featherlight.min.js?1579169880"></script>
+    <script src="/terraform-workshop/js/highlight.pack.js?1579169880"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/terraform-workshop/js/modernizr.custom-3.6.0.js?1579167960"></script>
-    <script src="/terraform-workshop/js/learn.js?1579167960"></script>
-    <script src="/terraform-workshop/js/hugo-learn.js?1579167960"></script>
+    <script src="/terraform-workshop/js/modernizr.custom-3.6.0.js?1579169880"></script>
+    <script src="/terraform-workshop/js/learn.js?1579169880"></script>
+    <script src="/terraform-workshop/js/hugo-learn.js?1579169880"></script>
 
-    <link href="/terraform-workshop/mermaid/mermaid.css?1579167960" rel="stylesheet" />
-    <script src="/terraform-workshop/mermaid/mermaid.js?1579167960"></script>
+    <link href="/terraform-workshop/mermaid/mermaid.css?1579169880" rel="stylesheet" />
+    <script src="/terraform-workshop/mermaid/mermaid.js?1579169880"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
