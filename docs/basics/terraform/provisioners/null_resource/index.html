@@ -10,23 +10,23 @@
     <link rel="shortcut icon" href="/terraform-workshop/images/favicon-60.png" type="image/x-icon" />
 <link rel="icon" href="/terraform-workshop/images/favicon-60.png" type="image/x-icon" />
 
-    <title>0.12upgrade :: Terraform Workshop</title>
+    <title>Provisioners Without a Resource :: Terraform Workshop</title>
 
     
-    <link href="/terraform-workshop/css/nucleus.css?1579158173" rel="stylesheet">
-    <link href="/terraform-workshop/css/fontawesome-all.min.css?1579158173" rel="stylesheet">
-    <link href="/terraform-workshop/css/hybrid.css?1579158173" rel="stylesheet">
-    <link href="/terraform-workshop/css/featherlight.min.css?1579158173" rel="stylesheet">
-    <link href="/terraform-workshop/css/perfect-scrollbar.min.css?1579158173" rel="stylesheet">
-    <link href="/terraform-workshop/css/auto-complete.css?1579158173" rel="stylesheet">
-    <link href="/terraform-workshop/css/atom-one-dark-reasonable.css?1579158173" rel="stylesheet">
-    <link href="/terraform-workshop/css/theme.css?1579158173" rel="stylesheet">
-    <link href="/terraform-workshop/css/hugo-theme.css?1579158173" rel="stylesheet">
+    <link href="/terraform-workshop/css/nucleus.css?1579163327" rel="stylesheet">
+    <link href="/terraform-workshop/css/fontawesome-all.min.css?1579163327" rel="stylesheet">
+    <link href="/terraform-workshop/css/hybrid.css?1579163327" rel="stylesheet">
+    <link href="/terraform-workshop/css/featherlight.min.css?1579163327" rel="stylesheet">
+    <link href="/terraform-workshop/css/perfect-scrollbar.min.css?1579163327" rel="stylesheet">
+    <link href="/terraform-workshop/css/auto-complete.css?1579163327" rel="stylesheet">
+    <link href="/terraform-workshop/css/atom-one-dark-reasonable.css?1579163327" rel="stylesheet">
+    <link href="/terraform-workshop/css/theme.css?1579163327" rel="stylesheet">
+    <link href="/terraform-workshop/css/hugo-theme.css?1579163327" rel="stylesheet">
     
-      <link href="/terraform-workshop/css/theme-blue.css?1579158173" rel="stylesheet">
+      <link href="/terraform-workshop/css/theme-blue.css?1579163327" rel="stylesheet">
     
 
-    <script src="/terraform-workshop/js/jquery-3.3.1.min.js?1579158173"></script>
+    <script src="/terraform-workshop/js/jquery-3.3.1.min.js?1579163327"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/terraform-workshop/basics/terraform/commands/0.12upgrade/">
+  <body class="" data-url="/terraform-workshop/basics/terraform/provisioners/null_resource/">
     <nav id="sidebar" class="">
 
 
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/terraform-workshop/js/lunr.min.js?1579158173"></script>
-<script type="text/javascript" src="/terraform-workshop/js/auto-complete.js?1579158173"></script>
+<script type="text/javascript" src="/terraform-workshop/js/lunr.min.js?1579163327"></script>
+<script type="text/javascript" src="/terraform-workshop/js/auto-complete.js?1579163327"></script>
 <script type="text/javascript">
     
         var baseurl = "\/terraform-workshop\/";
     
 </script>
-<script type="text/javascript" src="/terraform-workshop/js/search.js?1579158173"></script>
+<script type="text/javascript" src="/terraform-workshop/js/search.js?1579163327"></script>
 
     
   </div>
@@ -302,7 +302,7 @@
   
     
     <li data-nav-id="/terraform-workshop/basics/terraform/commands/" title="Commands (CLI)" class="dd-item 
-        parent
+        
         
         
         ">
@@ -509,25 +509,6 @@
 
             
           
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/terraform-workshop/basics/terraform/commands/0.12upgrade/" title="0.12upgrade" class="dd-item active">
-        <a href="/terraform-workshop/basics/terraform/commands/0.12upgrade/">
-        0.12upgrade
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
         
         </ul>
               
@@ -554,6 +535,73 @@
           
       </a>
       
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/basics/terraform/state/purpose/" title="Purpose of Terraform State" class="dd-item ">
+        <a href="/terraform-workshop/basics/terraform/state/purpose/">
+        Purpose of Terraform State
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/basics/terraform/state/remote/" title="Remote State" class="dd-item ">
+        <a href="/terraform-workshop/basics/terraform/state/remote/">
+        Remote State
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/basics/terraform/state/locking/" title="State Locking" class="dd-item ">
+        <a href="/terraform-workshop/basics/terraform/state/locking/">
+        State Locking
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
               
     </li>
   
@@ -578,6 +626,35 @@
           
       </a>
       
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/basics/terraform/providers/aws/" title="AWS Provider" class="dd-item ">
+        <a href="/terraform-workshop/basics/terraform/providers/aws/">
+        AWS Provider
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
               
     </li>
   
@@ -593,7 +670,7 @@
   
     
     <li data-nav-id="/terraform-workshop/basics/terraform/provisioners/" title="Provisioners" class="dd-item 
-        
+        parent
         
         
         ">
@@ -602,6 +679,54 @@
           
       </a>
       
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/basics/terraform/provisioners/connection/" title="Provisioner Connection Settings" class="dd-item ">
+        <a href="/terraform-workshop/basics/terraform/provisioners/connection/">
+        Provisioner Connection Settings
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/basics/terraform/provisioners/null_resource/" title="Provisioners Without a Resource" class="dd-item active">
+        <a href="/terraform-workshop/basics/terraform/provisioners/null_resource/">
+        Provisioners Without a Resource
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
               
     </li>
   
@@ -626,6 +751,54 @@
           
       </a>
       
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/basics/terraform/modules/sources/" title="Module Sources" class="dd-item ">
+        <a href="/terraform-workshop/basics/terraform/modules/sources/">
+        Module Sources
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/basics/terraform/modules/composition/" title="Module Composition" class="dd-item ">
+        <a href="/terraform-workshop/basics/terraform/modules/composition/">
+        Module Composition
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
               
     </li>
   
@@ -650,6 +823,54 @@
           
       </a>
       
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/basics/terraform/backends/config/" title="Backend Configuration" class="dd-item ">
+        <a href="/terraform-workshop/basics/terraform/backends/config/">
+        Backend Configuration
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/basics/terraform/backends/locking/" title="Locking" class="dd-item ">
+        <a href="/terraform-workshop/basics/terraform/backends/locking/">
+        Locking
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
               
     </li>
   
@@ -1320,7 +1541,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='' href="https://github.com/mzcdev/terraform-workshop/edit/master/content/basics/terraform/commands/0.12upgrade.md" target="blank">
+                    <a class="github-link" title='' href="https://github.com/mzcdev/terraform-workshop/edit/master/content/basics/terraform/provisioners/null_resource.md" target="blank">
                       <i class="fas fa-code-branch"></i>
                       <span id="top-github-link-text"></span>
                     </a>
@@ -1359,7 +1580,7 @@
             
           
           
-            <a href='/terraform-workshop/'>Home</a> > <a href='/terraform-workshop/basics/'>Basics</a> > <a href='/terraform-workshop/basics/terraform/'>Terraform</a> > <a href='/terraform-workshop/basics/terraform/commands/'>Commands (CLI)</a> > 0.12upgrade
+            <a href='/terraform-workshop/'>Home</a> > <a href='/terraform-workshop/basics/'>Basics</a> > <a href='/terraform-workshop/basics/terraform/'>Terraform</a> > <a href='/terraform-workshop/basics/terraform/provisioners/'>Provisioners</a> > Provisioners Without a Resource
           
          
           
@@ -1376,7 +1597,15 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#example">Example</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -1392,7 +1621,7 @@
           
             <h1>
               
-              0.12upgrade
+              Provisioners Without a Resource
             </h1>
           
 
@@ -1400,7 +1629,51 @@
 
 
 
+<p>특정 리소스와 직접 연결되지 않은 프로 비저를 실행해야하는 경우 해당 공급자를 null_resource와 연결할 수 있습니다.</p>
+<h3 id="example">Example</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-hcl" data-lang="hcl"><span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;aws_instance&#34; &#34;cluster&#34;</span> {
+  count <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span><span style="color:#75715e">
+</span><span style="color:#75715e">
+</span><span style="color:#75715e">  # ...
+</span><span style="color:#75715e"></span>}
 
+<span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;null_resource&#34; &#34;cluster&#34;</span> {<span style="color:#75715e">
+</span><span style="color:#75715e">  # Changes to any instance of the cluster requires re-provisioning
+</span><span style="color:#75715e"></span>  triggers <span style="color:#f92672">=</span> {
+    cluster_instance_ids <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;${join(&#34;,&#34;, aws_instance.cluster.*.id)}&#34;</span>
+  }<span style="color:#75715e">
+</span><span style="color:#75715e">
+</span><span style="color:#75715e">  # Bootstrap script can run on any instance of the cluster
+</span><span style="color:#75715e"></span><span style="color:#75715e">  # So we just choose the first in this case
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">connection</span> {
+    host <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;${element(aws_instance.cluster.*.public_ip, 0)}&#34;</span>
+  }
+
+  <span style="color:#66d9ef">provisioner</span> <span style="color:#e6db74">&#34;remote-exec&#34;</span> {<span style="color:#75715e">
+</span><span style="color:#75715e">    # Bootstrap script called with private_ip of each node in the cluster
+</span><span style="color:#75715e"></span>    inline <span style="color:#f92672">=</span> [
+      <span style="color:#e6db74">&#34;bootstrap-cluster.sh ${join(&#34; &#34;, aws_instance.cluster.*.private_ip)}&#34;</span>,
+    ]
+  }
+}
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-hcl" data-lang="hcl"><span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;null_resource&#34; &#34;executor&#34;</span> {
+  depends_on <span style="color:#f92672">=</span> [<span style="color:#66d9ef">aws_eks_cluster</span>.<span style="color:#66d9ef">cluster</span>]
+
+  triggers <span style="color:#f92672">=</span> {
+    endpoint <span style="color:#f92672">=</span> <span style="color:#66d9ef">aws_eks_cluster</span>.<span style="color:#66d9ef">cluster</span>.<span style="color:#66d9ef">endpoint</span>
+  }
+
+  <span style="color:#66d9ef">provisioner</span> <span style="color:#e6db74">&#34;local-exec&#34;</span> {
+    working_dir <span style="color:#f92672">=</span> <span style="color:#66d9ef">path</span>.<span style="color:#66d9ef">module</span>
+
+    command <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#66d9ef">EOS</span>
+<span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;local exec&#34;</span>
+<span style="color:#66d9ef">EOS</span>
+
+    interpreter <span style="color:#f92672">=</span> <span style="color:#66d9ef">var</span>.<span style="color:#66d9ef">local_exec_interpreter</span>
+  }
+}
+</code></pre></div>
 
 <footer class=" footline" >
 	
@@ -1601,7 +1874,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -1614,9 +1886,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1773,42 +2042,6 @@
             
         
                     
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
             
         
                     
@@ -1824,9 +2057,6 @@
                     
                     
 
-                    
-            
-        
                     
                         
             
@@ -1872,6 +2102,193 @@
                     
                     
 
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
             
         
@@ -2341,10 +2758,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/terraform-workshop/basics/terraform/commands/state/" title="state"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/terraform-workshop/basics/terraform/provisioners/connection/" title="Provisioner Connection Settings"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/terraform-workshop/basics/terraform/state/" title="State" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/terraform-workshop/basics/terraform/modules/" title="Modules" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -2354,19 +2771,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/terraform-workshop/js/clipboard.min.js?1579158173"></script>
-    <script src="/terraform-workshop/js/perfect-scrollbar.min.js?1579158173"></script>
-    <script src="/terraform-workshop/js/perfect-scrollbar.jquery.min.js?1579158173"></script>
-    <script src="/terraform-workshop/js/jquery.sticky.js?1579158173"></script>
-    <script src="/terraform-workshop/js/featherlight.min.js?1579158173"></script>
-    <script src="/terraform-workshop/js/highlight.pack.js?1579158173"></script>
+    <script src="/terraform-workshop/js/clipboard.min.js?1579163327"></script>
+    <script src="/terraform-workshop/js/perfect-scrollbar.min.js?1579163327"></script>
+    <script src="/terraform-workshop/js/perfect-scrollbar.jquery.min.js?1579163327"></script>
+    <script src="/terraform-workshop/js/jquery.sticky.js?1579163327"></script>
+    <script src="/terraform-workshop/js/featherlight.min.js?1579163327"></script>
+    <script src="/terraform-workshop/js/highlight.pack.js?1579163327"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/terraform-workshop/js/modernizr.custom-3.6.0.js?1579158173"></script>
-    <script src="/terraform-workshop/js/learn.js?1579158173"></script>
-    <script src="/terraform-workshop/js/hugo-learn.js?1579158173"></script>
+    <script src="/terraform-workshop/js/modernizr.custom-3.6.0.js?1579163327"></script>
+    <script src="/terraform-workshop/js/learn.js?1579163327"></script>
+    <script src="/terraform-workshop/js/hugo-learn.js?1579163327"></script>
 
-    <link href="/terraform-workshop/mermaid/mermaid.css?1579158173" rel="stylesheet" />
-    <script src="/terraform-workshop/mermaid/mermaid.js?1579158173"></script>
+    <link href="/terraform-workshop/mermaid/mermaid.css?1579163327" rel="stylesheet" />
+    <script src="/terraform-workshop/mermaid/mermaid.js?1579163327"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

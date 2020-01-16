@@ -20,6 +20,4 @@ $ tree sample-module/
 │   ├── .../
 ```
 
-더 많은 정보를 확인 하시려면 아래 링크를 참고 하세요.
-
-* https://www.terraform.io/docs/modules/index.html
+{{% children %}}

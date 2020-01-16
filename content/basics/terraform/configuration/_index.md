@@ -46,4 +46,4 @@ Terraform은 확장자가 .tf 인 파일을 사용합니다. json 기반일 경�
 
 Terraform은 각각 일련의 리소스 유형을 정의하고 관리하는 `Provider`라는 플러그인을 사용합니다. 대부분의 Provider는 특정 클라우드 또는 온-프레미스 인프라 서비스와 연결되어 있으므로 Terraform은 해당 서비스 내에서 인프라 개체를 관리 할 수 ​​있습니다.
 
-* https://www.terraform.io/docs/configuration/index.html
+{{% children %}}

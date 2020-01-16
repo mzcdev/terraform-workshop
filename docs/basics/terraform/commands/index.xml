@@ -126,14 +126,5 @@ Usage terraform providers [config-path] 예시:
 Usage terraform state &amp;lt;subcommand&amp;gt; [options] [args] subcommands  list mv pull push rm show  Remote State Terraform state 부속 명령은 모두 마치 로컬 상태 인 것처럼 원격 상태에서 작동합니다. 각 읽기 및 쓰기가 전체 네트워크 왕복을 수행하므로 읽기 및 쓰기가 평소보다 오래 걸릴 수 있습니다.</description>
     </item>
     
-    <item>
-      <title>0.12upgrade</title>
-      <link>/terraform-workshop/basics/terraform/commands/0.12upgrade/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/terraform-workshop/basics/terraform/commands/0.12upgrade/</guid>
-      <description></description>
-    </item>
-    
   </channel>
 </rss>
