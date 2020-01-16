@@ -11,10 +11,12 @@ weight: 102
 terraform {
   backend "s3" {
     region         = "ap-northeast-2"
-    bucket         = "terraform-workshop-seoul"
-    key            = "vpc.tfstate"
-    dynamodb_table = "terraform-workshop-seoul"
+    bucket         = "terraform-mz-seoul"
+    key            = "vpc-demo.tfstate"
+    dynamodb_table = "terraform-mz-seoul"
     encrypt        = true
   }
 }
 ```
+
+![graph](../../state/images/locking.png)

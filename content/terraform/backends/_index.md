@@ -1,6 +1,6 @@
 ---
 title: Backends
-weight: 37
+weight: 38
 ---
 
 Terraform의 `Backend`는 `State`가 로드되는 방식과 apply와 같은 작업이 실행되는 방식을 결정합니다.

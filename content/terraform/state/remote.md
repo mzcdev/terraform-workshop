@@ -38,9 +38,7 @@ data "terraform_remote_state" "vpc" {
     key    = "vpc-demo.tfstate"
   }
 }
-```
 
-```hcl
 module "eks" {
   source = "github.com/nalbam/terraform-aws-eks?ref=v0.12.32"
 
