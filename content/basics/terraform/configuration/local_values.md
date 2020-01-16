@@ -21,7 +21,10 @@ locals {
 ```hcl
 locals {
   # 두개의 인스턴스의 ID List를 반환 합니다.
-  instance_ids = concat(aws_instance.blue.*.id, aws_instance.green.*.id)
+  instance_ids = concat(
+    aws_instance.blue.*.id,
+    aws_instance.green.*.id,
+  )
 }
 
 locals {
@@ -30,5 +33,12 @@ locals {
     Service = local.service_name
     Owner   = local.owner
   }
+}
+
+
+locals {
+  # vpc 를 만들도록 설정 했으면 생성된 리소스에서 id 를 가져오고,
+  # 만들지 않 도록 설정 헸으면 변수에서 가져 온다.
+  vpc_id = var.create_vpc ? element(concat(aws_vpc.this.*.id, [""]), 0) : var.vpc_id
 }
 ```

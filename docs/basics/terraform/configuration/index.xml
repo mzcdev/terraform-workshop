@@ -18,7 +18,7 @@
       <guid>/terraform-workshop/basics/terraform/configuration/input_variables/</guid>
       <description>Input Variable은 Terraform 모듈의 매개 변수 역할을 하며, 다른 모듈 간에 매개 변수를 공유 할 수 있습니다.
 Declaring an Input Variable variable 블록을 사용 하여 설정 합니다.
-variable &amp;#34;ami_id&amp;#34; { description = &amp;#34;The id of the machine image (AMI) to use for the server.&amp;#34; type = string } variable &amp;#34;availability_zone_names&amp;#34; { type = list(string) default = [&amp;#34;us-west-1a&amp;#34;] } variable &amp;#34;docker_ports&amp;#34; { type = list(object({ internal = number external = number protocol = string })) default = [ { internal = 8300 external = 8300 protocol = &amp;#34;tcp&amp;#34; } ] } type 인수를 사용하면 변수 값으로 허용되는 타입을 제한 할 수 있습니다.</description>
+variable &amp;#34;ami_id&amp;#34; { description = &amp;#34;The id of the machine image (AMI).&amp;#34; type = string } variable &amp;#34;availability_zone_names&amp;#34; { type = list(string) default = [ &amp;#34;us-west-1a&amp;#34;, &amp;#34;us-west-1b&amp;#34;, ] } variable &amp;#34;docker_ports&amp;#34; { type = list(object({ internal = number external = number protocol = string })) default = [ { internal = 8300 external = 8300 protocol = &amp;#34;tcp&amp;#34; } ] } description 인수를 사용하여 각 값의 목적을 간단히 설명 할 수 있습니다.</description>
     </item>
     
     <item>
@@ -53,7 +53,7 @@ resource &amp;#34;aws_instance&amp;#34; &amp;#34;sample&amp;#34; { ami = var.ami
       <guid>/terraform-workshop/basics/terraform/configuration/output_values/</guid>
       <description>Output Value는 Terraform 모듈의 반환 값과 유사하며 여러 용도로 사용됩니다.
 Declaring an Output Value output 블록을 사용 하여 설정 합니다.
-output &amp;#34;private_ip&amp;#34; { value = aws_instance.server.private_ip description = &amp;#34;The private IP address of the main server instance.&amp;#34; depends_on = [ aws_security_group_rule.local_access, ] } output &amp;#34;db_password&amp;#34; { value = aws_db_instance.db.password description = &amp;#34;The password for logging in to the database.&amp;#34; sensitive = true } value 인수는 결과가 사용자에게 리턴되는 표현식을 사용합니다.</description>
+output &amp;#34;private_ip&amp;#34; { description = &amp;#34;The private IP address of the main server instance.&amp;#34; value = aws_instance.server.private_ip depends_on = [ aws_security_group_rule.local_access, ] } output &amp;#34;db_password&amp;#34; { description = &amp;#34;The password for logging in to the database.&amp;#34; value = aws_db_instance.db.password sensitive = true } description 인수를 사용하여 각 값의 목적을 간단히 설명 할 수 있습니다.</description>
     </item>
     
     <item>
@@ -65,7 +65,7 @@ output &amp;#34;private_ip&amp;#34; { value = aws_instance.server.private_ip des
       <description>Local Value는 이름을 표현식에 지정하여 모듈 내에서 반복하지 않고 여러 번 사용할 수 있습니다.
 Declaring a Local Value locals 블록을 사용 하여 설정 합니다.
 locals { service_name = &amp;#34;forum&amp;#34; owner = &amp;#34;Community Team&amp;#34; } 간단한 상수 이거나, 다른 모듈 또는 다른 리소스 값을 반환하거나, 복잡한 표현식도 가능 합니다.
-locals {# 두개의 인스턴스의 ID List를 반환 합니다.  instance_ids = concat(aws_instance.blue.*.id, aws_instance.green.*.id) } locals {# 모든 자원에서 사용할 공통 태그  common_tags = { Service = local.</description>
+locals {# 두개의 인스턴스의 ID List를 반환 합니다.  instance_ids = concat( aws_instance.blue.*.id, aws_instance.green.*.id, ) } locals {# 모든 자원에서 사용할 공통 태그  common_tags = { Service = local.</description>
     </item>
     
     <item>

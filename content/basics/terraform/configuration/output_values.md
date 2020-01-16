@@ -11,8 +11,8 @@ Output Value는 Terraform 모듈의 반환 값과 유사하며 여러 용도로 
 
 ```hcl
 output "private_ip" {
-  value       = aws_instance.server.private_ip
   description = "The private IP address of the main server instance."
+  value       = aws_instance.server.private_ip
 
   depends_on = [
     aws_security_group_rule.local_access,
@@ -20,15 +20,15 @@ output "private_ip" {
 }
 
 output "db_password" {
-  value       = aws_db_instance.db.password
   description = "The password for logging in to the database."
+  value       = aws_db_instance.db.password
   sensitive   = true
 }
 ```
 
-`value` 인수는 결과가 사용자에게 리턴되는 표현식을 사용합니다.
-
 `description` 인수를 사용하여 각 값의 목적을 간단히 설명 할 수 있습니다.
+
+`value` 인수는 결과가 사용자에게 리턴되는 표현식을 사용합니다.
 
 `sensitive` 출럭값을 마스킹 할 수 있습니다.
 

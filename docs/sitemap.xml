@@ -123,6 +123,50 @@
   </url>
   
   <url>
+    <loc>/terraform-workshop/basics/terraform/commands/apply/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/basics/terraform/commands/destroy/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/basics/terraform/commands/fmt/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/basics/terraform/commands/graph/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/basics/terraform/commands/import/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/basics/terraform/commands/init/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/basics/terraform/commands/output/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/basics/terraform/commands/plan/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/basics/terraform/commands/providers/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/basics/terraform/commands/state/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/basics/terraform/commands/0.12upgrade/</loc>
+  </url>
+  
+  <url>
     <loc>/terraform-workshop/basics/terraform/configuration/</loc>
   </url>
   
