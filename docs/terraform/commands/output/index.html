@@ -1,0 +1,2693 @@
+<!DOCTYPE html>
+<html lang="ko" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.62.2" />
+    <meta name="description" content="Terraform Workshop">
+<meta name="author" content="Jungyoul Yu">
+
+    <link rel="shortcut icon" href="/terraform-workshop/images/favicon-60.png" type="image/x-icon" />
+<link rel="icon" href="/terraform-workshop/images/favicon-60.png" type="image/x-icon" />
+
+    <title>output :: Terraform Workshop</title>
+
+    
+    <link href="/terraform-workshop/css/nucleus.css?1579169880" rel="stylesheet">
+    <link href="/terraform-workshop/css/fontawesome-all.min.css?1579169880" rel="stylesheet">
+    <link href="/terraform-workshop/css/hybrid.css?1579169880" rel="stylesheet">
+    <link href="/terraform-workshop/css/featherlight.min.css?1579169880" rel="stylesheet">
+    <link href="/terraform-workshop/css/perfect-scrollbar.min.css?1579169880" rel="stylesheet">
+    <link href="/terraform-workshop/css/auto-complete.css?1579169880" rel="stylesheet">
+    <link href="/terraform-workshop/css/atom-one-dark-reasonable.css?1579169880" rel="stylesheet">
+    <link href="/terraform-workshop/css/theme.css?1579169880" rel="stylesheet">
+    <link href="/terraform-workshop/css/hugo-theme.css?1579169880" rel="stylesheet">
+    
+      <link href="/terraform-workshop/css/theme-blue.css?1579169880" rel="stylesheet">
+    
+
+    <script src="/terraform-workshop/js/jquery-3.3.1.min.js?1579169880"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/terraform-workshop/terraform/commands/output/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/terraform-workshop/">
+
+	<img src="/terraform-workshop/images/mzcloud-logo-2.png">
+
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/terraform-workshop/js/lunr.min.js?1579169880"></script>
+<script type="text/javascript" src="/terraform-workshop/js/auto-complete.js?1579169880"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/terraform-workshop\/";
+    
+</script>
+<script type="text/javascript" src="/terraform-workshop/js/search.js?1579169880"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/terraform-workshop/terraform/" title="Terraform" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/terraform-workshop/terraform/">
+          Terraform
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/terraform-workshop/terraform/configuration/" title="Configuration Language" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/terraform-workshop/terraform/configuration/">
+          Configuration Language
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/terraform/configuration/input_variables/" title="Input Variables" class="dd-item ">
+        <a href="/terraform-workshop/terraform/configuration/input_variables/">
+        Input Variables
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/terraform/configuration/providers/" title="Providers" class="dd-item ">
+        <a href="/terraform-workshop/terraform/configuration/providers/">
+        Providers
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/terraform/configuration/resources/" title="Resources" class="dd-item ">
+        <a href="/terraform-workshop/terraform/configuration/resources/">
+        Resources
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/terraform/configuration/output_values/" title="Output Values" class="dd-item ">
+        <a href="/terraform-workshop/terraform/configuration/output_values/">
+        Output Values
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/terraform/configuration/local_values/" title="Local Values" class="dd-item ">
+        <a href="/terraform-workshop/terraform/configuration/local_values/">
+        Local Values
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/terraform/configuration/data_sources/" title="Data Sources" class="dd-item ">
+        <a href="/terraform-workshop/terraform/configuration/data_sources/">
+        Data Sources
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/terraform/configuration/modules/" title="Modules" class="dd-item ">
+        <a href="/terraform-workshop/terraform/configuration/modules/">
+        Modules
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/terraform-workshop/terraform/commands/" title="Commands (CLI)" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/terraform-workshop/terraform/commands/">
+          Commands (CLI)
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/terraform/commands/apply/" title="apply" class="dd-item ">
+        <a href="/terraform-workshop/terraform/commands/apply/">
+        apply
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/terraform/commands/destroy/" title="destroy" class="dd-item ">
+        <a href="/terraform-workshop/terraform/commands/destroy/">
+        destroy
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/terraform/commands/fmt/" title="fmt" class="dd-item ">
+        <a href="/terraform-workshop/terraform/commands/fmt/">
+        fmt
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/terraform/commands/graph/" title="graph" class="dd-item ">
+        <a href="/terraform-workshop/terraform/commands/graph/">
+        graph
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/terraform/commands/import/" title="import" class="dd-item ">
+        <a href="/terraform-workshop/terraform/commands/import/">
+        import
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/terraform/commands/init/" title="init" class="dd-item ">
+        <a href="/terraform-workshop/terraform/commands/init/">
+        init
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/terraform/commands/output/" title="output" class="dd-item active">
+        <a href="/terraform-workshop/terraform/commands/output/">
+        output
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/terraform/commands/plan/" title="plan" class="dd-item ">
+        <a href="/terraform-workshop/terraform/commands/plan/">
+        plan
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/terraform/commands/providers/" title="providers" class="dd-item ">
+        <a href="/terraform-workshop/terraform/commands/providers/">
+        providers
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/terraform/commands/state/" title="state" class="dd-item ">
+        <a href="/terraform-workshop/terraform/commands/state/">
+        state
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/terraform-workshop/terraform/state/" title="State" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/terraform-workshop/terraform/state/">
+          State
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/terraform/state/purpose/" title="Purpose of Terraform State" class="dd-item ">
+        <a href="/terraform-workshop/terraform/state/purpose/">
+        Purpose of Terraform State
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/terraform/state/remote/" title="Remote State" class="dd-item ">
+        <a href="/terraform-workshop/terraform/state/remote/">
+        Remote State
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/terraform/state/locking/" title="State Locking" class="dd-item ">
+        <a href="/terraform-workshop/terraform/state/locking/">
+        State Locking
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/terraform-workshop/terraform/providers/" title="Providers" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/terraform-workshop/terraform/providers/">
+          Providers
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/terraform/providers/aws/" title="AWS Provider" class="dd-item ">
+        <a href="/terraform-workshop/terraform/providers/aws/">
+        AWS Provider
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/terraform-workshop/terraform/provisioners/" title="Provisioners" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/terraform-workshop/terraform/provisioners/">
+          Provisioners
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/terraform/provisioners/connection/" title="Provisioner Connection Settings" class="dd-item ">
+        <a href="/terraform-workshop/terraform/provisioners/connection/">
+        Provisioner Connection Settings
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/terraform/provisioners/null_resource/" title="Provisioners Without a Resource" class="dd-item ">
+        <a href="/terraform-workshop/terraform/provisioners/null_resource/">
+        Provisioners Without a Resource
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/terraform-workshop/terraform/modules/" title="Modules" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/terraform-workshop/terraform/modules/">
+          Modules
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/terraform/modules/sources/" title="Module Sources" class="dd-item ">
+        <a href="/terraform-workshop/terraform/modules/sources/">
+        Module Sources
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/terraform/modules/composition/" title="Module Composition" class="dd-item ">
+        <a href="/terraform-workshop/terraform/modules/composition/">
+        Module Composition
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/terraform-workshop/terraform/backends/" title="Backends" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/terraform-workshop/terraform/backends/">
+          Backends
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/terraform/backends/config/" title="Backend Configuration" class="dd-item ">
+        <a href="/terraform-workshop/terraform/backends/config/">
+        Backend Configuration
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/terraform/backends/locking/" title="Locking" class="dd-item ">
+        <a href="/terraform-workshop/terraform/backends/locking/">
+        Locking
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/terraform-workshop/requirements/" title="Requirements" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/terraform-workshop/requirements/">
+          Requirements
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/terraform-workshop/requirements/account/" title="AWS Account" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/terraform-workshop/requirements/account/">
+          AWS Account
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/requirements/account/add_user_01/" title="Set user details" class="dd-item ">
+        <a href="/terraform-workshop/requirements/account/add_user_01/">
+        Set user details
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/requirements/account/add_user_02/" title="Set permissions" class="dd-item ">
+        <a href="/terraform-workshop/requirements/account/add_user_02/">
+        Set permissions
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/requirements/account/add_user_03/" title="Add tags (optional)" class="dd-item ">
+        <a href="/terraform-workshop/requirements/account/add_user_03/">
+        Add tags (optional)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/requirements/account/add_user_04/" title="Review" class="dd-item ">
+        <a href="/terraform-workshop/requirements/account/add_user_04/">
+        Review
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/requirements/account/add_user_05/" title="Success" class="dd-item ">
+        <a href="/terraform-workshop/requirements/account/add_user_05/">
+        Success
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/terraform-workshop/requirements/lightsail/" title="AWS Lightsail" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/terraform-workshop/requirements/lightsail/">
+          AWS Lightsail
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/requirements/lightsail/add_lightsail_01/" title="Set lishtsail details" class="dd-item ">
+        <a href="/terraform-workshop/requirements/lightsail/add_lightsail_01/">
+        Set lishtsail details
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/requirements/lightsail/add_lightsail_02/" title="Instance plan" class="dd-item ">
+        <a href="/terraform-workshop/requirements/lightsail/add_lightsail_02/">
+        Instance plan
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/requirements/lightsail/add_lightsail_03/" title="Create instance" class="dd-item ">
+        <a href="/terraform-workshop/requirements/lightsail/add_lightsail_03/">
+        Create instance
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/requirements/lightsail/add_lightsail_04/" title="Success" class="dd-item ">
+        <a href="/terraform-workshop/requirements/lightsail/add_lightsail_04/">
+        Success
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/requirements/lightsail/console/" title="Console" class="dd-item ">
+        <a href="/terraform-workshop/requirements/lightsail/console/">
+        Console
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/requirements/lightsail/tools/" title="Install tools" class="dd-item ">
+        <a href="/terraform-workshop/requirements/lightsail/tools/">
+        Install tools
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/requirements/lightsail/aws_configure/" title="AWS configure" class="dd-item ">
+        <a href="/terraform-workshop/requirements/lightsail/aws_configure/">
+        AWS configure
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/requirements/lightsail/ssh_keygen/" title="SSH keygen" class="dd-item ">
+        <a href="/terraform-workshop/requirements/lightsail/ssh_keygen/">
+        SSH keygen
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/terraform-workshop/provisioning/" title="Provisioning" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/terraform-workshop/provisioning/">
+          Provisioning
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/provisioning/clone/" title="Clone" class="dd-item ">
+        <a href="/terraform-workshop/provisioning/clone/">
+        Clone
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/provisioning/instance/" title="Instance" class="dd-item ">
+        <a href="/terraform-workshop/provisioning/instance/">
+        Instance
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/provisioning/backend/" title="Backend" class="dd-item ">
+        <a href="/terraform-workshop/provisioning/backend/">
+        Backend
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/provisioning/lambda/" title="Lambda API" class="dd-item ">
+        <a href="/terraform-workshop/provisioning/lambda/">
+        Lambda API
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/provisioning/vpc/" title="VPC" class="dd-item ">
+        <a href="/terraform-workshop/provisioning/vpc/">
+        VPC
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/provisioning/eks/" title="EKS" class="dd-item ">
+        <a href="/terraform-workshop/provisioning/eks/">
+        EKS
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/terraform-workshop/cleanup/" title="CleanUp" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/terraform-workshop/cleanup/">
+          CleanUp
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/cleanup/instance/" title="Instance" class="dd-item ">
+        <a href="/terraform-workshop/cleanup/instance/">
+        Instance
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/cleanup/lambda/" title="Lambda API" class="dd-item ">
+        <a href="/terraform-workshop/cleanup/lambda/">
+        Lambda API
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/cleanup/eks/" title="EKS" class="dd-item ">
+        <a href="/terraform-workshop/cleanup/eks/">
+        EKS
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/cleanup/vpc/" title="VPC" class="dd-item ">
+        <a href="/terraform-workshop/cleanup/vpc/">
+        VPC
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3></h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/mzcdev/terraform-workshop"><i class='fab fa-fw fa-github'></i> GitHub</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="/terraform-workshop/credits"><i class='fas fa-fw fa-bullhorn'></i> Credits</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='' href="https://github.com/mzcdev/terraform-workshop/edit/master/content/terraform/commands/output.md" target="blank">
+                      <i class="fas fa-code-branch"></i>
+                      <span id="top-github-link-text"></span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/terraform-workshop/'>Home</a> > <a href='/terraform-workshop/terraform/'>Terraform</a> > <a href='/terraform-workshop/terraform/commands/'>Commands (CLI)</a> > output
+          
+         
+          
+         
+          
+         
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#usage">Usage</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              output
+            </h1>
+          
+
+        
+
+
+
+<p><code>terraform output</code> 명령은 상태 파일에서 출력 변수의 값을 추출하는 데 사용됩니다.</p>
+<h3 id="usage">Usage</h3>
+<pre><code>terraform output [options] [NAME]
+</code></pre><p>주요 옵션:</p>
+<p><code>-json</code> - 지정된 경우 출력은 출력 당 키를 사용하여 JSON 오브젝트로 형식화됩니다. NAME을 지정하면 지정된 출력 만 반환됩니다. 추가 처리를 위해 jq와 같은 도구에 파이프로 연결할 수 있습니다.</p>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/terraform-workshop/terraform/commands/init/" title="init"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/terraform-workshop/terraform/commands/plan/" title="plan" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/terraform-workshop/js/clipboard.min.js?1579169880"></script>
+    <script src="/terraform-workshop/js/perfect-scrollbar.min.js?1579169880"></script>
+    <script src="/terraform-workshop/js/perfect-scrollbar.jquery.min.js?1579169880"></script>
+    <script src="/terraform-workshop/js/jquery.sticky.js?1579169880"></script>
+    <script src="/terraform-workshop/js/featherlight.min.js?1579169880"></script>
+    <script src="/terraform-workshop/js/highlight.pack.js?1579169880"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/terraform-workshop/js/modernizr.custom-3.6.0.js?1579169880"></script>
+    <script src="/terraform-workshop/js/learn.js?1579169880"></script>
+    <script src="/terraform-workshop/js/hugo-learn.js?1579169880"></script>
+
+    <link href="/terraform-workshop/mermaid/mermaid.css?1579169880" rel="stylesheet" />
+    <script src="/terraform-workshop/mermaid/mermaid.js?1579169880"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+  </body>
+</html>
+

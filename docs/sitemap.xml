@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/terraform-workshop/basics/</loc>
+    <loc>/terraform-workshop/terraform/</loc>
   </url>
   
   <url>
@@ -79,11 +79,15 @@
   </url>
   
   <url>
-    <loc>/terraform-workshop/basics/terraform/</loc>
+    <loc>/terraform-workshop/provisioning/clone/</loc>
   </url>
   
   <url>
-    <loc>/terraform-workshop/provisioning/clone/</loc>
+    <loc>/terraform-workshop/terraform/configuration/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/terraform/commands/</loc>
   </url>
   
   <url>
@@ -99,11 +103,31 @@
   </url>
   
   <url>
+    <loc>/terraform-workshop/terraform/state/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/terraform/providers/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/terraform/provisioners/</loc>
+  </url>
+  
+  <url>
     <loc>/terraform-workshop/provisioning/vpc/</loc>
   </url>
   
   <url>
     <loc>/terraform-workshop/provisioning/eks/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/terraform/modules/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/terraform/backends/</loc>
   </url>
   
   <url>
@@ -123,139 +147,111 @@
   </url>
   
   <url>
-    <loc>/terraform-workshop/basics/terraform/commands/apply/</loc>
+    <loc>/terraform-workshop/terraform/commands/apply/</loc>
   </url>
   
   <url>
-    <loc>/terraform-workshop/basics/terraform/providers/aws/</loc>
+    <loc>/terraform-workshop/terraform/providers/aws/</loc>
   </url>
   
   <url>
-    <loc>/terraform-workshop/basics/terraform/backends/config/</loc>
+    <loc>/terraform-workshop/terraform/backends/config/</loc>
   </url>
   
   <url>
-    <loc>/terraform-workshop/basics/terraform/modules/sources/</loc>
+    <loc>/terraform-workshop/terraform/modules/sources/</loc>
   </url>
   
   <url>
-    <loc>/terraform-workshop/basics/terraform/provisioners/connection/</loc>
+    <loc>/terraform-workshop/terraform/provisioners/connection/</loc>
   </url>
   
   <url>
-    <loc>/terraform-workshop/basics/terraform/state/purpose/</loc>
+    <loc>/terraform-workshop/terraform/state/purpose/</loc>
   </url>
   
   <url>
-    <loc>/terraform-workshop/basics/terraform/commands/destroy/</loc>
+    <loc>/terraform-workshop/terraform/commands/destroy/</loc>
   </url>
   
   <url>
-    <loc>/terraform-workshop/basics/terraform/backends/locking/</loc>
+    <loc>/terraform-workshop/terraform/backends/locking/</loc>
   </url>
   
   <url>
-    <loc>/terraform-workshop/basics/terraform/modules/composition/</loc>
+    <loc>/terraform-workshop/terraform/modules/composition/</loc>
   </url>
   
   <url>
-    <loc>/terraform-workshop/basics/terraform/provisioners/null_resource/</loc>
+    <loc>/terraform-workshop/terraform/provisioners/null_resource/</loc>
   </url>
   
   <url>
-    <loc>/terraform-workshop/basics/terraform/state/remote/</loc>
+    <loc>/terraform-workshop/terraform/state/remote/</loc>
   </url>
   
   <url>
-    <loc>/terraform-workshop/basics/terraform/commands/fmt/</loc>
+    <loc>/terraform-workshop/terraform/commands/fmt/</loc>
   </url>
   
   <url>
-    <loc>/terraform-workshop/basics/terraform/state/locking/</loc>
+    <loc>/terraform-workshop/terraform/state/locking/</loc>
   </url>
   
   <url>
-    <loc>/terraform-workshop/basics/terraform/commands/graph/</loc>
+    <loc>/terraform-workshop/terraform/commands/graph/</loc>
   </url>
   
   <url>
-    <loc>/terraform-workshop/basics/terraform/commands/import/</loc>
+    <loc>/terraform-workshop/terraform/commands/import/</loc>
   </url>
   
   <url>
-    <loc>/terraform-workshop/basics/terraform/commands/init/</loc>
+    <loc>/terraform-workshop/terraform/commands/init/</loc>
   </url>
   
   <url>
-    <loc>/terraform-workshop/basics/terraform/commands/output/</loc>
+    <loc>/terraform-workshop/terraform/commands/output/</loc>
   </url>
   
   <url>
-    <loc>/terraform-workshop/basics/terraform/commands/plan/</loc>
+    <loc>/terraform-workshop/terraform/commands/plan/</loc>
   </url>
   
   <url>
-    <loc>/terraform-workshop/basics/terraform/commands/providers/</loc>
+    <loc>/terraform-workshop/terraform/commands/providers/</loc>
   </url>
   
   <url>
-    <loc>/terraform-workshop/basics/terraform/commands/state/</loc>
+    <loc>/terraform-workshop/terraform/commands/state/</loc>
   </url>
   
   <url>
-    <loc>/terraform-workshop/basics/terraform/configuration/</loc>
+    <loc>/terraform-workshop/terraform/configuration/input_variables/</loc>
   </url>
   
   <url>
-    <loc>/terraform-workshop/basics/terraform/configuration/input_variables/</loc>
+    <loc>/terraform-workshop/terraform/configuration/providers/</loc>
   </url>
   
   <url>
-    <loc>/terraform-workshop/basics/terraform/configuration/providers/</loc>
+    <loc>/terraform-workshop/terraform/configuration/resources/</loc>
   </url>
   
   <url>
-    <loc>/terraform-workshop/basics/terraform/configuration/resources/</loc>
+    <loc>/terraform-workshop/terraform/configuration/output_values/</loc>
   </url>
   
   <url>
-    <loc>/terraform-workshop/basics/terraform/configuration/output_values/</loc>
+    <loc>/terraform-workshop/terraform/configuration/local_values/</loc>
   </url>
   
   <url>
-    <loc>/terraform-workshop/basics/terraform/configuration/local_values/</loc>
+    <loc>/terraform-workshop/terraform/configuration/data_sources/</loc>
   </url>
   
   <url>
-    <loc>/terraform-workshop/basics/terraform/configuration/data_sources/</loc>
-  </url>
-  
-  <url>
-    <loc>/terraform-workshop/basics/terraform/configuration/modules/</loc>
-  </url>
-  
-  <url>
-    <loc>/terraform-workshop/basics/terraform/commands/</loc>
-  </url>
-  
-  <url>
-    <loc>/terraform-workshop/basics/terraform/state/</loc>
-  </url>
-  
-  <url>
-    <loc>/terraform-workshop/basics/terraform/providers/</loc>
-  </url>
-  
-  <url>
-    <loc>/terraform-workshop/basics/terraform/provisioners/</loc>
-  </url>
-  
-  <url>
-    <loc>/terraform-workshop/basics/terraform/modules/</loc>
-  </url>
-  
-  <url>
-    <loc>/terraform-workshop/basics/terraform/backends/</loc>
+    <loc>/terraform-workshop/terraform/configuration/modules/</loc>
   </url>
   
   <url>
