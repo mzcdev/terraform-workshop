@@ -19,4 +19,4 @@ terraform {
 }
 ```
 
-![graph](../../state/images/locking.png)
+![graph](../../backends/images/locking.png)
