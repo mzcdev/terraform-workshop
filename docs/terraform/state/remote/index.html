@@ -13,20 +13,20 @@
     <title>Remote State :: Terraform Workshop</title>
 
     
-    <link href="/terraform-workshop/css/nucleus.css?1579171388" rel="stylesheet">
-    <link href="/terraform-workshop/css/fontawesome-all.min.css?1579171388" rel="stylesheet">
-    <link href="/terraform-workshop/css/hybrid.css?1579171388" rel="stylesheet">
-    <link href="/terraform-workshop/css/featherlight.min.css?1579171388" rel="stylesheet">
-    <link href="/terraform-workshop/css/perfect-scrollbar.min.css?1579171388" rel="stylesheet">
-    <link href="/terraform-workshop/css/auto-complete.css?1579171388" rel="stylesheet">
-    <link href="/terraform-workshop/css/atom-one-dark-reasonable.css?1579171388" rel="stylesheet">
-    <link href="/terraform-workshop/css/theme.css?1579171388" rel="stylesheet">
-    <link href="/terraform-workshop/css/hugo-theme.css?1579171388" rel="stylesheet">
+    <link href="/terraform-workshop/css/nucleus.css?1579171793" rel="stylesheet">
+    <link href="/terraform-workshop/css/fontawesome-all.min.css?1579171793" rel="stylesheet">
+    <link href="/terraform-workshop/css/hybrid.css?1579171793" rel="stylesheet">
+    <link href="/terraform-workshop/css/featherlight.min.css?1579171793" rel="stylesheet">
+    <link href="/terraform-workshop/css/perfect-scrollbar.min.css?1579171793" rel="stylesheet">
+    <link href="/terraform-workshop/css/auto-complete.css?1579171793" rel="stylesheet">
+    <link href="/terraform-workshop/css/atom-one-dark-reasonable.css?1579171793" rel="stylesheet">
+    <link href="/terraform-workshop/css/theme.css?1579171793" rel="stylesheet">
+    <link href="/terraform-workshop/css/hugo-theme.css?1579171793" rel="stylesheet">
     
-      <link href="/terraform-workshop/css/theme-blue.css?1579171388" rel="stylesheet">
+      <link href="/terraform-workshop/css/theme-blue.css?1579171793" rel="stylesheet">
     
 
-    <script src="/terraform-workshop/js/jquery-3.3.1.min.js?1579171388"></script>
+    <script src="/terraform-workshop/js/jquery-3.3.1.min.js?1579171793"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/terraform-workshop/js/lunr.min.js?1579171388"></script>
-<script type="text/javascript" src="/terraform-workshop/js/auto-complete.js?1579171388"></script>
+<script type="text/javascript" src="/terraform-workshop/js/lunr.min.js?1579171793"></script>
+<script type="text/javascript" src="/terraform-workshop/js/auto-complete.js?1579171793"></script>
 <script type="text/javascript">
     
         var baseurl = "\/terraform-workshop\/";
     
 </script>
-<script type="text/javascript" src="/terraform-workshop/js/search.js?1579171388"></script>
+<script type="text/javascript" src="/terraform-workshop/js/search.js?1579171793"></script>
 
     
   </div>
@@ -1604,6 +1604,13 @@
     key    <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;vpc-demo.tfstate&#34;</span>
   }
 }
+
+<span style="color:#66d9ef">module</span> <span style="color:#e6db74">&#34;vpc&#34;</span> {
+  source <span style="color:#f92672">=</span> &#34;github.com/nalbam/terraform-aws-vpc?ref<span style="color:#f92672">=</span><span style="color:#66d9ef">v0</span>.<span style="color:#ae81ff">12</span>.<span style="color:#ae81ff">24</span><span style="color:#960050;background-color:#1e0010">&#34;</span>
+
+  region <span style="color:#f92672">=</span> <span style="color:#66d9ef">var</span>.<span style="color:#66d9ef">region</span>
+  name   <span style="color:#f92672">=</span> <span style="color:#66d9ef">var</span>.<span style="color:#66d9ef">name</span>
+}
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-hcl" data-lang="hcl"><span style="color:#66d9ef">data</span> <span style="color:#e6db74">&#34;terraform_remote_state&#34; &#34;vpc&#34;</span> {
   backend <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;s3&#34;</span>
   config <span style="color:#f92672">=</span> {
@@ -1620,7 +1627,7 @@
   name   <span style="color:#f92672">=</span> <span style="color:#66d9ef">var</span>.<span style="color:#66d9ef">name</span>
 
   vpc_id     <span style="color:#f92672">=</span> <span style="color:#66d9ef">data</span>.<span style="color:#66d9ef">terraform_remote_state</span>.<span style="color:#66d9ef">vpc</span>.<span style="color:#66d9ef">outputs</span>.<span style="color:#66d9ef">vpc_id</span>
-  subnet_ids <span style="color:#f92672">=</span> <span style="color:#66d9ef">data</span>.<span style="color:#66d9ef">terraform_remote_state</span>.<span style="color:#66d9ef">vpc</span>.<span style="color:#66d9ef">outputs</span>.<span style="color:#66d9ef">private_subnet_ids</span>
+  subnet_ids <span style="color:#f92672">=</span> <span style="color:#66d9ef">data</span>.<span style="color:#66d9ef">terraform_remote_state</span>.<span style="color:#66d9ef">vpc</span>.<span style="color:#66d9ef">outputs</span>.<span style="color:#66d9ef">subnet_ids</span>
 }
 </code></pre></div>
 
@@ -2701,19 +2708,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/terraform-workshop/js/clipboard.min.js?1579171388"></script>
-    <script src="/terraform-workshop/js/perfect-scrollbar.min.js?1579171388"></script>
-    <script src="/terraform-workshop/js/perfect-scrollbar.jquery.min.js?1579171388"></script>
-    <script src="/terraform-workshop/js/jquery.sticky.js?1579171388"></script>
-    <script src="/terraform-workshop/js/featherlight.min.js?1579171388"></script>
-    <script src="/terraform-workshop/js/highlight.pack.js?1579171388"></script>
+    <script src="/terraform-workshop/js/clipboard.min.js?1579171793"></script>
+    <script src="/terraform-workshop/js/perfect-scrollbar.min.js?1579171793"></script>
+    <script src="/terraform-workshop/js/perfect-scrollbar.jquery.min.js?1579171793"></script>
+    <script src="/terraform-workshop/js/jquery.sticky.js?1579171793"></script>
+    <script src="/terraform-workshop/js/featherlight.min.js?1579171793"></script>
+    <script src="/terraform-workshop/js/highlight.pack.js?1579171793"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/terraform-workshop/js/modernizr.custom-3.6.0.js?1579171388"></script>
-    <script src="/terraform-workshop/js/learn.js?1579171388"></script>
-    <script src="/terraform-workshop/js/hugo-learn.js?1579171388"></script>
+    <script src="/terraform-workshop/js/modernizr.custom-3.6.0.js?1579171793"></script>
+    <script src="/terraform-workshop/js/learn.js?1579171793"></script>
+    <script src="/terraform-workshop/js/hugo-learn.js?1579171793"></script>
 
-    <link href="/terraform-workshop/mermaid/mermaid.css?1579171388" rel="stylesheet" />
-    <script src="/terraform-workshop/mermaid/mermaid.js?1579171388"></script>
+    <link href="/terraform-workshop/mermaid/mermaid.css?1579171793" rel="stylesheet" />
+    <script src="/terraform-workshop/mermaid/mermaid.js?1579171793"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

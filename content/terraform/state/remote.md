@@ -27,6 +27,13 @@ terraform {
     key    = "vpc-demo.tfstate"
   }
 }
+
+module "vpc" {
+  source = "github.com/nalbam/terraform-aws-vpc?ref=v0.12.24"
+
+  region = var.region
+  name   = var.name
+}
 ```
 
 ```hcl
@@ -46,6 +53,6 @@ module "eks" {
   name   = var.name
 
   vpc_id     = data.terraform_remote_state.vpc.outputs.vpc_id
-  subnet_ids = data.terraform_remote_state.vpc.outputs.private_subnet_ids
+  subnet_ids = data.terraform_remote_state.vpc.outputs.subnet_ids
 }
 ```

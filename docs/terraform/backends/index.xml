@@ -17,7 +17,8 @@
       
       <guid>/terraform-workshop/terraform/backends/config/</guid>
       <description>백엔드는 terraform 섹션의 Terraform 파일에서 직접 구성됩니다. 백엔드를 구성한 후에는 terraform init 을 해야합니다.
-terraform { backend &amp;#34;s3&amp;#34; { region = &amp;#34;ap-northeast-2&amp;#34; bucket = &amp;#34;terraform-workshop-seoul&amp;#34; key = &amp;#34;vpc.tfstate&amp;#34; } } 백엔드는 하나만 지정할 수 있습니다.</description>
+terraform { backend &amp;#34;s3&amp;#34; { region = &amp;#34;ap-northeast-2&amp;#34; bucket = &amp;#34;terraform-workshop-seoul&amp;#34; key = &amp;#34;vpc.tfstate&amp;#34; } }  백엔드는 하나만 지정할 수 있습니다.
+ </description>
     </item>
     
     <item>

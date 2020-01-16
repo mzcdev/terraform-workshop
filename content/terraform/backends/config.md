@@ -15,4 +15,6 @@ terraform {
 }
 ```
 
+{{% notice tip %}}
 백엔드는 하나만 지정할 수 있습니다.
+{{% /notice %}}
