@@ -20,3 +20,5 @@ terraform {
   }
 }
 ```
+
+![graph](../../state/images/locking.png)
