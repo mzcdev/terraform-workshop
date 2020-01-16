@@ -25,3 +25,24 @@ data "aws_ami" "example" {
 Terraform이 지정된 데이터 소스 `aws_ami`에서 읽고 해당 로컬 이름 `example`으로 결과를 내보내도록 요청합니다.
 
 블록 본문 내에 ({와} 사이) 데이터 소스에 의해 정의 된 쿼리 제한 조건이 있습니다. 이 섹션의 대부분의 인수는 데이터 소스에 따라 다르며 실제로이 예에서 `most_recent`, `owners` 및 `tags`는 모두 `aws_ami` 데이터 소스에 대해 특별히 정의 된 인수입니다.
+
+```hcl
+data "aws_ami" "worker" {
+  filter {
+    name   = "name"
+    values = ["amazon-eks-node-${var.kubernetes_version}-*"]
+  }
+
+  owners = ["602401143452"] # Amazon Account ID
+
+  most_recent = true
+}
+```
+
+```hcl
+data "aws_availability_zones" "azs" {
+}
+
+data "aws_caller_identity" "current" {
+}
+```

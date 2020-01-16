@@ -66,6 +66,14 @@ resource "aws_instance" "server" {
 }
 ```
 
+```hcl
+resource "aws_vpc" "this" {
+  count = var.create_vpc ? 1 : 0
+
+  cidr_block = var.vpc_cidr
+}
+```
+
 #### depends_on
 
 EC2 instance 를 생성하기 전, instance_profile 를 생성 해야 한다는 것은 aws_instance 안에 정의되어 있으므로 유추가 가능 합니다. 하지만, aws_iam_role_policy 는 Terraform 이 유추해 낼 수 없으므로 선언해 주어야 합니다.
@@ -133,6 +141,20 @@ resource "aws_autoscaling_group" "worker" {
 }
 ```
 
+```hcl
+      override {
+        instance_type = var.instance_type
+      }
+
+      override {
+        instance_type = var.mixed_instances.0
+      }
+
+      override {
+        instance_type = var.mixed_instances.1
+      }
+```
+
 #### lifecycle
 
 리소스의 생명주기를 정의 합니다.
@@ -147,8 +169,8 @@ resource "aws_launch_configuration" "worker" {
 }
 ```
 
-`aws_launch_configuration` (bool) - 현재 업데이트 할 수없는 리소스 인수를 변경해야하는 경우 Terraform은 기존 객체를 삭제 한 다음 새로 구성된 인수로 새 대체 객체를 만듭니다. .
+`create_before_destroy` (bool) - 현재 업데이트 할 수 없는 리소스 인수를 변경해야하는 경우 Terraform은 기존 객체를 삭제 한 다음 새로 구성된 인수로 새 대체 객체를 만듭니다. .
 
 `prevent_destroy` (bool) - 인수가 구성에 존재하는 한 자원과 관련된 인프라 개체를 파괴하는 계획을 Terraform이 오류와 함께 거부하게합니다.
 
-`ignore_changes` (list of attribute names) - Terraform은 실제 인프라 개체의 현재 설정에서 차이를 감지하고 구성과 일치하도록 원격 개체를 업데이트를 사도합니다. 하지만 외부에서 변경된 리소스를 변경 하고 싶지 않을때 사용 될수 있습니다.
+`ignore_changes` (list of attribute names) - Terraform은 실제 인프라 개체의 현재 설정에서 차이를 감지하고 구성과 일치하도록 원격 개체를 업데이트를 시도합니다. 하지만 외부에서 변경된 리소스를 변경 하고 싶지 않을때 사용 될수 있습니다.

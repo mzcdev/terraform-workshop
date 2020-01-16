@@ -27,14 +27,17 @@ module 키워드 바로 뒤에있는 레이블은 로컬 이름이며 호출 모
 
 ```hcl
 module "vpc" {
-  source = "github.com/nalbam/terraform-aws-vpc?ref=v0.12.8"
+  source = "github.com/nalbam/terraform-aws-vpc?ref=v0.12.22"
 
   region = var.region
   name   = var.name
+
+  vpc_id   = var.vpc_id
+  vpc_cidr = var.vpc_cidr
 }
 ```
 
-깃헙 주소 `https://github.com/nalbam/terraform-aws-vpc` 에서 `v0.12.8` Tag 를 지정하여 사용 할 수 있습니다.
+깃헙 주소 `https://github.com/nalbam/terraform-aws-vpc` 에서 `v0.12.22` Tag 를 지정하여 사용 할 수 있습니다.
 
 ### Accessing Module Output Values
 
