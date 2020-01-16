@@ -127,11 +127,51 @@
   </url>
   
   <url>
+    <loc>/terraform-workshop/basics/terraform/providers/aws/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/basics/terraform/backends/config/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/basics/terraform/modules/sources/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/basics/terraform/provisioners/connection/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/basics/terraform/state/purpose/</loc>
+  </url>
+  
+  <url>
     <loc>/terraform-workshop/basics/terraform/commands/destroy/</loc>
   </url>
   
   <url>
+    <loc>/terraform-workshop/basics/terraform/backends/locking/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/basics/terraform/modules/composition/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/basics/terraform/provisioners/null_resource/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/basics/terraform/state/remote/</loc>
+  </url>
+  
+  <url>
     <loc>/terraform-workshop/basics/terraform/commands/fmt/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/basics/terraform/state/locking/</loc>
   </url>
   
   <url>
@@ -160,10 +200,6 @@
   
   <url>
     <loc>/terraform-workshop/basics/terraform/commands/state/</loc>
-  </url>
-  
-  <url>
-    <loc>/terraform-workshop/basics/terraform/commands/0.12upgrade/</loc>
   </url>
   
   <url>

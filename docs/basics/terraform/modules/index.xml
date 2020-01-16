@@ -10,5 +10,28 @@
 	<atom:link href="/terraform-workshop/basics/terraform/modules/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>Module Sources</title>
+      <link>/terraform-workshop/basics/terraform/modules/sources/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/terraform-workshop/basics/terraform/modules/sources/</guid>
+      <description>모듈 블록의 소스 인수는 Terraform에게 원하는 하위 모듈의 소스 코드를 찾을 수있는 위치를 알려줍니다.
+Terraform은 terraform init의 모듈 설치 단계에서 이를 사용하여 소스 코드를 로컬 디스크의 디렉토리에 다운로드하여 다른 Terraform 명령에서 사용할 수 있도록 합니다.
+모듈 설치 프로그램은 아래 나열된 다양한 소스 유형에서 설치를 지원합니다.
+Local paths 로컬 경로 참조를 사용하면 단일 소스 리포지토리 내 구성의 일부를 가져올 수 있습니다.
+module &amp;#34;consul&amp;#34; { source = &amp;#34;./consul&amp;#34; } GitHub Terraform은 접두사가 없는 github.</description>
+    </item>
+    
+    <item>
+      <title>Module Composition</title>
+      <link>/terraform-workshop/basics/terraform/modules/composition/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/terraform-workshop/basics/terraform/modules/composition/</guid>
+      <description>루트 모듈이 하나만있는 간단한 Terraform 구성에서는 간단한 리소스 집합을 만들고 Terraform의 식 구문을 사용하여 이러한 리소스 간의 관계를 설명합니다.
+resource &amp;#34;aws_vpc&amp;#34; &amp;#34;example&amp;#34; { cidr_block = &amp;#34;10.1.0.0/16&amp;#34; } resource &amp;#34;aws_subnet&amp;#34; &amp;#34;example&amp;#34; { vpc_id = aws_vpc.example.id availability_zone = &amp;#34;us-west-2b&amp;#34; cidr_block = cidrsubnet(aws_vpc.example.cidr_block, 4, 1) } 모듈 블록을 도입하면 구성이 단순하지 않고 계층 적이됩니다. 각 모듈에는 고유 한 리소스 세트와 자체 하위 모듈이 포함되어있어 심도 있고 복잡한 리소스 구성 트리를 만들 수 있습니다.</description>
+    </item>
+    
   </channel>
 </rss>
