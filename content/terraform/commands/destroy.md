@@ -1,6 +1,6 @@
 ---
 title: destroy
-weight: 102
+weight: 104
 ---
 
 `terraform destroy` 명령은 Terraform 관리 인프라를 삭제하는 데 사용됩니다.

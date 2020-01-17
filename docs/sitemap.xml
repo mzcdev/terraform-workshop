@@ -147,10 +147,6 @@
   </url>
   
   <url>
-    <loc>/terraform-workshop/terraform/commands/apply/</loc>
-  </url>
-  
-  <url>
     <loc>/terraform-workshop/terraform/providers/aws/</loc>
   </url>
   
@@ -171,7 +167,7 @@
   </url>
   
   <url>
-    <loc>/terraform-workshop/terraform/commands/destroy/</loc>
+    <loc>/terraform-workshop/terraform/commands/environment-variables/</loc>
   </url>
   
   <url>
@@ -191,11 +187,19 @@
   </url>
   
   <url>
-    <loc>/terraform-workshop/terraform/commands/fmt/</loc>
+    <loc>/terraform-workshop/terraform/commands/apply/</loc>
   </url>
   
   <url>
     <loc>/terraform-workshop/terraform/state/locking/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/terraform/commands/destroy/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/terraform/commands/fmt/</loc>
   </url>
   
   <url>

@@ -11,6 +11,17 @@
     
     
     <item>
+      <title>Environment Variables</title>
+      <link>/terraform-workshop/terraform/commands/environment-variables/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/terraform-workshop/terraform/commands/environment-variables/</guid>
+      <description>Terraform은 동작의 다양한 측면을 사용자 정의하기 위한 여러 환경 변수를 사용할 수 있습니다.
+TF_VAR_name 환경 변수를 사용하여 변수를 설정할 수 있습니다. 환경 변수는 TF_VAR_name 형식 입니다.
+export TF_VAR_region=&#39;us-west-1&#39; export TF_VAR_ami=&#39;ami-049d8641&#39; export TF_VAR_alist=&#39;[1, 2, 3]&#39; export TF_VAR_amap=&#39;{ foo = &amp;quot;bar&amp;quot;, baz = &amp;quot;qux&amp;quot; }&#39; </description>
+    </item>
+    
+    <item>
       <title>apply</title>
       <link>/terraform-workshop/terraform/commands/apply/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

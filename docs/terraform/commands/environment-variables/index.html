@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/terraform-workshop/images/favicon-60.png" type="image/x-icon" />
 <link rel="icon" href="/terraform-workshop/images/favicon-60.png" type="image/x-icon" />
 
-    <title>Review :: Terraform Workshop</title>
+    <title>Environment Variables :: Terraform Workshop</title>
 
     
     <link href="/terraform-workshop/css/nucleus.css?1579222521" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/terraform-workshop/requirements/account/add_user_04/">
+  <body class="" data-url="/terraform-workshop/terraform/commands/environment-variables/">
     <nav id="sidebar" class="">
 
 
@@ -81,7 +81,7 @@
   
     
     <li data-nav-id="/terraform-workshop/terraform/" title="Terraform" class="dd-item 
-        
+        parent
         
         
         ">
@@ -275,7 +275,7 @@
   
     
     <li data-nav-id="/terraform-workshop/terraform/commands/" title="Commands (CLI)" class="dd-item 
-        
+        parent
         
         
         ">
@@ -299,7 +299,7 @@
  
   
     
-      <li data-nav-id="/terraform-workshop/terraform/commands/environment-variables/" title="Environment Variables" class="dd-item ">
+      <li data-nav-id="/terraform-workshop/terraform/commands/environment-variables/" title="Environment Variables" class="dd-item active">
         <a href="/terraform-workshop/terraform/commands/environment-variables/">
         Environment Variables
         
@@ -885,7 +885,7 @@
   
     
     <li data-nav-id="/terraform-workshop/requirements/" title="Requirements" class="dd-item 
-        parent
+        
         
         
         ">
@@ -912,7 +912,7 @@
   
     
     <li data-nav-id="/terraform-workshop/requirements/account/" title="AWS Account" class="dd-item 
-        parent
+        
         
         
         ">
@@ -993,7 +993,7 @@
  
   
     
-      <li data-nav-id="/terraform-workshop/requirements/account/add_user_04/" title="Review" class="dd-item active">
+      <li data-nav-id="/terraform-workshop/requirements/account/add_user_04/" title="Review" class="dd-item ">
         <a href="/terraform-workshop/requirements/account/add_user_04/">
         Review
         
@@ -1524,7 +1524,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='' href="https://github.com/mzcdev/terraform-workshop/edit/master/content/requirements/account/add_user_04.md" target="blank">
+                    <a class="github-link" title='' href="https://github.com/mzcdev/terraform-workshop/edit/master/content/terraform/commands/environment-variables.md" target="blank">
                       <i class="fas fa-code-branch"></i>
                       <span id="top-github-link-text"></span>
                     </a>
@@ -1559,7 +1559,7 @@
             
           
           
-            <a href='/terraform-workshop/'>Home</a> > <a href='/terraform-workshop/requirements/'>Requirements</a> > <a href='/terraform-workshop/requirements/account/'>AWS Account</a> > Review
+            <a href='/terraform-workshop/'>Home</a> > <a href='/terraform-workshop/terraform/'>Terraform</a> > <a href='/terraform-workshop/terraform/commands/'>Commands (CLI)</a> > Environment Variables
           
          
           
@@ -1574,7 +1574,15 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#tf_var_name">TF_VAR_name</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -1590,7 +1598,7 @@
           
             <h1>
               
-              Review
+              Environment Variables
             </h1>
           
 
@@ -1598,9 +1606,14 @@
 
 
 
-<p>입력한 정보를 다시한번 확인 합니다.</p>
-<p><img src="../../account/images/add_user_04.png" alt="Review"></p>
-
+<p>Terraform은 동작의 다양한 측면을 사용자 정의하기 위한 여러 환경 변수를 사용할 수 있습니다.</p>
+<h3 id="tf_var_name">TF_VAR_name</h3>
+<p>환경 변수를 사용하여 변수를 설정할 수 있습니다. 환경 변수는 TF_VAR_name 형식 입니다.</p>
+<pre><code>export TF_VAR_region='us-west-1'
+export TF_VAR_ami='ami-049d8641'
+export TF_VAR_alist='[1, 2, 3]'
+export TF_VAR_amap='{ foo = &quot;bar&quot;, baz = &quot;qux&quot; }'
+</code></pre>
 
 <footer class=" footline" >
 	
@@ -1638,8 +1651,6 @@
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -1656,133 +1667,8 @@
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
                         
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -1904,10 +1790,47 @@
             
         
                     
+            
+        
+                    
                         
             
             
                 
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -1968,54 +1891,6 @@
             
         
                     
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
                         
             
             
@@ -2048,22 +1923,6 @@
             
         
                     
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
                         
             
             
@@ -2079,38 +1938,6 @@
                     
             
         
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
                     
                         
             
@@ -2192,25 +2019,6 @@
             
         
                     
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
             
         
                     
@@ -2219,23 +2027,6 @@
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                    
                 
                 
 
@@ -2243,25 +2034,6 @@
                     
                     
 
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
                         
             
@@ -2295,11 +2067,26 @@
             
         
                     
+            
+        
+                    
                         
             
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -2317,8 +2104,231 @@
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
                         
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -2682,10 +2692,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/terraform-workshop/requirements/account/add_user_03/" title="Add tags (optional)"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/terraform-workshop/terraform/commands/" title="Commands (CLI)"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/terraform-workshop/requirements/account/add_user_05/" title="Success" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/terraform-workshop/terraform/commands/apply/" title="apply" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
