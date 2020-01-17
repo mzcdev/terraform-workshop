@@ -1,6 +1,6 @@
 ---
 title: graph
-weight: 104
+weight: 106
 ---
 
 `terraform graph` 명령은 구성 또는 실행 계획의 시각적 표현을 생성하는 데 사용됩니다. 출력은 DOT 형식이며, GraphViz에서 차트를 생성하는 데 사용할 수 있습니다.

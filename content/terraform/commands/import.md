@@ -1,6 +1,6 @@
 ---
 title: import
-weight: 105
+weight: 107
 ---
 
 `terraform import` 명령은 기존 리소스를 Terraform으로 가져 오는 데 사용됩니다.

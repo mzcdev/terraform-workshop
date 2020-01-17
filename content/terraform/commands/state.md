@@ -1,6 +1,6 @@
 ---
 title: state
-weight: 111
+weight: 112
 ---
 
 `terraform state` 명령은 고급 상태 관리에 사용됩니다. Terraform 사용이 향상됨에 따라 Terraform 상태를 수정해야하는 경우가 있습니다. 상태를 직접 수정하는 대신 terraform state 명령을 사용할 수 있습니다.

@@ -1,6 +1,6 @@
 ---
 title: output
-weight: 107
+weight: 109
 ---
 
 `terraform output` 명령은 상태 파일에서 출력 변수의 값을 추출하는 데 사용됩니다.

@@ -1,6 +1,6 @@
 ---
 title: apply
-weight: 101
+weight: 103
 ---
 
 `terraform apply` 명령은 원하는 구성 상태에 도달하는 데 필요한 변경 사항 또는 `terraform plan` 실행 계획에 의해 생성 된 사전 결정된 조치 세트를 적용하는 데 사용됩니다.
