@@ -13,7 +13,7 @@ weight: 108
 terraform plan [options] [dir]
 ```
 
-주요 옵션:
+### Options
 
 `-destroy` - 설정된 경우 알려진 모든 자원을 삭제하는 계획을 생성합니다.
 

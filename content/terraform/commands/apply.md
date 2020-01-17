@@ -13,7 +13,7 @@ terraform apply [options] [dir-or-plan]
 
 기본적으로 apply는 구성에 대한 현재 디렉토리를 스캔하고 변경 사항을 적절하게 적용합니다.
 
-주요 옵션:
+### Options
 
 `-input=true` - 직접 설정되지 않은 경우 변수 입력을 요청합니다.
 
