@@ -11,7 +11,7 @@ weight: 109
 terraform providers [config-path]
 ```
 
-예시:
+### Example
 
 ```
 .
@@ -22,4 +22,14 @@ terraform providers [config-path]
     ├── provider.kubernetes
     ├── provider.local
     └── provider.template
+```
+
+```
+.
+├── provider.aws
+├── provider.terraform
+└── module.worker
+    ├── provider.aws (inherited)
+    └── module.worker
+        └── provider.aws (inherited)
 ```
