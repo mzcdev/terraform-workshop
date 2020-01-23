@@ -12,10 +12,10 @@
     
     <item>
       <title>Cloud9 Home</title>
-      <link>/terraform-workshop/requirements/cloud9/cloud9_home/</link>
+      <link>/terraform-workshop/requirements/cloud9/cloud9-home/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/terraform-workshop/requirements/cloud9/cloud9_home/</guid>
+      <guid>/terraform-workshop/requirements/cloud9/cloud9-home/</guid>
       <description>Create environment 버튼을 눌러 새 환경을 만들도록 합니다.</description>
     </item>
     
@@ -25,7 +25,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/terraform-workshop/requirements/cloud9/environment-name/</guid>
-      <description>Environment name 은 terraform-workshop 을 입력 합니다.</description>
+      <description>Environment name 을 입력 합니다.</description>
     </item>
     
     <item>
@@ -74,15 +74,6 @@
     </item>
     
     <item>
-      <title>New terminal</title>
-      <link>/terraform-workshop/requirements/cloud9/new-terminal/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/terraform-workshop/requirements/cloud9/new-terminal/</guid>
-      <description>(+) 버튼을 눌러 새 터미널을 생성 합니다.</description>
-    </item>
-    
-    <item>
       <title>Terminal</title>
       <link>/terraform-workshop/requirements/cloud9/terminal/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -93,10 +84,10 @@
     
     <item>
       <title>AWS configure</title>
-      <link>/terraform-workshop/requirements/cloud9/aws_configure/</link>
+      <link>/terraform-workshop/requirements/cloud9/aws-configure/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/terraform-workshop/requirements/cloud9/aws_configure/</guid>
+      <guid>/terraform-workshop/requirements/cloud9/aws-configure/</guid>
       <description>AWS Account 를 생성하고 저장한 Access key ID 와 Secret access key 를 입력합니다.
 aws configure AWS Access Key ID [None]: AXXXXXXXXXXXXXXXXXXX AWS Secret Access Key [None]: AXXXXXXXXXXXXXXXXXXXAXXXXXXXXXXXXXXXXXXX Default region name [ap-northeast-2]: ap-northeast-2 Default output format [None]: json </description>
     </item>

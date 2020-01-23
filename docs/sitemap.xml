@@ -23,23 +23,23 @@
   </url>
   
   <url>
-    <loc>/terraform-workshop/requirements/account/add_user_01/</loc>
+    <loc>/terraform-workshop/requirements/account/user-details/</loc>
   </url>
   
   <url>
-    <loc>/terraform-workshop/requirements/account/add_user_02/</loc>
+    <loc>/terraform-workshop/requirements/account/permissions/</loc>
   </url>
   
   <url>
-    <loc>/terraform-workshop/requirements/account/add_user_03/</loc>
+    <loc>/terraform-workshop/requirements/account/tags/</loc>
   </url>
   
   <url>
-    <loc>/terraform-workshop/requirements/account/add_user_04/</loc>
+    <loc>/terraform-workshop/requirements/account/review/</loc>
   </url>
   
   <url>
-    <loc>/terraform-workshop/requirements/account/add_user_05/</loc>
+    <loc>/terraform-workshop/requirements/account/success/</loc>
   </url>
   
   <url>
@@ -47,7 +47,7 @@
   </url>
   
   <url>
-    <loc>/terraform-workshop/requirements/cloud9/cloud9_home/</loc>
+    <loc>/terraform-workshop/requirements/cloud9/cloud9-home/</loc>
   </url>
   
   <url>
@@ -75,15 +75,11 @@
   </url>
   
   <url>
-    <loc>/terraform-workshop/requirements/cloud9/new-terminal/</loc>
-  </url>
-  
-  <url>
     <loc>/terraform-workshop/requirements/cloud9/terminal/</loc>
   </url>
   
   <url>
-    <loc>/terraform-workshop/requirements/cloud9/aws_configure/</loc>
+    <loc>/terraform-workshop/requirements/cloud9/aws-configure/</loc>
   </url>
   
   <url>
