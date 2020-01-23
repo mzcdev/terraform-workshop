@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lambda API on Terraform Workshop</title>
+    <link>/terraform-workshop/provisioning/lambda/</link>
+    <description>Recent content in Lambda API on Terraform Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    
+	<atom:link href="/terraform-workshop/provisioning/lambda/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Lambda API</title>
+      <link>/terraform-workshop/provisioning/lambda/lambda/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/terraform-workshop/provisioning/lambda/lambda/</guid>
+      <description>다음 파일에서 terraform-workshop-seoul 을 생성한 버켓명으로 변경해줍니다.
+# export BUCKET=&amp;#34;terraform-nalbam-seoul&amp;#34; cd terraform-env-workshop/lambda sed -i &amp;#34;s/terraform-workshop-seoul/${BUCKET}/g&amp;#34; *.tf Terraform 명령으로 생성 합니다.
+terraform init terraform plan terraform apply 다음과 같은 메세지가 출력 되면 성공 입니다.
+Apply complete! Resources: x added, 0 changed, 0 destroyed. Outputs: invoke_url = https://8zgxxav8oi.execute-api.ap-northeast-2.amazonaws.com/dev lambda api 가 동작 하는지 테스트 해봅시다.
+invoke_url=&amp;#34;https://8zgxxav8oi.execute-api.ap-northeast-2.amazonaws.com/dev&amp;#34; curl -sL -X POST -d &amp;#34;{\&amp;#34;data\&amp;#34;:\&amp;#34;ok\&amp;#34;}&amp;#34; ${invoke_url}/demo | jq . ok 가 출력 되면 성공 입니다.</description>
+    </item>
+    
+  </channel>
+</rss>

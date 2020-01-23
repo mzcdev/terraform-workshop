@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>EKS on Terraform Workshop</title>
+    <link>/terraform-workshop/provisioning/eks/</link>
+    <description>Recent content in EKS on Terraform Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    
+	<atom:link href="/terraform-workshop/provisioning/eks/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>result</title>
+      <link>/terraform-workshop/provisioning/eks/result/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/terraform-workshop/provisioning/eks/result/</guid>
+      <description>Terraform 명령으로 생성 합니다.
+terraform init terraform plan terraform apply 다음과 같은 메세지가 출력 되면 성공 입니다.
+Apply complete! Resources: x added, 0 changed, 0 destroyed. Outputs: config = # # kube config aws eks update-kubeconfig --name workshop-eks --alias workshop-eks # or mkdir -p ~/.kube &amp;amp;&amp;amp; cp .output/kube_config.yaml ~/.kube/config # files cat .output/aws_auth.yaml cat .output/kube_config.yaml # get kubectl get node -o wide kubectl get all --all-namespaces # endpoint = https://F4CB6XXXXXXXXX53EXXXXXXXXXX5BA2.sk1.ap-northeast-2.eks.amazonaws.com name = workshop-eks kubectl 실행을 위한 권한을 획득합니다.</description>
+    </item>
+    
+  </channel>
+</rss>
