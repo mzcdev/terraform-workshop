@@ -43,39 +43,47 @@
   </url>
   
   <url>
-    <loc>/terraform-workshop/requirements/lightsail/</loc>
+    <loc>/terraform-workshop/requirements/cloud9/</loc>
   </url>
   
   <url>
-    <loc>/terraform-workshop/requirements/lightsail/add_lightsail_01/</loc>
+    <loc>/terraform-workshop/requirements/cloud9/cloud9_home/</loc>
   </url>
   
   <url>
-    <loc>/terraform-workshop/requirements/lightsail/add_lightsail_02/</loc>
+    <loc>/terraform-workshop/requirements/cloud9/environment-name/</loc>
   </url>
   
   <url>
-    <loc>/terraform-workshop/requirements/lightsail/add_lightsail_03/</loc>
+    <loc>/terraform-workshop/requirements/cloud9/configure-settings/</loc>
   </url>
   
   <url>
-    <loc>/terraform-workshop/requirements/lightsail/add_lightsail_04/</loc>
+    <loc>/terraform-workshop/requirements/cloud9/review/</loc>
   </url>
   
   <url>
-    <loc>/terraform-workshop/requirements/lightsail/console/</loc>
+    <loc>/terraform-workshop/requirements/cloud9/new-environment/</loc>
   </url>
   
   <url>
-    <loc>/terraform-workshop/requirements/lightsail/tools/</loc>
+    <loc>/terraform-workshop/requirements/cloud9/environment-clear/</loc>
   </url>
   
   <url>
-    <loc>/terraform-workshop/requirements/lightsail/aws_configure/</loc>
+    <loc>/terraform-workshop/requirements/cloud9/preferences/</loc>
   </url>
   
   <url>
-    <loc>/terraform-workshop/requirements/lightsail/ssh_keygen/</loc>
+    <loc>/terraform-workshop/requirements/cloud9/new-terminal/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/requirements/cloud9/terminal/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/requirements/cloud9/aws_configure/</loc>
   </url>
   
   <url>
@@ -88,6 +96,10 @@
   
   <url>
     <loc>/terraform-workshop/terraform/commands/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/requirements/cloud9/install-tools/</loc>
   </url>
   
   <url>
