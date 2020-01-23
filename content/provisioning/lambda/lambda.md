@@ -1,6 +1,6 @@
 ---
 title: Lambda API
-weight: 33
+weight: 100
 ---
 
 다음 파일에서 **terraform-workshop-seoul** 을 생성한 버켓명으로 변경해줍니다.

@@ -1,21 +1,7 @@
 ---
-title: EKS
-weight: 36
+title: result
+weight: 199
 ---
-
-EKS cluster 를 생성하고, on-demand 와 spot instance 로 구성된 Worker node 를 생성 합니다.
-
-![EKS](../../provisioning/images/terraform_eks_ach.png)
-
-다음 파일에서 **terraform-workshop-seoul** 을 생성한 버켓명으로 변경해줍니다.
-
-```bash
-# export BUCKET="terraform-nalbam-seoul"
-
-cd terraform-env-workshop/eks
-
-sed -i "s/terraform-workshop-seoul/${BUCKET}/g" *.tf
-```
 
 Terraform 명령으로 생성 합니다.
 

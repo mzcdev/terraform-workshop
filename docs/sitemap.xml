@@ -23,6 +23,10 @@
   </url>
   
   <url>
+    <loc>/terraform-workshop/provisioning/instance/</loc>
+  </url>
+  
+  <url>
     <loc>/terraform-workshop/requirements/account/user-details/</loc>
   </url>
   
@@ -44,6 +48,10 @@
   
   <url>
     <loc>/terraform-workshop/requirements/cloud9/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/provisioning/backend/</loc>
   </url>
   
   <url>
@@ -79,11 +87,15 @@
   </url>
   
   <url>
-    <loc>/terraform-workshop/requirements/cloud9/aws-configure/</loc>
+    <loc>/terraform-workshop/provisioning/bastion/</loc>
   </url>
   
   <url>
-    <loc>/terraform-workshop/provisioning/clone/</loc>
+    <loc>/terraform-workshop/provisioning/vpc/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/requirements/cloud9/aws-configure/</loc>
   </url>
   
   <url>
@@ -99,31 +111,11 @@
   </url>
   
   <url>
-    <loc>/terraform-workshop/provisioning/instance/</loc>
-  </url>
-  
-  <url>
-    <loc>/terraform-workshop/provisioning/backend/</loc>
-  </url>
-  
-  <url>
-    <loc>/terraform-workshop/provisioning/lambda/</loc>
-  </url>
-  
-  <url>
     <loc>/terraform-workshop/terraform/providers/</loc>
   </url>
   
   <url>
     <loc>/terraform-workshop/terraform/provisioners/</loc>
-  </url>
-  
-  <url>
-    <loc>/terraform-workshop/provisioning/vpc/</loc>
-  </url>
-  
-  <url>
-    <loc>/terraform-workshop/provisioning/eks/</loc>
   </url>
   
   <url>
@@ -136,6 +128,14 @@
   
   <url>
     <loc>/terraform-workshop/terraform/backends/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/provisioning/lambda/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/provisioning/eks/</loc>
   </url>
   
   <url>
@@ -155,11 +155,31 @@
   </url>
   
   <url>
+    <loc>/terraform-workshop/provisioning/lambda/lambda/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/provisioning/bastion/variable/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/provisioning/vpc/variable/</loc>
+  </url>
+  
+  <url>
     <loc>/terraform-workshop/terraform/providers/aws/</loc>
   </url>
   
   <url>
     <loc>/terraform-workshop/terraform/backends/config/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/provisioning/bastion/backend/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/provisioning/vpc/backend/</loc>
   </url>
   
   <url>
@@ -172,6 +192,10 @@
   
   <url>
     <loc>/terraform-workshop/terraform/state/purpose/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/provisioning/bastion/data/</loc>
   </url>
   
   <url>
@@ -195,7 +219,19 @@
   </url>
   
   <url>
+    <loc>/terraform-workshop/provisioning/vpc/vpc/</loc>
+  </url>
+  
+  <url>
     <loc>/terraform-workshop/terraform/commands/apply/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/provisioning/bastion/iam-role/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/provisioning/vpc/public-route/</loc>
   </url>
   
   <url>
@@ -207,7 +243,27 @@
   </url>
   
   <url>
+    <loc>/terraform-workshop/provisioning/vpc/public-subnet/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/provisioning/bastion/security-group/</loc>
+  </url>
+  
+  <url>
     <loc>/terraform-workshop/terraform/commands/fmt/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/provisioning/bastion/instance/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/provisioning/vpc/nat-gatweway/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/provisioning/bastion/eip/</loc>
   </url>
   
   <url>
@@ -215,11 +271,27 @@
   </url>
   
   <url>
+    <loc>/terraform-workshop/provisioning/vpc/private-route/</loc>
+  </url>
+  
+  <url>
     <loc>/terraform-workshop/terraform/commands/import/</loc>
   </url>
   
   <url>
+    <loc>/terraform-workshop/provisioning/bastion/output/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/provisioning/vpc/private-subnet/</loc>
+  </url>
+  
+  <url>
     <loc>/terraform-workshop/terraform/commands/init/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/provisioning/vpc/output/</loc>
   </url>
   
   <url>
@@ -236,6 +308,18 @@
   
   <url>
     <loc>/terraform-workshop/terraform/commands/state/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/provisioning/bastion/result/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/provisioning/eks/result/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/provisioning/vpc/result/</loc>
   </url>
   
   <url>

@@ -1,11 +1,9 @@
 ---
 title: Backend
-weight: 33
+weight: 20
 ---
 
-이번에는 State 를 S3 bucket 에 저장하고, DynamoDB 로 lock 설정을 해보겠습니다.
-
-먼저 Terraform state 정보를 저장할 S3 Bucket 를 생성 합니다.
+Terraform state 정보를 저장할 S3 Bucket 를 생성 합니다.
 
 ```bash
 export REGION="ap-northeast-2"
@@ -16,7 +14,7 @@ export BUCKET="terraform-workshop-seoul"
 aws s3 mb s3://${BUCKET} --region ${REGION}
 ```
 
-중복 실행을 막기 위해, DynamoDB Table 을 생성 합니다.
+중복 실행을 막기 위해 DynamoDB Table 을 생성 합니다.
 
 ```bash
 aws dynamodb create-table \

@@ -70,7 +70,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/terraform-workshop/requirements/cloud9/preferences/</guid>
-      <description>(+) 버튼을 눌러 새 터미널을 생성 합니다.</description>
+      <description>Preferences 메뉴를 엽니다.
+AWS Settings 메뉴를 엽니다.
+AWS managed temporory credentials 를 비활성화 합니다.</description>
     </item>
     
     <item>

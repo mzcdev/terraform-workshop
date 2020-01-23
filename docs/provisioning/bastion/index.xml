@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bastion on Terraform Workshop</title>
+    <link>/terraform-workshop/provisioning/bastion/</link>
+    <description>Recent content in Bastion on Terraform Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    
+	<atom:link href="/terraform-workshop/provisioning/bastion/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>variable.tf</title>
+      <link>/terraform-workshop/provisioning/bastion/variable/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/terraform-workshop/provisioning/bastion/variable/</guid>
+      <description>인스턴스를 생성하기 위해 variable 을 만들어 둡니다.
+variable &amp;#34;region&amp;#34; { description = &amp;#34;생성될 리전을 입력 합니다.&amp;#34; type = string default = &amp;#34;ap-northeast-2&amp;#34; } variable &amp;#34;name&amp;#34; { description = &amp;#34;서버 이름을 입력 합니다.&amp;#34; type = string default = &amp;#34;bastion&amp;#34; } variable &amp;#34;vpc_id&amp;#34; { description = &amp;#34;생성될 VPC ID 를 입력 합니다.&amp;#34; type = string default = &amp;#34;&amp;#34; } variable &amp;#34;subnet_id&amp;#34; { description = &amp;#34;생성될 Subnet ID 를 입력 합니다.&amp;#34; type = string default = &amp;#34;&amp;#34; } variable &amp;#34;administrator&amp;#34; { description = &amp;#34;AdministratorAccess 권한 부여 여부를 입력 합니다.</description>
+    </item>
+    
+    <item>
+      <title>backend.tf</title>
+      <link>/terraform-workshop/provisioning/bastion/backend/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/terraform-workshop/provisioning/bastion/backend/</guid>
+      <description>State 정보를 저장하기 위해 backend 설정을 해줍니다.
+Provider 는 AWS 를 사용 합니다.
+terraform { backend &amp;#34;s3&amp;#34; { region = &amp;#34;ap-northeast-2&amp;#34; bucket = &amp;#34;terraform-workshop-seoul&amp;#34; key = &amp;#34;bastion.tfstate&amp;#34; dynamodb_table = &amp;#34;terraform-workshop-seoul&amp;#34; encrypt = true } } provider &amp;#34;aws&amp;#34; { region = var.region } </description>
+    </item>
+    
+    <item>
+      <title>data.tf</title>
+      <link>/terraform-workshop/provisioning/bastion/data/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/terraform-workshop/provisioning/bastion/data/</guid>
+      <description>Amazon Linux 2 AMI 를 검색 합니다.
+data &amp;#34;aws_ami&amp;#34; &amp;#34;this&amp;#34; { most_recent = true owners = [&amp;#34;137112412989&amp;#34;]# AWS&amp;#39;s account ID.  filter { name = &amp;#34;architecture&amp;#34; values = [&amp;#34;x86_64&amp;#34;] } filter { name = &amp;#34;root-device-type&amp;#34; values = [&amp;#34;ebs&amp;#34;] } filter { name = &amp;#34;virtualization-type&amp;#34; values = [&amp;#34;hvm&amp;#34;] } filter { name = &amp;#34;name&amp;#34; values = [&amp;#34;amzn-ami-hvm-*&amp;#34;] } } </description>
+    </item>
+    
+    <item>
+      <title>iam-role.tf</title>
+      <link>/terraform-workshop/provisioning/bastion/iam-role/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/terraform-workshop/provisioning/bastion/iam-role/</guid>
+      <description>인스턴스에 AdministratorAccess 권한을 부여 합니다.
+resource &amp;#34;aws_iam_role&amp;#34; &amp;#34;this&amp;#34; { name = var.name description = &amp;#34;iam role for ${var.name}&amp;#34; assume_role_policy = &amp;lt;&amp;lt;POLICY { &amp;#34;Version&amp;#34;: &amp;#34;2012-10-17&amp;#34;, &amp;#34;Statement&amp;#34;: [ { &amp;#34;Effect&amp;#34;: &amp;#34;Allow&amp;#34;, &amp;#34;Principal&amp;#34;: { &amp;#34;Service&amp;#34;: &amp;#34;ec2.amazonaws.com&amp;#34; }, &amp;#34;Action&amp;#34;: &amp;#34;sts:AssumeRole&amp;#34; } ] } POLICY } resource &amp;#34;aws_iam_instance_profile&amp;#34; &amp;#34;this&amp;#34; { name = var.name role = aws_iam_role.this.name }# AdministratorAccess resource &amp;#34;aws_iam_role_policy_attachment&amp;#34; &amp;#34;admin&amp;#34; { count = var.administrator ? 1 : 0 role = aws_iam_role.this.name policy_arn = &amp;#34;arn:aws:iam::aws:policy/AdministratorAccess&amp;#34; } </description>
+    </item>
+    
+    <item>
+      <title>security-group.tf</title>
+      <link>/terraform-workshop/provisioning/bastion/security-group/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/terraform-workshop/provisioning/bastion/security-group/</guid>
+      <description>보안 그룹을 생성 합니다. ssh 로 접근 가능한 ip 를 등록 합니다.
+resource &amp;#34;aws_security_group&amp;#34; &amp;#34;this&amp;#34; { name = var.name description = &amp;#34;security group for ${var.name}&amp;#34; vpc_id = var.vpc_id egress { from_port = &amp;#34;0&amp;#34; to_port = &amp;#34;0&amp;#34; protocol = &amp;#34;-1&amp;#34; self = true } ingress { from_port = &amp;#34;0&amp;#34; to_port = &amp;#34;0&amp;#34; protocol = &amp;#34;-1&amp;#34; self = true }# ALL  egress { from_port = &amp;#34;0&amp;#34; to_port = &amp;#34;0&amp;#34; protocol = &amp;#34;-1&amp;#34; cidr_blocks = [&amp;#34;0.</description>
+    </item>
+    
+    <item>
+      <title>instance.tf</title>
+      <link>/terraform-workshop/provisioning/bastion/instance/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/terraform-workshop/provisioning/bastion/instance/</guid>
+      <description>인스턴스를 생성 합니다.
+resource &amp;#34;aws_instance&amp;#34; &amp;#34;this&amp;#34; { ami = var.ami_id != &amp;#34;&amp;#34; ? var.ami_id : data.aws_ami.this.id instance_type = var.instance_type subnet_id = var.subnet_id user_data = var.user_data key_name = var.key_name iam_instance_profile = aws_iam_instance_profile.this.id vpc_security_group_ids = [ aws_security_group.this.id, ] tags = { Name = var.name Type = &amp;#34;bastion&amp;#34; } } </description>
+    </item>
+    
+    <item>
+      <title>eip.tf</title>
+      <link>/terraform-workshop/provisioning/bastion/eip/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/terraform-workshop/provisioning/bastion/eip/</guid>
+      <description>탄력적 IP 를 생성하여 인스턴스에 연결 합니다.
+resource &amp;#34;aws_eip&amp;#34; &amp;#34;this&amp;#34; { instance = aws_instance.this.id vpc = true tags = { Name = var.name } } </description>
+    </item>
+    
+    <item>
+      <title>output.tf</title>
+      <link>/terraform-workshop/provisioning/bastion/output/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/terraform-workshop/provisioning/bastion/output/</guid>
+      <description>결과를 출력 합니다.
+output &amp;#34;id&amp;#34; { value = aws_instance.this.id } output &amp;#34;private_ip&amp;#34; { value = aws_instance.this.private_ip } output &amp;#34;public_ip&amp;#34; { value = aws_eip.this.public_ip } </description>
+    </item>
+    
+    <item>
+      <title>result</title>
+      <link>/terraform-workshop/provisioning/bastion/result/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/terraform-workshop/provisioning/bastion/result/</guid>
+      <description>Terraform 명령으로 생성 합니다.
+terraform init terraform plan terraform apply 다음과 같은 메세지가 출력 되면 성공 입니다.
+Apply complete! Resources: x added, 0 changed, 0 destroyed. Outputs: id = &amp;#34;i-0661eb15x9b3e2f0b&amp;#34; private_ip = &amp;#34;10.15.0.23&amp;#34; public_ip = &amp;#34;52.78.13.15&amp;#34; </description>
+    </item>
+    
+  </channel>
+</rss>
