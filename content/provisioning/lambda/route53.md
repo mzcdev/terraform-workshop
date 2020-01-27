@@ -3,16 +3,11 @@ title: route53.tf
 weight: 107
 ---
 
-API Gatewat 에서 Cloud Front 를 만들었고, 이를 Route53 의 `var.domain_name` 도메인에 연결 해 줍니다.
+API Gateway 에서 Cloud Front 를 만들었고, 이를 Route53 의 `var.domain_name` 도메인에 연결 해 줍니다.
 
 `module.domain.certificate_arn` 를 통해 ACM 인증서를 사용 합니다.
 
 ```hcl
-data "aws_route53_zone" "this" {
-  name = var.domain_root
-}
-
-# https://github.com/terraform-providers/terraform-provider-aws/issues/2195
 resource "aws_api_gateway_domain_name" "default" {
   domain_name     = var.domain_name
   certificate_arn = module.domain.certificate_arn
