@@ -155,6 +155,10 @@
   </url>
   
   <url>
+    <loc>/terraform-workshop/cleanup/bastion/</loc>
+  </url>
+  
+  <url>
     <loc>/terraform-workshop/cleanup/vpc/</loc>
   </url>
   
@@ -368,10 +372,6 @@
   
   <url>
     <loc>/terraform-workshop/provisioning/bastion/result/</loc>
-  </url>
-  
-  <url>
-    <loc>/terraform-workshop/provisioning/eks/result/</loc>
   </url>
   
   <url>
