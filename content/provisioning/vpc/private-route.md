@@ -5,7 +5,7 @@ weight: 106
 
 ```hcl
 resource "aws_route_table" "private" {
-  count = count(var.private_subnets)
+  count = length(var.private_subnets)
 
   vpc_id = aws_vpc.this.id
 
@@ -19,7 +19,7 @@ resource "aws_route_table" "private" {
 }
 
 resource "aws_route" "private" {
-  count = count(var.private_subnets)
+  count = length(var.private_subnets)
 
   route_table_id         = aws_route_table.private[count.index].id
   destination_cidr_block = "0.0.0.0/0"

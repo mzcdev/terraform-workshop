@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/terraform-workshop/images/favicon-60.png" type="image/x-icon" />
 <link rel="icon" href="/terraform-workshop/images/favicon-60.png" type="image/x-icon" />
 
-    <title>plan :: Terraform Workshop</title>
+    <title>setup.sh :: Terraform Workshop</title>
 
     
     <link href="/terraform-workshop/css/nucleus.css?1580125157" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/terraform-workshop/terraform/commands/plan/">
+  <body class="" data-url="/terraform-workshop/provisioning/bastion/setsup/">
     <nav id="sidebar" class="">
 
 
@@ -81,7 +81,7 @@
   
     
     <li data-nav-id="/terraform-workshop/terraform/" title="Terraform" class="dd-item 
-        parent
+        
         
         
         ">
@@ -275,7 +275,7 @@
   
     
     <li data-nav-id="/terraform-workshop/terraform/commands/" title="Commands (CLI)" class="dd-item 
-        parent
+        
         
         
         ">
@@ -451,7 +451,7 @@
  
   
     
-      <li data-nav-id="/terraform-workshop/terraform/commands/plan/" title="plan" class="dd-item active">
+      <li data-nav-id="/terraform-workshop/terraform/commands/plan/" title="plan" class="dd-item ">
         <a href="/terraform-workshop/terraform/commands/plan/">
         plan
         
@@ -1272,7 +1272,7 @@
   
     
     <li data-nav-id="/terraform-workshop/provisioning/" title="Provisioning" class="dd-item 
-        
+        parent
         
         
         ">
@@ -1662,7 +1662,7 @@
   
     
     <li data-nav-id="/terraform-workshop/provisioning/bastion/" title="Bastion" class="dd-item 
-        
+        parent
         
         
         ">
@@ -1743,7 +1743,7 @@
  
   
     
-      <li data-nav-id="/terraform-workshop/provisioning/bastion/setsup/" title="setup.sh" class="dd-item ">
+      <li data-nav-id="/terraform-workshop/provisioning/bastion/setsup/" title="setup.sh" class="dd-item active">
         <a href="/terraform-workshop/provisioning/bastion/setsup/">
         setup.sh
         
@@ -2090,7 +2090,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='' href="https://github.com/mzcdev/terraform-workshop/edit/master/content/terraform/commands/plan.md" target="blank">
+                    <a class="github-link" title='' href="https://github.com/mzcdev/terraform-workshop/edit/master/content/provisioning/bastion/setsup.md" target="blank">
                       <i class="fas fa-code-branch"></i>
                       <span id="top-github-link-text"></span>
                     </a>
@@ -2125,7 +2125,7 @@
             
           
           
-            <a href='/terraform-workshop/'>Home</a> > <a href='/terraform-workshop/terraform/'>Terraform</a> > <a href='/terraform-workshop/terraform/commands/'>Commands (CLI)</a> > plan
+            <a href='/terraform-workshop/'>Home</a> > <a href='/terraform-workshop/provisioning/'>Provisioning</a> > <a href='/terraform-workshop/provisioning/bastion/'>Bastion</a> > setup.sh
           
          
           
@@ -2140,17 +2140,7 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#usage">Usage</a></li>
-        <li><a href="#options">Options</a></li>
-        <li><a href="#resource-targeting">Resource Targeting</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+<nav id="TableOfContents"></nav>
     </div>
 </div>
 
@@ -2166,7 +2156,7 @@
           
             <h1>
               
-              plan
+              setup.sh
             </h1>
           
 
@@ -2174,20 +2164,29 @@
 
 
 
-<p><code>terraform plan</code> 명령은 실행 계획을 작성하는 데 사용됩니다. Terraform은 명시 적으로 비활성화되지 않은 경우 새로 고침을 수행 한 다음 구성 파일에 지정된 원하는 상태를 달성하는 데 필요한 작업을 결정합니다.</p>
-<p>이 명령은 실제 자원이나 상태를 변경하지 않고 일련의 변경에 대한 실행 계획이 예상과 일치하는지 확인하는 편리한 방법입니다. 예를 들어, 버전 제어에 대한 변경 사항을 commit 하기 전에 테라 폼 계획을 실행하여 예상대로 작동 함을 확신 할 수 있습니다.</p>
-<h3 id="usage">Usage</h3>
-<pre><code>terraform plan [options] [dir]
-</code></pre><h3 id="options">Options</h3>
-<p><code>-destroy</code> - 설정된 경우 알려진 모든 자원을 삭제하는 계획을 생성합니다.</p>
-<p><code>-input=true</code> - 직접 설정되지 않은 경우 변수 입력을 요청합니다.</p>
-<p><code>-target=resource</code> - 타겟팅 할 리소스 주소입니다. 이 플래그는 여러 번 사용할 수 있습니다. 자세한 내용은 아래를 참조하십시오.</p>
-<p><code>-var 'foo=bar'</code> - Terraform 구성에서 변수를 설정합니다. 이 플래그는 여러번 설정할 수 있습니다. 변수 값은 HCL로 해석되므로 이 플래그를 통해 목록 및 맵 값을 지정할 수 있습니다.</p>
-<p><code>-var-file=foo</code> - Terraform 구성의 변수를 변수 파일에서 설정합니다. terraform.tfvars 또는 .auto.tfvars 파일이 현재 디렉토리에 있으면 자동으로 로드됩니다. 이 플래그는 여러 번 사용할 수 있습니다.</p>
-<h3 id="resource-targeting">Resource Targeting</h3>
-<p><code>-target</code> 옵션을 사용하면 리소스의 하위 집합에만 Terraform의 주의를 집중시킬 수 있습니다. 자원 주소 구문은 제한 조건을 지정하는 데 사용됩니다.</p>
-<p>이 타겟팅 기능은 실수 복구 또는 Terraform 제한 문제 해결과 같은 예외적 인 상황을 위해 제공됩니다. 일상적인 작업에는 -target을 사용하지 않는 것이 좋습니다. 이로 인해 구성 드리프트가 감지되지 않고 실제 자원 상태가 구성과 어떻게 관련 되는지 혼동 될 수 있습니다.</p>
+<p>user_data 에 입력되어 Instance 가 부팅 될때 실행 됩니다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/usr/bin/env bash
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e"># Log everything we do.</span>
+set -x
+exec &gt; /var/log/user-data.log 2&gt;&amp;<span style="color:#ae81ff">1</span>
 
+hostname <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>HOSTNAME<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+
+rm -rf /etc/motd
+cat <span style="color:#e6db74">&lt;&lt;EOF &gt; /etc/motd
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">#########################################################
+</span><span style="color:#e6db74">#                                                       #
+</span><span style="color:#e6db74">#   모든 로그는 원격지 로그 서버에 저장되고 있습니다.   #
+</span><span style="color:#e6db74">#   비인가자의 경우 접속을 해지하여 주시기 바랍니다.    #
+</span><span style="color:#e6db74">#                                                       #
+</span><span style="color:#e6db74">#########################################################
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">&gt;&gt; ${HOSTNAME} &lt;&lt;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">EOF</span>
+</code></pre></div>
 
 <footer class=" footline" >
 	
@@ -2225,6 +2224,8 @@
             
                 
                     
+                        
+                        
                     
                 
                 
@@ -2240,9 +2241,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -2371,7 +2369,6 @@
             
             
                 
-                    
                     
                 
                 
@@ -2386,9 +2383,6 @@
             
                 
                     
-                        
-                        
-                    
                 
                 
 
@@ -2517,7 +2511,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -2533,9 +2526,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -3105,6 +3095,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -3119,6 +3110,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -3391,6 +3385,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -3405,6 +3400,9 @@
             
                 
                     
+                        
+                        
+                    
                 
                 
 
@@ -3453,6 +3451,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -3468,6 +3467,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -3687,10 +3689,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/terraform-workshop/terraform/commands/output/" title="output"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/terraform-workshop/provisioning/bastion/data/" title="data.tf"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/terraform-workshop/terraform/commands/providers/" title="providers" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/terraform-workshop/provisioning/bastion/iam-role/" title="iam-role.tf" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

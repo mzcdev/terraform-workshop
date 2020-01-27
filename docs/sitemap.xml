@@ -43,6 +43,10 @@
   </url>
   
   <url>
+    <loc>/terraform-workshop/provisioning/lambda/</loc>
+  </url>
+  
+  <url>
     <loc>/terraform-workshop/requirements/account/success/</loc>
   </url>
   
@@ -87,10 +91,6 @@
   </url>
   
   <url>
-    <loc>/terraform-workshop/provisioning/bastion/</loc>
-  </url>
-  
-  <url>
     <loc>/terraform-workshop/provisioning/vpc/</loc>
   </url>
   
@@ -131,7 +131,7 @@
   </url>
   
   <url>
-    <loc>/terraform-workshop/provisioning/lambda/</loc>
+    <loc>/terraform-workshop/provisioning/bastion/</loc>
   </url>
   
   <url>
@@ -179,6 +179,10 @@
   </url>
   
   <url>
+    <loc>/terraform-workshop/provisioning/lambda/backend/</loc>
+  </url>
+  
+  <url>
     <loc>/terraform-workshop/provisioning/vpc/backend/</loc>
   </url>
   
@@ -216,6 +220,10 @@
   
   <url>
     <loc>/terraform-workshop/terraform/state/remote/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/provisioning/bastion/setsup/</loc>
   </url>
   
   <url>
@@ -288,6 +296,10 @@
   
   <url>
     <loc>/terraform-workshop/terraform/commands/init/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/provisioning/lambda/output/</loc>
   </url>
   
   <url>

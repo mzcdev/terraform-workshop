@@ -23,5 +23,26 @@ Apply complete! Resources: x added, 0 changed, 0 destroyed. Outputs: invoke_url 
 invoke_url=&amp;#34;https://8zgxxav8oi.execute-api.ap-northeast-2.amazonaws.com/dev&amp;#34; curl -sL -X POST -d &amp;#34;{\&amp;#34;data\&amp;#34;:\&amp;#34;ok\&amp;#34;}&amp;#34; ${invoke_url}/demo | jq . ok 가 출력 되면 성공 입니다.</description>
     </item>
     
+    <item>
+      <title>backend.tf</title>
+      <link>/terraform-workshop/provisioning/lambda/backend/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/terraform-workshop/provisioning/lambda/backend/</guid>
+      <description>State 정보를 저장하기 위해 backend 설정을 해줍니다.
+Provider 는 AWS 를 사용 합니다.
+terraform { backend &amp;#34;s3&amp;#34; { region = &amp;#34;ap-northeast-2&amp;#34; bucket = &amp;#34;terraform-workshop-seoul&amp;#34; key = &amp;#34;lambda.tfstate&amp;#34; dynamodb_table = &amp;#34;terraform-workshop-seoul&amp;#34; encrypt = true } } provider &amp;#34;aws&amp;#34; { region = var.region } </description>
+    </item>
+    
+    <item>
+      <title>output.tf</title>
+      <link>/terraform-workshop/provisioning/lambda/output/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/terraform-workshop/provisioning/lambda/output/</guid>
+      <description>결과를 출력 합니다.
+output &amp;#34;url&amp;#34; { value = &amp;#34;https://${module.dev-lambda.domain}/demos&amp;#34; } output &amp;#34;invoke_url&amp;#34; { value = &amp;#34;${module.dev-lambda.invoke_url}&amp;#34; } </description>
+    </item>
+    
   </channel>
 </rss>

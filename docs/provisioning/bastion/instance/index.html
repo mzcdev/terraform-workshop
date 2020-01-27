@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.62.2" />
+    <meta name="generator" content="Hugo 0.63.1" />
     <meta name="description" content="Terraform Workshop">
 <meta name="author" content="Jungyoul Yu">
 
@@ -13,20 +13,20 @@
     <title>instance.tf :: Terraform Workshop</title>
 
     
-    <link href="/terraform-workshop/css/nucleus.css?1579763001" rel="stylesheet">
-    <link href="/terraform-workshop/css/fontawesome-all.min.css?1579763001" rel="stylesheet">
-    <link href="/terraform-workshop/css/hybrid.css?1579763001" rel="stylesheet">
-    <link href="/terraform-workshop/css/featherlight.min.css?1579763001" rel="stylesheet">
-    <link href="/terraform-workshop/css/perfect-scrollbar.min.css?1579763001" rel="stylesheet">
-    <link href="/terraform-workshop/css/auto-complete.css?1579763001" rel="stylesheet">
-    <link href="/terraform-workshop/css/atom-one-dark-reasonable.css?1579763001" rel="stylesheet">
-    <link href="/terraform-workshop/css/theme.css?1579763001" rel="stylesheet">
-    <link href="/terraform-workshop/css/hugo-theme.css?1579763001" rel="stylesheet">
+    <link href="/terraform-workshop/css/nucleus.css?1580125157" rel="stylesheet">
+    <link href="/terraform-workshop/css/fontawesome-all.min.css?1580125157" rel="stylesheet">
+    <link href="/terraform-workshop/css/hybrid.css?1580125157" rel="stylesheet">
+    <link href="/terraform-workshop/css/featherlight.min.css?1580125157" rel="stylesheet">
+    <link href="/terraform-workshop/css/perfect-scrollbar.min.css?1580125157" rel="stylesheet">
+    <link href="/terraform-workshop/css/auto-complete.css?1580125157" rel="stylesheet">
+    <link href="/terraform-workshop/css/atom-one-dark-reasonable.css?1580125157" rel="stylesheet">
+    <link href="/terraform-workshop/css/theme.css?1580125157" rel="stylesheet">
+    <link href="/terraform-workshop/css/hugo-theme.css?1580125157" rel="stylesheet">
     
-      <link href="/terraform-workshop/css/theme-blue.css?1579763001" rel="stylesheet">
+      <link href="/terraform-workshop/css/theme-blue.css?1580125157" rel="stylesheet">
     
 
-    <script src="/terraform-workshop/js/jquery-3.3.1.min.js?1579763001"></script>
+    <script src="/terraform-workshop/js/jquery-3.3.1.min.js?1580125157"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/terraform-workshop/js/lunr.min.js?1579763001"></script>
-<script type="text/javascript" src="/terraform-workshop/js/auto-complete.js?1579763001"></script>
+<script type="text/javascript" src="/terraform-workshop/js/lunr.min.js?1580125157"></script>
+<script type="text/javascript" src="/terraform-workshop/js/auto-complete.js?1580125157"></script>
 <script type="text/javascript">
     
         var baseurl = "\/terraform-workshop\/";
     
 </script>
-<script type="text/javascript" src="/terraform-workshop/js/search.js?1579763001"></script>
+<script type="text/javascript" src="/terraform-workshop/js/search.js?1580125157"></script>
 
     
   </div>
@@ -1322,37 +1322,13 @@
  
   
     
-    <li data-nav-id="/terraform-workshop/provisioning/backend/" title="Backend" class="dd-item 
+    <li data-nav-id="/terraform-workshop/provisioning/lambda/" title="Lambda API" class="dd-item 
         
         
         
         ">
-      <a href="/terraform-workshop/provisioning/backend/">
-          Backend
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-    <li data-nav-id="/terraform-workshop/provisioning/bastion/" title="Bastion" class="dd-item 
-        parent
-        
-        
-        ">
-      <a href="/terraform-workshop/provisioning/bastion/">
-          Bastion
+      <a href="/terraform-workshop/provisioning/lambda/">
+          Lambda API
           
       </a>
       
@@ -1371,9 +1347,9 @@
  
   
     
-      <li data-nav-id="/terraform-workshop/provisioning/bastion/variable/" title="variable.tf" class="dd-item ">
-        <a href="/terraform-workshop/provisioning/bastion/variable/">
-        variable.tf
+      <li data-nav-id="/terraform-workshop/provisioning/lambda/lambda/" title="Lambda API" class="dd-item ">
+        <a href="/terraform-workshop/provisioning/lambda/lambda/">
+        Lambda API
         
         </a>
     </li>
@@ -1390,8 +1366,8 @@
  
   
     
-      <li data-nav-id="/terraform-workshop/provisioning/bastion/backend/" title="backend.tf" class="dd-item ">
-        <a href="/terraform-workshop/provisioning/bastion/backend/">
+      <li data-nav-id="/terraform-workshop/provisioning/lambda/backend/" title="backend.tf" class="dd-item ">
+        <a href="/terraform-workshop/provisioning/lambda/backend/">
         backend.tf
         
         </a>
@@ -1409,123 +1385,9 @@
  
   
     
-      <li data-nav-id="/terraform-workshop/provisioning/bastion/data/" title="data.tf" class="dd-item ">
-        <a href="/terraform-workshop/provisioning/bastion/data/">
-        data.tf
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/terraform-workshop/provisioning/bastion/iam-role/" title="iam-role.tf" class="dd-item ">
-        <a href="/terraform-workshop/provisioning/bastion/iam-role/">
-        iam-role.tf
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/terraform-workshop/provisioning/bastion/security-group/" title="security-group.tf" class="dd-item ">
-        <a href="/terraform-workshop/provisioning/bastion/security-group/">
-        security-group.tf
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/terraform-workshop/provisioning/bastion/instance/" title="instance.tf" class="dd-item active">
-        <a href="/terraform-workshop/provisioning/bastion/instance/">
-        instance.tf
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/terraform-workshop/provisioning/bastion/eip/" title="eip.tf" class="dd-item ">
-        <a href="/terraform-workshop/provisioning/bastion/eip/">
-        eip.tf
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/terraform-workshop/provisioning/bastion/output/" title="output.tf" class="dd-item ">
-        <a href="/terraform-workshop/provisioning/bastion/output/">
+      <li data-nav-id="/terraform-workshop/provisioning/lambda/output/" title="output.tf" class="dd-item ">
+        <a href="/terraform-workshop/provisioning/lambda/output/">
         output.tf
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/terraform-workshop/provisioning/bastion/result/" title="result" class="dd-item ">
-        <a href="/terraform-workshop/provisioning/bastion/result/">
-        result
         
         </a>
     </li>
@@ -1537,6 +1399,30 @@
           
         
         </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/terraform-workshop/provisioning/backend/" title="Backend" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/terraform-workshop/provisioning/backend/">
+          Backend
+          
+      </a>
+      
               
     </li>
   
@@ -1775,13 +1661,13 @@
  
   
     
-    <li data-nav-id="/terraform-workshop/provisioning/lambda/" title="Lambda API" class="dd-item 
-        
+    <li data-nav-id="/terraform-workshop/provisioning/bastion/" title="Bastion" class="dd-item 
+        parent
         
         
         ">
-      <a href="/terraform-workshop/provisioning/lambda/">
-          Lambda API
+      <a href="/terraform-workshop/provisioning/bastion/">
+          Bastion
           
       </a>
       
@@ -1800,9 +1686,180 @@
  
   
     
-      <li data-nav-id="/terraform-workshop/provisioning/lambda/lambda/" title="Lambda API" class="dd-item ">
-        <a href="/terraform-workshop/provisioning/lambda/lambda/">
-        Lambda API
+      <li data-nav-id="/terraform-workshop/provisioning/bastion/variable/" title="variable.tf" class="dd-item ">
+        <a href="/terraform-workshop/provisioning/bastion/variable/">
+        variable.tf
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/provisioning/bastion/backend/" title="backend.tf" class="dd-item ">
+        <a href="/terraform-workshop/provisioning/bastion/backend/">
+        backend.tf
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/provisioning/bastion/data/" title="data.tf" class="dd-item ">
+        <a href="/terraform-workshop/provisioning/bastion/data/">
+        data.tf
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/provisioning/bastion/setsup/" title="setup.sh" class="dd-item ">
+        <a href="/terraform-workshop/provisioning/bastion/setsup/">
+        setup.sh
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/provisioning/bastion/iam-role/" title="iam-role.tf" class="dd-item ">
+        <a href="/terraform-workshop/provisioning/bastion/iam-role/">
+        iam-role.tf
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/provisioning/bastion/security-group/" title="security-group.tf" class="dd-item ">
+        <a href="/terraform-workshop/provisioning/bastion/security-group/">
+        security-group.tf
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/provisioning/bastion/instance/" title="instance.tf" class="dd-item active">
+        <a href="/terraform-workshop/provisioning/bastion/instance/">
+        instance.tf
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/provisioning/bastion/eip/" title="eip.tf" class="dd-item ">
+        <a href="/terraform-workshop/provisioning/bastion/eip/">
+        eip.tf
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/provisioning/bastion/output/" title="output.tf" class="dd-item ">
+        <a href="/terraform-workshop/provisioning/bastion/output/">
+        output.tf
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/provisioning/bastion/result/" title="result" class="dd-item ">
+        <a href="/terraform-workshop/provisioning/bastion/result/">
+        result
         
         </a>
     </li>
@@ -2111,9 +2168,11 @@
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-hcl" data-lang="hcl"><span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;aws_instance&#34; &#34;this&#34;</span> {
   ami           <span style="color:#f92672">=</span> var.ami_id !<span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#960050;background-color:#1e0010">?</span> <span style="color:#66d9ef">var</span>.<span style="color:#66d9ef">ami_id</span> <span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#66d9ef">data</span>.<span style="color:#66d9ef">aws_ami</span>.<span style="color:#66d9ef">this</span>.<span style="color:#66d9ef">id</span>
   instance_type <span style="color:#f92672">=</span> <span style="color:#66d9ef">var</span>.<span style="color:#66d9ef">instance_type</span>
-  subnet_id     <span style="color:#f92672">=</span> <span style="color:#66d9ef">var</span>.<span style="color:#66d9ef">subnet_id</span>
-  user_data     <span style="color:#f92672">=</span> <span style="color:#66d9ef">var</span>.<span style="color:#66d9ef">user_data</span>
-  key_name      <span style="color:#f92672">=</span> <span style="color:#66d9ef">var</span>.<span style="color:#66d9ef">key_name</span>
+  subnet_id     <span style="color:#f92672">=</span> <span style="color:#66d9ef">data</span>.<span style="color:#66d9ef">terraform_remote_state</span>.<span style="color:#66d9ef">vpc</span>.<span style="color:#66d9ef">outputs</span>.<span style="color:#66d9ef">public_subnet_ids</span>[<span style="color:#ae81ff">0</span>]
+  key_name      <span style="color:#f92672">=</span> <span style="color:#66d9ef">var</span>.<span style="color:#66d9ef">key_name</span><span style="color:#75715e">
+</span><span style="color:#75715e">
+</span><span style="color:#75715e">  # user_data = var.user_data
+</span><span style="color:#75715e"></span>  user_data <span style="color:#f92672">=</span> <span style="color:#66d9ef">data</span>.<span style="color:#66d9ef">template_file</span>.<span style="color:#66d9ef">setup</span>.<span style="color:#66d9ef">rendered</span>
 
   iam_instance_profile <span style="color:#f92672">=</span> <span style="color:#66d9ef">aws_iam_instance_profile</span>.<span style="color:#66d9ef">this</span>.<span style="color:#66d9ef">id</span>
 
@@ -3078,42 +3137,6 @@
                     
 
                     
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
             
             
@@ -3162,55 +3185,6 @@
             
         
                     
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
             
         
                     
@@ -3226,25 +3200,6 @@
                     
                     
 
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
             
         
@@ -3430,6 +3385,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -3437,6 +3393,157 @@
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -3594,19 +3701,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/terraform-workshop/js/clipboard.min.js?1579763001"></script>
-    <script src="/terraform-workshop/js/perfect-scrollbar.min.js?1579763001"></script>
-    <script src="/terraform-workshop/js/perfect-scrollbar.jquery.min.js?1579763001"></script>
-    <script src="/terraform-workshop/js/jquery.sticky.js?1579763001"></script>
-    <script src="/terraform-workshop/js/featherlight.min.js?1579763001"></script>
-    <script src="/terraform-workshop/js/highlight.pack.js?1579763001"></script>
+    <script src="/terraform-workshop/js/clipboard.min.js?1580125157"></script>
+    <script src="/terraform-workshop/js/perfect-scrollbar.min.js?1580125157"></script>
+    <script src="/terraform-workshop/js/perfect-scrollbar.jquery.min.js?1580125157"></script>
+    <script src="/terraform-workshop/js/jquery.sticky.js?1580125157"></script>
+    <script src="/terraform-workshop/js/featherlight.min.js?1580125157"></script>
+    <script src="/terraform-workshop/js/highlight.pack.js?1580125157"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/terraform-workshop/js/modernizr.custom-3.6.0.js?1579763001"></script>
-    <script src="/terraform-workshop/js/learn.js?1579763001"></script>
-    <script src="/terraform-workshop/js/hugo-learn.js?1579763001"></script>
+    <script src="/terraform-workshop/js/modernizr.custom-3.6.0.js?1580125157"></script>
+    <script src="/terraform-workshop/js/learn.js?1580125157"></script>
+    <script src="/terraform-workshop/js/hugo-learn.js?1580125157"></script>
 
-    <link href="/terraform-workshop/mermaid/mermaid.css?1579763001" rel="stylesheet" />
-    <script src="/terraform-workshop/mermaid/mermaid.js?1579763001"></script>
+    <link href="/terraform-workshop/mermaid/mermaid.css?1580125157" rel="stylesheet" />
+    <script src="/terraform-workshop/mermaid/mermaid.js?1580125157"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
