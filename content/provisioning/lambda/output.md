@@ -7,10 +7,10 @@ weight: 108
 
 ```hcl
 output "url" {
-  value = "https://${module.dev-lambda.domain}/demos"
+  value = "https://${var.domain_name}/demos"
 }
 
 output "invoke_url" {
-  value = "${module.dev-lambda.invoke_url}"
+  value = aws_api_gateway_deployment.default.invoke_url
 }
 ```

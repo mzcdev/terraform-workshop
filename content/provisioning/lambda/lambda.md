@@ -1,48 +1,37 @@
 ---
-title: Lambda API
-weight: 100
+title: lambda.tf
+weight: 105
 ---
 
-다음 파일에서 **terraform-workshop-seoul** 을 생성한 버켓명으로 변경해줍니다.
+```hcl
+resource "aws_s3_bucket_object" "default" {
+  bucket = var.s3_bucket
+  source = var.s3_source
+  key    = var.s3_key
+}
 
-```bash
-# export BUCKET="terraform-nalbam-seoul"
+resource "aws_lambda_function" "default" {
+  function_name = "${var.stage}-${var.name}"
 
-cd terraform-env-workshop/lambda
+  s3_bucket = var.s3_bucket
+  s3_key    = var.s3_key
 
-sed -i "s/terraform-workshop-seoul/${BUCKET}/g" *.tf
-```
+  runtime = var.runtime
+  handler = var.handler
 
-Terraform 명령으로 생성 합니다.
+  memory_size = var.memory_size
+  timeout     = var.timeout
 
-```bash
-terraform init
-terraform plan
-terraform apply
-```
+  role = aws_iam_role.default.arn
 
-다음과 같은 메세지가 출력 되면 성공 입니다.
+  depends_on = [
+    aws_iam_role.default,
+    aws_iam_role_policy.default,
+    aws_s3_bucket_object.default,
+  ]
 
-```text
-Apply complete! Resources: x added, 0 changed, 0 destroyed.
-
-Outputs:
-
-invoke_url = https://8zgxxav8oi.execute-api.ap-northeast-2.amazonaws.com/dev
-```
-
-lambda api 가 동작 하는지 테스트 해봅시다.
-
-```bash
-invoke_url="https://8zgxxav8oi.execute-api.ap-northeast-2.amazonaws.com/dev"
-
-curl -sL -X POST -d "{\"data\":\"ok\"}" ${invoke_url}/demo | jq .
-```
-
-`ok` 가 출력 되면 성공 입니다.
-
-```json
-{
-  "data": "ok"
+  environment {
+    variables = var.env_vars
+  }
 }
 ```
