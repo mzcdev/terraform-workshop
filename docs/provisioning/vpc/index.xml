@@ -28,7 +28,7 @@ variable &amp;#34;region&amp;#34; { description = &amp;#34;생성될 리전을 �
       <guid>/terraform-workshop/provisioning/vpc/backend/</guid>
       <description>State 정보를 저장하기 위해 backend 설정을 해줍니다.
 Provider 는 AWS 를 사용 합니다.
-terraform { backend &amp;#34;s3&amp;#34; { region = &amp;#34;ap-northeast-2&amp;#34; bucket = &amp;#34;terraform-workshop-seoul&amp;#34; key = &amp;#34;vpc.tfstate&amp;#34; dynamodb_table = &amp;#34;terraform-workshop-seoul&amp;#34; encrypt = true } } provider &amp;#34;aws&amp;#34; { region = var.region } </description>
+terraform { backend &amp;#34;s3&amp;#34; { region = &amp;#34;ap-northeast-2&amp;#34; bucket = &amp;#34;terraform-workshop-seoul&amp;#34; key = &amp;#34;vpc-demo.tfstate&amp;#34; dynamodb_table = &amp;#34;terraform-workshop-seoul&amp;#34; encrypt = true } } provider &amp;#34;aws&amp;#34; { region = var.region } </description>
     </item>
     
     <item>
@@ -46,7 +46,7 @@ terraform { backend &amp;#34;s3&amp;#34; { region = &amp;#34;ap-northeast-2&amp;
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/terraform-workshop/provisioning/vpc/public-route/</guid>
-      <description>resource &amp;#34;aws_route_table&amp;#34; &amp;#34;public&amp;#34; { count = count(var.public_subnets) vpc_id = aws_vpc.this.id tags = { Name = format(&amp;#34;%s-public-%s&amp;#34;, var.name, count.index) } } resource &amp;#34;aws_route&amp;#34; &amp;#34;public&amp;#34; { count = count(var.public_subnets) route_table_id = aws_route_table.public[count.index].id destination_cidr_block = &amp;#34;0.0.0.0/0&amp;#34; gateway_id = aws_internet_gateway.this.id timeouts { create = &amp;#34;5m&amp;#34; } } </description>
+      <description>resource &amp;#34;aws_route_table&amp;#34; &amp;#34;public&amp;#34; { count = length(var.public_subnets) vpc_id = aws_vpc.this.id tags = { Name = format(&amp;#34;%s-public-%s&amp;#34;, var.name, count.index) } } resource &amp;#34;aws_route&amp;#34; &amp;#34;public&amp;#34; { count = length(var.public_subnets) route_table_id = aws_route_table.public[count.index].id destination_cidr_block = &amp;#34;0.0.0.0/0&amp;#34; gateway_id = aws_internet_gateway.this.id timeouts { create = &amp;#34;5m&amp;#34; } } </description>
     </item>
     
     <item>
@@ -73,7 +73,7 @@ terraform { backend &amp;#34;s3&amp;#34; { region = &amp;#34;ap-northeast-2&amp;
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/terraform-workshop/provisioning/vpc/private-route/</guid>
-      <description>resource &amp;#34;aws_route_table&amp;#34; &amp;#34;private&amp;#34; { count = count(var.private_subnets) vpc_id = aws_vpc.this.id lifecycle { ignore_changes = [propagating_vgws] } tags = { Name = format(&amp;#34;%s-private-%s&amp;#34;, var.name, count.index) } } resource &amp;#34;aws_route&amp;#34; &amp;#34;private&amp;#34; { count = count(var.private_subnets) route_table_id = aws_route_table.private[count.index].id destination_cidr_block = &amp;#34;0.0.0.0/0&amp;#34; nat_gateway_id = aws_nat_gateway.private.id timeouts { create = &amp;#34;5m&amp;#34; } } </description>
+      <description>resource &amp;#34;aws_route_table&amp;#34; &amp;#34;private&amp;#34; { count = length(var.private_subnets) vpc_id = aws_vpc.this.id lifecycle { ignore_changes = [propagating_vgws] } tags = { Name = format(&amp;#34;%s-private-%s&amp;#34;, var.name, count.index) } } resource &amp;#34;aws_route&amp;#34; &amp;#34;private&amp;#34; { count = length(var.private_subnets) route_table_id = aws_route_table.private[count.index].id destination_cidr_block = &amp;#34;0.0.0.0/0&amp;#34; nat_gateway_id = aws_nat_gateway.private.id timeouts { create = &amp;#34;5m&amp;#34; } } </description>
     </item>
     
     <item>

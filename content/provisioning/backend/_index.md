@@ -3,18 +3,20 @@ title: Backend
 weight: 20
 ---
 
-Terraform state 정보를 저장할 S3 Bucket 를 생성 합니다.
+Terraform state 정보를 저장하기 위해 환경 변수를 선언해 줍니다.
 
 ```bash
 export REGION="ap-northeast-2"
 export BUCKET="terraform-workshop-seoul"
 ```
 
+State 정보를 저장할 `S3 Bucket` 을 생성 합니다.
+
 ```bash
 aws s3 mb s3://${BUCKET} --region ${REGION}
 ```
 
-중복 실행을 막기 위해 DynamoDB Table 을 생성 합니다.
+중복 실행을 막기 위해 `DynamoDB Table` 을 생성 합니다.
 
 ```bash
 aws dynamodb create-table \

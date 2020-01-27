@@ -11,16 +11,95 @@
     
     
     <item>
-      <title>Lambda API</title>
+      <title>variable.tf</title>
+      <link>/terraform-workshop/provisioning/lambda/variable/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/terraform-workshop/provisioning/lambda/variable/</guid>
+      <description>variable &amp;#34;region&amp;#34; { description = &amp;#34;생성될 리전.&amp;#34; type = string default = &amp;#34;ap-northeast-2&amp;#34; } variable &amp;#34;name&amp;#34; { description = &amp;#34;서비스 이름.&amp;#34; type = string default = &amp;#34;demo-api&amp;#34; } variable &amp;#34;stage&amp;#34; { description = &amp;#34;서비스 영역.&amp;#34; type = string default = &amp;#34;dev&amp;#34; } variable &amp;#34;runtime&amp;#34; { description = &amp;#34;람다 펑션이 실행될 런타임.&amp;#34; type = string default = &amp;#34;nodejs10.x&amp;#34; } variable &amp;#34;handler&amp;#34; { description = &amp;#34;람다 펑션이 실행될 핸들러 이름.&amp;#34; type = string default = &amp;#34;index.</description>
+    </item>
+    
+    <item>
+      <title>backend.tf</title>
+      <link>/terraform-workshop/provisioning/lambda/backend/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/terraform-workshop/provisioning/lambda/backend/</guid>
+      <description>State 정보를 저장하기 위해 backend 설정을 해줍니다.
+Provider 는 AWS 를 사용 합니다.
+terraform { backend &amp;#34;s3&amp;#34; { region = &amp;#34;ap-northeast-2&amp;#34; bucket = &amp;#34;terraform-workshop-seoul&amp;#34; key = &amp;#34;lambda-demo.tfstate&amp;#34; dynamodb_table = &amp;#34;terraform-workshop-seoul&amp;#34; encrypt = true } } provider &amp;#34;aws&amp;#34; { region = var.region } </description>
+    </item>
+    
+    <item>
+      <title>api-gateway.tf</title>
+      <link>/terraform-workshop/provisioning/lambda/api-gateway/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/terraform-workshop/provisioning/lambda/api-gateway/</guid>
+      <description>API Gateway 를 생성 합니다.
+resource &amp;#34;aws_api_gateway_rest_api&amp;#34; &amp;#34;default&amp;#34; { name = &amp;#34;${var.stage}-${var.name}&amp;#34; } resource &amp;#34;aws_api_gateway_resource&amp;#34; &amp;#34;default&amp;#34; { rest_api_id = aws_api_gateway_rest_api.default.id parent_id = aws_api_gateway_rest_api.default.root_resource_id path_part = var.path_part# {proxy+} } resource &amp;#34;aws_api_gateway_method&amp;#34; &amp;#34;default&amp;#34; { count = length(var.http_methods) rest_api_id = aws_api_gateway_rest_api.default.id resource_id = aws_api_gateway_resource.default.id http_method = element(var.http_methods, count.index) authorization = &amp;#34;NONE&amp;#34; depends_on = [aws_api_gateway_resource.default] } resource &amp;#34;aws_api_gateway_integration&amp;#34; &amp;#34;default&amp;#34; { count = length(var.http_methods) type = &amp;#34;AWS_PROXY&amp;#34; rest_api_id = aws_api_gateway_rest_api.default.id resource_id = aws_api_gateway_resource.default.id http_method = element(var.</description>
+    </item>
+    
+    <item>
+      <title>iam-role.tf</title>
+      <link>/terraform-workshop/provisioning/lambda/iam-role/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/terraform-workshop/provisioning/lambda/iam-role/</guid>
+      <description>람다 펑션이 S3 Bucket 와 DynamoDB 를 사용 할수 있도록 권한을 부여 합니다.
+# https://docs.aws.amazon.com/ko_kr/lambda/latest/dg/policy-templates.html  data &amp;#34;aws_iam_policy_document&amp;#34; &amp;#34;lambda-role&amp;#34; { statement { sid = &amp;#34;&amp;#34; actions = [ &amp;#34;sts:AssumeRole&amp;#34;, ] principals { type = &amp;#34;Service&amp;#34; identifiers = [ &amp;#34;lambda.amazonaws.com&amp;#34;, ] } effect = &amp;#34;Allow&amp;#34; } } data &amp;#34;aws_iam_policy_document&amp;#34; &amp;#34;lambda-policy&amp;#34; { statement { sid = &amp;#34;&amp;#34; actions = [ &amp;#34;lambda:InvokeFunction&amp;#34;, ] resources = [ &amp;#34;arn:aws:lambda:*&amp;#34;, ] effect = &amp;#34;Allow&amp;#34; } statement { sid = &amp;#34;&amp;#34; actions = [ &amp;#34;logs:CreateLogGroup&amp;#34;, &amp;#34;logs:CreateLogStream&amp;#34;, &amp;#34;logs:PutLogEvents&amp;#34;, ] resources = [ &amp;#34;arn:aws:logs:*&amp;#34;, ] effect = &amp;#34;Allow&amp;#34; } statement { sid = &amp;#34;&amp;#34; actions = [ &amp;#34;s3:GetObject&amp;#34;, &amp;#34;s3:PutObject&amp;#34;, &amp;#34;s3:PutObjectAcl&amp;#34;, &amp;#34;s3:PutObjectTagging&amp;#34;, &amp;#34;s3:PutObjectVersionAcl&amp;#34;, &amp;#34;s3:PutObjectVersionTagging&amp;#34;, &amp;#34;s3:DeleteObject&amp;#34;, ] resources = [ &amp;#34;arn:aws:s3:::*&amp;#34;, ] effect = &amp;#34;Allow&amp;#34; } statement { sid = &amp;#34;&amp;#34; actions = [ &amp;#34;dynamodb:DeleteItem&amp;#34;, &amp;#34;dynamodb:GetItem&amp;#34;, &amp;#34;dynamodb:PutItem&amp;#34;, &amp;#34;dynamodb:Scan&amp;#34;, &amp;#34;dynamodb:UpdateItem&amp;#34;, ] resources = [ &amp;#34;arn:aws:dynamodb:*&amp;#34;, ] effect = &amp;#34;Allow&amp;#34; } } resource &amp;#34;aws_iam_role&amp;#34; &amp;#34;default&amp;#34; { name = &amp;#34;terraform-${var.</description>
+    </item>
+    
+    <item>
+      <title>lambda.tf</title>
       <link>/terraform-workshop/provisioning/lambda/lambda/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/terraform-workshop/provisioning/lambda/lambda/</guid>
-      <description>다음 파일에서 terraform-workshop-seoul 을 생성한 버켓명으로 변경해줍니다.
-# export BUCKET=&amp;#34;terraform-nalbam-seoul&amp;#34; cd terraform-env-workshop/lambda sed -i &amp;#34;s/terraform-workshop-seoul/${BUCKET}/g&amp;#34; *.tf Terraform 명령으로 생성 합니다.
+      <description>람다 코드를 zip 으로 묶어 S3 Bucket 에 올려두고, 람다 펑션을 생성 합니다.
+resource &amp;#34;aws_s3_bucket_object&amp;#34; &amp;#34;default&amp;#34; { bucket = var.s3_bucket source = var.s3_source key = var.s3_key } resource &amp;#34;aws_lambda_function&amp;#34; &amp;#34;default&amp;#34; { function_name = &amp;#34;${var.stage}-${var.name}&amp;#34; s3_bucket = var.s3_bucket s3_key = var.s3_key runtime = var.runtime handler = var.handler memory_size = var.memory_size timeout = var.timeout role = aws_iam_role.default.arn depends_on = [ aws_iam_role.default, aws_iam_role_policy.default, aws_s3_bucket_object.default, ] environment { variables = var.env_vars } } </description>
+    </item>
+    
+    <item>
+      <title>acm.tf</title>
+      <link>/terraform-workshop/provisioning/lambda/acm/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/terraform-workshop/provisioning/lambda/acm/</guid>
+      <description>acm 디렉토리의 코드를 module 로 사용 합니다.
+module &amp;#34;domain&amp;#34; { source = &amp;#34;../acm&amp;#34; domain = var.domain_root } </description>
+    </item>
+    
+    <item>
+      <title>route53.tf</title>
+      <link>/terraform-workshop/provisioning/lambda/route53/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/terraform-workshop/provisioning/lambda/route53/</guid>
+      <description>API Gateway 에서 Cloud Front 를 만들었고, 이를 Route53 의 var.domain_name 도메인에 연결 해 줍니다.
+module.domain.certificate_arn 를 통해 ACM 인증서를 사용 합니다.
+resource &amp;#34;aws_api_gateway_domain_name&amp;#34; &amp;#34;default&amp;#34; { domain_name = var.domain_name certificate_arn = module.domain.certificate_arn } resource &amp;#34;aws_api_gateway_base_path_mapping&amp;#34; &amp;#34;default&amp;#34; { api_id = aws_api_gateway_rest_api.default.id stage_name = aws_api_gateway_deployment.default.stage_name domain_name = aws_api_gateway_domain_name.default.domain_name } resource &amp;#34;aws_route53_record&amp;#34; &amp;#34;default&amp;#34; { zone_id = module.domain.zone_id name = var.domain_name type = &amp;#34;A&amp;#34; alias { name = aws_api_gateway_domain_name.default.cloudfront_domain_name zone_id = aws_api_gateway_domain_name.default.cloudfront_zone_id evaluate_target_health = &amp;#34;false&amp;#34; } } </description>
+    </item>
+    
+    <item>
+      <title>output.tf</title>
+      <link>/terraform-workshop/provisioning/lambda/output/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/terraform-workshop/provisioning/lambda/output/</guid>
+      <description>결과를 출력 합니다.
+output &amp;#34;url&amp;#34; { value = &amp;#34;https://${var.domain_name}/demos&amp;#34; } output &amp;#34;invoke_url&amp;#34; { value = aws_api_gateway_deployment.default.invoke_url } </description>
+    </item>
+    
+    <item>
+      <title>result</title>
+      <link>/terraform-workshop/provisioning/lambda/result/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/terraform-workshop/provisioning/lambda/result/</guid>
+      <description>Terraform 명령으로 생성 합니다.
 terraform init terraform plan terraform apply 다음과 같은 메세지가 출력 되면 성공 입니다.
-Apply complete! Resources: x added, 0 changed, 0 destroyed. Outputs: invoke_url = https://8zgxxav8oi.execute-api.ap-northeast-2.amazonaws.com/dev lambda api 가 동작 하는지 테스트 해봅시다.
-invoke_url=&amp;#34;https://8zgxxav8oi.execute-api.ap-northeast-2.amazonaws.com/dev&amp;#34; curl -sL -X POST -d &amp;#34;{\&amp;#34;data\&amp;#34;:\&amp;#34;ok\&amp;#34;}&amp;#34; ${invoke_url}/demo | jq . ok 가 출력 되면 성공 입니다.</description>
+Apply complete! Resources: x added, 0 changed, 0 destroyed. Outputs: nat_gateway_ip = [ &amp;#34;52.78.13.15&amp;#34;, ] private_subnet_ids = [ &amp;#34;subnet-034abbc6xc10634ad&amp;#34;, &amp;#34;subnet-0944x61ec8c2f8f93&amp;#34;, &amp;#34;subnet-06b7d51d44537x626&amp;#34;, ] public_subnet_ids = [ &amp;#34;subnet-092938d936610xbfe&amp;#34;, &amp;#34;subnet-026b23axc4b257e42&amp;#34;, &amp;#34;subnet-0xfe713b44d028898&amp;#34;, ] vpc_id = &amp;#34;vpc-0fxb2037axdc5b059&amp;#34; </description>
     </item>
     
   </channel>
