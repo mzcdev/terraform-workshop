@@ -3,6 +3,8 @@ title: api-gateway.tf
 weight: 103
 ---
 
+API Gateway 를 생성 합니다.
+
 ```hcl
 resource "aws_api_gateway_rest_api" "default" {
   name = "${var.stage}-${var.name}"

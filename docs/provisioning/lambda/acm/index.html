@@ -13,20 +13,20 @@
     <title>acm.tf :: Terraform Workshop</title>
 
     
-    <link href="/terraform-workshop/css/nucleus.css?1580128589" rel="stylesheet">
-    <link href="/terraform-workshop/css/fontawesome-all.min.css?1580128589" rel="stylesheet">
-    <link href="/terraform-workshop/css/hybrid.css?1580128589" rel="stylesheet">
-    <link href="/terraform-workshop/css/featherlight.min.css?1580128589" rel="stylesheet">
-    <link href="/terraform-workshop/css/perfect-scrollbar.min.css?1580128589" rel="stylesheet">
-    <link href="/terraform-workshop/css/auto-complete.css?1580128589" rel="stylesheet">
-    <link href="/terraform-workshop/css/atom-one-dark-reasonable.css?1580128589" rel="stylesheet">
-    <link href="/terraform-workshop/css/theme.css?1580128589" rel="stylesheet">
-    <link href="/terraform-workshop/css/hugo-theme.css?1580128589" rel="stylesheet">
+    <link href="/terraform-workshop/css/nucleus.css?1580131895" rel="stylesheet">
+    <link href="/terraform-workshop/css/fontawesome-all.min.css?1580131895" rel="stylesheet">
+    <link href="/terraform-workshop/css/hybrid.css?1580131895" rel="stylesheet">
+    <link href="/terraform-workshop/css/featherlight.min.css?1580131895" rel="stylesheet">
+    <link href="/terraform-workshop/css/perfect-scrollbar.min.css?1580131895" rel="stylesheet">
+    <link href="/terraform-workshop/css/auto-complete.css?1580131895" rel="stylesheet">
+    <link href="/terraform-workshop/css/atom-one-dark-reasonable.css?1580131895" rel="stylesheet">
+    <link href="/terraform-workshop/css/theme.css?1580131895" rel="stylesheet">
+    <link href="/terraform-workshop/css/hugo-theme.css?1580131895" rel="stylesheet">
     
-      <link href="/terraform-workshop/css/theme-blue.css?1580128589" rel="stylesheet">
+      <link href="/terraform-workshop/css/theme-blue.css?1580131895" rel="stylesheet">
     
 
-    <script src="/terraform-workshop/js/jquery-3.3.1.min.js?1580128589"></script>
+    <script src="/terraform-workshop/js/jquery-3.3.1.min.js?1580131895"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/terraform-workshop/js/lunr.min.js?1580128589"></script>
-<script type="text/javascript" src="/terraform-workshop/js/auto-complete.js?1580128589"></script>
+<script type="text/javascript" src="/terraform-workshop/js/lunr.min.js?1580131895"></script>
+<script type="text/javascript" src="/terraform-workshop/js/auto-complete.js?1580131895"></script>
 <script type="text/javascript">
     
         var baseurl = "\/terraform-workshop\/";
     
 </script>
-<script type="text/javascript" src="/terraform-workshop/js/search.js?1580128589"></script>
+<script type="text/javascript" src="/terraform-workshop/js/search.js?1580131895"></script>
 
     
   </div>
@@ -1322,6 +1322,135 @@
  
   
     
+    <li data-nav-id="/terraform-workshop/provisioning/acm/" title="ACM" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/terraform-workshop/provisioning/acm/">
+          ACM
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/provisioning/acm/variable/" title="variable.tf" class="dd-item ">
+        <a href="/terraform-workshop/provisioning/acm/variable/">
+        variable.tf
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/provisioning/acm/provider/" title="provider.tf" class="dd-item ">
+        <a href="/terraform-workshop/provisioning/acm/provider/">
+        provider.tf
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/provisioning/acm/acm/" title="acm.tf" class="dd-item ">
+        <a href="/terraform-workshop/provisioning/acm/acm/">
+        acm.tf
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/provisioning/acm/route53/" title="route53.tf" class="dd-item ">
+        <a href="/terraform-workshop/provisioning/acm/route53/">
+        route53.tf
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/provisioning/acm/output/" title="output.tf" class="dd-item ">
+        <a href="/terraform-workshop/provisioning/acm/output/">
+        output.tf
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
     <li data-nav-id="/terraform-workshop/provisioning/lambda/" title="Lambda API" class="dd-item 
         parent
         
@@ -2278,34 +2407,10 @@
 
 
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-hcl" data-lang="hcl"><span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;aws_acm_certificate&#34; &#34;cert&#34;</span> {
-  domain_name <span style="color:#f92672">=</span> <span style="color:#66d9ef">var</span>.<span style="color:#66d9ef">domain_name</span>
-
-  subject_alternative_names <span style="color:#f92672">=</span> [
-    <span style="color:#e6db74">&#34;*.${var.domain_name}&#34;</span>
-  ]
-
-  validation_method <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;DNS&#34;</span>
-}
-
-<span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;aws_route53_record&#34; &#34;cert&#34;</span> {
-  zone_id <span style="color:#f92672">=</span> <span style="color:#66d9ef">data</span>.<span style="color:#66d9ef">aws_route53_zone</span>.<span style="color:#66d9ef">this</span>.<span style="color:#66d9ef">id</span>
-
-  name <span style="color:#f92672">=</span> <span style="color:#66d9ef">aws_acm_certificate</span>.<span style="color:#66d9ef">cert</span>.<span style="color:#66d9ef">domain_validation_options</span>[<span style="color:#ae81ff">0</span>].<span style="color:#66d9ef">resource_record_name</span>
-  type <span style="color:#f92672">=</span> <span style="color:#66d9ef">aws_acm_certificate</span>.<span style="color:#66d9ef">cert</span>.<span style="color:#66d9ef">domain_validation_options</span>[<span style="color:#ae81ff">0</span>].<span style="color:#66d9ef">resource_record_type</span>
-  ttl  <span style="color:#f92672">=</span> <span style="color:#ae81ff">60</span>
-
-  records <span style="color:#f92672">=</span> [
-    <span style="color:#66d9ef">aws_acm_certificate</span>.<span style="color:#66d9ef">cert</span>.<span style="color:#66d9ef">domain_validation_options</span>[<span style="color:#ae81ff">0</span>].<span style="color:#66d9ef">resource_record_value</span>,
-  ]
-}
-
-<span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;aws_acm_certificate_validation&#34; &#34;cert&#34;</span> {
-  certificate_arn <span style="color:#f92672">=</span> <span style="color:#66d9ef">aws_acm_certificate</span>.<span style="color:#66d9ef">cert</span>.<span style="color:#66d9ef">arn</span>
-
-  validation_record_fqdns <span style="color:#f92672">=</span> [
-    <span style="color:#66d9ef">aws_route53_record</span>.<span style="color:#66d9ef">cert</span>.<span style="color:#66d9ef">fqdn</span>,
-  ]
+<p>acm 디렉토리의 코드를 module 로 사용 합니다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-hcl" data-lang="hcl"><span style="color:#66d9ef">module</span> <span style="color:#e6db74">&#34;domain&#34;</span> {
+  source <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;../acm&#34;</span>
+  domain <span style="color:#f92672">=</span> <span style="color:#66d9ef">var</span>.<span style="color:#66d9ef">domain_root</span>
 }
 </code></pre></div>
 
@@ -3251,6 +3356,102 @@
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                     
                 
                 
@@ -3919,19 +4120,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/terraform-workshop/js/clipboard.min.js?1580128589"></script>
-    <script src="/terraform-workshop/js/perfect-scrollbar.min.js?1580128589"></script>
-    <script src="/terraform-workshop/js/perfect-scrollbar.jquery.min.js?1580128589"></script>
-    <script src="/terraform-workshop/js/jquery.sticky.js?1580128589"></script>
-    <script src="/terraform-workshop/js/featherlight.min.js?1580128589"></script>
-    <script src="/terraform-workshop/js/highlight.pack.js?1580128589"></script>
+    <script src="/terraform-workshop/js/clipboard.min.js?1580131895"></script>
+    <script src="/terraform-workshop/js/perfect-scrollbar.min.js?1580131895"></script>
+    <script src="/terraform-workshop/js/perfect-scrollbar.jquery.min.js?1580131895"></script>
+    <script src="/terraform-workshop/js/jquery.sticky.js?1580131895"></script>
+    <script src="/terraform-workshop/js/featherlight.min.js?1580131895"></script>
+    <script src="/terraform-workshop/js/highlight.pack.js?1580131895"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/terraform-workshop/js/modernizr.custom-3.6.0.js?1580128589"></script>
-    <script src="/terraform-workshop/js/learn.js?1580128589"></script>
-    <script src="/terraform-workshop/js/hugo-learn.js?1580128589"></script>
+    <script src="/terraform-workshop/js/modernizr.custom-3.6.0.js?1580131895"></script>
+    <script src="/terraform-workshop/js/learn.js?1580131895"></script>
+    <script src="/terraform-workshop/js/hugo-learn.js?1580131895"></script>
 
-    <link href="/terraform-workshop/mermaid/mermaid.css?1580128589" rel="stylesheet" />
-    <script src="/terraform-workshop/mermaid/mermaid.js?1580128589"></script>
+    <link href="/terraform-workshop/mermaid/mermaid.css?1580131895" rel="stylesheet" />
+    <script src="/terraform-workshop/mermaid/mermaid.js?1580131895"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -31,6 +31,10 @@
   </url>
   
   <url>
+    <loc>/terraform-workshop/provisioning/acm/</loc>
+  </url>
+  
+  <url>
     <loc>/terraform-workshop/requirements/account/permissions/</loc>
   </url>
   
@@ -155,6 +159,10 @@
   </url>
   
   <url>
+    <loc>/terraform-workshop/provisioning/acm/variable/</loc>
+  </url>
+  
+  <url>
     <loc>/terraform-workshop/provisioning/bastion/variable/</loc>
   </url>
   
@@ -191,11 +199,19 @@
   </url>
   
   <url>
+    <loc>/terraform-workshop/provisioning/acm/provider/</loc>
+  </url>
+  
+  <url>
     <loc>/terraform-workshop/terraform/provisioners/connection/</loc>
   </url>
   
   <url>
     <loc>/terraform-workshop/terraform/state/purpose/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/provisioning/acm/acm/</loc>
   </url>
   
   <url>
@@ -244,6 +260,10 @@
   
   <url>
     <loc>/terraform-workshop/provisioning/vpc/public-route/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/provisioning/acm/route53/</loc>
   </url>
   
   <url>
@@ -328,6 +348,10 @@
   
   <url>
     <loc>/terraform-workshop/terraform/commands/output/</loc>
+  </url>
+  
+  <url>
+    <loc>/terraform-workshop/provisioning/acm/output/</loc>
   </url>
   
   <url>

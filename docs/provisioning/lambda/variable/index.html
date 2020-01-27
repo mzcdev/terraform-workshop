@@ -13,20 +13,20 @@
     <title>variable.tf :: Terraform Workshop</title>
 
     
-    <link href="/terraform-workshop/css/nucleus.css?1580128588" rel="stylesheet">
-    <link href="/terraform-workshop/css/fontawesome-all.min.css?1580128588" rel="stylesheet">
-    <link href="/terraform-workshop/css/hybrid.css?1580128588" rel="stylesheet">
-    <link href="/terraform-workshop/css/featherlight.min.css?1580128588" rel="stylesheet">
-    <link href="/terraform-workshop/css/perfect-scrollbar.min.css?1580128588" rel="stylesheet">
-    <link href="/terraform-workshop/css/auto-complete.css?1580128588" rel="stylesheet">
-    <link href="/terraform-workshop/css/atom-one-dark-reasonable.css?1580128588" rel="stylesheet">
-    <link href="/terraform-workshop/css/theme.css?1580128588" rel="stylesheet">
-    <link href="/terraform-workshop/css/hugo-theme.css?1580128588" rel="stylesheet">
+    <link href="/terraform-workshop/css/nucleus.css?1580131895" rel="stylesheet">
+    <link href="/terraform-workshop/css/fontawesome-all.min.css?1580131895" rel="stylesheet">
+    <link href="/terraform-workshop/css/hybrid.css?1580131895" rel="stylesheet">
+    <link href="/terraform-workshop/css/featherlight.min.css?1580131895" rel="stylesheet">
+    <link href="/terraform-workshop/css/perfect-scrollbar.min.css?1580131895" rel="stylesheet">
+    <link href="/terraform-workshop/css/auto-complete.css?1580131895" rel="stylesheet">
+    <link href="/terraform-workshop/css/atom-one-dark-reasonable.css?1580131895" rel="stylesheet">
+    <link href="/terraform-workshop/css/theme.css?1580131895" rel="stylesheet">
+    <link href="/terraform-workshop/css/hugo-theme.css?1580131895" rel="stylesheet">
     
-      <link href="/terraform-workshop/css/theme-blue.css?1580128588" rel="stylesheet">
+      <link href="/terraform-workshop/css/theme-blue.css?1580131895" rel="stylesheet">
     
 
-    <script src="/terraform-workshop/js/jquery-3.3.1.min.js?1580128588"></script>
+    <script src="/terraform-workshop/js/jquery-3.3.1.min.js?1580131895"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/terraform-workshop/js/lunr.min.js?1580128588"></script>
-<script type="text/javascript" src="/terraform-workshop/js/auto-complete.js?1580128588"></script>
+<script type="text/javascript" src="/terraform-workshop/js/lunr.min.js?1580131895"></script>
+<script type="text/javascript" src="/terraform-workshop/js/auto-complete.js?1580131895"></script>
 <script type="text/javascript">
     
         var baseurl = "\/terraform-workshop\/";
     
 </script>
-<script type="text/javascript" src="/terraform-workshop/js/search.js?1580128588"></script>
+<script type="text/javascript" src="/terraform-workshop/js/search.js?1580131895"></script>
 
     
   </div>
@@ -1322,6 +1322,135 @@
  
   
     
+    <li data-nav-id="/terraform-workshop/provisioning/acm/" title="ACM" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/terraform-workshop/provisioning/acm/">
+          ACM
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/provisioning/acm/variable/" title="variable.tf" class="dd-item ">
+        <a href="/terraform-workshop/provisioning/acm/variable/">
+        variable.tf
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/provisioning/acm/provider/" title="provider.tf" class="dd-item ">
+        <a href="/terraform-workshop/provisioning/acm/provider/">
+        provider.tf
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/provisioning/acm/acm/" title="acm.tf" class="dd-item ">
+        <a href="/terraform-workshop/provisioning/acm/acm/">
+        acm.tf
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/provisioning/acm/route53/" title="route53.tf" class="dd-item ">
+        <a href="/terraform-workshop/provisioning/acm/route53/">
+        route53.tf
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform-workshop/provisioning/acm/output/" title="output.tf" class="dd-item ">
+        <a href="/terraform-workshop/provisioning/acm/output/">
+        output.tf
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
     <li data-nav-id="/terraform-workshop/provisioning/lambda/" title="Lambda API" class="dd-item 
         parent
         
@@ -2279,67 +2408,67 @@
 
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-hcl" data-lang="hcl"><span style="color:#66d9ef">variable</span> <span style="color:#e6db74">&#34;region&#34;</span> {
-  description <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;생성될 리전을 입력 합니다.&#34;</span>
+  description <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;생성될 리전.&#34;</span>
   type        <span style="color:#f92672">=</span> <span style="color:#66d9ef">string</span>
   default     <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ap-northeast-2&#34;</span>
 }
 
 <span style="color:#66d9ef">variable</span> <span style="color:#e6db74">&#34;name&#34;</span> {
-  description <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;서비스 이름을 입력 합니다.&#34;</span>
+  description <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;서비스 이름.&#34;</span>
   type        <span style="color:#f92672">=</span> <span style="color:#66d9ef">string</span>
   default     <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;demo-api&#34;</span>
 }
 
 <span style="color:#66d9ef">variable</span> <span style="color:#e6db74">&#34;stage&#34;</span> {
-  description <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;서비스 영역을 입력 합니다.&#34;</span>
+  description <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;서비스 영역.&#34;</span>
   type        <span style="color:#f92672">=</span> <span style="color:#66d9ef">string</span>
   default     <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;dev&#34;</span>
 }
 
 <span style="color:#66d9ef">variable</span> <span style="color:#e6db74">&#34;runtime&#34;</span> {
-  description <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;람다 펑션이 실행될 런타임을 입력 합니다.&#34;</span>
+  description <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;람다 펑션이 실행될 런타임.&#34;</span>
   type        <span style="color:#f92672">=</span> <span style="color:#66d9ef">string</span>
   default     <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;nodejs10.x&#34;</span>
 }
 
 <span style="color:#66d9ef">variable</span> <span style="color:#e6db74">&#34;handler&#34;</span> {
-  description <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;람다 펑션이 실행될 핸들러 이름을 입력 합니다.&#34;</span>
+  description <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;람다 펑션이 실행될 핸들러 이름.&#34;</span>
   type        <span style="color:#f92672">=</span> <span style="color:#66d9ef">string</span>
   default     <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;index.handler&#34;</span>
 }
 
 <span style="color:#66d9ef">variable</span> <span style="color:#e6db74">&#34;memory_size&#34;</span> {
-  description <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;람다 펑션이 실행될 메모리 사이즈를 입력 합니다.&#34;</span>
+  description <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;람다 펑션이 실행될 메모리 사이즈.&#34;</span>
   type        <span style="color:#f92672">=</span> <span style="color:#66d9ef">string</span>
   default     <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1024&#34;</span>
 }
 
 <span style="color:#66d9ef">variable</span> <span style="color:#e6db74">&#34;timeout&#34;</span> {
-  description <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;람다 펑션의 타임아웃 값을 입력 합니다.&#34;</span>
+  description <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;람다 펑션의 타임아웃 값.&#34;</span>
   type        <span style="color:#f92672">=</span> <span style="color:#66d9ef">string</span>
   default     <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;5&#34;</span>
 }
 
 <span style="color:#66d9ef">variable</span> <span style="color:#e6db74">&#34;s3_bucket&#34;</span> {
-  description <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;The S3 bucket location containing the function&#39;s deployment package.&#34;</span>
+  description <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;배포 패키지가 저장될 버켓 이름.&#34;</span>
   type        <span style="color:#f92672">=</span> <span style="color:#66d9ef">string</span>
   default     <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;terraform-workshop-seoul&#34;</span>
 }
 
 <span style="color:#66d9ef">variable</span> <span style="color:#e6db74">&#34;s3_source&#34;</span> {
-  description <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;The S3 source location containing the function&#39;s deployment package.&#34;</span>
+  description <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;복사될 배포 패키지가 있는 경로.&#34;</span>
   type        <span style="color:#f92672">=</span> <span style="color:#66d9ef">string</span>
   default     <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;package/lambda.zip&#34;</span>
 }
 
 <span style="color:#66d9ef">variable</span> <span style="color:#e6db74">&#34;s3_key&#34;</span> {
-  description <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;The S3 key of an object containing the function&#39;s deployment package.&#34;</span>
+  description <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;배포 패키지가 배포될 경로.&#34;</span>
   type        <span style="color:#f92672">=</span> <span style="color:#66d9ef">string</span>
   default     <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;package/lambda.zip&#34;</span>
 }
 
 <span style="color:#66d9ef">variable</span> <span style="color:#e6db74">&#34;env_vars&#34;</span> {
-  description <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;A map that defines environment variables for the Lambda function.&#34;</span>
+  description <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;람다 펑션에서 사용될 환경 변수 맵.&#34;</span>
   type        <span style="color:#f92672">=</span> <span style="color:#66d9ef">map</span>(<span style="color:#66d9ef">string</span>)
   default <span style="color:#f92672">=</span> {
     &#34;PROFILE&#34; <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;dev&#34;</span>,
@@ -2361,13 +2490,13 @@
 }
 
 <span style="color:#66d9ef">variable</span> <span style="color:#e6db74">&#34;domain_root&#34;</span> {
-  description <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
+  description <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Route53 에 등록된 도메인 명&#34;</span>
   type        <span style="color:#f92672">=</span> <span style="color:#66d9ef">string</span>
   default     <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;mzdev.be&#34;</span>
 }
 
 <span style="color:#66d9ef">variable</span> <span style="color:#e6db74">&#34;domain_name&#34;</span> {
-  description <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
+  description <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;람다 펑션이 서비스 될 도메인 명&#34;</span>
   type        <span style="color:#f92672">=</span> <span style="color:#66d9ef">string</span>
   default     <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;demo-api.workshop.mzdev.be&#34;</span>
 }
@@ -3315,6 +3444,102 @@
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                     
                 
                 
@@ -3980,19 +4205,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/terraform-workshop/js/clipboard.min.js?1580128588"></script>
-    <script src="/terraform-workshop/js/perfect-scrollbar.min.js?1580128588"></script>
-    <script src="/terraform-workshop/js/perfect-scrollbar.jquery.min.js?1580128588"></script>
-    <script src="/terraform-workshop/js/jquery.sticky.js?1580128588"></script>
-    <script src="/terraform-workshop/js/featherlight.min.js?1580128588"></script>
-    <script src="/terraform-workshop/js/highlight.pack.js?1580128588"></script>
+    <script src="/terraform-workshop/js/clipboard.min.js?1580131895"></script>
+    <script src="/terraform-workshop/js/perfect-scrollbar.min.js?1580131895"></script>
+    <script src="/terraform-workshop/js/perfect-scrollbar.jquery.min.js?1580131895"></script>
+    <script src="/terraform-workshop/js/jquery.sticky.js?1580131895"></script>
+    <script src="/terraform-workshop/js/featherlight.min.js?1580131895"></script>
+    <script src="/terraform-workshop/js/highlight.pack.js?1580131895"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/terraform-workshop/js/modernizr.custom-3.6.0.js?1580128588"></script>
-    <script src="/terraform-workshop/js/learn.js?1580128588"></script>
-    <script src="/terraform-workshop/js/hugo-learn.js?1580128588"></script>
+    <script src="/terraform-workshop/js/modernizr.custom-3.6.0.js?1580131895"></script>
+    <script src="/terraform-workshop/js/learn.js?1580131895"></script>
+    <script src="/terraform-workshop/js/hugo-learn.js?1580131895"></script>
 
-    <link href="/terraform-workshop/mermaid/mermaid.css?1580128588" rel="stylesheet" />
-    <script src="/terraform-workshop/mermaid/mermaid.js?1580128588"></script>
+    <link href="/terraform-workshop/mermaid/mermaid.css?1580131895" rel="stylesheet" />
+    <script src="/terraform-workshop/mermaid/mermaid.js?1580131895"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

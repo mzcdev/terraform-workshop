@@ -3,6 +3,8 @@ title: iam-role.tf
 weight: 104
 ---
 
+람다 펑션이 S3 Bucket 와 DynamoDB 를 사용 할수 있도록 권한을 부여 합니다.
+
 ```hcl
 # https://docs.aws.amazon.com/ko_kr/lambda/latest/dg/policy-templates.html
 

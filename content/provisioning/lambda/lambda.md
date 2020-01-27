@@ -3,6 +3,8 @@ title: lambda.tf
 weight: 105
 ---
 
+람다 코드를 zip 으로 묶어 S3 Bucket 에 올려두고, 람다 펑션을 생성 합니다.
+
 ```hcl
 resource "aws_s3_bucket_object" "default" {
   bucket = var.s3_bucket
