@@ -9,6 +9,4 @@ EKS cluster 를 생성하고, ASG 로 Worker node 를 생성 합니다.
 
 #### 다음 주소의 소스를 참고 하여 주세요.
 
-* https://github.com/nalbam/terraform-aws-eks
-
-* https://github.com/nalbam/terraform-aws-eks-worker
+* https://github.com/mzcdev/terraform-env-workshop/tree/master/eks
