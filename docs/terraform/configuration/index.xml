@@ -1,96 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Configuration Language on Terraform Workshop</title>
-    <link>/terraform-workshop/terraform/configuration/</link>
-    <description>Recent content in Configuration Language on Terraform Workshop</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>ko-KR</language>
-    
-	<atom:link href="/terraform-workshop/terraform/configuration/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Input Variables</title>
-      <link>/terraform-workshop/terraform/configuration/input_variables/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/terraform-workshop/terraform/configuration/input_variables/</guid>
-      <description>Input Variable은 Terraform 모듈의 매개 변수 역할을 하며, 다른 모듈 간에 매개 변수를 공유 할 수 있습니다.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Configuration Language on Terraform Workshop</title><link>/terraform-workshop/terraform/configuration/</link><description>Recent content in Configuration Language on Terraform Workshop</description><generator>Hugo -- gohugo.io</generator><language>ko-KR</language><atom:link href="/terraform-workshop/terraform/configuration/index.xml" rel="self" type="application/rss+xml"/><item><title>Input Variables</title><link>/terraform-workshop/terraform/configuration/input_variables/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/terraform-workshop/terraform/configuration/input_variables/</guid><description>Input Variable은 Terraform 모듈의 매개 변수 역할을 하며, 다른 모듈 간에 매개 변수를 공유 할 수 있습니다.
 Declaring an Input Variable variable 블록을 사용 하여 설정 합니다.
-variable &amp;#34;ami_id&amp;#34; { description = &amp;#34;The id of the machine image (AMI).&amp;#34; type = string } variable &amp;#34;availability_zone_names&amp;#34; { type = list(string) default = [ &amp;#34;us-west-1a&amp;#34;, &amp;#34;us-west-1b&amp;#34;, ] } variable &amp;#34;docker_ports&amp;#34; { type = list(object({ internal = number external = number protocol = string })) default = [ { internal = 8300 external = 8300 protocol = &amp;#34;tcp&amp;#34; } ] } description 인수를 사용하여 각 값의 목적을 간단히 설명 할 수 있습니다.</description>
-    </item>
-    
-    <item>
-      <title>Providers</title>
-      <link>/terraform-workshop/terraform/configuration/providers/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/terraform-workshop/terraform/configuration/providers/</guid>
-      <description>자원(Resource)은 Terraform 언어의 기본 구성이지만 자원의 동작은 연관된 자원 유형에 의존하며 이러한 유형은 제공자(Provider)에 의해 정의됩니다.
+variable &amp;#34;ami_id&amp;#34; { description = &amp;#34;The id of the machine image (AMI).&amp;#34; type = string } variable &amp;#34;availability_zone_names&amp;#34; { type = list(string) default = [ &amp;#34;us-west-1a&amp;#34;, &amp;#34;us-west-1b&amp;#34;, ] } variable &amp;#34;docker_ports&amp;#34; { type = list(object({ internal = number external = number protocol = string })) default = [ { internal = 8300 external = 8300 protocol = &amp;#34;tcp&amp;#34; } ] } description 인수를 사용하여 각 값의 목적을 간단히 설명 할 수 있습니다.</description></item><item><title>Providers</title><link>/terraform-workshop/terraform/configuration/providers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/terraform-workshop/terraform/configuration/providers/</guid><description>자원(Resource)은 Terraform 언어의 기본 구성이지만 자원의 동작은 연관된 자원 유형에 의존하며 이러한 유형은 제공자(Provider)에 의해 정의됩니다.
 각 제공자는 이름 지정된 자원 유형 세트를 제공하고 각 자원 유형에 대해 허용되는 인수, 내보내는 속성 및 해당 유형의 자원 변경 사항이 실제로 원격 API에 적용되는 방법을 정의합니다.
 사용 가능한 대부분의 공급자는 하나의 클라우드 또는 온-프레미스 인프라 플랫폼에 해당하며 해당 플랫폼의 각 기능에 해당하는 리소스 유형을 제공합니다.
-공급자는 일반적으로 엔드 포인트 URL, 리전, 인증 설정 등을 지정하기 위해 자체 구성이 필요합니다.</description>
-    </item>
-    
-    <item>
-      <title>Resources</title>
-      <link>/terraform-workshop/terraform/configuration/resources/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/terraform-workshop/terraform/configuration/resources/</guid>
-      <description>Terraform 언어에서 리소스는 가장 중요한 요소입니다. 각 리소스 블록은 가상 네트워크, 컴퓨팅 인스턴스 또는 DNS 레코드와 같은 상위 구성 요소와 같은 하나 이상의 인프라 개체를 설명합니다.
+공급자는 일반적으로 엔드 포인트 URL, 리전, 인증 설정 등을 지정하기 위해 자체 구성이 필요합니다.</description></item><item><title>Resources</title><link>/terraform-workshop/terraform/configuration/resources/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/terraform-workshop/terraform/configuration/resources/</guid><description>Terraform 언어에서 리소스는 가장 중요한 요소입니다. 각 리소스 블록은 가상 네트워크, 컴퓨팅 인스턴스 또는 DNS 레코드와 같은 상위 구성 요소와 같은 하나 이상의 인프라 개체를 설명합니다.
 Resource Syntax 아래는 aws ec2 instance 를 생성하는 가장 심플한 코드 입니다.
 resource &amp;#34;aws_instance&amp;#34; &amp;#34;sample&amp;#34; { ami = var.ami_id instance_type = var.instance_type } resource 블록을 사용 하여 설정 합니다. aws_instance의 자원을 생성하며, sample의 이름을 가집니다.
-블록 내의 ami instance_type은 aws_instance 자원 유형의 인수 입니다.</description>
-    </item>
-    
-    <item>
-      <title>Output Values</title>
-      <link>/terraform-workshop/terraform/configuration/output_values/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/terraform-workshop/terraform/configuration/output_values/</guid>
-      <description>Output Value는 Terraform 모듈의 반환 값과 유사하며 여러 용도로 사용됩니다.
+블록 내의 ami instance_type은 aws_instance 자원 유형의 인수 입니다.</description></item><item><title>Output Values</title><link>/terraform-workshop/terraform/configuration/output_values/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/terraform-workshop/terraform/configuration/output_values/</guid><description>Output Value는 Terraform 모듈의 반환 값과 유사하며 여러 용도로 사용됩니다.
 Declaring an Output Value output 블록을 사용 하여 설정 합니다.
-output &amp;#34;private_ip&amp;#34; { description = &amp;#34;The private IP address of the main server instance.&amp;#34; value = aws_instance.server.private_ip depends_on = [ aws_security_group_rule.local_access, ] } output &amp;#34;db_password&amp;#34; { description = &amp;#34;The password for logging in to the database.&amp;#34; value = aws_db_instance.db.password sensitive = true } description 인수를 사용하여 각 값의 목적을 간단히 설명 할 수 있습니다.</description>
-    </item>
-    
-    <item>
-      <title>Local Values</title>
-      <link>/terraform-workshop/terraform/configuration/local_values/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/terraform-workshop/terraform/configuration/local_values/</guid>
-      <description>Local Value는 이름을 표현식에 지정하여 모듈 내에서 반복하지 않고 여러 번 사용할 수 있습니다.
+output &amp;#34;private_ip&amp;#34; { description = &amp;#34;The private IP address of the main server instance.&amp;#34; value = aws_instance.server.private_ip depends_on = [ aws_security_group_rule.local_access, ] } output &amp;#34;db_password&amp;#34; { description = &amp;#34;The password for logging in to the database.&amp;#34; value = aws_db_instance.db.password sensitive = true } description 인수를 사용하여 각 값의 목적을 간단히 설명 할 수 있습니다.</description></item><item><title>Local Values</title><link>/terraform-workshop/terraform/configuration/local_values/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/terraform-workshop/terraform/configuration/local_values/</guid><description>Local Value는 이름을 표현식에 지정하여 모듈 내에서 반복하지 않고 여러 번 사용할 수 있습니다.
 Declaring a Local Value locals 블록을 사용 하여 설정 합니다.
 locals { service_name = &amp;#34;forum&amp;#34; owner = &amp;#34;Community Team&amp;#34; } 간단한 상수 이거나, 다른 모듈 또는 다른 리소스 값을 반환하거나, 복잡한 표현식도 가능 합니다.
-locals {# 두개의 인스턴스의 ID List를 반환 합니다.  instance_ids = concat( aws_instance.blue.*.id, aws_instance.green.*.id, ) } locals {# 모든 자원에서 사용할 공통 태그  common_tags = { Service = local.</description>
-    </item>
-    
-    <item>
-      <title>Data Sources</title>
-      <link>/terraform-workshop/terraform/configuration/data_sources/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/terraform-workshop/terraform/configuration/data_sources/</guid>
-      <description>Data Source를 통해 Terraform 구성의 다른 곳에서 사용하기 위해 데이터를 가져 오거나 계산할 수 있습니다. 데이터 소스를 사용하면 Terraform 구성이 Terraform 외부에서 정의되거나 다른 별도의 Terraform 구성으로 정의 된 정보를 사용할 수 있습니다.
+locals {# 두개의 인스턴스의 ID List를 반환 합니다. instance_ids = concat( aws_instance.blue.*.id, aws_instance.green.*.id, ) } locals {# 모든 자원에서 사용할 공통 태그 common_tags = { Service = local.</description></item><item><title>Data Sources</title><link>/terraform-workshop/terraform/configuration/data_sources/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/terraform-workshop/terraform/configuration/data_sources/</guid><description>Data Source를 통해 Terraform 구성의 다른 곳에서 사용하기 위해 데이터를 가져 오거나 계산할 수 있습니다. 데이터 소스를 사용하면 Terraform 구성이 Terraform 외부에서 정의되거나 다른 별도의 Terraform 구성으로 정의 된 정보를 사용할 수 있습니다.
 Using Data Sources data 블록을 사용 하여 설정 합니다.
-data &amp;#34;aws_ami&amp;#34; &amp;#34;example&amp;#34; { owners = [&amp;#34;self&amp;#34;] tags = { Name = &amp;#34;app-server&amp;#34; Tested = &amp;#34;true&amp;#34; } most_recent = true } Terraform이 지정된 데이터 소스 aws_ami에서 읽고 해당 로컬 이름 example으로 결과를 내보내도록 요청합니다.</description>
-    </item>
-    
-    <item>
-      <title>Modules</title>
-      <link>/terraform-workshop/terraform/configuration/modules/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/terraform-workshop/terraform/configuration/modules/</guid>
-      <description>Module은 함께 사용되는 여러 리소스의 컨테이너입니다.
+data &amp;#34;aws_ami&amp;#34; &amp;#34;example&amp;#34; { owners = [&amp;#34;self&amp;#34;] tags = { Name = &amp;#34;app-server&amp;#34; Tested = &amp;#34;true&amp;#34; } most_recent = true } Terraform이 지정된 데이터 소스 aws_ami에서 읽고 해당 로컬 이름 example으로 결과를 내보내도록 요청합니다.</description></item><item><title>Modules</title><link>/terraform-workshop/terraform/configuration/modules/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/terraform-workshop/terraform/configuration/modules/</guid><description>Module은 함께 사용되는 여러 리소스의 컨테이너입니다.
 모든 Terraform 구성에는 기본 작업 디렉토리의 .tf 파일에 정의 된 리소스로 구성된 루트 모듈이라고하는 하나 이상의 모듈이 있습니다.
 모듈은 다른 모듈을 호출 할 수 있으며, 이를 통해 하위 모듈의 리소스를 간결하게 구성에 포함시킬 수 있습니다. 동일한 구성 내에서 또는 별도의 구성으로 모듈을 여러 번 호출하여 리소스 구성을 패키지화하고 재사용 할 수 있습니다.
 Calling a Child Module module 블록을 사용 하여 설정 합니다.
-module &amp;#34;servers&amp;#34; { source = &amp;#34;.</description>
-    </item>
-    
-  </channel>
-</rss>
+module &amp;#34;servers&amp;#34; { source = &amp;#34;.</description></item></channel></rss>
