@@ -2,5 +2,5 @@
 AWS Settings 메뉴를 엽니다.
 AWS managed temporory credentials 를 비활성화 합니다.</description></item><item><title>Terminal</title><link>/terraform-workshop/requirements/cloud9/terminal/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/terraform-workshop/requirements/cloud9/terminal/</guid><description>기본적인 작업 환경이 만들어졌습니다.</description></item><item><title>AWS configure</title><link>/terraform-workshop/requirements/cloud9/aws-configure/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/terraform-workshop/requirements/cloud9/aws-configure/</guid><description>AWS Account 를 생성하고 저장한 Access key ID 와 Secret access key 를 입력합니다.
 aws configure AWS Access Key ID [None]: AXXXXXXXXXXXXXXXXXXX AWS Secret Access Key [None]: AXXXXXXXXXXXXXXXXXXXAXXXXXXXXXXXXXXXXXXX Default region name [ap-northeast-2]: ap-northeast-2 Default output format [None]: json</description></item><item><title>Install tools</title><link>/terraform-workshop/requirements/cloud9/install-tools/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/terraform-workshop/requirements/cloud9/install-tools/</guid><description>워크샵에 필요한 툴을 설치 합니다.
-curl -sL opspresso.com/install | bash 다음의 툴이 설치 됩니다.
+curl -sL opspresso.github.io/tools/install.sh | bash 다음의 툴이 설치 됩니다.
 git, jq, pip, telnet awscli terraform kubectl helm nodejs aws-iam-authenticator</description></item></channel></rss>
