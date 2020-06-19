@@ -7,7 +7,7 @@ Terraform state 정보를 저장하기 위해 환경 변수를 선언해 줍니�
 
 ```bash
 export REGION="ap-northeast-2"
-export BUCKET="terraform-workshop-seoul"
+export BUCKET="terraform-workshop-mzcdev"
 ```
 
 State 정보를 저장할 `S3 Bucket` 을 생성 합니다.
@@ -28,6 +28,6 @@ aws dynamodb create-table \
 ```
 
 {{% notice tip %}}
-S3 Bucket 이름으로 사용되는 **terraform-workshop-seoul** 은 다른 사용자와 중복될수 있습니다.
+S3 Bucket 이름으로 사용되는 **terraform-workshop-mzcdev** 은 다른 사용자와 중복될수 있습니다.
 본인의 닉네임 등을 사용하여 유니크한 이름을 부여하도록 합니다.
 {{% /notice %}}

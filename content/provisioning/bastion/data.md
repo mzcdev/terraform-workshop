@@ -10,7 +10,7 @@ data "terraform_remote_state" "vpc" {
   backend = "s3"
   config = {
     region = "ap-northeast-2"
-    bucket = "terraform-workshop-seoul"
+    bucket = "terraform-workshop-mzcdev"
     key    = "vpc-demo.tfstate"
   }
 }

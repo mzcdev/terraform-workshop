@@ -9,7 +9,7 @@ weight: 101
 terraform {
   backend "s3" {
     region = "ap-northeast-2"
-    bucket = "terraform-workshop-seoul"
+    bucket = "terraform-workshop-mzcdev"
     key    = "vpc.tfstate"
   }
 }
